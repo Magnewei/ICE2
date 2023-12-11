@@ -8,7 +8,7 @@ public class Kevin implements Datamon {
     private int BaseDamage;
     private String CreatureType;
 
-    Kevin(){
+    public Kevin(){
         this.name = "Kevin";
         this.hp = 100;
         this.BaseDamage = 5;

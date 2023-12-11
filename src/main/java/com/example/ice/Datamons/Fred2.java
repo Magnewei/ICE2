@@ -9,7 +9,7 @@ public class Fred2 implements Datamon {
     private int BaseDamage;
     private String CreatureType;
 
-    Fred2(){
+    public Fred2(){
         this.name = "Fred2";
         this.hp = 250;
         this.BaseDamage = 7;

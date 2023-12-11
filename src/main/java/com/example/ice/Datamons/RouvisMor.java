@@ -9,7 +9,7 @@ public class RouvisMor implements Datamon {
     private int BaseDamage;
     private String CreatureType;
 
-    RouvisMor(){
+    public RouvisMor(){
         this.name = "Henriette";
         this.hp = 300;
         this.BaseDamage = 10;
