@@ -1,10 +1,12 @@
-package com.example.ice;
+package com.example.ice.Datamons;
 
-public class Jonas implements Datamon{
-private String name;
-private int hp;
-private int BaseDamage;
-private String CreatureType;
+import com.example.ice.Datamon;
+
+public class Jonas implements Datamon {
+    private String name;
+    private double hp;
+    private int BaseDamage;
+    private String CreatureType;
 
 
     Jonas(){
@@ -20,17 +22,17 @@ private String CreatureType;
     }
 
     @Override
-    public int getHP() {
+    public double getHP() {
         return hp;
     }
 
     @Override
     public void setHP(int hp) {
-    this.hp = hp;
+        this.hp = hp;
     }
 
     @Override
-    public int getBaseDamage() {
+    public double getBaseDamage() {
         return BaseDamage;
     }
 
@@ -40,12 +42,12 @@ private String CreatureType;
     }
 
     @Override
-    public int Damagebuff(Datamon target) {
-     return 0;
+    public double Damagebuff(Datamon target) {
+        return 0;
     }
 
     @Override
-    public int takedamage(int damage) {
+    public double takedamage(double damage) {
         return hp-= damage;
     }
 
@@ -53,4 +55,12 @@ private String CreatureType;
     public String introduction() {
         return "A giant monster apears from the dista..... oh wait its just tiny jonas";
     }
+
+
+    public void BulkUp(Datamon target){
+        double damageDealt = 0;
+        target.takedamage(damageDealt); // but nothing happend
+    }
+
+
 }
