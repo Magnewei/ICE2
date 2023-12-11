@@ -44,7 +44,11 @@ public class RouvisMor implements Datamon {
 
     @Override
     public double DamageBuff(Datamon target) {
-        return 0;
+        if("Ginger".equals(target.getCreatureType())){
+            return getBaseDamage() +10;
+        } else {
+            return getBaseDamage();
+        }
     }
 
     @Override

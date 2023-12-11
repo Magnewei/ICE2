@@ -42,7 +42,11 @@ public class Kevin implements Datamon {
 
     @Override
     public double DamageBuff(Datamon target) {
-        return 0;
+        if("Milf".equals(target.getCreatureType())){
+            return getBaseDamage() - 4;
+        } else {
+            return getBaseDamage();
+        }
     }
 
     @Override
