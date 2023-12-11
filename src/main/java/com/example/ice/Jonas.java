@@ -11,7 +11,7 @@ private String CreatureType;
         this.name = "Jonas";
         this.hp = 50;
         this.BaseDamage = 3;
-        this.CreatureType = "Spaghetti";
+        this.CreatureType = "Elskløve";
     }
 
     @Override

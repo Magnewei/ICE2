@@ -10,6 +10,8 @@ public interface Datamon {
     public  int takedamage(int damage);
     public String introduction();
 
+    public int Dealdamage();
+
 
 
 }

@@ -1,9 +1,11 @@
 package com.example.ice;
+import java.util.Scanner;
 
 public class Kevin implements Datamon{
     private String name;
     private int hp;
     private int BaseDamage;
+    Scanner scanner = new Scanner(System.in);
     private String CreatureType;
 
     Kevin(){
@@ -38,8 +40,17 @@ public class Kevin implements Datamon{
         return CreatureType;
     }
 
+
+    @Override
+    public int Dealdamage(){
+        return 0;
+    }
+
+
     @Override
     public int Damagebuff(Datamon target) {
+        System.out.println("Chose an attack");
+        int choise = Integer.parseInt(scanner.nextLine());
         if("Milf".equals(target.getCreatureType())){
             return getBaseDamage() -4;
         } else {
@@ -56,4 +67,11 @@ public class Kevin implements Datamon{
     public String introduction() {
         return "A soulless Datamon appears, and it has.... red hair?";
     }
+
+    public int straweberrythrow(){
+        int damage = 10;
+        Damagebuff();
+    }
+
+
 }

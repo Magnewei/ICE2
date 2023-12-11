@@ -1,21 +1,18 @@
 package com.example.ice;
 
-import java.util.Objects;
-
-public class Fred2 implements Datamon{
-
+public class Bobby implements Datamon{
     private String name;
     private int hp;
     private int BaseDamage;
     private String CreatureType;
 
-    Fred2(){
-        this.name = "Fred2";
-        this.hp = 250;
-        this.BaseDamage = 7;
-        this.CreatureType = "Drunk";
-    }
 
+    Bobby() {
+        this.name = "Bobby";
+        this.hp = 310;
+        this.BaseDamage = 7;
+        this.CreatureType = "Ghost";
+    }
 
     @Override
     public String getName() {
@@ -49,15 +46,11 @@ public class Fred2 implements Datamon{
 
     @Override
     public int takedamage(int damage) {
-        return hp-= damage;
+        return hp -= damage;
     }
 
     @Override
     public String introduction() {
-        return  "";
+        return "A giant monster apears from the dista..... oh wait its just tiny jonas";
     }
-
-
-
-
 }

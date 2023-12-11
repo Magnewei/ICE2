@@ -1,19 +1,17 @@
 package com.example.ice;
 
-import java.util.Objects;
-
-public class Fred2 implements Datamon{
+public class Tess implements Datamon{
 
     private String name;
     private int hp;
     private int BaseDamage;
     private String CreatureType;
 
-    Fred2(){
-        this.name = "Fred2";
-        this.hp = 250;
-        this.BaseDamage = 7;
-        this.CreatureType = "Drunk";
+    Tess(){
+        this.name = "Tess";
+        this.hp = 300;
+        this.BaseDamage = 9;
+        this.CreatureType = "Boss";
     }
 
 
@@ -56,8 +54,4 @@ public class Fred2 implements Datamon{
     public String introduction() {
         return  "";
     }
-
-
-
-
 }
