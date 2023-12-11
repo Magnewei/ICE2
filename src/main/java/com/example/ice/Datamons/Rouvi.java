@@ -1,17 +1,19 @@
-package com.example.ice;
+package com.example.ice.Datamons;
 
-public class Nicolai implements Datamon{
+import com.example.ice.Datamon;
+
+public class Rouvi implements Datamon {
     private String name;
     private int hp;
     private int BaseDamage;
     private String CreatureType;
 
 
-    Nicolai() {
-        this.name = "Nicolai";
+    public Rouvi() {
+        this.name = "Rouvi";
         this.hp = 280;
         this.BaseDamage = 9;
-        this.CreatureType = "Muren";
+        this.CreatureType = "?";
     }
 
     @Override
@@ -20,7 +22,7 @@ public class Nicolai implements Datamon{
     }
 
     @Override
-    public int getHP() {
+    public double getHP() {
         return hp;
     }
 
@@ -30,7 +32,7 @@ public class Nicolai implements Datamon{
     }
 
     @Override
-    public int getBaseDamage() {
+    public double getBaseDamage() {
         return BaseDamage;
     }
 
@@ -40,14 +42,15 @@ public class Nicolai implements Datamon{
     }
 
     @Override
-    public int Damagebuff(Datamon target) {
+    public double DamageBuff(Datamon target) {
         return 0;
     }
 
     @Override
-    public int takedamage(int damage) {
-        return hp -= damage;
+    public double takedamage(double damage) {
+        return 0;
     }
+
 
     @Override
     public String introduction() {

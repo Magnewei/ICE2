@@ -14,54 +14,54 @@
                <children>
                   <FlowPane prefHeight="600.0" prefWidth="1920.0">
                      <children>
-                        <Button fx:id="Mon1" mnemonicParsing="false" onMouseClicked="#Select1Pressed" prefHeight="200.0" prefWidth="480.0" text="1">
+                        <Button fx:id="button1" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="1" onAction="#Select1Pressed">
                            <effect>
                               <ImageInput>
                                  <source>
                                     <Image url="file:/C:/Users/Gustav/Desktop/Ice/ICE/MediaFiles/Bobby.png" />
                                  </source></ImageInput>
                            </effect></Button>
-                        <Button fx:id="Mon2" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="2">
+                        <Button fx:id="button2" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="2" onAction="#Select2Pressed">
                            <effect>
                               <ImageInput />
                            </effect></Button>
-                        <Button fx:id="Mon3" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="3">
+                        <Button fx:id="button3" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="3" onAction="#Select3Pressed">
                            <effect>
                               <ImageInput />
                            </effect></Button>
-                        <Button fx:id="Mon4" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="4">
+                        <Button fx:id="button4" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="4" onAction="#Select4Pressed">
                            <effect>
                               <ImageInput />
                            </effect></Button>
-                        <Button fx:id="Mon5" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="5">
+                        <Button fx:id="button5" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="5" onAction="#Select5Pressed">
                            <effect>
                               <ImageInput />
                            </effect></Button>
-                        <Button fx:id="Mon6" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="6">
+                        <Button fx:id="button6" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="6" onAction="#Select6Pressed">
                            <effect>
                               <ImageInput />
                            </effect></Button>
-                        <Button fx:id="Mon7" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="7">
+                        <Button fx:id="button7" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="7" onAction="#Select7Pressed">
                            <effect>
                               <ImageInput />
                            </effect></Button>
-                        <Button fx:id="Mon8" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="8">
+                        <Button fx:id="button8" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="8" onAction="#Select8Pressed">
                            <effect>
                               <ImageInput />
                            </effect></Button>
-                        <Button fx:id="Mon9" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="9">
+                        <Button fx:id="button9" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="9" onAction="#Select9Pressed">
                            <effect>
                               <ImageInput />
                            </effect></Button>
-                        <Button fx:id="Mon10" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="10">
+                        <Button fx:id="button10" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="10" onAction="#Select10Pressed">
                            <effect>
                               <ImageInput />
                            </effect></Button>
-                        <Button fx:id="Mon11" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="11">
+                        <Button fx:id="button11" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="11" onAction="#Select11Pressed">
                            <effect>
                               <ImageInput />
                            </effect></Button>
-                        <Button fx:id="Mon12" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="12">
+                        <Button fx:id="button12" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="12" onAction="#Select12Pressed">
                            <effect>
                               <ImageInput />
                            </effect></Button>
