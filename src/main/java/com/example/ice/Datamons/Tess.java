@@ -1,6 +1,8 @@
-package com.example.ice;
+package com.example.ice.Datamons;
 
-public class Tess implements Datamon{
+import com.example.ice.Datamon;
+
+public class Tess implements Datamon {
 
     private String name;
     private int hp;
@@ -21,7 +23,7 @@ public class Tess implements Datamon{
     }
 
     @Override
-    public int getHP() {
+    public double getHP() {
         return hp;
     }
 
@@ -31,7 +33,7 @@ public class Tess implements Datamon{
     }
 
     @Override
-    public int getBaseDamage() {
+    public double getBaseDamage() {
         return BaseDamage;
     }
 
@@ -41,14 +43,15 @@ public class Tess implements Datamon{
     }
 
     @Override
-    public int Damagebuff(Datamon target) {
+    public double DamageBuff(Datamon target) {
         return 0;
     }
 
     @Override
-    public int takedamage(int damage) {
-        return hp-= damage;
+    public double takedamage(double damage) {
+        return 0;
     }
+
 
     @Override
     public String introduction() {
