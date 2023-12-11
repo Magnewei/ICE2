@@ -31,7 +31,6 @@ public class DBConnector{
                  int xp = resultSet.getInt("xp");
                  int level = resultSet.getInt("level");
                   */
-                List<Datamon> list = null;
 
                 users.add(new User(username,password));
 

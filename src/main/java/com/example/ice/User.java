@@ -18,6 +18,14 @@ public class User {
     public List<Datamon> getDatamons() {
         return datamons;
     }
+
+    public void addDatamon(Datamon mon){
+        datamons.add(mon);
+    }
+
+    public void removeDatamon(Datamon mon){
+        datamons.remove(mon);
+    }
     public String getUsername() {
         return username;
     }
@@ -25,7 +33,6 @@ public class User {
     public String getPassword() {
         return password;
     }
-
 
 
 

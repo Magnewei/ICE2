@@ -6,10 +6,10 @@ public interface Datamon {
     public void setHP(int hp);
     public double getBaseDamage();
     public String getCreatureType();
-    public double Damagebuff(Datamon target);
-    public double takedamage(double damage);
+    public double DamageBuff(Datamon target);
+
+    double takedamage(double damage);
+
     public String introduction();
-
-
 
 }

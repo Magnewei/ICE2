@@ -42,7 +42,7 @@ public class Jonas implements Datamon {
     }
 
     @Override
-    public double Damagebuff(Datamon target) {
+    public double DamageBuff(Datamon target) {
         return 0;
     }
 
