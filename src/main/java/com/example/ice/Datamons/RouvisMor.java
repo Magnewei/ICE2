@@ -1,13 +1,15 @@
-package com.example.ice;
+package com.example.ice.Datamons;
 
-public class RouvisMor implements Datamon{
+import com.example.ice.Datamon;
+
+public class RouvisMor implements Datamon {
 
     private String name;
-    private int hp;
+    private double hp;
     private int BaseDamage;
     private String CreatureType;
 
-    RouvisMor(){
+    public RouvisMor(){
         this.name = "Henriette";
         this.hp = 300;
         this.BaseDamage = 10;
@@ -21,7 +23,7 @@ public class RouvisMor implements Datamon{
     }
 
     @Override
-    public int getHP() {
+    public double getHP() {
         return hp;
     }
 
@@ -31,7 +33,7 @@ public class RouvisMor implements Datamon{
     }
 
     @Override
-    public int getBaseDamage() {
+    public double getBaseDamage() {
         return BaseDamage;
     }
 
@@ -39,8 +41,9 @@ public class RouvisMor implements Datamon{
     public String getCreatureType() {
         return CreatureType;
     }
+
     @Override
-    public int Damagebuff(Datamon target) {
+    public double DamageBuff(Datamon target) {
         if("Ginger".equals(target.getCreatureType())){
             return getBaseDamage() +10;
         } else {
@@ -49,7 +52,7 @@ public class RouvisMor implements Datamon{
     }
 
     @Override
-    public int takedamage(int damage) {
+    public double takedamage(double damage) {
         return hp-= damage;
     }
 
@@ -57,4 +60,10 @@ public class RouvisMor implements Datamon{
     public String introduction() {
         return "A hot milf appears in the wild. Her soul is kind, and her smile light up the world";
     }
+
+    public void TeenSeduction(Datamon target){
+        double damageDealt = 2*getBaseDamage();
+        target.takedamage(damageDealt);
+    }
+
 }

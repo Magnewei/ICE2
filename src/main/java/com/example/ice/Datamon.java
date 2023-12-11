@@ -2,16 +2,14 @@ package com.example.ice;
 
 public interface Datamon {
     public String getName();
-    public int getHP();
+    public double getHP();
     public void setHP(int hp);
-    public int getBaseDamage();
+    public double getBaseDamage();
     public String getCreatureType();
-    public int Damagebuff(Datamon target);
-    public  int takedamage(int damage);
+    public double DamageBuff(Datamon target);
+
+    double takedamage(double damage);
+
     public String introduction();
-
-    public int Dealdamage();
-
-
 
 }

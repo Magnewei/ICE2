@@ -4,17 +4,20 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
+import com.example.ice.Datamons.Fred2;
+import com.example.ice.Datamons.Jonas;
+import com.example.ice.Datamons.Kevin;
+import com.example.ice.Datamons.RouvisMor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 public class SelectorController {
+    private int maxCarriedDatamon = 3;
     @FXML
     private ResourceBundle resources;
     @FXML
@@ -40,7 +43,7 @@ public class SelectorController {
     private void Select1Pressed(ActionEvent event) {
         Datamon datamon = new Fred2();
 
-        if (datamons.size() < 6) {
+        if (datamons.size() < maxCarriedDatamon) {
             datamons.add(datamon);
             System.out.println(datamon.getName() + " datamon added.");
 
@@ -53,7 +56,7 @@ public class SelectorController {
     private void  Select2Pressed(ActionEvent event) {
         Datamon datamon = new RouvisMor();
 
-        if (datamons.size() < 6) {
+        if (datamons.size() < maxCarriedDatamon) {
             datamons.add(datamon);
             System.out.println(datamon.getName() + " datamon added.");
 
@@ -66,7 +69,7 @@ public class SelectorController {
     private void Select3Pressed(ActionEvent event) {
        Datamon datamon = new Jonas();
 
-        if (datamons.size() < 6) {
+        if (datamons.size() < maxCarriedDatamon) {
             datamons.add(datamon);
             System.out.println(datamon.getName() + " datamon added.");
 
@@ -79,7 +82,7 @@ public class SelectorController {
     private void  Select4Pressed(ActionEvent event) {
         Datamon datamon = new Kevin();
 
-        if (datamons.size() < 6) {
+        if (datamons.size() < maxCarriedDatamon) {
             datamons.add(datamon);
             System.out.println(datamon.getName() + " datamon added.");
 
@@ -94,7 +97,7 @@ public class SelectorController {
        Datamon datamon = new Fred2();
 
 
-        if (datamons.size() < 6) {
+        if (datamons.size() < maxCarriedDatamon) {
             datamons.add(datamon);
             System.out.println(datamon.getName() + " datamon added.");
 
@@ -107,7 +110,7 @@ public class SelectorController {
         //TODO: Fix assigned datamon.
         Datamon datamon = new Fred2();
 
-        if (datamons.size() < 6) {
+        if (datamons.size() < maxCarriedDatamon) {
             datamons.add(datamon);
             System.out.println(datamon.getName() + " datamon added.");
 

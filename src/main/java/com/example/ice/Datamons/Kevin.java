@@ -1,14 +1,14 @@
-package com.example.ice;
-import java.util.Scanner;
+package com.example.ice.Datamons;
 
-public class Kevin implements Datamon{
+import com.example.ice.Datamon;
+
+public class Kevin implements Datamon {
     private String name;
-    private int hp;
+    private double hp;
     private int BaseDamage;
-    Scanner scanner = new Scanner(System.in);
     private String CreatureType;
 
-    Kevin(){
+    public Kevin(){
         this.name = "Kevin";
         this.hp = 100;
         this.BaseDamage = 5;
@@ -21,7 +21,7 @@ public class Kevin implements Datamon{
     }
 
     @Override
-    public int getHP() {
+    public double getHP() {
         return hp;
     }
 
@@ -31,7 +31,7 @@ public class Kevin implements Datamon{
     }
 
     @Override
-    public int getBaseDamage() {
+    public double getBaseDamage() {
         return BaseDamage;
     }
 
@@ -40,26 +40,17 @@ public class Kevin implements Datamon{
         return CreatureType;
     }
 
-
     @Override
-    public int Dealdamage(){
-        return 0;
-    }
-
-
-    @Override
-    public int Damagebuff(Datamon target) {
-        System.out.println("Chose an attack");
-        int choise = Integer.parseInt(scanner.nextLine());
+    public double DamageBuff(Datamon target) {
         if("Milf".equals(target.getCreatureType())){
-            return getBaseDamage() -4;
+            return getBaseDamage() - 4;
         } else {
             return getBaseDamage();
         }
     }
 
     @Override
-    public int takedamage(int damage) {
+    public double takedamage(double damage) {
         return hp-= damage;
     }
 
@@ -68,9 +59,10 @@ public class Kevin implements Datamon{
         return "A soulless Datamon appears, and it has.... red hair?";
     }
 
-    public int straweberrythrow(){
-        int damage = 10;
-        Damagebuff();
+
+    public void StrawberryThrow(Datamon target){
+        double damageDealt = 1.2*getBaseDamage();
+        target.takedamage(damageDealt);
     }
 
 
