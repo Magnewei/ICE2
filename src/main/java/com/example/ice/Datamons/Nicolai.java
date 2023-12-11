@@ -9,7 +9,7 @@ public class Nicolai implements Datamon {
     private String CreatureType;
 
 
-    Nicolai() {
+    public Nicolai() {
         this.name = "Nicolai";
         this.hp = 280;
         this.BaseDamage = 9;

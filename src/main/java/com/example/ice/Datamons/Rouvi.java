@@ -9,7 +9,7 @@ public class Rouvi implements Datamon {
     private String CreatureType;
 
 
-    Rouvi() {
+    public Rouvi() {
         this.name = "Rouvi";
         this.hp = 280;
         this.BaseDamage = 9;
