@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.media.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ice.SelectorController">
    <children>
       <BorderPane prefHeight="1080.0" prefWidth="1920.0">
          <bottom>
@@ -14,7 +14,7 @@
                <children>
                   <FlowPane prefHeight="600.0" prefWidth="1920.0">
                      <children>
-                        <Button fx:id="Mon1" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="1">
+                        <Button fx:id="Mon1" mnemonicParsing="false" onMouseClicked="#Select1Pressed" prefHeight="200.0" prefWidth="480.0" text="1">
                            <effect>
                               <ImageInput>
                                  <source>

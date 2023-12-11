@@ -16,6 +16,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+
 public class SelectorController {
     private int maxCarriedDatamon = 3;
     @FXML
@@ -40,7 +42,7 @@ public class SelectorController {
     }
 
     @FXML
-    private void Select1Pressed(ActionEvent event) {
+    private void Select1Pressed(MouseEvent event) {
         Datamon datamon = new Fred2();
 
         if (datamons.size() < maxCarriedDatamon) {
