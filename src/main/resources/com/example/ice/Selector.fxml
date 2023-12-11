@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="1080.0" prefWidth="1920.0">
+         <bottom>
+            <AnchorPane prefHeight="600.0" prefWidth="1920.0" BorderPane.alignment="CENTER">
+               <children>
+                  <FlowPane prefHeight="600.0" prefWidth="1920.0">
+                     <children>
+                        <Button fx:id="Mon1" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="1">
+                           <effect>
+                              <ImageInput>
+                                 <source>
+                                    <Image url="file:/C:/Users/Gustav/Desktop/Ice/ICE/MediaFiles/Bobby.png" />
+                                 </source></ImageInput>
+                           </effect></Button>
+                        <Button fx:id="Mon2" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="2">
+                           <effect>
+                              <ImageInput />
+                           </effect></Button>
+                        <Button fx:id="Mon3" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="3">
+                           <effect>
+                              <ImageInput />
+                           </effect></Button>
+                        <Button fx:id="Mon4" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="4">
+                           <effect>
+                              <ImageInput />
+                           </effect></Button>
+                        <Button fx:id="Mon5" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="5">
+                           <effect>
+                              <ImageInput />
+                           </effect></Button>
+                        <Button fx:id="Mon6" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="6">
+                           <effect>
+                              <ImageInput />
+                           </effect></Button>
+                        <Button fx:id="Mon7" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="7">
+                           <effect>
+                              <ImageInput />
+                           </effect></Button>
+                        <Button fx:id="Mon8" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="8">
+                           <effect>
+                              <ImageInput />
+                           </effect></Button>
+                        <Button fx:id="Mon9" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="9">
+                           <effect>
+                              <ImageInput />
+                           </effect></Button>
+                        <Button fx:id="Mon10" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="10">
+                           <effect>
+                              <ImageInput />
+                           </effect></Button>
+                        <Button fx:id="Mon11" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="11">
+                           <effect>
+                              <ImageInput />
+                           </effect></Button>
+                        <Button fx:id="Mon12" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="12">
+                           <effect>
+                              <ImageInput />
+                           </effect></Button>
+                     </children>
+                  </FlowPane>
+               </children>
+            </AnchorPane>
+         </bottom>
+         <top>
+            <AnchorPane prefHeight="119.0" prefWidth="1920.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="BattleButton" alignment="CENTER" contentDisplay="CENTER" layoutX="736.0" layoutY="18.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="496.0" text="Battle" textAlignment="CENTER" />
+               </children></AnchorPane>
+         </top>
+      </BorderPane>
+      <MediaView fitHeight="1080.0" fitWidth="1920.0" />
+   </children>
+</AnchorPane>

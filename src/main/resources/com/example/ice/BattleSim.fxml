@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ice.BattleSimController">
+
+   <children>
+      <BorderPane layoutX="-1.0" layoutY="-2.0" prefHeight="1086.0" prefWidth="1920.0">
+         <left>
+            <VBox prefHeight="896.0" prefWidth="219.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="ChooseMon1" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="1" />
+                  <Button fx:id="ChooseMon2" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="2" />
+                  <Button fx:id="ChooseMon3" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="3" />
+               </children>
+            </VBox>
+         </left>
+         <bottom>
+            <HBox prefHeight="190.0" prefWidth="1920.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="SelectMove1" mnemonicParsing="false" prefHeight="150.0" prefWidth="200.0" text="Move1" />
+                  <Button fx:id="SelectMove2" mnemonicParsing="false" prefHeight="150.0" prefWidth="200.0" text="Move2" />
+                  <Button fx:id="SelectMove3" mnemonicParsing="false" prefHeight="150.0" prefWidth="200.0" text="Move3" />
+                  <Button fx:id="SelectMove4" mnemonicParsing="false" prefHeight="150.0" prefWidth="200.0" text="Move4" />
+               </children></HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

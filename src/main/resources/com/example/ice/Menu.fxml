@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ice.MenuController">
+   
+   <children>
+      <MediaView fx:id="MenuBackground" fitHeight="1080.0" fitWidth="1920.0" onMouseEntered="#PlayMenu" />
+      <Button fx:id="PlayButton" layoutX="835.0" layoutY="719.0" mnemonicParsing="false" onAction="#loginPressed" prefHeight="75.0" prefWidth="250.0" style="-fx-background-color: #408861;" text="Play" textFill="#fed269">
+         <font>
+            <Font name="Impact" size="36.0" />
+         </font></Button>
+      <Button fx:id="registerButton" layoutX="877.0" layoutY="806.0" mnemonicParsing="false" onAction="#registerPressed" prefHeight="40.0" prefWidth="167.0" style="-fx-background-color: #408861;" text="Create User" textFill="#fed269">
+         <font>
+            <Font name="Impact" size="17.0" />
+         </font></Button>
+      <Button fx:id="ExitButton" layoutX="889.0" layoutY="859.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="142.0" style="-fx-background-color: #408861;" text="Exit" textFill="#fed269">
+         <font>
+            <Font name="Impact" size="16.0" />
+         </font></Button>
+      <PasswordField fx:id="passwordField" layoutX="750.0" layoutY="668.0" prefHeight="40.0" prefWidth="400.0" />
+      <TextField fx:id="usernameField" layoutX="748.0" layoutY="604.0" prefHeight="40.0" prefWidth="400.0" />
+   </children>
+</AnchorPane>
