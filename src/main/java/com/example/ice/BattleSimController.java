@@ -1,162 +1,172 @@
 package com.example.ice;
 
-
-import java.util.ArrayList;
-import java.util.List;
+import java.io.IOException;
 import java.util.Random;
-
-import com.example.ice.Datamons.*;
 import javafx.event.ActionEvent;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.stage.Stage;
 
 public class BattleSimController {
-    DBConnector db = new DBConnector();
-    SelectorController sc = new SelectorController();
-    Kevin kevin = new Kevin();
-    Jonas jonas = new Jonas();
-    RouvisMor rouvisMor = new RouvisMor();
-    Fred2 fred2 = new Fred2();
-    User player = new User("Anton","123");
-    User NPC = new User("Hal9000","ImSorryDave");
-    TextUI ui = new TextUI();
-    Random random = new Random();
-    Datamon currentPlayer1Mon;
-    Datamon currentPlayer2Mon;
-    Datamon currentNPCMon;
+    private Stage userChoices = new Stage();
+    private final MenuController menuController = new MenuController();
+    private final User player = menuController.getCurrentUser();
+    private final User NPC = menuController.getNPC();
+    private User currentPlayer = player;
+    private User enemyPlayer = NPC;
+    private Datamon currentDatamon = currentPlayer.getCurrentDatamon();
+    private Datamon enemyDatamon = enemyPlayer.getCurrentDatamon();
 
+    private void showErrorDialog(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
 
-
-
-    public void FightNPC(){
-        //TODO Skal bare sættes til at hente lister fra SelectorController?
-        List<Datamon> selected = sc.sendList();
-        for(Datamon d:selected){
-            player.addDatamon(d);
-        }
-        NPC.addDatamon(rouvisMor);
-        NPC.addDatamon(fred2);
-
-        //TODO Skal vælges via knap
-        currentPlayer1Mon = player.getDatamons().get(0);
-
-        //Kun sat her for at fjerne debugging fejl.
-        boolean pressedAttackButton = true;
-        boolean pressedSwitchButton = true;
-
-
-        currentNPCMon = NPC.getDatamons().get(random.nextInt(0,NPC.getDatamons().size()));
-
-        while(player.getDatamons().size() > 0 && NPC.getDatamons().size() > 0){
-            //Players turn
-            ui.displayMessage("Do you want to attack or switch?");
-
-
-            //TODO skal vælge move via knap.
-
-
-            //Checks if Datamons are alive. If not, subs in  a new one. If it was the last one, awards a win.
-            if(checkIfDead(currentNPCMon)){
-                NPC.removeDatamon(currentNPCMon);
-                currentNPCMon = NPC.getDatamons().get(random.nextInt(0,NPC.getDatamons().size()));
-            } else if (checkIfDead(currentPlayer1Mon)){
-                player.removeDatamon(currentPlayer1Mon);
-                currentPlayer1Mon = player.getDatamons().get(0);
-            }
-
-            //NPC turn
-            //attack(currentNPCMon,currentPlayer1Mon);
-
-            //Checks if Datamons are alive. If not, subs in  a new one. If it was the last one, awards a win.
-            if(checkIfDead(currentNPCMon)){
-                NPC.removeDatamon(currentNPCMon);
-                currentNPCMon = NPC.getDatamons().get(random.nextInt(0,NPC.getDatamons().size()));
-            } else if (checkIfDead(currentPlayer1Mon)){
-                player.removeDatamon(currentPlayer1Mon);
-                currentPlayer1Mon = player.getDatamons().get(0);
-            }
-
+    // Switches user between current and enemy player.
+    private void switchUser() {
+        if (currentPlayer.equals(player)) {
+            currentPlayer = NPC;
+        } else {
+            currentPlayer = player;
         }
 
-        if (player.getDatamons().size() > 0){
-            //Player wins
-        }else{
-            //NPC wins
+        // TODO: Fix logic with enemyPlayer
+    }
+
+
+    // Calls a random ability if the current player is the NPC.
+    private void ChooseMove(int pick) {
+       int methodNumber;
+
+        if (currentPlayer.equals(NPC)) {
+            Random random = new Random();
+            methodNumber = random.nextInt(4) + 1;
+            } else {
+            methodNumber = pick;
         }
+
+            switch (methodNumber) {
+                case 1:
+                    move1(currentDatamon, enemyDatamon);
+                    break;
+
+                case 2:
+                    move2(currentDatamon, enemyDatamon);
+                    break;
+
+                case 3:
+                    move3(currentDatamon, enemyDatamon);
+                    break;
+
+                case 4:
+                    move4(currentDatamon, enemyDatamon);
+                    break;
+
+                default:
+                    System.out.println("Something went wrong.");
+        }
+    }
+
+    // Checks if the enemy players datamon is dead.
+    private void checkIfDead() {
+        if (!enemyPlayer.getDatamons().isEmpty() && enemyDatamon.getHP() <= 0) {
+            enemyPlayer.removeDatamon(currentDatamon);
+            enemyDatamon = enemyPlayer.getDatamons().get(0);
+        }
+    }
+
+
+
+    private void chooseMon() {
+        //TODO: Add måde at vælge på.
+        //Generer buttons ud fra list.size() med navne på objekter.
+    }
+
+
+    // Checks if there's a winner.
+    private Boolean checkIfWin() {
+        if (enemyPlayer.getDatamons().size() <= 0) {
+            System.out.println("Winner found test");
+            return true;
+        }
+        return false;
+    }
+
+
+
+    public void Fight() {
+        if (checkIfWin()) {
+            showErrorDialog("Winner found", currentPlayer.getUsername() + "won!");
+
+            /*
+            Platform.runLater(() -> {
+                try {
+
+
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("Selector.fxml"));
+                    Parent root = loader.load();
+                    userChoices.setScene(new Scene(root));;
+                    userChoices.show();
+
+                } catch (IOException e) {
+                    showErrorDialog("Error1", "An error occurred while loading the next screen.");
+                }
+            });
+
+             */
+
+        }
+
+        checkIfDead();
+        switchUser();
 
     }
+
+
+
 
     public void move1(Datamon attacker, Datamon defender) {
-        defender.setHP((int) (defender.getHP() - attacker.move1(defender)));
+        defender.setHP(defender.getHP() - attacker.move1(defender));
     }
     public void move2(Datamon attacker, Datamon defender) {
-        defender.setHP((int) (defender.getHP() - attacker.move1(defender)));
+        defender.setHP(defender.getHP() - attacker.move2(defender));
     }
     public void move3(Datamon attacker, Datamon defender) {
-        defender.setHP((int) (defender.getHP() - attacker.move1(defender)));
+        defender.setHP(defender.getHP() - attacker.move3(defender));
     }
     public void move4(Datamon attacker, Datamon defender) {
-        defender.setHP((int) (defender.getHP() - attacker.move1(defender)));
+        defender.setHP(defender.getHP() - attacker.move4(defender));
     }
 
     @FXML
     public void move1Button(ActionEvent e){
-       move1(currentPlayer1Mon,currentNPCMon);
+        ChooseMove(1);
+        Fight();
     }
 
     @FXML
     public void move2Button(ActionEvent e){
-        move2(currentPlayer1Mon,currentNPCMon);
+        ChooseMove(2);
+        Fight();
     }
 
     @FXML
     public void move3Button(ActionEvent e){
-        move3(currentPlayer1Mon,currentNPCMon);
+        ChooseMove(3);
+        Fight();
     }
 
     @FXML
     public void move4Button(ActionEvent e){
-        move4(currentPlayer1Mon,currentNPCMon);
+        ChooseMove(4);
+        Fight();
     }
-
-    public void switchMons(){
-        //TODO Skal vælges via knap
-        Datamon denDerBlirValgt = jonas;  // Fjern efter test
-        currentPlayer1Mon = denDerBlirValgt;
-    }
-
-    public boolean checkIfDead(Datamon d){
-        return d.getHP() <= 0;
-    }
-
-    public List<Datamon> makeAll(){
-        List<Datamon> all = new ArrayList<>();
-        Datamon d1 = new Bobby();
-        all.add(d1);
-        Datamon d2 = new Fred2();
-        all.add(d1);
-        Datamon d3 = new Jonas();
-        all.add(d1);
-        Datamon d4 = new Kevin();
-        all.add(d1);
-        Datamon d5 = new Mads();
-        all.add(d1);
-        Datamon d6 = new Marcus();
-        all.add(d1);
-        Datamon d7 = new Nicolai();
-        all.add(d1);
-        Datamon d8 = new Rouvi();
-        all.add(d1);
-        Datamon d9 = new RouvisMor();
-        all.add(d1);
-        Datamon d10 = new Tess();
-        all.add(d1);
-        Datamon d11 = new Tobias();
-        all.add(d1);
-        Datamon d12 = new Bobby();
-        all.add(d1);
-          return null;
-    }
-
-
 
 }

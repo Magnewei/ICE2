@@ -8,13 +8,19 @@ public class User {
     private final String password;
     private int xp;
     private List<Datamon> datamons = new ArrayList<>();
+    private Datamon currentDatamon;
 
     public User(String username, String password) {
         this.username = username;
         this.password = password;
-
-
+        this.currentDatamon = currentDatamon;
+        this.datamons = datamons;
     }
+
+    public Datamon getCurrentDatamon() {
+        return currentDatamon;
+    }
+
     public List<Datamon> getDatamons() {
         return datamons;
     }

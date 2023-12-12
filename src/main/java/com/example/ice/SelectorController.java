@@ -5,6 +5,7 @@ import java.net.URL;
 import java.security.spec.RSAOtherPrimeInfo;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 import com.example.ice.Datamons.*;
@@ -23,24 +24,14 @@ public class SelectorController {
     private ResourceBundle resources;
     @FXML
     private URL location;
+    private MenuController menuController;
     @FXML
     private ImageView Mon1, Mon2, Mon3, Mon4, Mon5, Mon6;
     @FXML
     private Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12;
     private List<Datamon> datamons = new ArrayList<>();
-    private User currentUser = new User("Magnus", "");  //TODO: Replace when class is functional.
-    //private User currentUser = MenuController.currentUser;                         //TODO: Remove comments from User.
-
-
-    // Assigns the player datamon(s) according to buttons pressed.
-    // Returns list of datamons to the BattleSimController.
-    public void giveUserDatamons(Datamon datamon) {
-        datamons.add(datamon);
-        for(Datamon data : datamons) {
-            System.out.println(data.getName());
-
-        }
-    }
+    private User currentUser = menuController.getCurrentUser();
+    private User NPC = menuController.getNPC();
 
     @FXML
     private void Select1Pressed(ActionEvent event) {
@@ -70,7 +61,7 @@ public class SelectorController {
 
     @FXML
     private void Select3Pressed(ActionEvent event) {
-       Datamon datamon = new Jonas();
+        Datamon datamon = new Jonas();
 
         if (datamons.size() < maxCarriedDatamon) {
             datamons.add(datamon);
@@ -97,7 +88,7 @@ public class SelectorController {
     @FXML
     private void Select5Pressed(ActionEvent event) {
         //TODO: Fix assigned datamon.
-       Datamon datamon = new Fred1();
+        Datamon datamon = new Fred1();
 
 
         if (datamons.size() < maxCarriedDatamon) {
@@ -202,6 +193,7 @@ public class SelectorController {
     private void BattleButtonPressed(ActionEvent event) {
         if (datamons.size() > 0) {
             ((Node)(event.getSource())).getScene().getWindow().hide();
+            sendPlayerList();
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("BattleSim.fxml"));
                 Parent root = loader.load();
@@ -215,10 +207,36 @@ public class SelectorController {
         }
     }
 
-    public List<Datamon> sendList(){
-        return datamons;
+    //public List<Datamon> sendPlayerList(){
+    public void sendPlayerList() {
+        for (Datamon d : datamons) {
+            currentUser.addDatamon(d);
+        }
     }
 
+    public void sendNPCList(){
+        Random rand = new Random();
+
+        for(int i = 0 ; i <= datamons.size() ; i++ ) {
+            List<Datamon> pickDataMon = new ArrayList<>();
+
+            pickDataMon.add(new Bobby());
+            pickDataMon.add(new Fred1());
+            pickDataMon.add(new Fred2());
+            pickDataMon.add(new Jonas());
+            pickDataMon.add(new Kevin());
+            pickDataMon.add(new Mads());
+            pickDataMon.add(new Marcus());
+            pickDataMon.add(new Nicolai());
+            pickDataMon.add(new Rouvi());
+            pickDataMon.add(new RouvisMor());
+            pickDataMon.add(new Tess());
+            pickDataMon.add(new Tobias());
+
+            int randomNum = rand.nextInt(pickDataMon.size());
+            NPC.addDatamon(pickDataMon.get(randomNum));
+        }
+    }
 
 
 }

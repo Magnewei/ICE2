@@ -12,10 +12,7 @@ import java.io.IOException;
 public class Main extends Application {
 
     public static void main(String[] args) {
-        Fred1 f = new Fred1();
-        Fred2 f2 = new Fred2();
-        f.move1(f2);
-        //launch(args);
+        launch(args);
     }
 
     public void start(Stage primaryStage) throws IOException {

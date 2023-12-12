@@ -31,8 +31,10 @@ public class MenuController implements Initializable {
     @FXML
     private Stage userChoices = new Stage();
     private DBConnector io = new DBConnector();
-    public static User currentUser;
+    private User currentUser;
+    private User NPC = new User("Hal9000","ImSorryDave");
     private MediaPlayer mediaPlayer;
+
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -114,6 +116,13 @@ public class MenuController implements Initializable {
         mediaPlayer.setRate(1.1);
         mediaPlayer.setVolume(0.5);
 
+    }
+    public User getNPC() {
+        return NPC;
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
     }
 }
 
