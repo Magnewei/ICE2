@@ -13,7 +13,7 @@ public class Jonas implements Datamon {
         this.name = "Jonas";
         this.hp = 50;
         this.BaseDamage = 3;
-        this.CreatureType = "Elskløve";
+        this.CreatureType = "ElsketLøve";
     }
 
     @Override
@@ -22,8 +22,8 @@ public class Jonas implements Datamon {
     }
 
     @Override
-    public double getHP() {
-        return hp;
+    public int getHP() {
+        return (int)hp;
     }
 
     @Override
@@ -42,24 +42,40 @@ public class Jonas implements Datamon {
     }
 
     @Override
-    public double DamageBuff(Datamon target) {
-        return BaseDamage;
-    }
-
-    @Override
-    public double takedamage(double damage) {
-        return hp-= damage;
-    }
-
-    @Override
     public String introduction() {
-        return "A giant monster apears from the dista..... oh wait its just tiny jonas";
+        return "A giant monster apears from the dista..... oh wait its just tiny Jonas";
     }
 
 
-    public void BulkUp(Datamon target){
-        double damageDealt = 0;
-        target.takedamage(damageDealt); // but nothing happend
+    public int move1(Datamon target){
+        String name = "Bulk up";
+        setHP((int)hp + 50);
+        int damage = 0;
+        return damage;
+    }
+
+    @Override
+    public int move2(Datamon Target) {
+        String name = "Skift navn på discord";
+        int damage = 2;
+        return damage;
+    }
+
+    @Override
+    public int move3(Datamon Target) {
+        String name = "Sig vi skal game senere, men glem at dukke op";
+        int damage = 10;
+        return damage;
+    }
+
+    @Override
+    public int move4(Datamon Target) {
+        String name = "HULK SMASH";
+        double damage = hp/10;
+        if(hp > 200){
+            damage *= 5;
+        }
+        return (int)damage;
     }
 
 

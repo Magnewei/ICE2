@@ -7,6 +7,9 @@ public class Marcus implements Datamon {
     private int hp;
     private int BaseDamage;
     private String CreatureType;
+    boolean opgave1Done = false;
+    boolean opgave2Done = false;
+    boolean opgave3Done = false;
 
 
     public Marcus() {
@@ -45,12 +48,6 @@ public class Marcus implements Datamon {
     public double DamageBuff(Datamon target) {
         return 0;
     }
-
-    @Override
-    public double takedamage(double damage) {
-        return 0;
-    }
-
 
     @Override
     public String introduction() {

@@ -8,6 +8,7 @@ public class Tess implements Datamon {
     private int hp;
     private int BaseDamage;
     private String CreatureType;
+    private boolean studerendePræsenterer;
 
     public Tess(){
         this.name = "Tess";
@@ -41,17 +42,6 @@ public class Tess implements Datamon {
     public String getCreatureType() {
         return CreatureType;
     }
-
-    @Override
-    public double DamageBuff(Datamon target) {
-        return 0;
-    }
-
-    @Override
-    public double takedamage(double damage) {
-        return 0;
-    }
-
 
     @Override
     public String introduction() {

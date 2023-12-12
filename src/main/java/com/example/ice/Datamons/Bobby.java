@@ -42,13 +42,32 @@ public class Bobby implements Datamon {
     }
 
     @Override
-    public double DamageBuff(Datamon target) {
-        return 0;
+    public int move1(Datamon target){
+        String name = "Jeg kommer i morgen gutter";
+        int damage = 2;
+        return damage;
     }
 
     @Override
-    public double takedamage(double damage) {
-        return 0;
+    public int move2(Datamon target){
+        String name = "Ej jeg kommer på torsdag gutter";
+        int damage = 4;
+        return damage;
+    }
+
+    @Override
+    public int move3(Datamon target){
+        String name = "Bogstaveligt talt bare dyresex lmao";
+        int damage = 10;
+        return damage;
+    }
+
+    @Override
+    public int move4(Datamon target){
+        String name = "Drop ud";
+        setHP(0);
+        int damage = 0;
+        return damage;
     }
 
     @Override

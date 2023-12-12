@@ -4,11 +4,12 @@ public interface Datamon {
     public String getName();
     public double getHP();
     public void setHP(int hp);
-    public double getBaseDamage();
     public String getCreatureType();
-    public double DamageBuff(Datamon target);
 
-    double takedamage(double damage);
+    public int move1(Datamon Target);
+    public int move2(Datamon Target);
+    public int move3(Datamon Target);
+    public int move4(Datamon Target);
 
     public String introduction();
 

@@ -42,16 +42,6 @@ public class Nicolai implements Datamon {
     }
 
     @Override
-    public double DamageBuff(Datamon target) {
-        return 0;
-    }
-
-    @Override
-    public double takedamage(double damage) {
-        return 0;
-    }
-
-    @Override
     public String introduction() {
         return "A giant monster apears from the dista..... oh wait its just tiny jonas";
     }

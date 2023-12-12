@@ -41,16 +41,6 @@ public class Tobias implements Datamon {
         return CreatureType;
     }
 
-    @Override
-    public double DamageBuff(Datamon target) {
-        return 0;
-    }
-
-    @Override
-    public double takedamage(double damage) {
-        return 0;
-    }
-
 
     @Override
     public String introduction() {

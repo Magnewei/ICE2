@@ -32,10 +32,6 @@ public class RouvisMor implements Datamon {
         this.hp = hp;
     }
 
-    @Override
-    public double getBaseDamage() {
-        return BaseDamage;
-    }
 
     @Override
     public String getCreatureType() {
@@ -43,27 +39,39 @@ public class RouvisMor implements Datamon {
     }
 
     @Override
-    public double DamageBuff(Datamon target) {
-        if("Ginger".equals(target.getCreatureType())){
-            return getBaseDamage() +10;
-        } else {
-            return getBaseDamage();
-        }
-    }
-
-    @Override
-    public double takedamage(double damage) {
-        return hp-= damage;
-    }
-
-    @Override
     public String introduction() {
         return "A hot milf appears in the wild. Her soul is kind, and her smile light up the world";
     }
 
-    public void TeenSeduction(Datamon target){
-        double damageDealt = 2*getBaseDamage();
-        target.takedamage(damageDealt);
+    public int move1(Datamon target){
+        String name = "Teen Seduction";
+        int damage = 7;
+        if("Ginger".equals(target.getCreatureType())){
+            damage *= 2;
+        }
+        return damage;
+    }
+
+    public int move2(Datamon target){
+        String name = "Bitch Slap";
+        int damage = 6;
+        return damage;
+    }
+
+    public int move3(Datamon target){
+        String name = "Blowing kisses";
+        int damage = 1;
+        if("Ginger".equals(target.getCreatureType())){
+            damage = 100;
+        }
+        return damage;
+
+    }
+
+    public int move4(Datamon target){
+        String name ="Life advice";
+        int damage = 1;
+        return damage;
     }
 
 }

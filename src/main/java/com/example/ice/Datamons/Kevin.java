@@ -4,7 +4,7 @@ import com.example.ice.Datamon;
 
 public class Kevin implements Datamon {
     private String name;
-    private double hp;
+    private int hp;
     private int BaseDamage;
     private String CreatureType;
 
@@ -31,28 +31,10 @@ public class Kevin implements Datamon {
     }
 
     @Override
-    public double getBaseDamage() {
-        return BaseDamage;
-    }
-
-    @Override
     public String getCreatureType() {
         return CreatureType;
     }
 
-    @Override
-    public double DamageBuff(Datamon target) {
-        if("Milf".equals(target.getCreatureType())){
-            return getBaseDamage() - 4;
-        } else {
-            return getBaseDamage();
-        }
-    }
-
-    @Override
-    public double takedamage(double damage) {
-        return hp-= damage;
-    }
 
     @Override
     public String introduction() {

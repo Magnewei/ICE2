@@ -212,4 +212,10 @@ public class SelectorController {
         }
     }
 
+    public List<Datamon> sendList(){
+        return datamons;
+    }
+
+
+
 }

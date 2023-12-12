@@ -5,7 +5,7 @@ import com.example.ice.Datamon;
 public class Fred2 implements Datamon {
 
     private String name;
-    private double hp;
+    private int hp;
     private int BaseDamage;
     private String CreatureType;
 
@@ -39,16 +39,6 @@ public class Fred2 implements Datamon {
     @Override
     public String getCreatureType() {
         return CreatureType;
-    }
-
-    @Override
-    public double DamageBuff(Datamon target) {
-        return BaseDamage;
-    }
-
-    @Override
-    public double takedamage(double damage) {
-        return hp-= damage;
     }
 
     @Override

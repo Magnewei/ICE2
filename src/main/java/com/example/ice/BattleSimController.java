@@ -1,14 +1,17 @@
 package com.example.ice;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
-import com.example.ice.Datamons.Fred2;
-import com.example.ice.Datamons.Jonas;
-import com.example.ice.Datamons.Kevin;
-import com.example.ice.Datamons.RouvisMor;
+
+import com.example.ice.Datamons.*;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 
 public class BattleSimController {
     DBConnector db = new DBConnector();
+    SelectorController sc = new SelectorController();
     Kevin kevin = new Kevin();
     Jonas jonas = new Jonas();
     RouvisMor rouvisMor = new RouvisMor();
@@ -24,10 +27,13 @@ public class BattleSimController {
 
 
 
+
     public void FightNPC(){
         //TODO Skal bare sættes til at hente lister fra SelectorController?
-        player.addDatamon(kevin);
-        player.addDatamon(jonas);
+        List<Datamon> selected = sc.sendList();
+        for(Datamon d:selected){
+            player.addDatamon(d);
+        }
         NPC.addDatamon(rouvisMor);
         NPC.addDatamon(fred2);
 
@@ -46,35 +52,26 @@ public class BattleSimController {
             ui.displayMessage("Do you want to attack or switch?");
 
 
-            if(pressedAttackButton){
-                attack(currentPlayer1Mon,currentNPCMon);
-            }else if(pressedSwitchButton){
-              //  currentPlayer1Mon = switchMons();  //TODO: Fjern kommentar når funktion testes.
-            }
+            //TODO skal vælge move via knap.
 
-            //Checks if NPC Datamon is alive. If not, subs in  a new one. If it was the last one, awards a win.
+
+            //Checks if Datamons are alive. If not, subs in  a new one. If it was the last one, awards a win.
             if(checkIfDead(currentNPCMon)){
                 NPC.removeDatamon(currentNPCMon);
                 currentNPCMon = NPC.getDatamons().get(random.nextInt(0,NPC.getDatamons().size()));
-            }
-
-            //Checks if Player Datamon is alive. If not, subs in  a new one. If it was the last one, awards a win.
-            if(checkIfDead(currentPlayer1Mon)){
+            } else if (checkIfDead(currentPlayer1Mon)){
                 player.removeDatamon(currentPlayer1Mon);
                 currentPlayer1Mon = player.getDatamons().get(0);
             }
 
             //NPC turn
-            attack(currentNPCMon,currentPlayer1Mon);
+            //attack(currentNPCMon,currentPlayer1Mon);
 
-            //Checks if NPC Datamon is alive. If not, subs in  a new one. If it was the last one, awards a win.
+            //Checks if Datamons are alive. If not, subs in  a new one. If it was the last one, awards a win.
             if(checkIfDead(currentNPCMon)){
                 NPC.removeDatamon(currentNPCMon);
                 currentNPCMon = NPC.getDatamons().get(random.nextInt(0,NPC.getDatamons().size()));
-            }
-
-            //Checks if Player Datamon is alive. If not, subs in  a new one. If it was the last one, awards a win.
-            if(checkIfDead(currentPlayer1Mon)){
+            } else if (checkIfDead(currentPlayer1Mon)){
                 player.removeDatamon(currentPlayer1Mon);
                 currentPlayer1Mon = player.getDatamons().get(0);
             }
@@ -86,7 +83,6 @@ public class BattleSimController {
         }else{
             //NPC wins
         }
-
 
     }
 
@@ -102,6 +98,35 @@ public class BattleSimController {
 
     public boolean checkIfDead(Datamon d){
         return d.getHP() <= 0;
+    }
+
+    public List<Datamon> makeAll(){
+        List<Datamon> all = new ArrayList<>();
+        Datamon d1 = new Bobby();
+        all.add(d1);
+        Datamon d2 = new Fred2();
+        all.add(d1);
+        Datamon d3 = new Jonas();
+        all.add(d1);
+        Datamon d4 = new Kevin();
+        all.add(d1);
+        Datamon d5 = new Mads();
+        all.add(d1);
+        Datamon d6 = new Marcus();
+        all.add(d1);
+        Datamon d7 = new Nicolai();
+        all.add(d1);
+        Datamon d8 = new Rouvi();
+        all.add(d1);
+        Datamon d9 = new RouvisMor();
+        all.add(d1);
+        Datamon d10 = new Tess();
+        all.add(d1);
+        Datamon d11 = new Tobias();
+        all.add(d1);
+        Datamon d12 = new Bobby();
+        all.add(d1);
+          return null;
     }
 
 

@@ -47,12 +47,6 @@ public class Rouvi implements Datamon {
     }
 
     @Override
-    public double takedamage(double damage) {
-        return 0;
-    }
-
-
-    @Override
     public String introduction() {
         return "A giant monster apears from the dista..... oh wait its just tiny jonas";
     }
