@@ -30,7 +30,6 @@ public class BattleSimController {
 
     // Switches user between current and enemy player.
     private void switchUser() {
-
         if (currentPlayer.equals(player)) {
             currentPlayer = NPC;
         } else {
