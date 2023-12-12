@@ -41,7 +41,6 @@ public class SelectorController {
     @FXML
     private void Select1Pressed(ActionEvent event) {
         Datamon datamon = new Fred2();
-        System.out.println("Gaeshitgotrealnow");
         if (datamons.size() < maxCarriedDatamon) {
             datamons.add(datamon);
             System.out.println(datamon.getName() + " datamon added.");
@@ -194,36 +193,34 @@ public class SelectorController {
         }
     }
 
+
+    // Loads BattleSim
     @FXML
     private void BattleButtonPressed(ActionEvent event) {
-        //datamons = currentUser.getDatamons();
 
         if (datamons.size() > 0) {
-            Platform.runLater(() -> {
+            sendNPCList();
+
                 try {
                     ((Node) (event.getSource())).getScene().getWindow().hide();
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("BattleSim.fxml"));
                     Parent root = loader.load();
-                    userChoices.setScene(new Scene(root));;
+                    userChoices.setScene(new Scene(root));
                     userChoices.show();
 
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            });
+
 
         } else {
             System.out.println("No datamons selected.");
         }
     }
 
-    //public List<Datamon> sendPlayerList(){
-    public void sendPlayerList() {
-        for (Datamon d : datamons) {
-            currentUser.addDatamon(d);
-        }
-    }
 
+
+     // Adds random Datamons to NPC Datamon list.
     public void sendNPCList(){
         Random rand = new Random();
 

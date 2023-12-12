@@ -7,16 +7,27 @@ public class User {
     private String username;
     private String password;
     private int xp;
-    private List<Datamon> datamons = new ArrayList<Datamon>();
+    private List<Datamon> datamons = new ArrayList<>();
+
+
+
     private Datamon currentDatamon;
 
     public User(String username, String password) {
         this.username = username;
         this.password = password;
-    }
 
+    }
     public User() {
 
+    }
+
+    public void setCurrentDatamon(Datamon currentDatamon) {
+        this.currentDatamon = currentDatamon;
+    }
+
+    public void setDatamons(List<Datamon> datamons) {
+        this.datamons = datamons;
     }
 
     public void setUsername(String username) {
@@ -28,6 +39,9 @@ public class User {
     }
 
     public Datamon getCurrentDatamon() {
+        if (datamons != null) {
+            return datamons.get(0);
+    }
         return currentDatamon;
     }
 

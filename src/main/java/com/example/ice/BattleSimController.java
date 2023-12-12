@@ -12,15 +12,12 @@ import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 public class BattleSimController {
-    private Stage userChoices = new Stage();
-    private MenuController menuController = new MenuController();
-    private User player = menuController.getCurrentUser();
-    private User NPC = menuController.getNPC();
+    private final Stage userChoices = new Stage();
+    private final MenuController menuController = new MenuController();
+    private final User player = menuController.getCurrentUser();
+    private final User NPC = menuController.getNPC();
     private User currentPlayer = player;
     private User enemyPlayer = NPC;
-
-    private Datamon currentDatamon = currentPlayer.getCurrentDatamon();
-    private Datamon enemyDatamon = enemyPlayer.getCurrentDatamon();
 
 
     private void showErrorDialog(String title, String content) {
@@ -58,19 +55,19 @@ public class BattleSimController {
 
             switch (methodNumber) {
                 case 1:
-                    move1(currentDatamon, enemyDatamon);
+                    move1(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());
                     break;
 
                 case 2:
-                    move2(currentDatamon, enemyDatamon);
+                    move2(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());
                     break;
 
                 case 3:
-                    move3(currentDatamon, enemyDatamon);
+                    move3(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());
                     break;
 
                 case 4:
-                    move4(currentDatamon, enemyDatamon);
+                    move4(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());
                     break;
 
                 default:
@@ -80,9 +77,9 @@ public class BattleSimController {
 
     // Checks if the enemy players datamon is dead.
     private void checkIfDead() {
-        if (!enemyPlayer.getDatamons().isEmpty() && enemyDatamon.getHP() <= 0) {
-            enemyPlayer.removeDatamon(currentDatamon);
-            enemyDatamon = enemyPlayer.getDatamons().get(0);
+        if (!enemyPlayer.getDatamons().isEmpty() && enemyPlayer.getCurrentDatamon().getHP() <= 0) {
+            enemyPlayer.removeDatamon(enemyPlayer.getCurrentDatamon());
+            enemyPlayer.getDatamons().get(0);
         }
     }
 
