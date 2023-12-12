@@ -5,14 +5,12 @@ import com.example.ice.Datamon;
 public class Bobby implements Datamon {
     private String name;
     private int hp;
-    private int BaseDamage;
     private String CreatureType;
 
 
     public Bobby() {
         this.name = "Bobby";
         this.hp = 310;
-        this.BaseDamage = 7;
         this.CreatureType = "Ghost";
     }
 
@@ -22,18 +20,13 @@ public class Bobby implements Datamon {
     }
 
     @Override
-    public double getHP() {
+    public int getHP() {
         return hp;
     }
 
     @Override
     public void setHP(int hp) {
         this.hp = hp;
-    }
-
-    @Override
-    public double getBaseDamage() {
-        return BaseDamage;
     }
 
     @Override

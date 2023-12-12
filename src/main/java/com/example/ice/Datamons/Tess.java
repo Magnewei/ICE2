@@ -24,7 +24,7 @@ public class Tess implements Datamon {
     }
 
     @Override
-    public double getHP() {
+    public int getHP() {
         return hp;
     }
 
@@ -47,4 +47,36 @@ public class Tess implements Datamon {
     public String introduction() {
         return  "";
     }
+
+
+    public int move1(Datamon target){
+        String name ="Roast";
+        int damage = 7;
+        if (target.getCreatureType().equals("ElsketLøve")){
+            damage *= 100;
+        }
+        return damage;
+    }
+
+    public int move2(Datamon target){
+        String name = "Stil spørgsmål til studerendes kode";
+        int damage = 12;
+        if(studerendePræsenterer){
+            damage *= 2;
+        }
+        return damage;
+    }
+
+    public int move3(Datamon target){
+        String name = "Undervis på Zoom";
+        int damage = 2;
+        return damage;
+    }
+
+    public int move4(Datamon target){
+        String name = "Få studerende til at præsentere";
+        int damage = 3;
+        return damage;
+    }
+
 }

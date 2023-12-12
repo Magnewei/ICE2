@@ -21,7 +21,7 @@ public class Kevin implements Datamon {
     }
 
     @Override
-    public double getHP() {
+    public int getHP() {
         return hp;
     }
 
@@ -41,11 +41,28 @@ public class Kevin implements Datamon {
         return "A soulless Datamon appears, and it has.... red hair?";
     }
 
-
-    public void StrawberryThrow(Datamon target){
-        double damageDealt = 1.2*getBaseDamage();
-        target.takedamage(damageDealt);
+    public int move1(Datamon target){
+        String name ="StrawberryThrow";
+        int damage = 7;
+        return damage;
     }
 
+    public int move2(Datamon target){
+        String name ="Absorber sjæl";
+        int damage = 11;
+        return damage;
+    }
+
+    public int move3(Datamon target){
+        String name ="Rødhåret blodrus";
+        int damage = 8;
+        return damage;
+    }
+
+    public int move4(Datamon target){
+        String name ="Blændende maveskind";
+        int damage = 5;
+        return damage;
+    }
 
 }

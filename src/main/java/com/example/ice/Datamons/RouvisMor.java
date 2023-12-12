@@ -5,7 +5,7 @@ import com.example.ice.Datamon;
 public class RouvisMor implements Datamon {
 
     private String name;
-    private double hp;
+    private int hp;
     private int BaseDamage;
     private String CreatureType;
 
@@ -23,7 +23,7 @@ public class RouvisMor implements Datamon {
     }
 
     @Override
-    public double getHP() {
+    public int getHP() {
         return hp;
     }
 

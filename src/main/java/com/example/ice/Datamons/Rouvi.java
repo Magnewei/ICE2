@@ -22,7 +22,7 @@ public class Rouvi implements Datamon {
     }
 
     @Override
-    public double getHP() {
+    public int getHP() {
         return hp;
     }
 
@@ -41,14 +41,36 @@ public class Rouvi implements Datamon {
         return CreatureType;
     }
 
-    @Override
-    public double DamageBuff(Datamon target) {
-        return 0;
-    }
 
     @Override
     public String introduction() {
         return "A giant monster apears from the dista..... oh wait its just tiny jonas";
     }
+
+
+    public int move1(Datamon target){
+        String name ="Wingman";
+        int damage = 6;
+        return damage;
+    }
+
+    public int move2(Datamon target){
+        String name ="Teemo";
+        int damage = 5;
+        return damage;
+    }
+
+    public int move3(Datamon target){
+        String name ="Yappe";
+        int damage = 9;
+        return damage;
+    }
+
+    public int move4(Datamon target){
+        String name ="Cs goat";
+        int damage = 7;
+        return damage;
+    }
+
 }
 

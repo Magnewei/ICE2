@@ -2,7 +2,7 @@ package com.example.ice;
 
 public interface Datamon {
     public String getName();
-    public double getHP();
+    public int getHP();
     public void setHP(int hp);
     public String getCreatureType();
 

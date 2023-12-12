@@ -22,7 +22,7 @@ public class Fred2 implements Datamon {
     }
 
     @Override
-    public double getHP() {
+    public int getHP() {
         return hp;
     }
 
@@ -46,9 +46,31 @@ public class Fred2 implements Datamon {
         return  "";
     }
 
-    public void oelKastMedFar(Datamon target){
-        double damageDealt = 1.5*getBaseDamage();
-        target.takedamage(damageDealt);
+
+
+    public int move1(Datamon target){
+        String name ="Drik øl med far";
+        int damage = 10;
+        return damage;
     }
+
+    public int move2(Datamon target){
+        String name = "Drik vin med far";
+        int damage = 2;
+        return damage;
+    }
+
+    public int move3(Datamon target){
+        String name ="Drik whisky med far";
+        int damage = 11;
+        return damage;
+    }
+
+public int move4(Datamon target){
+        String name = "Drunken uppercut";
+        int damage = 11;
+        return damage;
+}
+
 
 }

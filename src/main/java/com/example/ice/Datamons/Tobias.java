@@ -22,7 +22,7 @@ public class Tobias implements Datamon {
     }
 
     @Override
-    public double getHP() {
+    public int getHP() {
         return hp;
     }
 
@@ -45,5 +45,29 @@ public class Tobias implements Datamon {
     @Override
     public String introduction() {
         return "A giant monster apears from the dista..... oh wait its just tiny jonas";
+    }
+
+    public int move1(Datamon target){
+         String name ="Byg reol 1";
+         int damage = 0;
+         return damage;
+    }
+
+    public int move2(Datamon target){
+        String name ="Byg reol 2";
+        int damage = 0;
+        return damage;
+    }
+
+    public int move3(Datamon target){
+        String name ="Byg reol 3";
+        int damage = 0;
+        return damage;
+    }
+
+    public int move4(Datamon target){
+        String name ="Byg reol 4";
+        int damage = 0;
+        return damage;
     }
 }

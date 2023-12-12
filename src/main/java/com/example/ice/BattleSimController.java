@@ -86,8 +86,24 @@ public class BattleSimController {
 
     }
 
-    public void attack(Datamon attacker, Datamon defender){
-        defender.setHP((int) (defender.getHP() - attacker.DamageBuff(defender)));
+    @FXML
+    public void move1Button(ActionEvent e){
+       move1(currentPlayer1Mon,currentNPCMon);
+    }
+
+    @FXML
+    public void move2Button(ActionEvent e){
+        move2(currentPlayer1Mon,currentNPCMon);
+    }
+
+    @FXML
+    public void move3Button(ActionEvent e){
+        move3(currentPlayer1Mon,currentNPCMon);
+    }
+
+    @FXML
+    public void move4Button(ActionEvent e){
+        move4(currentPlayer1Mon,currentNPCMon);
     }
 
     public void switchMons(){

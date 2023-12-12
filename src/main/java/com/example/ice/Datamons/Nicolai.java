@@ -22,7 +22,7 @@ public class Nicolai implements Datamon {
     }
 
     @Override
-    public double getHP() {
+    public int getHP() {
         return hp;
     }
 
@@ -45,5 +45,31 @@ public class Nicolai implements Datamon {
     public String introduction() {
         return "A giant monster apears from the dista..... oh wait its just tiny jonas";
     }
+
+
+    public int move1(Datamon target){
+        String name ="Build that wall";
+        int damage = 7;
+        return damage;
+    }
+
+    public int move2(Datamon target){
+        String name ="Murstens kast";
+        int damage = 8;
+        return damage;
+    }
+
+    public int move3(Datamon target){
+        String name ="Cs flæk";
+        int damage = 6;
+        return damage;
+    }
+
+    public int move4(Datamon target){
+        String name ="?";
+        int damage = 2;
+        return damage;
+    }
+
 }
 

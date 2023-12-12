@@ -22,7 +22,7 @@ public class Mads implements Datamon {
     }
 
     @Override
-    public double getHP() {
+    public int getHP() {
         return hp;
     }
 
@@ -32,24 +32,39 @@ public class Mads implements Datamon {
     }
 
     @Override
-    public double getBaseDamage() {
-        return BaseDamage;
-    }
-
-    @Override
     public String getCreatureType() {
         return CreatureType;
-    }
-
-    @Override
-    public double DamageBuff(Datamon target) {
-        return 0;
     }
 
     @Override
     public String introduction() {
         return "You hear the bangers long before he turns the corner... It's Mads!";
     }
+
+    public int move1(Datamon target){
+        String name ="Spil en banger";
+        int damage = 11;
+        return damage;
+    }
+
+    public int move2(Datamon target){
+        String name ="Råb bror";
+        int damage = 8;
+        return damage;
+    }
+
+    public int move3(Datamon target){
+        String name ="Skal vi i byen";
+        int damage = 9;
+        return damage;
+    }
+
+    public int move4(Datamon target){
+        String name ="Næver forever";
+        int damage = 1;
+        return damage;
+    }
+
 }
 
 
