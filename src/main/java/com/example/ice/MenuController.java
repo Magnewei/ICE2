@@ -27,13 +27,16 @@ public class MenuController implements Initializable {
     @FXML
     private MediaView MenuBackground;
     @FXML
-    private TextField usernameField, passwordField;
+    private TextField usernameField;
+    @FXML
+    private TextField passwordField;
     @FXML
     private Stage userChoices = new Stage();
     private DBConnector io = new DBConnector();
     private User currentUser;
-    private User NPC = new User("Hal9000","ImSorryDave");
     private MediaPlayer mediaPlayer;
+    private User NPC = new User("Hal9000", "");
+
 
 
     @Override
@@ -43,6 +46,8 @@ public class MenuController implements Initializable {
         mediaPlayer = new MediaPlayer(media);
         MenuBackground.setMediaPlayer(mediaPlayer);
     }
+
+
 
     @FXML
     private void loginPressed(ActionEvent event) {
@@ -61,6 +66,7 @@ public class MenuController implements Initializable {
 
                     } catch (IOException e) {
                         showErrorDialog("Error1", "An error occurred while loading the next screen.");
+                        e.printStackTrace();
                     }
                 });
 
@@ -117,12 +123,21 @@ public class MenuController implements Initializable {
         mediaPlayer.setVolume(0.5);
 
     }
-    public User getNPC() {
-        return NPC;
+
+    public User getCurrentUser()  {
+        if (currentUser == null) {
+            throw new NullPointerException("currentUser is null.");
+        }
+        return currentUser;
+
     }
 
-    public User getCurrentUser() {
-        return currentUser;
+
+    public User getNPC() {
+        if (NPC == null) {
+            throw new NullPointerException("NPC is null.");
+        }
+        return NPC;
     }
 }
 

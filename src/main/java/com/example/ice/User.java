@@ -1,5 +1,7 @@
 package com.example.ice;
 
+import com.example.ice.Datamons.RouvisMor;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +9,8 @@ public class User {
     private final String username;
     private final String password;
     private int xp;
-    private List<Datamon> datamons = new ArrayList<>();
+
+    private List<Datamon> datamons = new ArrayList<Datamon>();
     private Datamon currentDatamon;
 
     public User(String username, String password) {
@@ -15,6 +18,7 @@ public class User {
         this.password = password;
         this.currentDatamon = currentDatamon;
         this.datamons = datamons;
+
     }
 
     public Datamon getCurrentDatamon() {

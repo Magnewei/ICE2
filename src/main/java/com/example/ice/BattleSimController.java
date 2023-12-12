@@ -13,13 +13,17 @@ import javafx.stage.Stage;
 
 public class BattleSimController {
     private Stage userChoices = new Stage();
-    private final MenuController menuController = new MenuController();
-    private final User player = menuController.getCurrentUser();
-    private final User NPC = menuController.getNPC();
-    private User currentPlayer = player;
+    private MenuController menuController = new MenuController();
+    private User player = menuController.getCurrentUser();
+    private User NPC = menuController.getNPC();
+    private User currentPlayer = menuController.getCurrentUser();
     private User enemyPlayer = NPC;
+
     private Datamon currentDatamon = currentPlayer.getCurrentDatamon();
     private Datamon enemyDatamon = enemyPlayer.getCurrentDatamon();
+
+
+
 
     private void showErrorDialog(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -31,6 +35,7 @@ public class BattleSimController {
 
     // Switches user between current and enemy player.
     private void switchUser() {
+
         if (currentPlayer.equals(player)) {
             currentPlayer = NPC;
         } else {
@@ -43,6 +48,7 @@ public class BattleSimController {
 
     // Calls a random ability if the current player is the NPC.
     private void ChooseMove(int pick) {
+
        int methodNumber;
 
         if (currentPlayer.equals(NPC)) {

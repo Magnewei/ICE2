@@ -24,13 +24,13 @@ public class SelectorController {
     private ResourceBundle resources;
     @FXML
     private URL location;
-    private MenuController menuController;
+    private MenuController menuController = new MenuController();
     @FXML
     private ImageView Mon1, Mon2, Mon3, Mon4, Mon5, Mon6;
     @FXML
     private Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12;
-    private List<Datamon> datamons = new ArrayList<>();
     private User currentUser = menuController.getCurrentUser();
+    private List<Datamon> datamons = new ArrayList<>();
     private User NPC = menuController.getNPC();
 
     @FXML
@@ -191,9 +191,11 @@ public class SelectorController {
 
     @FXML
     private void BattleButtonPressed(ActionEvent event) {
+        datamons = currentUser.getDatamons();
         if (datamons.size() > 0) {
+
             ((Node)(event.getSource())).getScene().getWindow().hide();
-            sendPlayerList();
+
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("BattleSim.fxml"));
                 Parent root = loader.load();
