@@ -25,6 +25,14 @@
                   <Button fx:id="SelectMove4" mnemonicParsing="false" onAction="#move4" prefHeight="150.0" prefWidth="200.0" text="Move4" />
                </children></HBox>
          </bottom>
+         <center>
+            <AnchorPane prefHeight="457.0" prefWidth="893.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="609.0" layoutY="175.0" mnemonicParsing="false" prefHeight="338.0" prefWidth="406.0" text="Mon2 Temp" />
+                  <Button layoutX="132.0" layoutY="412.0" mnemonicParsing="false" prefHeight="222.0" prefWidth="394.0" text="Mon1 Temp" />
+               </children>
+            </AnchorPane>
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>

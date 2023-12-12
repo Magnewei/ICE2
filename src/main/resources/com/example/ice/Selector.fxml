@@ -106,12 +106,22 @@
          <top>
             <AnchorPane prefHeight="119.0" prefWidth="1920.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="BattleButton" alignment="CENTER" contentDisplay="CENTER" layoutX="730.0" layoutY="1.0" mnemonicParsing="false" onAction="#BattleButtonPressed" prefHeight="115.0" prefWidth="502.0" style="-fx-background-color: #E1C16E;" text="BATTLE" textAlignment="CENTER" textFill="AZURE">
+                  <Button fx:id="BattleButton" alignment="CENTER" contentDisplay="CENTER" layoutY="-1.0" mnemonicParsing="false" onAction="#BattleButtonPressed" prefHeight="122.0" prefWidth="1920.0" style="-fx-background-color: #E1C16E;" text="BATTLE" textAlignment="CENTER" textFill="AZURE">
                      <font>
                         <Font name="Impact" size="50.0" />
                      </font></Button>
                </children></AnchorPane>
          </top>
+         <center>
+            <Button mnemonicParsing="false" prefHeight="360.0" prefWidth="1920.0" text="Button" BorderPane.alignment="CENTER">
+               <effect>
+                  <ImageInput>
+                     <source>
+                        <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Asset2.png" />
+                     </source></ImageInput>
+               </effect>
+            </Button>
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>

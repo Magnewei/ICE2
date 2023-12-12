@@ -14,7 +14,7 @@ public class Main extends Application {
     }
 
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("BattleSim.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Selector.fxml"));
         Pane root = fxmlLoader.load();
         Scene scene = new Scene(root);
         primaryStage.setTitle("Datamon.exe");
