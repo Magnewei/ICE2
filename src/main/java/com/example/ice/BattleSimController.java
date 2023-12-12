@@ -16,13 +16,11 @@ public class BattleSimController {
     private MenuController menuController = new MenuController();
     private User player = menuController.getCurrentUser();
     private User NPC = menuController.getNPC();
-    private User currentPlayer = menuController.getCurrentUser();
+    private User currentPlayer = player;
     private User enemyPlayer = NPC;
 
     private Datamon currentDatamon = currentPlayer.getCurrentDatamon();
     private Datamon enemyDatamon = enemyPlayer.getCurrentDatamon();
-
-
 
 
     private void showErrorDialog(String title, String content) {

@@ -33,7 +33,7 @@ public class MenuController implements Initializable {
     @FXML
     private Stage userChoices = new Stage();
     private DBConnector io = new DBConnector();
-    private User currentUser;
+    private User currentUser = new User();
     private MediaPlayer mediaPlayer;
     private User NPC = new User("Hal9000", "");
 

@@ -9,16 +9,21 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 import com.example.ice.Datamons.*;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class SelectorController {
+    @FXML
+    private Stage userChoices = new Stage();
     private int maxCarriedDatamon = 3;
     @FXML
     private ResourceBundle resources;
@@ -30,7 +35,7 @@ public class SelectorController {
     @FXML
     private Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12;
     private User currentUser = menuController.getCurrentUser();
-    private List<Datamon> datamons = new ArrayList<>();
+    private List<Datamon> datamons = currentUser.getDatamons();
     private User NPC = menuController.getNPC();
 
     @FXML
@@ -191,18 +196,21 @@ public class SelectorController {
 
     @FXML
     private void BattleButtonPressed(ActionEvent event) {
-        datamons = currentUser.getDatamons();
+        //datamons = currentUser.getDatamons();
+
         if (datamons.size() > 0) {
+            Platform.runLater(() -> {
+                try {
+                    ((Node) (event.getSource())).getScene().getWindow().hide();
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("BattleSim.fxml"));
+                    Parent root = loader.load();
+                    userChoices.setScene(new Scene(root));;
+                    userChoices.show();
 
-            ((Node)(event.getSource())).getScene().getWindow().hide();
-
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("BattleSim.fxml"));
-                Parent root = loader.load();
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
 
         } else {
             System.out.println("No datamons selected.");
