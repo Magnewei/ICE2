@@ -42,7 +42,7 @@ public class SelectorController {
     private void Select1Pressed(ActionEvent event) {
         Datamon datamon = new Fred2();
         if (datamons.size() < maxCarriedDatamon) {
-            datamons.add(datamon);
+            currentUser.addDatamon(datamon);
             System.out.println(datamon.getName() + " datamon added.");
 
         } else {
@@ -55,7 +55,7 @@ public class SelectorController {
         Datamon datamon = new RouvisMor();
 
         if (datamons.size() < maxCarriedDatamon) {
-            datamons.add(datamon);
+            currentUser.addDatamon(datamon);
             System.out.println(datamon.getName() + " datamon added.");
 
         } else {
@@ -68,7 +68,7 @@ public class SelectorController {
         Datamon datamon = new Jonas();
 
         if (datamons.size() < maxCarriedDatamon) {
-            datamons.add(datamon);
+            currentUser.addDatamon(datamon);
             System.out.println(datamon.getName() + " datamon added.");
 
         } else {
@@ -81,7 +81,7 @@ public class SelectorController {
         Datamon datamon = new Kevin();
 
         if (datamons.size() < maxCarriedDatamon) {
-            datamons.add(datamon);
+            currentUser.addDatamon(datamon);
             System.out.println(datamon.getName() + " datamon added.");
 
         } else {
@@ -91,12 +91,11 @@ public class SelectorController {
 
     @FXML
     private void Select5Pressed(ActionEvent event) {
-        //TODO: Fix assigned datamon.
         Datamon datamon = new Fred1();
 
 
         if (datamons.size() < maxCarriedDatamon) {
-            datamons.add(datamon);
+            currentUser.addDatamon(datamon);
             System.out.println(datamon.getName() + " datamon added.");
 
         } else {
@@ -108,7 +107,7 @@ public class SelectorController {
         Datamon datamon = new Rouvi();
 
         if (datamons.size() < maxCarriedDatamon) {
-            datamons.add(datamon);
+            currentUser.addDatamon(datamon);
             System.out.println(datamon.getName() + " datamon added.");
 
         } else {
@@ -120,7 +119,7 @@ public class SelectorController {
         Datamon datamon = new Bobby();
 
         if (datamons.size() < maxCarriedDatamon) {
-            datamons.add(datamon);
+            currentUser.addDatamon(datamon);
             System.out.println(datamon.getName() + " datamon added.");
 
         } else {
@@ -133,7 +132,7 @@ public class SelectorController {
         Datamon datamon = new Mads();
 
         if (datamons.size() < maxCarriedDatamon) {
-            datamons.add(datamon);
+            currentUser.addDatamon(datamon);
             System.out.println(datamon.getName() + " datamon added.");
 
         } else {
@@ -146,7 +145,7 @@ public class SelectorController {
         Datamon datamon = new Marcus();
 
         if (datamons.size() < maxCarriedDatamon) {
-            datamons.add(datamon);
+            currentUser.addDatamon(datamon);
             System.out.println(datamon.getName() + " datamon added.");
 
         } else {
@@ -159,7 +158,7 @@ public class SelectorController {
         Datamon datamon = new Nicolai();
 
         if (datamons.size() < maxCarriedDatamon) {
-            datamons.add(datamon);
+            currentUser.addDatamon(datamon);
             System.out.println(datamon.getName() + " datamon added.");
 
         } else {
@@ -172,7 +171,7 @@ public class SelectorController {
         Datamon datamon = new Tess();
 
         if (datamons.size() < maxCarriedDatamon) {
-            datamons.add(datamon);
+            currentUser.addDatamon(datamon);
             System.out.println(datamon.getName() + " datamon added.");
 
         } else {
@@ -185,7 +184,7 @@ public class SelectorController {
         Datamon datamon = new Tobias();
 
         if (datamons.size() < maxCarriedDatamon) {
-            datamons.add(datamon);
+            currentUser.addDatamon(datamon);
             System.out.println(datamon.getName() + " datamon added.");
 
         } else {

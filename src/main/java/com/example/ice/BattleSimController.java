@@ -14,8 +14,8 @@ import javafx.stage.Stage;
 public class BattleSimController {
     private final Stage userChoices = new Stage();
     private final MenuController menuController = new MenuController();
-    private final User player = menuController.getCurrentUser();
-    private final User NPC = menuController.getNPC();
+    private User player = menuController.getCurrentUser();
+    private User NPC = menuController.getNPC();
     private User currentPlayer = player;
     private User enemyPlayer = NPC;
 
@@ -104,24 +104,6 @@ public class BattleSimController {
     public void Fight() {
         if (checkIfWin()) {
             showErrorDialog("Winner found", currentPlayer.getUsername() + "won!");
-
-            /*
-            Platform.runLater(() -> {
-                try {
-
-
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("Selector.fxml"));
-                    Parent root = loader.load();
-                    userChoices.setScene(new Scene(root));;
-                    userChoices.show();
-
-                } catch (IOException e) {
-                    showErrorDialog("Error1", "An error occurred while loading the next screen.");
-                }
-            });
-
-             */
-
         }
 
         checkIfDead();
