@@ -13,15 +13,20 @@
          <font>
             <Font name="Impact" size="36.0" />
          </font></Button>
-      <Button fx:id="registerButton" layoutX="877.0" layoutY="806.0" mnemonicParsing="false" onAction="#registerPressed" prefHeight="40.0" prefWidth="167.0" style="-fx-background-color: #408861;" text="Create User" textFill="#fed269">
+      <Button fx:id="registerButton" layoutX="835.0" layoutY="799.0" mnemonicParsing="false" onAction="#registerPressed" prefHeight="47.0" prefWidth="250.0" style="-fx-background-color: #408861;" text="Create User" textFill="#fed269">
          <font>
             <Font name="Impact" size="17.0" />
          </font></Button>
-      <Button fx:id="ExitButton" layoutX="889.0" layoutY="859.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="142.0" style="-fx-background-color: #408861;" text="Exit" textFill="#fed269">
+      <Button fx:id="ExitButton" layoutX="835.0" layoutY="851.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #408861;" text="Exit" textFill="#fed269">
          <font>
             <Font name="Impact" size="16.0" />
          </font></Button>
       <PasswordField fx:id="passwordField" layoutX="750.0" layoutY="668.0" prefHeight="40.0" prefWidth="400.0" />
-      <TextField fx:id="usernameField" layoutX="748.0" layoutY="604.0" prefHeight="40.0" prefWidth="400.0" />
+      <TextField fx:id="usernameField" layoutX="750.0" layoutY="604.0" prefHeight="40.0" prefWidth="400.0" />
+      <Label alignment="CENTER" layoutX="750.0" layoutY="481.0" prefHeight="123.0" prefWidth="400.0" text="DATAMON" textFill="#fed269" underline="true">
+         <font>
+            <Font name="Impact" size="96.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
