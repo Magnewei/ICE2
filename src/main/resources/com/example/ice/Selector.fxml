@@ -18,28 +18,28 @@
                            <effect>
                               <ImageInput>
                                  <source>
-                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Fred2G.png" />
                                  </source></ImageInput>
                            </effect></Button>
                         <Button fx:id="button2" mnemonicParsing="false" onAction="#Select2Pressed" prefHeight="200.0" prefWidth="480.0" text="2">
                            <effect>
                               <ImageInput>
                                  <source>
-                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/RouvisMor.png" />
                                  </source></ImageInput>
                            </effect></Button>
                         <Button fx:id="button3" mnemonicParsing="false" onAction="#Select3Pressed" prefHeight="200.0" prefWidth="480.0" text="3">
                            <effect>
                               <ImageInput>
                                  <source>
-                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Jones.png" />
                                  </source></ImageInput>
                            </effect></Button>
                         <Button fx:id="button4" mnemonicParsing="false" onAction="#Select4Pressed" prefHeight="200.0" prefWidth="480.0" text="4">
                            <effect>
                               <ImageInput>
                                  <source>
-                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Kevin.png" />
                                  </source></ImageInput>
                            </effect></Button>
                         <Button fx:id="button5" mnemonicParsing="false" onAction="#Select5Pressed" prefHeight="200.0" prefWidth="480.0" text="5">
