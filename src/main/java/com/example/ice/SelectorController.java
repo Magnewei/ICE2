@@ -2,6 +2,7 @@ package com.example.ice;
 
 import java.io.IOException;
 import java.net.URL;
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -14,6 +15,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+
 public class SelectorController {
     private int maxCarriedDatamon = 3;
     @FXML
@@ -42,7 +45,7 @@ public class SelectorController {
     @FXML
     private void Select1Pressed(ActionEvent event) {
         Datamon datamon = new Fred2();
-
+        System.out.println("Gaeshitgotrealnow");
         if (datamons.size() < maxCarriedDatamon) {
             datamons.add(datamon);
             System.out.println(datamon.getName() + " datamon added.");

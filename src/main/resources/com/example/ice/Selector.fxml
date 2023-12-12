@@ -4,7 +4,7 @@
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ice.SelectorController">
    <children>
@@ -14,56 +14,89 @@
                <children>
                   <FlowPane prefHeight="600.0" prefWidth="1920.0">
                      <children>
-                        <Button fx:id="button1" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="1" onAction="#Select1Pressed">
+                        <Button fx:id="button1" mnemonicParsing="false" onAction="#Select1Pressed" prefHeight="200.0" prefWidth="480.0" text="1">
                            <effect>
                               <ImageInput>
                                  <source>
-                                    <Image url="file:/C:/Users/Gustav/Desktop/Ice/ICE/MediaFiles/Bobby.png" />
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
                                  </source></ImageInput>
                            </effect></Button>
-                        <Button fx:id="button2" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="2" onAction="#Select2Pressed">
+                        <Button fx:id="button2" mnemonicParsing="false" onAction="#Select2Pressed" prefHeight="200.0" prefWidth="480.0" text="2">
                            <effect>
-                              <ImageInput />
+                              <ImageInput>
+                                 <source>
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                 </source></ImageInput>
                            </effect></Button>
-                        <Button fx:id="button3" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="3" onAction="#Select3Pressed">
+                        <Button fx:id="button3" mnemonicParsing="false" onAction="#Select3Pressed" prefHeight="200.0" prefWidth="480.0" text="3">
                            <effect>
-                              <ImageInput />
+                              <ImageInput>
+                                 <source>
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                 </source></ImageInput>
                            </effect></Button>
-                        <Button fx:id="button4" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="4" onAction="#Select4Pressed">
+                        <Button fx:id="button4" mnemonicParsing="false" onAction="#Select4Pressed" prefHeight="200.0" prefWidth="480.0" text="4">
                            <effect>
-                              <ImageInput />
+                              <ImageInput>
+                                 <source>
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                 </source></ImageInput>
                            </effect></Button>
-                        <Button fx:id="button5" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="5" onAction="#Select5Pressed">
+                        <Button fx:id="button5" mnemonicParsing="false" onAction="#Select5Pressed" prefHeight="200.0" prefWidth="480.0" text="5">
                            <effect>
-                              <ImageInput />
+                              <ImageInput>
+                                 <source>
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                 </source></ImageInput>
                            </effect></Button>
-                        <Button fx:id="button6" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="6" onAction="#Select6Pressed">
+                        <Button fx:id="button6" mnemonicParsing="false" onAction="#Select6Pressed" prefHeight="200.0" prefWidth="480.0" text="6">
                            <effect>
-                              <ImageInput />
+                              <ImageInput>
+                                 <source>
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                 </source></ImageInput>
                            </effect></Button>
-                        <Button fx:id="button7" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="7" onAction="#Select7Pressed">
+                        <Button fx:id="button7" mnemonicParsing="false" onAction="#Select7Pressed" prefHeight="200.0" prefWidth="480.0" text="7">
                            <effect>
-                              <ImageInput />
+                              <ImageInput>
+                                 <source>
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                 </source></ImageInput>
                            </effect></Button>
-                        <Button fx:id="button8" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="8" onAction="#Select8Pressed">
+                        <Button fx:id="button8" mnemonicParsing="false" onAction="#Select8Pressed" prefHeight="200.0" prefWidth="480.0" text="8">
                            <effect>
-                              <ImageInput />
+                              <ImageInput>
+                                 <source>
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                 </source></ImageInput>
                            </effect></Button>
-                        <Button fx:id="button9" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="9" onAction="#Select9Pressed">
+                        <Button fx:id="button9" mnemonicParsing="false" onAction="#Select9Pressed" prefHeight="200.0" prefWidth="480.0" text="9">
                            <effect>
-                              <ImageInput />
+                              <ImageInput>
+                                 <source>
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                 </source></ImageInput>
                            </effect></Button>
-                        <Button fx:id="button10" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="10" onAction="#Select10Pressed">
+                        <Button fx:id="button10" mnemonicParsing="false" onAction="#Select10Pressed" prefHeight="200.0" prefWidth="480.0" text="10">
                            <effect>
-                              <ImageInput />
+                              <ImageInput>
+                                 <source>
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                 </source></ImageInput>
                            </effect></Button>
-                        <Button fx:id="button11" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="11" onAction="#Select11Pressed">
+                        <Button fx:id="button11" mnemonicParsing="false" onAction="#Select11Pressed" prefHeight="200.0" prefWidth="480.0" text="11">
                            <effect>
-                              <ImageInput />
+                              <ImageInput>
+                                 <source>
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                 </source></ImageInput>
                            </effect></Button>
-                        <Button fx:id="button12" mnemonicParsing="false" prefHeight="200.0" prefWidth="480.0" text="12" onAction="#Select12Pressed">
+                        <Button fx:id="button12" mnemonicParsing="false" onAction="#Select12Pressed" prefHeight="200.0" prefWidth="480.0" text="12">
                            <effect>
-                              <ImageInput />
+                              <ImageInput>
+                                 <source>
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                 </source></ImageInput>
                            </effect></Button>
                      </children>
                   </FlowPane>
@@ -73,10 +106,22 @@
          <top>
             <AnchorPane prefHeight="119.0" prefWidth="1920.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="BattleButton" alignment="CENTER" contentDisplay="CENTER" layoutX="736.0" layoutY="18.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="496.0" text="Battle" textAlignment="CENTER" />
+                  <Button fx:id="BattleButton" alignment="CENTER" contentDisplay="CENTER" layoutY="-1.0" mnemonicParsing="false" onAction="#BattleButtonPressed" prefHeight="122.0" prefWidth="1920.0" style="-fx-background-color: #E1C16E;" text="BATTLE" textAlignment="CENTER" textFill="AZURE">
+                     <font>
+                        <Font name="Impact" size="50.0" />
+                     </font></Button>
                </children></AnchorPane>
          </top>
+         <center>
+            <Button mnemonicParsing="false" prefHeight="360.0" prefWidth="1920.0" text="Button" BorderPane.alignment="CENTER">
+               <effect>
+                  <ImageInput>
+                     <source>
+                        <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Asset2.png" />
+                     </source></ImageInput>
+               </effect>
+            </Button>
+         </center>
       </BorderPane>
-      <MediaView fitHeight="1080.0" fitWidth="1920.0" />
    </children>
 </AnchorPane>

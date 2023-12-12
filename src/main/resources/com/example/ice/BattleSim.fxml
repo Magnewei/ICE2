@@ -19,12 +19,20 @@
          <bottom>
             <HBox prefHeight="190.0" prefWidth="1920.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="SelectMove1" mnemonicParsing="false" onAction="#move1Button" prefHeight="150.0" prefWidth="200.0" text="Move1" />
-                  <Button fx:id="SelectMove2" mnemonicParsing="false" onAction="#move2Button" prefHeight="150.0" prefWidth="200.0" text="Move2" />
-                  <Button fx:id="SelectMove3" mnemonicParsing="false" onAction="#move3Button" prefHeight="150.0" prefWidth="200.0" text="Move3" />
-                  <Button fx:id="SelectMove4" mnemonicParsing="false" onAction="#move4Button" prefHeight="150.0" prefWidth="200.0" text="Move4" />
+                  <Button fx:id="SelectMove1" mnemonicParsing="false" onAction="#move1" prefHeight="150.0" prefWidth="200.0" text="Move1" />
+                  <Button fx:id="SelectMove2" mnemonicParsing="false" onAction="#move2" prefHeight="150.0" prefWidth="200.0" text="Move2" />
+                  <Button fx:id="SelectMove3" mnemonicParsing="false" onAction="#move3" prefHeight="150.0" prefWidth="200.0" text="Move3" />
+                  <Button fx:id="SelectMove4" mnemonicParsing="false" onAction="#move4" prefHeight="150.0" prefWidth="200.0" text="Move4" />
                </children></HBox>
          </bottom>
+         <center>
+            <AnchorPane prefHeight="457.0" prefWidth="893.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="609.0" layoutY="175.0" mnemonicParsing="false" prefHeight="338.0" prefWidth="406.0" text="Mon2 Temp" />
+                  <Button layoutX="132.0" layoutY="412.0" mnemonicParsing="false" prefHeight="222.0" prefWidth="394.0" text="Mon1 Temp" />
+               </children>
+            </AnchorPane>
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>
