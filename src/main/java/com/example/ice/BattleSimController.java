@@ -27,7 +27,6 @@ public class BattleSimController {
 
 
 
-
     public void FightNPC(){
         //TODO Skal bare sættes til at hente lister fra SelectorController?
         List<Datamon> selected = sc.sendList();
@@ -84,6 +83,19 @@ public class BattleSimController {
             //NPC wins
         }
 
+    }
+
+    public void move1(Datamon attacker, Datamon defender) {
+        defender.setHP((int) (defender.getHP() - attacker.move1(defender)));
+    }
+    public void move2(Datamon attacker, Datamon defender) {
+        defender.setHP((int) (defender.getHP() - attacker.move1(defender)));
+    }
+    public void move3(Datamon attacker, Datamon defender) {
+        defender.setHP((int) (defender.getHP() - attacker.move1(defender)));
+    }
+    public void move4(Datamon attacker, Datamon defender) {
+        defender.setHP((int) (defender.getHP() - attacker.move1(defender)));
     }
 
     @FXML

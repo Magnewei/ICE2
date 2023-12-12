@@ -31,10 +31,7 @@ public class Fred2 implements Datamon {
         this.hp = hp;
     }
 
-    @Override
-    public double getBaseDamage() {
-        return BaseDamage;
-    }
+
 
     @Override
     public String getCreatureType() {

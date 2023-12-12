@@ -31,10 +31,6 @@ public class Tobias implements Datamon {
         this.hp = hp;
     }
 
-    @Override
-    public double getBaseDamage() {
-        return BaseDamage;
-    }
 
     @Override
     public String getCreatureType() {

@@ -94,7 +94,7 @@ public class SelectorController {
     @FXML
     private void Select5Pressed(ActionEvent event) {
         //TODO: Fix assigned datamon.
-       Datamon datamon = new Fred2();
+       Datamon datamon = new Fred1();
 
 
         if (datamons.size() < maxCarriedDatamon) {

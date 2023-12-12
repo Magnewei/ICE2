@@ -32,11 +32,6 @@ public class Nicolai implements Datamon {
     }
 
     @Override
-    public double getBaseDamage() {
-        return BaseDamage;
-    }
-
-    @Override
     public String getCreatureType() {
         return CreatureType;
     }
