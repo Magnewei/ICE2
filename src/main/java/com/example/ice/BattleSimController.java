@@ -8,6 +8,7 @@ import java.util.Random;
 import com.example.ice.Datamons.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 
 public class BattleSimController {
     DBConnector db = new DBConnector();
@@ -23,6 +24,8 @@ public class BattleSimController {
     Datamon currentPlayer1Mon;
     Datamon currentPlayer2Mon;
     Datamon currentNPCMon;
+
+
 
 
 

@@ -19,10 +19,10 @@
          <bottom>
             <HBox prefHeight="190.0" prefWidth="1920.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="SelectMove1" mnemonicParsing="false" onAction="#move1" prefHeight="150.0" prefWidth="200.0" text="Move1" />
-                  <Button fx:id="SelectMove2" mnemonicParsing="false" onAction="#move2" prefHeight="150.0" prefWidth="200.0" text="Move2" />
-                  <Button fx:id="SelectMove3" mnemonicParsing="false" onAction="#move3" prefHeight="150.0" prefWidth="200.0" text="Move3" />
-                  <Button fx:id="SelectMove4" mnemonicParsing="false" onAction="#move4" prefHeight="150.0" prefWidth="200.0" text="Move4" />
+                  <Button fx:id="SelectMove1" mnemonicParsing="false" onAction="#move1Button" prefHeight="150.0" prefWidth="200.0" text="Move1" />
+                  <Button fx:id="SelectMove2" mnemonicParsing="false" onAction="#move2Button" prefHeight="150.0" prefWidth="200.0" text="Move2" />
+                  <Button fx:id="SelectMove3" mnemonicParsing="false" onAction="#move3Button" prefHeight="150.0" prefWidth="200.0" text="Move3" />
+                  <Button fx:id="SelectMove4" mnemonicParsing="false" onAction="#move4Button" prefHeight="150.0" prefWidth="200.0" text="Move4" />
                </children></HBox>
          </bottom>
          <center>
