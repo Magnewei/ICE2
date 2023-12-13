@@ -12,7 +12,7 @@
          <effect>
             <ImageInput>
                <source>
-                  <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/ControlsTemp.jpg" />
+                  <Image url="@ControlsTemp.jpg" />
                </source>
             </ImageInput>
          </effect></Button>
