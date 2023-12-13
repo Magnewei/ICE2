@@ -120,7 +120,6 @@ public class BattleSim {
         }
 
 
-
     // Checks if there's a winner.
     public void move1(Datamon attacker, Datamon defender) {
         defender.setHP(defender.getHP() - attacker.move1(defender));

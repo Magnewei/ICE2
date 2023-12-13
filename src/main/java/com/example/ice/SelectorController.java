@@ -23,7 +23,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class SelectorController {
-    private final int maxCarriedDatamon = 2;
+    private final int maxCarriedDatamon = 3;
     @FXML
     private ImageView Mon1, Mon2, Mon3, Mon4, Mon5, Mon6;
     @FXML
