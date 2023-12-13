@@ -49,11 +49,13 @@ public class Fred2 implements Datamon {
         String name ="Drik øl med far";
         int damage = 10;
         return damage;
+
     }
 
     public int move2(Datamon target){
         String name = "Drik vin med far";
         int damage = 2;
+        System.out.println(name);
         return damage;
     }
 

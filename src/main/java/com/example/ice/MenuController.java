@@ -34,10 +34,8 @@ public class MenuController implements Initializable {
     private Stage userChoices = new Stage();
     private DBConnector io = new DBConnector();
     private User currentUser = new User();
+    private User NPC = new User();
     private MediaPlayer mediaPlayer;
-    private User NPC = new User("Hal9000", "");
-
-
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -47,20 +45,24 @@ public class MenuController implements Initializable {
         MenuBackground.setMediaPlayer(mediaPlayer);
     }
 
-
-
     @FXML
     private void loginPressed(ActionEvent event) {
         try {
             currentUser = io.login(usernameField.getText(), passwordField.getText());
 
             if (currentUser != null) {
-                Platform.runLater(() -> {
 
+
+                Platform.runLater(() -> {
                     try {
+
                         ((Node)(event.getSource())).getScene().getWindow().hide();
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("Selector.fxml"));
                         Parent root = loader.load();
+
+                        SelectorController selectorController = loader.getController();
+                        selectorController.setup(currentUser, NPC);
+
                         userChoices.setScene(new Scene(root));;
                         userChoices.show();
 
@@ -122,22 +124,6 @@ public class MenuController implements Initializable {
         mediaPlayer.setRate(1.1);
         mediaPlayer.setVolume(0.5);
 
-    }
-
-    public User getCurrentUser()  {
-        if (currentUser == null) {
-            throw new NullPointerException("currentUser is null.");
-        }
-        return currentUser;
-
-    }
-
-
-    public User getNPC() {
-        if (NPC == null) {
-            throw new NullPointerException("NPC is null.");
-        }
-        return NPC;
     }
 }
 

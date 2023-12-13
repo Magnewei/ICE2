@@ -18,15 +18,7 @@ public class User {
     public User() {
 
     }
-    public void setDatamons(List<Datamon> datamons, Datamon datamon) {
-        this.datamons = datamons;
-        this.currentDatamon = datamon;
-    }
 
-    public void setName(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
     public List<Datamon> getDatamons() {
         return datamons;
     }

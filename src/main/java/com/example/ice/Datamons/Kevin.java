@@ -48,7 +48,7 @@ public class Kevin implements Datamon {
     }
 
     public int move2(Datamon target){
-        String name ="Absorber sjæl";
+        String name = "Absorber sjæl";
         int damage = 11;
         return damage;
     }

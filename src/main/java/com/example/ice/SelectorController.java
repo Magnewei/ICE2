@@ -13,6 +13,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -22,24 +23,25 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class SelectorController {
-    @FXML
-    private Stage userChoices = new Stage();
-    private int maxCarriedDatamon = 3;
-    @FXML
-    private ResourceBundle resources;
-    @FXML
-    private URL location;
-    private MenuController menuController = new MenuController();
+    private final int maxCarriedDatamon = 2;
     @FXML
     private ImageView Mon1, Mon2, Mon3, Mon4, Mon5, Mon6;
     @FXML
     private Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12;
-    private User currentUser = menuController.getCurrentUser();
-    private User NPC = menuController.getNPC();
-    private List<Datamon> datamons = currentUser.getDatamons();
-    private List<Datamon> NPCdatamons = NPC.getDatamons();
+    private User currentUser;
+    private User NPC;
+    private List<Datamon> datamons;
+    private List<Datamon> NPCdatamons;
 
 
+    public void setup(User currentUser, User NPC) {
+        this.currentUser = currentUser;
+        this.NPC = NPC;
+        this.datamons = (currentUser != null) ? currentUser.getDatamons() : new ArrayList<>();
+        this.NPCdatamons = (NPC != null) ? NPC.getDatamons() : new ArrayList<>();
+
+        // Any additional setup code that depends on currentUser or NPC
+    }
     @FXML
     private void Select1Pressed(ActionEvent event) {
         Datamon datamon = new Fred2();
@@ -198,13 +200,19 @@ public class SelectorController {
     // Loads BattleSim
     @FXML
     private void BattleButtonPressed(ActionEvent event) {
+
         if (datamons.size() > 0) {
                  sendNPCList();
-            System.out.println(NPC.getDatamons().toString());
+                 Stage userChoices = new Stage();
                 try {
                     ((Node) (event.getSource())).getScene().getWindow().hide();
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("BattleSim.fxml"));
                     Parent root = loader.load();
+
+                    BattleSimController battleSimController = loader.getController();
+
+                    battleSimController.setup(currentUser, NPC);
+
                     userChoices.setScene(new Scene(root));
                     userChoices.show();
 
@@ -212,18 +220,14 @@ public class SelectorController {
                     e.printStackTrace();
                 }
 
-
         } else {
             System.out.println("No datamons selected.");
         }
     }
 
-
-
      // Adds random Datamons to NPC Datamon list.
     public void sendNPCList(){
         Random rand = new Random();
-
 
         List<Datamon> pickDataMon = new ArrayList<>();
         pickDataMon.add(new Bobby());
@@ -246,6 +250,5 @@ public class SelectorController {
            NPC.addDatamon(pickDataMon.get(randomNum));
         }
     }
-
 
 }
