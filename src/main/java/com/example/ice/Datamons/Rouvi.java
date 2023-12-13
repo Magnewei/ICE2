@@ -5,14 +5,12 @@ import com.example.ice.Datamon;
 public class Rouvi implements Datamon {
     private String name;
     private int hp;
-    private int BaseDamage;
     private String CreatureType;
 
 
     public Rouvi() {
         this.name = "Rouvi";
         this.hp = 280;
-        this.BaseDamage = 9;
         this.CreatureType = "?";
     }
 
@@ -47,24 +45,32 @@ public class Rouvi implements Datamon {
     public int move1(Datamon target){
         String name ="Wingman";
         int damage = 6;
+        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move2(Datamon target){
         String name ="Teemo";
         int damage = 5;
+        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move3(Datamon target){
         String name ="Yappe";
         int damage = 9;
+        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move4(Datamon target){
         String name ="Cs goat";
         int damage = 7;
+        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 

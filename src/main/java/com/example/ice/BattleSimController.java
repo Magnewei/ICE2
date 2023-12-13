@@ -41,6 +41,7 @@ public class BattleSimController {
     public void move2Button(ActionEvent e){
         sim.ChooseMove(2);
         sim.Fight();
+
     }
 
     @FXML

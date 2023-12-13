@@ -48,6 +48,8 @@ public class Marcus implements Datamon {
         String name ="Lav opgave 1";
         int damage = 2;
         opgave1Done = true;
+        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
@@ -55,6 +57,8 @@ public class Marcus implements Datamon {
         String name ="Lav opgave 2";
         int damage = 2;
         opgave2Done = true;
+        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
@@ -62,6 +66,8 @@ public class Marcus implements Datamon {
         String name ="Lav opgave 3";
         int damage = 2;
         opgave3Done = true;
+        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
@@ -75,7 +81,8 @@ public class Marcus implements Datamon {
             opgave2Done = false;
             opgave3Done = false;
         }
-
+        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 

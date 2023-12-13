@@ -6,13 +6,11 @@ public class RouvisMor implements Datamon {
 
     private String name;
     private int hp;
-    private int BaseDamage;
     private String CreatureType;
 
     public RouvisMor(){
         this.name = "Henriette";
         this.hp = 300;
-        this.BaseDamage = 10;
         this.CreatureType = "Milf";
     }
 
@@ -49,12 +47,16 @@ public class RouvisMor implements Datamon {
         if("Ginger".equals(target.getCreatureType())){
             damage *= 2;
         }
+        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move2(Datamon target){
         String name = "Bitch Slap";
         int damage = 6;
+        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
@@ -64,6 +66,8 @@ public class RouvisMor implements Datamon {
         if("Ginger".equals(target.getCreatureType())){
             damage = 100;
         }
+        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
 
     }
@@ -71,6 +75,8 @@ public class RouvisMor implements Datamon {
     public int move4(Datamon target){
         String name ="Life advice";
         int damage = 1;
+        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
