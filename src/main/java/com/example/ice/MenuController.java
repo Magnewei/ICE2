@@ -109,6 +109,7 @@ public class MenuController implements Initializable {
         }
     }
 
+
     private void showErrorDialog(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);

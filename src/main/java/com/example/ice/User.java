@@ -11,10 +11,6 @@ public class User {
     private int xp;
     private List<Datamon> datamons = new ArrayList<>();
 
-    public void setCurrentDatamon(int x) {
-        this.currentDatamon = datamons.get(x);
-    }
-
     private Datamon currentDatamon;
 
     public User(String username, String password) {
@@ -22,8 +18,12 @@ public class User {
         this.password = password;
 
     }
-    public User() {
 
+    public void setCurrentDatamon(int x) {
+        this.currentDatamon = datamons.get(x);
+    }
+
+    public User() {
     }
 
     public List<Datamon> getDatamons() {
@@ -32,11 +32,21 @@ public class User {
 
     public Datamon getCurrentDatamon() {
         if (datamons != null && !datamons.isEmpty() ) {
+            return currentDatamon;
+        }
+        return setCurrentDatamon();
+    }
+
+     public Datamon setCurrentDatamon() {
+        if (datamons != null && !datamons.isEmpty() ) {
             Random random = new Random();
             return datamons.get(random.nextInt(getDatamons().size()));
-    }
+        }
         return currentDatamon;
     }
+
+
+
     public void addDatamon(Datamon mon){
         datamons.add(mon);
     }

@@ -33,14 +33,11 @@ public class SelectorController {
     private List<Datamon> datamons;
     private List<Datamon> NPCdatamons;
 
-
     public void setup(User currentUser, User NPC) {
         this.currentUser = currentUser;
         this.NPC = NPC;
         this.datamons = (currentUser != null) ? currentUser.getDatamons() : new ArrayList<>();
         this.NPCdatamons = (NPC != null) ? NPC.getDatamons() : new ArrayList<>();
-
-        // Any additional setup code that depends on currentUser or NPC
     }
     @FXML
     private void Select1Pressed(ActionEvent event) {
@@ -229,25 +226,23 @@ public class SelectorController {
     private void sendNPCList(){
         Random rand = new Random();
 
-        List<Datamon> pickDataMon = new ArrayList<>();
-        pickDataMon.add(new Bobby());
-        pickDataMon.add(new Fred1());
-        pickDataMon.add(new Fred2());
-        pickDataMon.add(new Jonas());
-        pickDataMon.add(new Kevin());
-        pickDataMon.add(new Mads());
-        pickDataMon.add(new Marcus());
-        pickDataMon.add(new Nicolai());
-        pickDataMon.add(new Rouvi());
-        pickDataMon.add(new RouvisMor());
-        pickDataMon.add(new Tess());
-        pickDataMon.add(new Tobias());
-
-        int randomNum = rand.nextInt(pickDataMon.size());
-
         for(int i = 0 ; i <= (datamons.size() -1); i++ ) {
-            NPC.addDatamon(pickDataMon.get(randomNum));
+            List<Datamon> pickDataMon = new ArrayList<>();
+            pickDataMon.add(new Bobby());
+            pickDataMon.add(new Fred1());
+            pickDataMon.add(new Fred2());
+            pickDataMon.add(new Jonas());
+            pickDataMon.add(new Kevin());
+            pickDataMon.add(new Mads());
+            pickDataMon.add(new Marcus());
+            pickDataMon.add(new Nicolai());
+            pickDataMon.add(new Rouvi());
+            pickDataMon.add(new RouvisMor());
+            pickDataMon.add(new Tess());
+            pickDataMon.add(new Tobias());
 
+            int randomNum = rand.nextInt(pickDataMon.size());
+            NPC.addDatamon(pickDataMon.get(randomNum));
        }
     }
 

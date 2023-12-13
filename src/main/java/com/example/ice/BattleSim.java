@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import javafx.event.ActionEvent;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -19,23 +21,31 @@ public class BattleSim {
     private User player;
     private User NPC;
     private final Random random = new Random();
+    private Datamon enemyDatamon;
+    private Datamon playerDatamon;
 
     public void setup(User player, User NPC) {
         this.player = player;
         this.NPC = NPC;
+
         currentPlayer = player;
         enemyPlayer = NPC;
-    }
+
+        enemyDatamon = enemyPlayer.getDatamons().get(0);
+        playerDatamon = currentPlayer.getDatamons().get(0);
+}
+
 
 
     // Checks if Datamon is dead.
     private void checkIfDead() {
-        if (enemyPlayer.getCurrentDatamon().getHP() <= 0) {
-            enemyPlayer.removeDatamon(enemyPlayer.getCurrentDatamon());
+        if (enemyDatamon.getHP() <= 0) {
+            enemyPlayer.removeDatamon(enemyDatamon);
 
-            if (!enemyPlayer.getDatamons().isEmpty()) {
-                Datamon randomDatamon = enemyPlayer.getDatamons().get(random.nextInt(enemyPlayer.getDatamons().size()));
-                enemyPlayer.setCurrentDatamon(randomDatamon);
+            if (!enemyPlayer.getDatamons().isEmpty() ) {
+                enemyDatamon = enemyPlayer.getDatamons().get(0);
+
+
             }
         }
     }
@@ -67,6 +77,7 @@ public class BattleSim {
             System.out.println("Player Mons: " + player.getDatamons());
 
             if (!checkIfWin()) {
+                checkIfDead();
                 switchUser();
 
                 if (currentPlayer.equals(NPC)) {
@@ -76,25 +87,26 @@ public class BattleSim {
                 }
                 switch (methodNumber) {
                     case 1:
-                        move1(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());
+                        move1(playerDatamon, enemyDatamon);
                         checkIfDead();
                         checkIfWin();
+                        System.out.println();
                         break;
 
                     case 2:
-                        move2(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());
+                        move2(playerDatamon, enemyDatamon);
                         checkIfDead();
                         checkIfWin();
                         break;
 
                     case 3:
-                        move3(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());
+                        move3(playerDatamon, enemyDatamon);
                         checkIfDead();
                         checkIfWin();
                         break;
 
                     case 4:
-                        move4(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());
+                        move4(playerDatamon, enemyDatamon);
                         checkIfDead();
                         checkIfWin();
                         break;

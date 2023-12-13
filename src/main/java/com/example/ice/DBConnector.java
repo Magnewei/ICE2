@@ -14,7 +14,6 @@ public class DBConnector{
     static final String USER = "sql11669270";
     static final String PASS = "HreeKmVJuh";
 
-
     private List<User> loadUsers() throws FileNotFoundException {
         List<User> users = new ArrayList<>();
         String selectQuery = "SELECT username, password FROM sql11669270.users";
