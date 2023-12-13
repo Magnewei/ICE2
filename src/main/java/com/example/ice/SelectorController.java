@@ -226,7 +226,7 @@ public class SelectorController {
     }
 
      // Adds random Datamons to NPC Datamon list.
-    public void sendNPCList(){
+    private void sendNPCList(){
         Random rand = new Random();
 
         List<Datamon> pickDataMon = new ArrayList<>();

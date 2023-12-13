@@ -14,10 +14,8 @@ public class DBConnector{
     static final String USER = "sql11669270";
     static final String PASS = "HreeKmVJuh";
 
-    //Login i program med Username: "hej", Password: "lol".
 
-
-    public List<User> loadUsers() throws FileNotFoundException {
+    private List<User> loadUsers() throws FileNotFoundException {
         List<User> users = new ArrayList<>();
         String selectQuery = "SELECT username, password FROM sql11669270.users";
         try (Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
@@ -27,18 +25,12 @@ public class DBConnector{
             while (resultSet.next()) {
                 String username = resultSet.getString("username");
                 String password = resultSet.getString("password");
-                 /*
-                 int xp = resultSet.getInt("xp");
-                 int level = resultSet.getInt("level");
-                  */
 
                 users.add(new User(username,password));
-
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
         return users;
     }
 
@@ -54,19 +46,12 @@ public class DBConnector{
                 // Set parameters based on your CSV file columns and data types
                 preparedStatement.setString(1,username);
                 preparedStatement.setString(2,password);
-                /*
-                preparedStatement.setInt(3,0);
-                preparedStatement.setInt(4,1);
-
-                 */
-
                 preparedStatement.executeUpdate();
-
             }
         }catch(Exception e){
             //Handle errors for Class.forName
             e.printStackTrace();
-        }finally{
+        } finally {
             //finally block used to close resources
             try{
                 if(stmt!=null)
@@ -81,7 +66,6 @@ public class DBConnector{
                 se.printStackTrace();
             }//end finally try
         }//end try
-
     }
 
     public User login(String username, String password) throws FileNotFoundException {

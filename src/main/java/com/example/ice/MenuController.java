@@ -45,14 +45,12 @@ public class MenuController implements Initializable {
         MenuBackground.setMediaPlayer(mediaPlayer);
     }
 
+    // Parses database login information. Returns user if username and password match found.
     @FXML
     private void loginPressed(ActionEvent event) {
         try {
             currentUser = io.login(usernameField.getText(), passwordField.getText());
-
             if (currentUser != null) {
-
-
                 Platform.runLater(() -> {
                     try {
 
@@ -82,6 +80,8 @@ public class MenuController implements Initializable {
             showErrorDialog("Error4", "An unexpected error occured: " + e.getMessage());
         }
     }
+
+    // Register user and inserts username and password into database.
     @FXML
     private void registerPressed(ActionEvent event) {
         try {
@@ -101,7 +101,6 @@ public class MenuController implements Initializable {
                         showErrorDialog("Error1", "An error occurred while loading the next screen.");
                     }
                 });
-
             } else {
                 showErrorDialog("Register Success!", "You can now proceed to login!");
             }
