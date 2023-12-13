@@ -10,32 +10,62 @@
    
    <children>
       <MediaView fx:id="MenuBackground" fitHeight="1080.0" fitWidth="1920.0" onMouseEntered="#PlayMenu" />
-      <Button fx:id="PlayButton" layoutX="835.0" layoutY="719.0" mnemonicParsing="false" onAction="#loginPressed" prefHeight="75.0" prefWidth="250.0" style="-fx-background-color: #408861;" text="Play" textFill="#fed269">
+      <Button fx:id="PlayButton" layoutX="835.0" layoutY="719.0" mnemonicParsing="false" onAction="#loginPressed" prefHeight="75.0" prefWidth="250.0" style="-fx-background-color: #408861;" textFill="#fed269">
          <font>
             <Font name="Impact" size="36.0" />
          </font>
          <effect>
             <InnerShadow choke="0.25" height="44.45" radius="22.457500000000003" width="47.38" />
-         </effect></Button>
-      <Button fx:id="registerButton" layoutX="835.0" layoutY="799.0" mnemonicParsing="false" onAction="#registerPressed" prefHeight="47.0" prefWidth="250.0" style="-fx-background-color: #408861;" text="Create User" textFill="#fed269">
+         </effect>
+         <graphic>
+            <Label text="Play" textFill="#fed269">
+               <font>
+                  <Font name="Impact" size="36.0" />
+               </font>
+               <effect>
+                  <InnerShadow choke="0.15" height="10.75" radius="3.0425" width="3.42" />
+               </effect>
+            </Label>
+         </graphic></Button>
+      <Button fx:id="registerButton" layoutX="835.0" layoutY="799.0" mnemonicParsing="false" onAction="#registerPressed" prefHeight="47.0" prefWidth="250.0" style="-fx-background-color: #408861;" textFill="#fed269">
          <font>
             <Font name="Impact" size="17.0" />
          </font>
          <effect>
             <InnerShadow choke="0.25" height="35.66" radius="17.33" width="35.66" />
-         </effect></Button>
-      <Button fx:id="ExitButton" layoutX="835.0" layoutY="851.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #408861;" text="Exit" textFill="#fed269">
+         </effect>
+         <graphic>
+            <Label text="Create User" textFill="#fed269">
+               <font>
+                  <Font name="Impact" size="20.0" />
+               </font>
+               <effect>
+                  <InnerShadow choke="0.15" height="15.13" radius="4.015000000000001" width="2.93" />
+               </effect>
+            </Label>
+         </graphic></Button>
+      <Button fx:id="ExitButton" layoutX="835.0" layoutY="851.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #408861;" textFill="#fed269">
          <font>
             <Font name="Impact" size="16.0" />
          </font>
          <effect>
             <InnerShadow choke="0.25" height="38.59" radius="17.3275" width="32.72" />
-         </effect></Button>
-      <PasswordField fx:id="passwordField" layoutX="750.0" layoutY="659.0" prefHeight="50.0" prefWidth="400.0">
+         </effect>
+         <graphic>
+            <Label text="Exit" textFill="#fed269">
+               <font>
+                  <Font name="Impact" size="20.0" />
+               </font>
+               <effect>
+                  <InnerShadow choke="0.15" height="7.81" radius="2.3049999999999997" width="3.41" />
+               </effect>
+            </Label>
+         </graphic></Button>
+      <PasswordField fx:id="passwordField" layoutX="750.0" layoutY="659.0" prefHeight="50.0" prefWidth="400.0" style="-fx-background-color: silver;">
          <effect>
             <InnerShadow choke="0.18" height="38.59" radius="14.3975" />
          </effect></PasswordField>
-      <TextField fx:id="usernameField" layoutX="750.0" layoutY="604.0" prefHeight="50.0" prefWidth="400.0">
+      <TextField fx:id="usernameField" layoutX="750.0" layoutY="604.0" prefHeight="50.0" prefWidth="400.0" style="-fx-background-color: silver;">
          <effect>
             <InnerShadow choke="0.18" height="37.12" radius="14.03" />
          </effect></TextField>
