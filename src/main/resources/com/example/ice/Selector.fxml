@@ -106,10 +106,13 @@
          <top>
             <AnchorPane prefHeight="119.0" prefWidth="1920.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="BattleButton" alignment="CENTER" contentDisplay="CENTER" layoutY="-1.0" mnemonicParsing="false" onAction="#BattleButtonPressed" prefHeight="122.0" prefWidth="1920.0" style="-fx-background-color: #E1C16E;" text="BATTLE" textAlignment="CENTER" textFill="AZURE">
+                  <Button fx:id="BattleButton" alignment="CENTER" contentDisplay="CENTER" layoutY="-1.0" mnemonicParsing="false" onAction="#BattleButtonPressed" prefHeight="122.0" prefWidth="1920.0" style="-fx-background-color: #E1C16E;" text="BATTLE" textAlignment="CENTER" textFill="AZURE" underline="true">
                      <font>
                         <Font name="Impact" size="50.0" />
-                     </font></Button>
+                     </font>
+                     <effect>
+                        <InnerShadow choke="0.09" height="149.96" radius="100.74000000000001" width="255.0" />
+                     </effect></Button>
                </children></AnchorPane>
          </top>
          <center>
