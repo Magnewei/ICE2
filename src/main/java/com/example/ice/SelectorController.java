@@ -35,8 +35,10 @@ public class SelectorController {
     @FXML
     private Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12;
     private User currentUser = menuController.getCurrentUser();
-    private List<Datamon> datamons = currentUser.getDatamons();
     private User NPC = menuController.getNPC();
+    private List<Datamon> datamons = currentUser.getDatamons();
+    private List<Datamon> NPCdatamons = NPC.getDatamons();
+
 
     @FXML
     private void Select1Pressed(ActionEvent event) {
@@ -196,9 +198,7 @@ public class SelectorController {
     // Loads BattleSim
     @FXML
     private void BattleButtonPressed(ActionEvent event) {
-
         if (datamons.size() > 0) {
-            sendNPCList();
 
                 try {
                     ((Node) (event.getSource())).getScene().getWindow().hide();
@@ -220,28 +220,28 @@ public class SelectorController {
 
 
      // Adds random Datamons to NPC Datamon list.
-    public void sendNPCList(){
+    public List sendNPCList(List list){
         Random rand = new Random();
+        List<Datamon> pickDataMon = new ArrayList<>();
+        pickDataMon.add(new Bobby());
+        pickDataMon.add(new Fred1());
+        pickDataMon.add(new Fred2());
+        pickDataMon.add(new Jonas());
+        pickDataMon.add(new Kevin());
+        pickDataMon.add(new Mads());
+        pickDataMon.add(new Marcus());
+        pickDataMon.add(new Nicolai());
+        pickDataMon.add(new Rouvi());
+        pickDataMon.add(new RouvisMor());
+        pickDataMon.add(new Tess());
+        pickDataMon.add(new Tobias());
 
         for(int i = 0 ; i <= datamons.size() ; i++ ) {
-            List<Datamon> pickDataMon = new ArrayList<>();
-
-            pickDataMon.add(new Bobby());
-            pickDataMon.add(new Fred1());
-            pickDataMon.add(new Fred2());
-            pickDataMon.add(new Jonas());
-            pickDataMon.add(new Kevin());
-            pickDataMon.add(new Mads());
-            pickDataMon.add(new Marcus());
-            pickDataMon.add(new Nicolai());
-            pickDataMon.add(new Rouvi());
-            pickDataMon.add(new RouvisMor());
-            pickDataMon.add(new Tess());
-            pickDataMon.add(new Tobias());
 
             int randomNum = rand.nextInt(pickDataMon.size());
-            NPC.addDatamon(pickDataMon.get(randomNum));
+            list.add(pickDataMon.get(randomNum));
         }
+        return list;
     }
 
 

@@ -32,17 +32,16 @@ public class BattleSimController {
     private void switchUser() {
         if (currentPlayer.equals(player)) {
             currentPlayer = NPC;
+            enemyPlayer = player;
         } else {
             currentPlayer = player;
+            enemyPlayer = NPC;
         }
-
-        // TODO: Fix logic with enemyPlayer
     }
 
 
     // Calls a random ability if the current player is the NPC.
     private void ChooseMove(int pick) {
-
        int methodNumber;
 
         if (currentPlayer.equals(NPC)) {
