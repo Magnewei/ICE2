@@ -46,42 +46,42 @@
                            <effect>
                               <ImageInput>
                                  <source>
-                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Fred1.png" />
                                  </source></ImageInput>
                            </effect></Button>
                         <Button fx:id="button6" mnemonicParsing="false" onAction="#Select6Pressed" prefHeight="200.0" prefWidth="480.0" text="6">
                            <effect>
                               <ImageInput>
                                  <source>
-                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Rouvi.png" />
                                  </source></ImageInput>
                            </effect></Button>
                         <Button fx:id="button7" mnemonicParsing="false" onAction="#Select7Pressed" prefHeight="200.0" prefWidth="480.0" text="7">
                            <effect>
                               <ImageInput>
                                  <source>
-                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Bobby.png" />
                                  </source></ImageInput>
                            </effect></Button>
                         <Button fx:id="button8" mnemonicParsing="false" onAction="#Select8Pressed" prefHeight="200.0" prefWidth="480.0" text="8">
                            <effect>
                               <ImageInput>
                                  <source>
-                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/DJMads.png" />
                                  </source></ImageInput>
                            </effect></Button>
                         <Button fx:id="button9" mnemonicParsing="false" onAction="#Select9Pressed" prefHeight="200.0" prefWidth="480.0" text="9">
                            <effect>
                               <ImageInput>
                                  <source>
-                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Marcus.png" />
                                  </source></ImageInput>
                            </effect></Button>
                         <Button fx:id="button10" mnemonicParsing="false" onAction="#Select10Pressed" prefHeight="200.0" prefWidth="480.0" text="10">
                            <effect>
                               <ImageInput>
                                  <source>
-                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Temp.png" />
+                                    <Image url="file:/C:/Users/Gustav/Desktop/ICEFORREALNOW/MediaFiles/Nicolai.png" />
                                  </source></ImageInput>
                            </effect></Button>
                         <Button fx:id="button11" mnemonicParsing="false" onAction="#Select11Pressed" prefHeight="200.0" prefWidth="480.0" text="11">
