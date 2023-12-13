@@ -68,13 +68,18 @@ public class BattleSim {
 
 
     }
-
+    // Remove the current Datamon if its HP is zero or negative
     private void checkIfDead() {
-        if (!enemyPlayer.getDatamons().isEmpty() && enemyPlayer.getCurrentDatamon().getHP() <= 0) {
+        if (enemyPlayer.getCurrentDatamon().getHP() <= 0) {
             enemyPlayer.removeDatamon(enemyPlayer.getCurrentDatamon());
-            enemyPlayer.getDatamons().get(0);
+
+            if (!checkIfWin()) {
+                Datamon randomDatamon = enemyPlayer.getDatamons().get(random.nextInt(enemyPlayer.getDatamons().size()));
+                enemyPlayer.setCurrentDatamon(randomDatamon);
+            }
         }
     }
+
 
     private Boolean checkIfWin() {
         if (enemyPlayer.getDatamons().size() <= 0) {

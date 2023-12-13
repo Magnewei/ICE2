@@ -2,6 +2,8 @@ package com.example.ice;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
 
 public class User {
     private String username;
@@ -25,7 +27,8 @@ public class User {
 
     public Datamon getCurrentDatamon() {
         if (datamons != null && !datamons.isEmpty() ) {
-            return datamons.get(0);
+            Random random = new Random();
+            return datamons.get(random.nextInt(getDatamons().size()));
     }
         return currentDatamon;
     }
@@ -43,6 +46,8 @@ public class User {
         return password;
     }
 
-
+    public void setCurrentDatamon(Datamon datamon){
+        this.currentDatamon = datamon;
+    }
 
 }
