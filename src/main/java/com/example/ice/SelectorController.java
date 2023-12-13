@@ -199,7 +199,8 @@ public class SelectorController {
     @FXML
     private void BattleButtonPressed(ActionEvent event) {
         if (datamons.size() > 0) {
-
+                 sendNPCList();
+            System.out.println(NPC.getDatamons().toString());
                 try {
                     ((Node) (event.getSource())).getScene().getWindow().hide();
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("BattleSim.fxml"));
@@ -220,8 +221,10 @@ public class SelectorController {
 
 
      // Adds random Datamons to NPC Datamon list.
-    public List sendNPCList(List list){
+    public void sendNPCList(){
         Random rand = new Random();
+
+
         List<Datamon> pickDataMon = new ArrayList<>();
         pickDataMon.add(new Bobby());
         pickDataMon.add(new Fred1());
@@ -236,12 +239,12 @@ public class SelectorController {
         pickDataMon.add(new Tess());
         pickDataMon.add(new Tobias());
 
-        for(int i = 0 ; i <= datamons.size() ; i++ ) {
+        int randomNum = rand.nextInt(pickDataMon.size());
 
-            int randomNum = rand.nextInt(pickDataMon.size());
-            list.add(pickDataMon.get(randomNum));
+        for(int i = 0 ; i <= (datamons.size() -1); i++ ) {
+
+           NPC.addDatamon(pickDataMon.get(randomNum));
         }
-        return list;
     }
 
 
