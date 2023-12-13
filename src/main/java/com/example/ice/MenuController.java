@@ -34,7 +34,7 @@ public class MenuController implements Initializable {
     private Stage userChoices = new Stage();
     private DBConnector io = new DBConnector();
     private User currentUser = new User();
-    private User NPC = new User();
+    private User NPC = new User("Hal9000", "");
     private MediaPlayer mediaPlayer;
 
     @Override

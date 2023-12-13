@@ -244,11 +244,11 @@ public class SelectorController {
         pickDataMon.add(new Tobias());
 
         int randomNum = rand.nextInt(pickDataMon.size());
-          NPC.addDatamon(new Bobby());
-        //for(int i = 0 ; i <= (datamons.size() -1); i++ ) {
 
-          // NPC.addDatamon(pickDataMon.get(randomNum));
-       // }
+        for(int i = 0 ; i <= (datamons.size() -1); i++ ) {
+            NPC.addDatamon(pickDataMon.get(randomNum));
+
+       }
     }
 
 }

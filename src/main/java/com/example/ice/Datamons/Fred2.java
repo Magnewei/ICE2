@@ -48,7 +48,7 @@ public class Fred2 implements Datamon {
 
     public int move1(Datamon target){
         String name ="Drik øl med far";
-        int damage = 10;
+        int damage = 50;
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         beerdrunk = true;

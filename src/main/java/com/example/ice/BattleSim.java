@@ -19,61 +19,26 @@ public class BattleSim {
     private User enemyPlayer;
     private User player;
     private User NPC;
+    private Random random = new Random();
 
 
-    public void setup(User currentPlayer, User enemyPlayer) {
-        this.currentPlayer = currentPlayer;
-        this.enemyPlayer = enemyPlayer;
-
-
-    }
-
-    public void ChooseMove(int pick) {
-        int methodNumber;
-
-        if (currentPlayer != null) {
-
-            if (currentPlayer.equals(enemyPlayer)) {
-                Random random = new Random();
-                methodNumber = random.nextInt(4) + 1;
-            } else {
-                methodNumber = pick;
-            }
-
-
-            switch (methodNumber) {
-                case 1:
-                    move1(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());
-                    break;
-
-                case 2:
-                    move2(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());
-                    break;
-
-                case 3:
-                    move3(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());
-                    break;
-
-                case 4:
-                    move4(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());
-                    break;
-
-                default:
-                    System.out.println("Something went wrong.");
-            }
-
-        } else {
-            System.out.println("Current player is null.");
-        }
+    public void setup(User player, User NPC) {
+        this.player = player;
+        this.NPC = NPC;
+        currentPlayer = player;
+        enemyPlayer = NPC;
 
 
     }
+
+
+
     // Remove the current Datamon if its HP is zero or negative
     private void checkIfDead() {
         if (enemyPlayer.getCurrentDatamon().getHP() <= 0) {
             enemyPlayer.removeDatamon(enemyPlayer.getCurrentDatamon());
 
-            if (!checkIfWin()) {
+            if (!enemyPlayer.getDatamons().isEmpty()) {
                 Datamon randomDatamon = enemyPlayer.getDatamons().get(random.nextInt(enemyPlayer.getDatamons().size()));
                 enemyPlayer.setCurrentDatamon(randomDatamon);
             }
@@ -81,28 +46,72 @@ public class BattleSim {
     }
 
 
-    private Boolean checkIfWin() {
-        if (enemyPlayer.getDatamons().size() <= 0) {
-            System.out.println("Winner found test");
+    public Boolean checkIfWin() {
+        if (player.getDatamons().isEmpty()) {
+            showErrorDialog("Winner found ", NPC.getUsername() + " won!");
             return true;
-        }
-        return false;
-    }
-
-    public void Fight() {
-
-        if (enemyPlayer != null && currentPlayer != null) {
-            if (checkIfWin()) {
-                showErrorDialog("Winner found", currentPlayer.getUsername() + "won!");
-            }
-
-            // checkIfDead();
-            // switchUser();
+        } else if (NPC.getDatamons().isEmpty()) {
+            showErrorDialog("Winner found ", player.getUsername() + " won!");
+            return true;
         } else {
-            System.out.println("Fight() users are null.");
+            return false;
         }
 
+
     }
+
+
+    public void Fight(int pick) {
+        if (enemyPlayer != null && currentPlayer != null) {
+        checkIfDead();
+        checkIfWin();
+
+        int methodNumber;
+            System.out.println("Current Player: " + currentPlayer.getUsername());
+            System.out.println("Enemy Player: " + enemyPlayer.getUsername());
+            if (!checkIfWin()) {
+                checkIfDead();
+                switchUser();
+
+                if (currentPlayer.equals(NPC)) {
+                    methodNumber = random.nextInt(1, 4);
+                } else {
+                    methodNumber = pick;
+                }
+                switch (methodNumber) {
+                    case 1:
+                        move1(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());
+                        checkIfDead();
+                        checkIfWin();
+                        break;
+
+                    case 2:
+                        move2(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());
+                        checkIfDead();
+                        checkIfWin();
+                        break;
+
+                    case 3:
+                        move3(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());
+                        checkIfDead();
+                        checkIfWin();
+                        break;
+
+                    case 4:
+                        move4(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());
+                        checkIfDead();
+                        checkIfWin();
+                        break;
+
+                    default:
+                        System.out.println("Something went wrong.");
+
+                }
+            }
+        }
+    }
+
+
     private void showErrorDialog(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
@@ -117,12 +126,14 @@ public class BattleSim {
     }
 
     private void switchUser() {
-        if (currentPlayer.equals(currentPlayer)) {
+        if (currentPlayer.equals(player)) {
             currentPlayer = enemyPlayer;
-            enemyPlayer = currentPlayer;
+            enemyPlayer = player;
+        } else {
+            currentPlayer = player;
+            enemyPlayer = NPC;
         }
-
-        }
+    }
 
 
     // Checks if there's a winner.

@@ -10,6 +10,11 @@ public class User {
     private String password;
     private int xp;
     private List<Datamon> datamons = new ArrayList<>();
+
+    public void setCurrentDatamon(int x) {
+        this.currentDatamon = datamons.get(x);
+    }
+
     private Datamon currentDatamon;
 
     public User(String username, String password) {

@@ -33,27 +33,27 @@ public class BattleSimController {
 
     @FXML
     public void move1Button(ActionEvent e){
-        sim.ChooseMove(1);
-        sim.Fight();
+        sim.Fight(1);
     }
 
     @FXML
     public void move2Button(ActionEvent e){
-        sim.ChooseMove(2);
-        sim.Fight();
+        sim.Fight(2);
 
     }
 
     @FXML
     public void move3Button(ActionEvent e){
-        sim.ChooseMove(3);
-        sim.Fight();
+        sim.Fight(3);
+
+
     }
 
     @FXML
     public void move4Button(ActionEvent e){
-        sim.ChooseMove(4);
-        sim.Fight();
+        sim.Fight(4);
+
+
     }
 
 
