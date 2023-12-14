@@ -14,7 +14,7 @@ public class Marcus implements Datamon {
     public Marcus() {
         this.name = "Marcus";
         this.hp = 280;
-        this.CreatureType = "Speedy";
+        this.CreatureType = "StudyGroup F";
     }
 
     @Override
@@ -48,8 +48,7 @@ public class Marcus implements Datamon {
         String name ="Lav opgave 1";
         int damage = 2;
         opgave1Done = true;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
@@ -57,8 +56,7 @@ public class Marcus implements Datamon {
         String name ="Lav opgave 2";
         int damage = 2;
         opgave2Done = true;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
@@ -66,8 +64,7 @@ public class Marcus implements Datamon {
         String name ="Lav opgave 3";
         int damage = 2;
         opgave3Done = true;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
@@ -75,15 +72,21 @@ public class Marcus implements Datamon {
         String name ="Opgaver done? I'm gone";
         int damage = 2;
         if(opgave1Done && opgave2Done && opgave3Done){
-            damage = 1000;
+            if(target.getCreatureType().equals("StudyGroup F")){
+                damage = 1000;
+            }
             setHP(0);
             opgave1Done = false;
             opgave2Done = false;
             opgave3Done = false;
         }
+        showResult(name,damage,target);
+        return damage;
+    }
+
+    public void showResult(String name, int damage, Datamon target){
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
-        return damage;
     }
 
 }

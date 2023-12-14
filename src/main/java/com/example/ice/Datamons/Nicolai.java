@@ -43,33 +43,35 @@ public class Nicolai implements Datamon {
     public int move1(Datamon target){
         String name ="Build that wall";
         int damage = 7;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        setHP(hp + 25);
+        showResult(name,damage,target);
         return damage;
     }
 
     public int move2(Datamon target){
         String name ="Murstens kast";
         int damage = 8;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
     public int move3(Datamon target){
         String name ="Cs flæk";
         int damage = 6;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
     public int move4(Datamon target){
         String name ="?";
         int damage = 2;
+        showResult(name,damage,target);
+        return damage;
+    }
+
+    public void showResult(String name, int damage, Datamon target){
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
-        return damage;
     }
 
 }

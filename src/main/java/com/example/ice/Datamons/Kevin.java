@@ -42,33 +42,35 @@ public class Kevin implements Datamon {
     public int move1(Datamon target){
         String name ="StrawberryThrow";
         int damage = 7;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
     public int move2(Datamon target){
         String name = "Absorber sjæl";
         int damage = 11;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
     public int move3(Datamon target){
         String name ="Rødhåret blodrus";
         int damage = 8;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
     public int move4(Datamon target){
         String name ="Blændende maveskind";
         int damage = 5;
+        showResult(name,damage,target);
+        return damage;
+    }
+
+    @Override
+    public void showResult(String name, int damage, Datamon target){
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
-        return damage;
     }
 
 }

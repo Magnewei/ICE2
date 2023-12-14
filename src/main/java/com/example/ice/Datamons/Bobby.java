@@ -38,8 +38,7 @@ public class Bobby implements Datamon {
     public int move1(Datamon target){
         String name = "Jeg kommer i morgen gutter";
         int damage = 2;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
@@ -47,8 +46,7 @@ public class Bobby implements Datamon {
     public int move2(Datamon target){
         String name = "Ej jeg kommer på torsdag gutter";
         int damage = 4;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
@@ -56,8 +54,7 @@ public class Bobby implements Datamon {
     public int move3(Datamon target){
         String name = "Bogstaveligt talt bare dyresex lmao";
         int damage = 10;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
@@ -66,9 +63,15 @@ public class Bobby implements Datamon {
         String name = "Drop ud";
         setHP(0);
         int damage = 0;
+        showResult(name,damage,target);
+        System.out.println("Bobby dropped out, he's gone from this world.");
+        return damage;
+    }
+
+    @Override
+    public void showResult(String name, int damage, Datamon target){
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
-        return damage;
     }
 
     @Override

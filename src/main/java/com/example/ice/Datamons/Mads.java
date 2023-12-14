@@ -42,33 +42,40 @@ public class Mads implements Datamon {
     public int move1(Datamon target){
         String name ="Spil en banger";
         int damage = 11;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        if(target.getName().equals("Rouvi")){
+            damage *= 2;
+        }
+        showResult(name,damage,target);
         return damage;
     }
 
     public int move2(Datamon target){
         String name ="Råb bror";
         int damage = 8;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
     public int move3(Datamon target){
         String name ="Skal vi i byen";
         int damage = 9;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        if(target.getName().equals("Fred2")){
+            damage *= 3;
+        }
+        showResult(name,damage,target);
         return damage;
     }
 
     public int move4(Datamon target){
         String name ="Næver forever";
         int damage = 1;
+        showResult(name,damage,target);
+        return damage;
+    }
+
+    public void showResult(String name, int damage, Datamon target){
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
-        return damage;
     }
 
 }

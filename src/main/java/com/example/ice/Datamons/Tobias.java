@@ -44,32 +44,33 @@ public class Tobias implements Datamon {
     public int move1(Datamon target){
          String name ="Byg reol 1";
          int damage = 0;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
          return damage;
     }
 
     public int move2(Datamon target){
         String name ="Byg reol 2";
         int damage = 0;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
     public int move3(Datamon target){
         String name ="Byg reol 3";
         int damage = 0;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
     public int move4(Datamon target){
         String name ="Byg reol 4";
         int damage = 0;
+        showResult(name,damage,target);
+        return damage;
+    }
+
+    public void showResult(String name, int damage, Datamon target){
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
-        return damage;
     }
 }

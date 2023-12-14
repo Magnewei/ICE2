@@ -12,7 +12,7 @@ public class Fred2 implements Datamon {
     public Fred2(){
         this.name = "Fred2";
         this.hp = 250;
-        this.CreatureType = "Drunk";
+        this.CreatureType = "StudyGroup F";
     }
 
     @Override
@@ -48,8 +48,7 @@ public class Fred2 implements Datamon {
         String name ="Drik øl med far";
         int damage = 8;
         promille += 3;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
 
     }
@@ -58,8 +57,7 @@ public class Fred2 implements Datamon {
         String name = "Drik vin med far";
         int damage = 6;
         promille += 6;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
@@ -67,19 +65,24 @@ public class Fred2 implements Datamon {
         String name ="Drik whisky med far";
         int damage = 4;
         promille += 10;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
-public int move4(Datamon target){
+    public int move4(Datamon target){
         String name = "Drunken uppercut";
         int damage = 3;
         damage += promille;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
-}
+    }
+
+    @Override
+    public void showResult(String name, int damage, Datamon target){
+        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println("Freds promille is now at: " + promille);
+        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+    }
 
 
 

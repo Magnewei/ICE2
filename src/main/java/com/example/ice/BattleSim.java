@@ -47,6 +47,12 @@ public class BattleSim {
 
 
             }
+        }else if(playerDatamon.getHP() <= 0){
+            currentPlayer.removeDatamon(playerDatamon);
+
+            if(!currentPlayer.getDatamons().isEmpty()){
+                playerDatamon = currentPlayer.getDatamons().get(0);
+            }
         }
     }
 

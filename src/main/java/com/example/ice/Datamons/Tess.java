@@ -49,8 +49,7 @@ public class Tess implements Datamon {
         if (target.getCreatureType().equals("ElsketLøve")){
             damage *= 100;
         }
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
@@ -60,25 +59,27 @@ public class Tess implements Datamon {
         if(studerendePræsenterer){
             damage *= 2;
         }
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
     public int move3(Datamon target){
         String name = "Undervis på Zoom";
         int damage = 2;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
     public int move4(Datamon target){
         String name = "Få studerende til at præsentere";
         int damage = 3;
+        showResult(name,damage,target);
+        return damage;
+    }
+
+    public void showResult(String name, int damage, Datamon target){
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
-        return damage;
     }
 
 }

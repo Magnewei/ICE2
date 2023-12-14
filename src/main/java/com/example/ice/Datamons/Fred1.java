@@ -10,7 +10,7 @@ public class Fred1 implements Datamon{
     public Fred1() {
         this.name = "Bobby";
         this.hp= 200;
-        this.CreatureType = "Ghost";
+        this.CreatureType = "StudyGroup F";
     }
 
     @Override
@@ -37,8 +37,7 @@ public class Fred1 implements Datamon{
     public int move1(Datamon target) {
         String name = "Forvir med kompleks matematik";
         int damage = 30;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
@@ -46,8 +45,7 @@ public class Fred1 implements Datamon{
     public int move2(Datamon target) {
         String name = "Spil Gwen";
         int damage = 5;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        showResult(name,damage,target);
         return damage;
     }
 
@@ -55,18 +53,23 @@ public class Fred1 implements Datamon{
     public int move3(Datamon target) {
         String name = "Spil literally alt andet end Gwen";
         int damage = -20;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        System.out.println("That was so poor that you healed the opposing datamon.");
+        showResult(name,damage,target);
         return damage;
     }
 
     @Override
     public int move4(Datamon target) {
-        String name = "";
-        int damage = 0;
+        String name = "Jeg gider ikke være Tauren!";
+        int damage = 1;
+        showResult(name,damage,target);
+        return damage;
+    }
+
+    @Override
+    public void showResult(String name, int damage, Datamon target){
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
-        return damage;
     }
 
     @Override
