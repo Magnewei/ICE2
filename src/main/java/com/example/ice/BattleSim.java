@@ -38,14 +38,19 @@ public class BattleSim {
 
 
     // Checks if Datamon is dead.
+
     private void checkIfDead() {
         if (enemyDatamon.getHP() <= 0) {
             enemyPlayer.removeDatamon(enemyDatamon);
-
-            if (!enemyPlayer.getDatamons().isEmpty() ) {
+            if (!enemyPlayer.getDatamons().isEmpty()) {
                 enemyDatamon = enemyPlayer.getDatamons().get(0);
+            }
+        }
 
-
+        if (playerDatamon.getHP() <= 0) {
+            player.removeDatamon(playerDatamon);
+            if (!player.getDatamons().isEmpty()) {
+                playerDatamon = player.getDatamons().get(0);
             }
         }
     }
@@ -106,55 +111,10 @@ public class BattleSim {
 
 
 
-
-
-
-    // Method is called on buttons. Fight() checks winner and prompts if winner is found, checks dead datamon
-    // Prompting if winner is found through method calls.
-    // Finally calls Moves from button if player turn or from random number on AI turn.
-
-        /*
-    // Picks datamon from list.
-    private void chooseMon(int x) {
-        int pick;
-
-        if (player Mon = dead){
-            for (int i = 0 : i <= player.getDatamons().size(): i++) {
-                System.out.println("Option " + player.getDatamons().get(i));
-            }
-
-            switch (x) {
-                case 1:
-                    enemyDatamon = currentPlayer.setCurrentDatamon(x)
-                    break;
-
-                case 2:
-                    enemyDatamon = currentPlayer.setCurrentDatamon(x)
-                    break;
-
-                case 3:
-                    enemyDatamon = currentPlayer.setCurrentDatamon(x)
-                    break;
-            }
-            //TODO: Add måde at vælge på.
-            //Generer buttons ud fra list.size() med navne på objekter.
-        }
-    }
-
-         */
-
-
-
-
-    // Swaps user on round end.
     private void switchUser() {
-        if (currentPlayer.equals(player)) {
-            currentPlayer = enemyPlayer;
-            enemyPlayer = player;
-        } else {
-            currentPlayer = player;
-            enemyPlayer = NPC;
-        }
+        User temp = currentPlayer;
+        currentPlayer = enemyPlayer;
+        enemyPlayer = temp;
     }
 
     private void showErrorDialog(String title, String content) {
