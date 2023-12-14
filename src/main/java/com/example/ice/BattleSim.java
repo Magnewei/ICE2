@@ -73,7 +73,6 @@ public class BattleSim {
     // Method is called on buttons. Fight() checks winner and prompts if winner is found, checks dead datamon
     // Prompting if winner is found through method calls.
     // Finally calls Moves from button if player turn or from random number on AI turn.
-
     public void Fight(int pick) {
         if (enemyPlayer != null && currentPlayer != null) {
 

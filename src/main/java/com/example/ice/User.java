@@ -23,6 +23,11 @@ public class User {
         this.currentDatamon = datamons.get(x);
     }
 
+    public void setCurrentDatamon(Datamon datamon) {
+        this.currentDatamon = datamon;
+    }
+
+
     public User() {
     }
 
@@ -31,14 +36,14 @@ public class User {
     }
 
     public Datamon getCurrentDatamon() {
-        if (datamons != null && !datamons.isEmpty() ) {
+        if (datamons != null && !datamons.isEmpty()) {
             return currentDatamon;
         }
         return setCurrentDatamon();
     }
 
-     public Datamon setCurrentDatamon() {
-        if (datamons != null && !datamons.isEmpty() ) {
+    public Datamon setCurrentDatamon() {
+        if (datamons != null && !datamons.isEmpty()) {
             Random random = new Random();
             return datamons.get(random.nextInt(getDatamons().size()));
         }
@@ -46,13 +51,14 @@ public class User {
     }
 
 
-
-    public void addDatamon(Datamon mon){
+    public void addDatamon(Datamon mon) {
         datamons.add(mon);
     }
-    public void removeDatamon(Datamon mon){
+
+    public void removeDatamon(Datamon mon) {
         datamons.remove(mon);
     }
+
     public String getUsername() {
         return username;
     }
@@ -60,9 +66,7 @@ public class User {
     public String getPassword() {
         return password;
     }
-
-    public void setCurrentDatamon(Datamon datamon){
-        this.currentDatamon = datamon;
-    }
-
 }
+
+
+
