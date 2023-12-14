@@ -72,6 +72,26 @@ public class Bobby implements Datamon {
     }
 
     @Override
+    public String getMove1Name() {
+        return move1Name;
+    }
+
+    @Override
+    public String getMove2Name() {
+        return move2Name;
+    }
+
+    @Override
+    public String getMove3Name() {
+        return move3Name;
+    }
+
+    @Override
+    public String getMove4Name() {
+        return move4Name;
+    }
+
+    @Override
     public String introduction() {
         return "A giant monster apears from the dista..... oh wait its just tiny jonas";
     }

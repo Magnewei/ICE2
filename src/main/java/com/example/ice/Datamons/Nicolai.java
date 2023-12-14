@@ -7,6 +7,11 @@ public class Nicolai implements Datamon {
     private int hp;
     private String CreatureType;
 
+    private String move1Name = "Build that wall";
+    private String move2Name = "Murstens kast";
+    private String move3Name = "CS Flick";
+    private String move4Name = "Clutch kongen";
+
 
     public Nicolai() {
         this.name = "Nicolai";
@@ -70,6 +75,26 @@ public class Nicolai implements Datamon {
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
+    }
+
+    @Override
+    public String getMove1Name() {
+        return move1Name;
+    }
+
+    @Override
+    public String getMove2Name() {
+        return move2Name;
+    }
+
+    @Override
+    public String getMove3Name() {
+        return move3Name;
+    }
+
+    @Override
+    public String getMove4Name() {
+        return move4Name;
     }
 
 }

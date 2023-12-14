@@ -33,6 +33,7 @@ public class BattleSim {
 
         enemyDatamon = enemyPlayer.getDatamons().get(0);
         playerDatamon = currentPlayer.getDatamons().get(0);
+
 }
 
 
