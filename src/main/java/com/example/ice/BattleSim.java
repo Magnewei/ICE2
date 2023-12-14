@@ -65,60 +65,55 @@ public class BattleSim {
     }
 
 
+
     // Method is called on buttons. Fight() checks winner and prompts if winner is found, checks dead datamon
     // Prompting if winner is found through method calls.
     // Finally calls Moves from button if player turn or from random number on AI turn.
+
     public void Fight(int pick) {
         if (enemyPlayer != null && currentPlayer != null) {
-            int methodNumber;
 
-            // Prints player and NPC datamons. Used for testing whether they get removed from lists, when datamon health <= 0;
-            System.out.println("NPC Mons: " + NPC.getDatamons());
-            System.out.println("Player Mons: " + player.getDatamons());
+            // Used for debugging player objects and datamon arraylists.
+            System.out.println("Player datamons" + player.getDatamons().toString() );
+            System.out.println("NPC datamons" + NPC.getDatamons());
+            System.out.println("CurrentPlayer is: " + currentPlayer.getUsername());
+            System.out.println("CurrentPlayer is: " + enemyPlayer.getUsername());
+
 
             if (!checkIfWin()) {
                 checkIfDead();
-                switchUser();
 
-                if (currentPlayer.equals(NPC)) {
-                    methodNumber = random.nextInt(1, 4);
-                } else {
-                    methodNumber = pick;
-                }
-                switch (methodNumber) {
-                    case 1:
-                        move1(playerDatamon, enemyDatamon);
-                        checkIfDead();
-                        checkIfWin();
-                        System.out.println();
-                        break;
+                // Execute player move
+                if (currentPlayer.equals(player)) {
+                    executeMove(pick, playerDatamon, enemyDatamon);
+                    checkIfDead();
+                    if (checkIfWin()) return;
 
-                    case 2:
-                        move2(playerDatamon, enemyDatamon);
-                        checkIfDead();
-                        checkIfWin();
-                        break;
+                    switchUser(); // Switch to NPC after player move
 
-                    case 3:
-                        move3(playerDatamon, enemyDatamon);
-                        checkIfDead();
-                        checkIfWin();
-                        break;
+                    // Execute NPC move
+                    int npcMove = random.nextInt(1, 5); // Assuming 4 moves, inclusive
+                    executeMove(npcMove, enemyDatamon, playerDatamon);
+                    checkIfDead();
+                    checkIfWin();
 
-                    case 4:
-                        move4(playerDatamon, enemyDatamon);
-                        checkIfDead();
-                        checkIfWin();
-                        break;
-
-                    default:
-                        System.out.println("Something went wrong.");
-
+                    switchUser(); // Switch back to player
                 }
             }
         }
     }
 
+
+
+
+
+
+
+    // Method is called on buttons. Fight() checks winner and prompts if winner is found, checks dead datamon
+    // Prompting if winner is found through method calls.
+    // Finally calls Moves from button if player turn or from random number on AI turn.
+
+        /*
     // Picks datamon from list.
     private void chooseMon(int x) {
         int pick;
@@ -146,14 +141,9 @@ public class BattleSim {
         }
     }
 
+         */
 
-    private void showErrorDialog(String title, String content) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(content);
-        alert.showAndWait();
-    }
+
 
 
     // Swaps user on round end.
@@ -167,8 +157,37 @@ public class BattleSim {
         }
     }
 
+    private void showErrorDialog(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
 
-     // Current datamon's move 1 to 4.
+
+
+    private void executeMove(int moveNumber, Datamon attacker, Datamon defender) {
+        switch (moveNumber) {
+            case 1:
+                move1(attacker, defender);
+                break;
+            case 2:
+                move2(attacker, defender);
+                break;
+            case 3:
+                move3(attacker, defender);
+                break;
+            case 4:
+                move4(attacker, defender);
+                break;
+            default:
+                System.out.println("Invalid move.");
+        }
+    }
+
+
+    // Current datamon's move 1 to 4.
     public void move1(Datamon attacker, Datamon defender) {
         defender.setHP(defender.getHP() - attacker.move1(defender));
 
