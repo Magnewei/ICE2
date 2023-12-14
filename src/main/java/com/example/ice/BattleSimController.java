@@ -57,7 +57,6 @@ public class BattleSimController implements Initializable {
         this.enemyPlayer = enemyPlayer;
         sim.setup(currentPlayer, enemyPlayer);
         MoveName1.setText(sim.getPlayerDatamon().getMove1Name());
-
         MoveName2.setText(sim.getPlayerDatamon().getMove2Name());
         MoveName3.setText(sim.getPlayerDatamon().getMove3Name());
         MoveName4.setText(sim.getPlayerDatamon().getMove4Name());
