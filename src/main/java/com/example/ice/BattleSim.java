@@ -119,6 +119,33 @@ public class BattleSim {
         }
     }
 
+    // Picks datamon from list.
+    private void chooseMon(int x) {
+        int pick;
+
+        if (player Mon = dead){
+            for (int i = 0 : i <= player.getDatamons().size(): i++) {
+                System.out.println("Option " + player.getDatamons().get(i));
+            }
+
+            switch (x) {
+                case 1:
+                    enemyDatamon = currentPlayer.setCurrentDatamon(x)
+                    break;
+
+                case 2:
+                    enemyDatamon = currentPlayer.setCurrentDatamon(x)
+                    break;
+
+                case 3:
+                    enemyDatamon = currentPlayer.setCurrentDatamon(x)
+                    break;
+            }
+            //TODO: Add måde at vælge på.
+            //Generer buttons ud fra list.size() med navne på objekter.
+        }
+    }
+
 
     private void showErrorDialog(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
