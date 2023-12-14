@@ -10,6 +10,10 @@ public class Fred2 implements Datamon {
     boolean beerdrunk = false;
     boolean winedrunk = false;
     boolean whiskeydrunk = false;
+    private String move1Name = "Drik øl med far";
+    private String move2Name = "Drik vin med far";
+    private String move3Name = "Drik whiskey med far";
+    private String move4Name = "Drunken uppercut";
 
     public Fred2(){
         this.name = "Fred2";
@@ -47,7 +51,6 @@ public class Fred2 implements Datamon {
 
 
     public int move1(Datamon target){
-        String name ="Drik øl med far";
         int damage = 50;
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
@@ -57,7 +60,6 @@ public class Fred2 implements Datamon {
     }
 
     public int move2(Datamon target){
-        String name = "Drik vin med far";
         int damage = 2;
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
@@ -66,7 +68,6 @@ public class Fred2 implements Datamon {
     }
 
     public int move3(Datamon target){
-        String name ="Drik whisky med far";
         int damage = 11;
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
@@ -75,15 +76,34 @@ public class Fred2 implements Datamon {
     }
 
 public int move4(Datamon target){
-        String name = "Drunken uppercut";
         int damage = 3;
-                if(whiskeydrunk && winedrunk && beerdrunk){
-                    damage = 20;
-                }
-                    System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
-    System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        if(whiskeydrunk && winedrunk && beerdrunk){
+            damage = 20;
+        }
+        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
 }
+
+    @Override
+    public String getMove1Name() {
+        return move1Name;
+    }
+
+    @Override
+    public String getMove2Name() {
+        return move2Name;
+    }
+
+    @Override
+    public String getMove3Name() {
+        return move3Name;
+    }
+
+    @Override
+    public String getMove4Name() {
+        return move4Name;
+    }
 
 
 

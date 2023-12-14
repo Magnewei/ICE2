@@ -9,6 +9,10 @@ public class Marcus implements Datamon {
     boolean opgave1Done = false;
     boolean opgave2Done = false;
     boolean opgave3Done = false;
+    private String move1Name = "Lav opgave 1";
+    private String move2Name = "Lav opgave 2";
+    private String move3Name = "Lav opgave 3";
+    private String move4Name = "Opgaver done, I'm gone";
 
 
     public Marcus() {
@@ -45,7 +49,6 @@ public class Marcus implements Datamon {
 
 
     public int move1(Datamon target){
-        String name ="Lav opgave 1";
         int damage = 2;
         opgave1Done = true;
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
@@ -84,6 +87,26 @@ public class Marcus implements Datamon {
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
+    }
+
+    @Override
+    public String getMove1Name() {
+        return move1Name;
+    }
+
+    @Override
+    public String getMove2Name() {
+        return move2Name;
+    }
+
+    @Override
+    public String getMove3Name() {
+        return move3Name;
+    }
+
+    @Override
+    public String getMove4Name() {
+        return move4Name;
     }
 
 }

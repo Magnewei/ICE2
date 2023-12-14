@@ -68,6 +68,7 @@ public class BattleSimController implements Initializable {
 
 
 
+
     @FXML
     public void move1Button(ActionEvent e){
         sim.Fight(1);

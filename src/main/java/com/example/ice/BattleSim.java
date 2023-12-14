@@ -42,11 +42,14 @@ public class BattleSim {
     private void checkIfDead() {
         if (enemyDatamon.getHP() <= 0) {
             enemyPlayer.removeDatamon(enemyDatamon);
-
             if (!enemyPlayer.getDatamons().isEmpty() ) {
                 enemyDatamon = enemyPlayer.getDatamons().get(0);
+            }
 
-
+        }else if(playerDatamon.getHP() <= 0){
+            currentPlayer.removeDatamon(playerDatamon);
+            if(!currentPlayer.getDatamons().isEmpty()){
+                playerDatamon = currentPlayer.getDatamons().get(0);
             }
         }
     }
@@ -102,6 +105,10 @@ public class BattleSim {
                 }
             }
         }
+    }
+
+    public Datamon getPlayerDatamon(){
+        return playerDatamon;
     }
 
 
