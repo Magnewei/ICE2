@@ -129,13 +129,6 @@ public class BattleSim {
     }
 
 
-    // Picks datamon from list.
-    private void chooseMon() {
-        //TODO: Add måde at vælge på.
-        //Generer buttons ud fra list.size() med navne på objekter.
-    }
-
-
     // Swaps user on round end.
     private void switchUser() {
         if (currentPlayer.equals(player)) {
