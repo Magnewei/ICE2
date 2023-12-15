@@ -57,7 +57,7 @@ public class Tess implements Datamon {
 
     public int move1(Datamon target){
         int damage = 7;
-        if (target.getCreatureType().equals("ElsketLøve")){
+        if (target.getName().equals("Elsket Løve")){
             damage *= 100;
         }
         System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
