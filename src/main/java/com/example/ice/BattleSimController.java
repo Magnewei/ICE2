@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
@@ -47,6 +48,11 @@ public class BattleSimController implements Initializable {
     private User enemyPlayer;
     private final BattleSim sim = new BattleSim();
 
+    @FXML
+    private ProgressBar enemyProgressBar, playerProgressBar;
+
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -64,6 +70,9 @@ public class BattleSimController implements Initializable {
         ChooseMon2Name.setText(currentPlayer.getDatamons().get(1).getName());
         ChooseMon3Name.setText(currentPlayer.getDatamons().get(2).getName());
 
+        currentPlayer.setCurrentDatamon(0);
+        enemyPlayer.setCurrentDatamon(0);
+
     }
 
     //
@@ -79,10 +88,18 @@ public class BattleSimController implements Initializable {
         buttons.add(ChooseMon2);
         buttons.add(ChooseMon3);
 
+        updateProgress();
+
         for(int i = 0; i <  amountOfDatamons ; i++){
             buttons.get(i).setVisible(true);
 
         }
+    }
+
+    public void updateProgress() {
+        enemyProgressBar = new ProgressBar(enemyPlayer.getCurrentDatamon().getPercentageHealth());
+        playerProgressBar = new ProgressBar(currentPlayer.getCurrentDatamon().getPercentageHealth());
+
     }
 
 

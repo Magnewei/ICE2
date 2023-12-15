@@ -20,6 +20,12 @@ public class RouvisMor implements Datamon {
         this.CreatureType = "Milf";
     }
 
+    @Override
+    public double getPercentageHealth() {
+        int maxHealth = 300;
+        return (double) (maxHealth - hp) / maxHealth;
+    }
+
 
     @Override
     public String getName() {

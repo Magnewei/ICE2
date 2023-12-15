@@ -20,6 +20,12 @@ public class Nicolai implements Datamon {
     }
 
     @Override
+    public double getPercentageHealth() {
+        int maxHealth = 280;
+        return (double) (maxHealth - hp) / maxHealth;
+    }
+
+    @Override
     public String getName() {
         return name;
     }

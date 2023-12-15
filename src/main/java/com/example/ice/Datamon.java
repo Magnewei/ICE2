@@ -17,4 +17,6 @@ public interface Datamon {
 
     public String introduction();
 
+    public double getPercentageHealth();
+
 }
