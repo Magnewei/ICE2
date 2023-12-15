@@ -45,28 +45,28 @@ public class Kevin implements Datamon {
 
     public int move1(Datamon target){
         int damage = 7;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move2(Datamon target){
         int damage = 11;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println("Angreb: " + move2Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move3(Datamon target){
         int damage = 8;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move4(Datamon target){
         int damage = 5;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }

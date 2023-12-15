@@ -7,10 +7,10 @@ public class Tobias implements Datamon {
     private int hp;
     private String CreatureType;
 
-    private String move1Name = "Byg Reol 1";
-    private String move2Name = "Byg Reol 2";
-    private String move3Name = "Byg Reol 3";
-    private String move4Name = "Byg Reol 4";
+    private String move1Name = "Kod reol";
+    private String move2Name = "Print reol";
+    private String move3Name = "Byg Reol";
+    private String move4Name = "Snak om reol";
 
 
     public Tobias() {
@@ -47,33 +47,29 @@ public class Tobias implements Datamon {
     }
 
     public int move1(Datamon target){
-         String name ="Byg reol 1";
          int damage = 0;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
          return damage;
     }
 
     public int move2(Datamon target){
-        String name ="Byg reol 2";
         int damage = 0;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println("Angreb: " + move2Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move3(Datamon target){
-        String name ="Byg reol 3";
         int damage = 0;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move4(Datamon target){
-        String name ="Byg reol 4";
         int damage = 0;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }

@@ -52,7 +52,7 @@ public class Fred2 implements Datamon {
 
     public int move1(Datamon target){
         int damage = 50;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         beerdrunk = true;
         return damage;
@@ -61,7 +61,7 @@ public class Fred2 implements Datamon {
 
     public int move2(Datamon target){
         int damage = 2;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println("Angreb: " + move2Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         winedrunk = true;
         return damage;
@@ -69,7 +69,7 @@ public class Fred2 implements Datamon {
 
     public int move3(Datamon target){
         int damage = 11;
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         whiskeydrunk = true;
         return damage;
@@ -80,7 +80,7 @@ public int move4(Datamon target){
         if(whiskeydrunk && winedrunk && beerdrunk){
             damage = 20;
         }
-        System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
+        System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
 }
