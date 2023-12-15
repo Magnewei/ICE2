@@ -146,6 +146,11 @@ public class BattleSim {
         }
     }
 
+    public Datamon getPlayerDatamon(){
+        return playerDatamon;
+    }
+
+
 
     // Current datamon's move 1 to 4.
     public void move1(Datamon attacker, Datamon defender) {
