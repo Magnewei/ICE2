@@ -7,6 +7,11 @@ public class Rouvi implements Datamon {
     private int hp;
     private String CreatureType;
 
+    private String move1Name = "Wingman";
+    private String move2Name = "Teemo";
+    private String move3Name = "Yappe";
+    private String move4Name = "CS goat";
+
 
     public Rouvi() {
         this.name = "Rouvi";
@@ -72,6 +77,26 @@ public class Rouvi implements Datamon {
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
+    }
+
+    @Override
+    public String getMove1Name() {
+        return move1Name;
+    }
+
+    @Override
+    public String getMove2Name() {
+        return move2Name;
+    }
+
+    @Override
+    public String getMove3Name() {
+        return move3Name;
+    }
+
+    @Override
+    public String getMove4Name() {
+        return move4Name;
     }
 
 }

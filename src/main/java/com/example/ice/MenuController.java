@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.io.File;
 import javafx.scene.input.MouseEvent;
@@ -83,32 +84,14 @@ public class MenuController implements Initializable {
 
     // Register user and inserts username and password into database.
     @FXML
-    private void registerPressed(ActionEvent event) {
-        try {
-            io.createUser(usernameField.getText(), passwordField.getText());
+    private void registerPressed(ActionEvent event) throws SQLException {
+        if (io.createUser(usernameField.getText(), passwordField.getText()).equals(true)) {
+           showErrorDialog("Success!", "You can now proceed to login!");
 
-            if (currentUser != null) {
-
-                Platform.runLater(() -> {
-
-                    try {
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("Selector.fxml"));
-                        Parent root = loader.load();
-                        userChoices.setScene(new Scene(root));
-                        userChoices.show();
-
-                    } catch (IOException e) {
-                        showErrorDialog("Error1", "An error occurred while loading the next screen.");
-                    }
-                });
-            } else {
-                showErrorDialog("Register Success!", "You can now proceed to login!");
-            }
-        } catch (Exception e) {
-            showErrorDialog("Error3", "An unexpected error occured: " + e.getMessage());
+        } else {
+            showErrorDialog("Failure!", "User already exists.");
         }
     }
-
 
     private void showErrorDialog(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);

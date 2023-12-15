@@ -6,6 +6,10 @@ public class Mads implements Datamon {
     private String name;
     private int hp;
     private String CreatureType;
+    private String move1Name = "Spil en banger";
+    private String move2Name = "Råb bror";
+    private String move3Name = "Skal vi i byen?";
+    private String move4Name = "Næver forever";
 
 
     public Mads() {
@@ -40,7 +44,6 @@ public class Mads implements Datamon {
     }
 
     public int move1(Datamon target){
-        String name ="Spil en banger";
         int damage = 11;
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
@@ -48,7 +51,6 @@ public class Mads implements Datamon {
     }
 
     public int move2(Datamon target){
-        String name ="Råb bror";
         int damage = 8;
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
@@ -56,7 +58,6 @@ public class Mads implements Datamon {
     }
 
     public int move3(Datamon target){
-        String name ="Skal vi i byen";
         int damage = 9;
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
@@ -64,11 +65,30 @@ public class Mads implements Datamon {
     }
 
     public int move4(Datamon target){
-        String name ="Næver forever";
         int damage = 1;
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
+    }
+
+    @Override
+    public String getMove1Name() {
+        return move1Name;
+    }
+
+    @Override
+    public String getMove2Name() {
+        return move2Name;
+    }
+
+    @Override
+    public String getMove3Name() {
+        return move3Name;
+    }
+
+    @Override
+    public String getMove4Name() {
+        return move4Name;
     }
 
 }

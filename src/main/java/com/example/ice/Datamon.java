@@ -10,6 +10,11 @@ public interface Datamon {
     public int move2(Datamon Target);
     public int move3(Datamon Target);
     public int move4(Datamon Target);
+    public String getMove1Name();
+    public String getMove2Name();
+    public String getMove3Name();
+    public String getMove4Name();
+
     public String introduction();
 
 }

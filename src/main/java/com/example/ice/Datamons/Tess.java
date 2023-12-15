@@ -9,6 +9,11 @@ public class Tess implements Datamon {
     private String CreatureType;
     private boolean studerendePræsenterer;
 
+    private String move1Name = "Roast";
+    private String move2Name = "Stil spørgsmål til studerendes kode";
+    private String move3Name = "Undervis på Zoom";
+    private String move4Name = "Få studerende til at præsentere";
+
     public Tess(){
         this.name = "Tess";
         this.hp = 300;
@@ -79,6 +84,26 @@ public class Tess implements Datamon {
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
+    }
+
+    @Override
+    public String getMove1Name() {
+        return move1Name;
+    }
+
+    @Override
+    public String getMove2Name() {
+        return move2Name;
+    }
+
+    @Override
+    public String getMove3Name() {
+        return move3Name;
+    }
+
+    @Override
+    public String getMove4Name() {
+        return move4Name;
     }
 
 }

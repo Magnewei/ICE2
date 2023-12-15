@@ -6,9 +6,13 @@ public class Fred1 implements Datamon{
     private String name;
     private int hp;
     private String CreatureType;
+    private String move1Name = "Forvir med kompleks matematik";
+    private String move2Name = "Spil Gwen";
+    private String move3Name = "Spil literally alt andet end Gwen";
+    private String move4Name = "Jeg gider ikke være Tauren!";
 
     public Fred1() {
-        this.name = "Bobby";
+        this.name = "Fred1";
         this.hp= 200;
         this.CreatureType = "Ghost";
     }
@@ -35,7 +39,6 @@ public class Fred1 implements Datamon{
 
     @Override
     public int move1(Datamon target) {
-        String name = "Forvir med kompleks matematik";
         int damage = 30;
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
@@ -44,7 +47,6 @@ public class Fred1 implements Datamon{
 
     @Override
     public int move2(Datamon target) {
-        String name = "Spil Gwen";
         int damage = 5;
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
@@ -53,7 +55,6 @@ public class Fred1 implements Datamon{
 
     @Override
     public int move3(Datamon target) {
-        String name = "Spil literally alt andet end Gwen";
         int damage = -20;
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
@@ -62,11 +63,30 @@ public class Fred1 implements Datamon{
 
     @Override
     public int move4(Datamon target) {
-        String name = "";
         int damage = 0;
         System.out.println("Angreb: " + name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
+    }
+
+    @Override
+    public String getMove1Name() {
+        return move1Name;
+    }
+
+    @Override
+    public String getMove2Name() {
+        return move2Name;
+    }
+
+    @Override
+    public String getMove3Name() {
+        return move3Name;
+    }
+
+    @Override
+    public String getMove4Name() {
+        return move4Name;
     }
 
     @Override

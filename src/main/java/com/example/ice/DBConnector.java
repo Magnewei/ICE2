@@ -33,7 +33,7 @@ public class DBConnector{
         return users;
     }
 
-    public void createUser(String username, String password) throws SQLException {
+    public Boolean createUser(String username, String password) throws SQLException {
         Connection conn = null;
         PreparedStatement stmt = null;
         try (Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
@@ -46,10 +46,12 @@ public class DBConnector{
                 preparedStatement.setString(1,username);
                 preparedStatement.setString(2,password);
                 preparedStatement.executeUpdate();
+                return true;
             }
         }catch(Exception e){
             //Handle errors for Class.forName
             e.printStackTrace();
+            return false;
         } finally {
             //finally block used to close resources
             try{
