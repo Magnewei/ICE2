@@ -63,32 +63,49 @@ public class BattleSimController implements Initializable {
         ChooseMon1Name.setText(currentPlayer.getDatamons().get(0).getName());
         ChooseMon2Name.setText(currentPlayer.getDatamons().get(1).getName());
         ChooseMon3Name.setText(currentPlayer.getDatamons().get(2).getName());
+
     }
 
+    //
 
+    public void showMonButtons() {
+        List<Button> buttons = new ArrayList<>();
+        int amountOfDatamons = currentPlayer.getDatamons().size();
 
+        ChooseMon1.setVisible(false);
+        ChooseMon2.setVisible(false);
+        ChooseMon3.setVisible(false);
+        buttons.add(ChooseMon1);
+        buttons.add(ChooseMon2);
+        buttons.add(ChooseMon3);
+
+        for(int i = 0; i <  amountOfDatamons ; i++){
+            buttons.get(i).setVisible(true);
+        }
+    }
 
     @FXML
     public void move1Button(ActionEvent e){
         sim.Fight(1);
+        showMonButtons();
     }
 
     @FXML
     public void move2Button(ActionEvent e){
         sim.Fight(2);
+        showMonButtons();
     }
 
     @FXML
     public void move3Button(ActionEvent e){
         sim.Fight(3);
+        showMonButtons();
     }
 
     @FXML
     public void move4Button(ActionEvent e){
         sim.Fight(4);
+        showMonButtons();
     }
-
-
-
-    }
+}
 
