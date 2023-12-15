@@ -24,7 +24,7 @@ public class Marcus implements Datamon {
     @Override
     public double getPercentageHealth() {
         int maxHealth = 280;
-        return (double) (maxHealth - hp) / maxHealth;
+        return (double) hp / maxHealth;
     }
 
     @Override
@@ -81,7 +81,9 @@ public class Marcus implements Datamon {
     public int move4(Datamon target){
         int damage = 2;
         if(opgave1Done && opgave2Done && opgave3Done){
-            damage = 1000;
+            if(target.getCreatureType().equals("StudieGruppeF")){
+                damage = 1000;
+            }
             setHP(0);
             opgave1Done = false;
             opgave2Done = false;

@@ -95,10 +95,12 @@ public class BattleSimController implements Initializable {
         ChooseMon1.setVisible(false);
         ChooseMon2.setVisible(false);
         ChooseMon3.setVisible(false);
+
         buttons.add(ChooseMon1);
         buttons.add(ChooseMon2);
         buttons.add(ChooseMon3);
-
+        updateMonLabels();
+        updateActiveMonLabels();
         updateProgress();
 
         for(int i = 0; i <  amountOfDatamons ; i++){
@@ -116,21 +118,21 @@ public class BattleSimController implements Initializable {
     @FXML
     public void chooseMon1(ActionEvent e){
         currentPlayer.setCurrentDatamon(0);
-        System.out.println(currentPlayer.getCurrentDatamon());
+        updateMoveLabels();
         showMonButtons();
     }
 
     @FXML
     public void chooseMon2(ActionEvent e){
         currentPlayer.setCurrentDatamon(1);
-        System.out.println(currentPlayer.getCurrentDatamon());
+        updateMoveLabels();
         showMonButtons();
     }
 
     @FXML
     public void chooseMon3(ActionEvent e){
         currentPlayer.setCurrentDatamon(2);
-       System.out.println(currentPlayer.getCurrentDatamon());
+        updateMoveLabels();
         showMonButtons();
     }
 
@@ -156,6 +158,37 @@ public class BattleSimController implements Initializable {
     public void move4Button(ActionEvent e){
         sim.Fight(4);
         showMonButtons();
+    }
+
+    private void updateMoveLabels(){
+        MoveName1.setText(currentPlayer.getCurrentDatamon().getMove1Name());
+        MoveName2.setText(currentPlayer.getCurrentDatamon().getMove2Name());
+        MoveName3.setText(currentPlayer.getCurrentDatamon().getMove3Name());
+        MoveName4.setText(currentPlayer.getCurrentDatamon().getMove4Name());
+    }
+
+    private void updateMonLabels(){
+        if(currentPlayer.getDatamons().size()>2){
+            ChooseMon3Name.setText(currentPlayer.getDatamons().get(2).getName());
+        }
+        if(currentPlayer.getDatamons().size()>1) {
+            ChooseMon2Name.setText(currentPlayer.getDatamons().get(1).getName());
+        }
+        ChooseMon1Name.setText(currentPlayer.getDatamons().get(0).getName());
+
+
+    }
+
+    private void updateActiveMonLabels(){
+        ActiveMon1.setText(currentPlayer.getCurrentDatamon().getName());
+        ActiveMon2.setText(enemyPlayer.getDatamons().get(0).getName());
+    }
+    @FXML
+    private void PlaySimB(MouseEvent mouseEvent) {
+        mediaPlayer.play();
+        mediaPlayer.setRate(1.1);
+        mediaPlayer.setVolume(0.5);
+
     }
 }
 

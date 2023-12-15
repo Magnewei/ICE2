@@ -79,8 +79,8 @@ public class BattleSim {
         if (enemyPlayer != null && currentPlayer != null) {
 
             // Used for debugging player objects and datamon arraylists.
-            System.out.println("Player datamons" + player.getDatamons().toString() );
-            System.out.println("NPC datamons" + NPC.getDatamons());
+            //System.out.println("Player datamons" + player.getDatamons().toString() );
+            //System.out.println("NPC datamons" + NPC.getDatamons());
             System.out.println("CurrentPlayer is: " + currentPlayer.getUsername());
             System.out.println("CurrentPlayer is: " + enemyPlayer.getUsername());
 

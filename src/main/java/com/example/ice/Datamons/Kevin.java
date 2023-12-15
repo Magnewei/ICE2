@@ -18,6 +18,12 @@ public class Kevin implements Datamon {
     }
 
     @Override
+    public double getPercentageHealth() {
+        int maxHealth = 100;
+        return (double) hp / maxHealth;
+    }
+
+    @Override
     public String getName() {
         return name;
     }
@@ -71,11 +77,7 @@ public class Kevin implements Datamon {
         return damage;
     }
 
-    @Override
-    public double getPercentageHealth() {
-        int maxHealth = 100;
-        return (double) (maxHealth - hp) / maxHealth;
-    }
+
 
     @Override
     public String getMove1Name() {

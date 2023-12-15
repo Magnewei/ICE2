@@ -16,13 +16,13 @@ public class Rouvi implements Datamon {
     public Rouvi() {
         this.name = "Rouvi";
         this.hp = 280;
-        this.CreatureType = "?";
+        this.CreatureType = "CS:GOAT";
     }
 
     @Override
     public double getPercentageHealth() {
         int maxHealth = 280;
-        return (double) (maxHealth - hp) / maxHealth;
+        return (double) hp / maxHealth;
     }
 
     @Override

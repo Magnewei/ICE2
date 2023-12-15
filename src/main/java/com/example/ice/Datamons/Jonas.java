@@ -13,9 +13,15 @@ public class Jonas implements Datamon {
 
 
     public Jonas(){
-        this.name = "Jonas";
-        this.hp = 50;
-        this.CreatureType = "ElsketLøve";
+        this.name = "Elsket Løve";
+        this.hp = 20;
+        this.CreatureType = "StudieGruppeF";
+    }
+
+    @Override
+    public double getPercentageHealth() {
+        int maxHealth = 20;
+        return (double) hp / maxHealth;
     }
 
     @Override
@@ -46,7 +52,6 @@ public class Jonas implements Datamon {
 
 
     public int move1(Datamon target){
-        setHP((int)hp + 50);
         int damage = 0;
         System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
@@ -78,12 +83,6 @@ public class Jonas implements Datamon {
         System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return (int)damage;
-    }
-
-    @Override
-    public double getPercentageHealth() {
-        int maxHealth = 50;
-        return (double) (maxHealth - hp) / maxHealth;
     }
 
     @Override

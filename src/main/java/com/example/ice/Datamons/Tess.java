@@ -24,7 +24,7 @@ public class Tess implements Datamon {
     @Override
     public double getPercentageHealth() {
         int maxHealth = 300;
-        return (double) (maxHealth - hp) / maxHealth;
+        return (double) hp / maxHealth;
     }
 
 

@@ -22,7 +22,7 @@ public class Bobby implements Datamon {
     @Override
     public double getPercentageHealth() {
         int maxHealth = 310;
-        return (double) (maxHealth - hp) / maxHealth;
+        return (double) hp / maxHealth;
     }
 
     @Override
@@ -71,7 +71,7 @@ public class Bobby implements Datamon {
 
     @Override
     public int move4(Datamon target){
-        setHP(0);
+        this.setHP(0);
         int damage = 0;
         System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));

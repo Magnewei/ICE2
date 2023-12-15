@@ -17,14 +17,14 @@ public class Fred2 implements Datamon {
 
     public Fred2(){
         this.name = "Fred2";
-        this.hp = 30;
-        this.CreatureType = "Drunk";
+        this.hp = 250;
+        this.CreatureType = "StudieGruppeF";
     }
 
     @Override
     public double getPercentageHealth() {
         int maxHealth = 30;
-        return (double) (maxHealth - hp) / maxHealth;
+        return (double) hp / maxHealth;
     }
 
     @Override

@@ -16,13 +16,13 @@ public class Nicolai implements Datamon {
     public Nicolai() {
         this.name = "Nicolai";
         this.hp = 280;
-        this.CreatureType = "Muren";
+        this.CreatureType = "Mur";
     }
 
     @Override
     public double getPercentageHealth() {
         int maxHealth = 280;
-        return (double) (maxHealth - hp) / maxHealth;
+        return (double) hp / maxHealth;
     }
 
     @Override

@@ -21,7 +21,7 @@ public class Mads implements Datamon {
     @Override
     public double getPercentageHealth() {
         int maxHealth = 280;
-        return (double) (maxHealth - hp) / maxHealth;
+        return (double) hp / maxHealth;
     }
 
     @Override
@@ -65,6 +65,9 @@ public class Mads implements Datamon {
 
     public int move3(Datamon target){
         int damage = 9;
+        if(target.getName().equals("Fred2")){
+            damage *= 3;
+        }
         System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;

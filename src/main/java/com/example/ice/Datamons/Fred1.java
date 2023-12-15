@@ -14,7 +14,7 @@ public class Fred1 implements Datamon{
     public Fred1() {
         this.name = "Fred1";
         this.hp= 200;
-        this.CreatureType = "Ghost";
+        this.CreatureType = "StudieGruppeF";
     }
 
     @Override
