@@ -12,12 +12,23 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
 
 
 public class BattleSimController implements Initializable {
+
+
+    @FXML
+    private Label ActiveMon1, ActiveMon2;
+
+    @FXML
+    private ProgressBar Hpbar2;
+
+    @FXML
+    private ProgressBar Hpbar1;
 
     @FXML
     private ResourceBundle resources;
@@ -63,6 +74,8 @@ public class BattleSimController implements Initializable {
         ChooseMon1Name.setText(currentPlayer.getDatamons().get(0).getName());
         ChooseMon2Name.setText(currentPlayer.getDatamons().get(1).getName());
         ChooseMon3Name.setText(currentPlayer.getDatamons().get(2).getName());
+
+
 
     }
 
