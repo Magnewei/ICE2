@@ -20,7 +20,7 @@ public class User {
     }
 
     public void setCurrentDatamon(int x) {
-        this.currentDatamon = datamons.get(x);
+        currentDatamon = datamons.get(x);
     }
 
     public void setCurrentDatamon(Datamon datamon) {

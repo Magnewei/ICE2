@@ -81,7 +81,30 @@ public class BattleSimController implements Initializable {
 
         for(int i = 0; i <  amountOfDatamons ; i++){
             buttons.get(i).setVisible(true);
+
         }
+    }
+
+
+    @FXML
+    public void chooseMon1(ActionEvent e){
+        currentPlayer.setCurrentDatamon(0);
+        System.out.println(currentPlayer.getCurrentDatamon());
+        showMonButtons();
+    }
+
+    @FXML
+    public void chooseMon2(ActionEvent e){
+        currentPlayer.setCurrentDatamon(1);
+        System.out.println(currentPlayer.getCurrentDatamon());
+        showMonButtons();
+    }
+
+    @FXML
+    public void chooseMon3(ActionEvent e){
+        currentPlayer.setCurrentDatamon(2);
+       System.out.println(currentPlayer.getCurrentDatamon());
+        showMonButtons();
     }
 
     @FXML

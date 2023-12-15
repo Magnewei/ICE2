@@ -14,7 +14,7 @@
          <left>
             <VBox prefHeight="896.0" prefWidth="219.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="ChooseMon1" mnemonicParsing="false" prefHeight="298.66" prefWidth="219.0" style="-fx-background-color: C0C0C0;">
+                  <Button fx:id="ChooseMon1" mnemonicParsing="false" prefHeight="298.66" prefWidth="219.0" style="-fx-background-color: C0C0C0;" onAction="#chooseMon1">
                      <graphic>
                         <Label fx:id="ChooseMon1Name">
                            <font>
@@ -24,7 +24,7 @@
                      <effect>
                         <InnerShadow choke="0.18" height="28.33" radius="27.9525" width="85.48" />
                      </effect></Button>
-                  <Button fx:id="ChooseMon2" mnemonicParsing="false" prefHeight="298.66" prefWidth="219.0" style="-fx-background-color: C0C0C0;">
+                  <Button fx:id="ChooseMon2" mnemonicParsing="false" prefHeight="298.66" prefWidth="219.0" style="-fx-background-color: C0C0C0;" onAction="#chooseMon2">
                      <graphic>
                         <Label fx:id="ChooseMon2Name">
                            <font>
@@ -34,7 +34,7 @@
                      <effect>
                         <InnerShadow choke="0.18" height="28.33" radius="27.9525" width="85.48" />
                      </effect></Button>
-                  <Button fx:id="ChooseMon3" mnemonicParsing="false" prefHeight="298.66" prefWidth="219.0" style="-fx-background-color: C0C0C0;">
+                  <Button fx:id="ChooseMon3" mnemonicParsing="false" prefHeight="298.66" prefWidth="219.0" style="-fx-background-color: C0C0C0;" onAction="#chooseMon3">
                      <graphic>
                         <Label fx:id="ChooseMon3Name">
                            <font>
