@@ -92,7 +92,6 @@ public class BattleSimController implements Initializable {
 
         for(int i = 0; i <  amountOfDatamons ; i++){
             buttons.get(i).setVisible(true);
-
         }
     }
 
