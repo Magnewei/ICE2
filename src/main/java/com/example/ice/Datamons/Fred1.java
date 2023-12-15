@@ -20,7 +20,7 @@ public class Fred1 implements Datamon{
     @Override
     public double getPercentageHealth() {
         int maxHealth = 200;
-        return (double) (maxHealth - hp) / maxHealth;
+        return (double) hp / maxHealth;
     }
 
     @Override

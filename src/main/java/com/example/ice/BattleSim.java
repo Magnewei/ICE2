@@ -38,7 +38,6 @@ public class BattleSim {
 
 
     // Checks if Datamon is dead.
-
     private void checkIfDead() {
         if (enemyDatamon.getHP() <= 0) {
             enemyPlayer.removeDatamon(enemyDatamon);

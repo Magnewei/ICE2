@@ -23,55 +23,37 @@ import javafx.scene.media.MediaView;
 
 
 public class BattleSimController implements Initializable {
-
-
+    @FXML
+    private MediaView SimBackground;
     @FXML
     private Label ActiveMon1, ActiveMon2;
-
-    @FXML
-    private ProgressBar Hpbar2;
-
-    @FXML
-    private ProgressBar Hpbar1;
-
     @FXML
     private ResourceBundle resources;
-
     @FXML
     private URL location;
-
     @FXML
     private Button SelectMove1, SelectMove2, SelectMove3, SelectMove4;
-
-
     @FXML
     private Button ChooseMon1,ChooseMon2,ChooseMon3;
-
-
     @FXML
     private ImageView VisualMon1, VisualMon2;
-
-
     @FXML
     private Label MoveName1, MoveName2, MoveName3, MoveName4;
-
     @FXML
     private Label ChooseMon1Name, ChooseMon2Name, ChooseMon3Name;
-
+    @FXML
+    private ProgressBar enemyProgressBar, playerProgressBar;
     private User currentPlayer;
     private User enemyPlayer;
     private final BattleSim sim = new BattleSim();
-
-    @FXML
-    private ProgressBar enemyProgressBar, playerProgressBar;
-
-
+    private MediaPlayer mediaPlayer;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+
     public void setup(User currentPlayer, User enemyPlayer) {
         File file = new File("MediaFiles/DataMonB.mp4");
         Media media = new Media(file.toURI().toString());
@@ -83,12 +65,18 @@ public class BattleSimController implements Initializable {
         updateMonLabels();
         currentPlayer.setCurrentDatamon(0);
         enemyPlayer.setCurrentDatamon(0);
+        updateMoveLabels();
+        updateProgress();
+        updateActiveMonLabels();
+        playerProgressBar.setProgress(currentPlayer.getCurrentDatamon().getPercentageHealth());
+        if(enemyPlayer.getDatamons().size()>0){
+            enemyProgressBar.setProgress(enemyPlayer.getDatamons().get(0).getPercentageHealth());
+        }
 
     }
 
-    //
-
-    public void showMonButtons() {
+    // Updates the player's Datamon choice buttons depending on available Datamons.
+    private void showMonButtons() {
         List<Button> buttons = new ArrayList<>();
         int amountOfDatamons = currentPlayer.getDatamons().size();
         updateMoveLabels();
@@ -108,12 +96,12 @@ public class BattleSimController implements Initializable {
         }
     }
 
-    public void updateProgress() {
-        enemyProgressBar = new ProgressBar(enemyPlayer.getCurrentDatamon().getPercentageHealth());
-        playerProgressBar = new ProgressBar(currentPlayer.getCurrentDatamon().getPercentageHealth());
-
+    private void updateProgress() {
+        if(enemyPlayer.getDatamons().size()>0){
+            enemyProgressBar.setProgress(enemyPlayer.getDatamons().get(0).getPercentageHealth());
+        }
+        playerProgressBar.setProgress(currentPlayer.getCurrentDatamon().getPercentageHealth());
     }
-
 
     @FXML
     public void chooseMon1(ActionEvent e){
