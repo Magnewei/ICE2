@@ -20,6 +20,16 @@ import javafx.scene.image.ImageView;
 
 public class BattleSimController implements Initializable {
 
+
+    @FXML
+    private Label ActiveMon1, ActiveMon2;
+
+    @FXML
+    private ProgressBar Hpbar2;
+
+    @FXML
+    private ProgressBar Hpbar1;
+
     @FXML
     private ResourceBundle resources;
 
