@@ -22,7 +22,7 @@ public class Tobias implements Datamon {
     @Override
     public double getPercentageHealth() {
         int maxHealth = 280;
-        return (double) (maxHealth - hp) / maxHealth;
+        return (double) hp / maxHealth;
     }
 
     @Override

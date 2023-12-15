@@ -1,5 +1,6 @@
 package com.example.ice;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -15,7 +16,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-
+import javafx.scene.input.MouseEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 
 
 public class BattleSimController implements Initializable {
@@ -69,17 +73,14 @@ public class BattleSimController implements Initializable {
 
     }
     public void setup(User currentPlayer, User enemyPlayer) {
+        File file = new File("MediaFiles/DataMonB.mp4");
+        Media media = new Media(file.toURI().toString());
+        mediaPlayer = new MediaPlayer(media);
+        SimBackground.setMediaPlayer(mediaPlayer);
         this.currentPlayer = currentPlayer;
         this.enemyPlayer = enemyPlayer;
         sim.setup(currentPlayer, enemyPlayer);
-        MoveName1.setText(sim.getPlayerDatamon().getMove1Name());
-        MoveName2.setText(sim.getPlayerDatamon().getMove2Name());
-        MoveName3.setText(sim.getPlayerDatamon().getMove3Name());
-        MoveName4.setText(sim.getPlayerDatamon().getMove4Name());
-        ChooseMon1Name.setText(currentPlayer.getDatamons().get(0).getName());
-        ChooseMon2Name.setText(currentPlayer.getDatamons().get(1).getName());
-        ChooseMon3Name.setText(currentPlayer.getDatamons().get(2).getName());
-
+        updateMonLabels();
         currentPlayer.setCurrentDatamon(0);
         enemyPlayer.setCurrentDatamon(0);
 
@@ -90,7 +91,7 @@ public class BattleSimController implements Initializable {
     public void showMonButtons() {
         List<Button> buttons = new ArrayList<>();
         int amountOfDatamons = currentPlayer.getDatamons().size();
-
+        updateMoveLabels();
         ChooseMon1.setVisible(false);
         ChooseMon2.setVisible(false);
         ChooseMon3.setVisible(false);
