@@ -1,6 +1,8 @@
 package com.example.ice.Datamons;
 
 import com.example.ice.Datamon;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class Mads implements Datamon {
     private String name;
@@ -100,6 +102,19 @@ public class Mads implements Datamon {
         return move4Name;
     }
 
+
+    @Override
+    public ImageView getSprite() {
+        // Import image file.
+        Image image = new Image("@Fred2G.png");
+
+        // Instantiate ImageView and set image.
+        ImageView imageView = new ImageView();
+        imageView.setImage(image);
+
+        // Return ImageView related to specific Datamon.
+        return imageView;
+    }
 }
 
 

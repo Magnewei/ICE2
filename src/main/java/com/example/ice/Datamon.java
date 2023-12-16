@@ -1,5 +1,7 @@
 package com.example.ice;
 
+import javafx.scene.image.ImageView;
+
 public interface Datamon {
     public String getName();
     public int getHP();
@@ -18,5 +20,6 @@ public interface Datamon {
     public String introduction();
 
     public double getPercentageHealth();
+    public ImageView getSprite();
 
 }
