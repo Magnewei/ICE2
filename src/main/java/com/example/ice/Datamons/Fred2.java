@@ -2,7 +2,9 @@ package com.example.ice.Datamons;
 
 import com.example.ice.Datamon;
 
+
 public class Fred2 implements Datamon {
+
 
     private String name;
     private int hp;
@@ -14,6 +16,8 @@ public class Fred2 implements Datamon {
     private String move2Name = "Drik vin med far";
     private String move3Name = "Drik whiskey med far";
     private String move4Name = "Drunken uppercut";
+
+
 
     public Fred2(){
         this.name = "Fred2";
@@ -110,7 +114,5 @@ public int move4(Datamon target){
     public String getMove4Name() {
         return move4Name;
     }
-
-
 
 }

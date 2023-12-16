@@ -170,9 +170,6 @@ public class BattleSimController implements Initializable {
         ActiveMon2.setText(enemyPlayer.getDatamons().get(0).getName());
     }
 
-    public void PlayerSprite(){
-
-    }
 
 }
 
