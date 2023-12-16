@@ -108,7 +108,7 @@ public class Mads implements Datamon {
 
     @Override
     public Image getSprite() {
-        String path = "file:" + "src/main/resources/com/example/ice/Fred2G.png";
+        String path = "file:" + "src/main/resources/com/example/ice/DJmadsSprite.png";
 
         // Import image file.
         Image image = new Image(path);

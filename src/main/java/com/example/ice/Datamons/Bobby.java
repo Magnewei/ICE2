@@ -107,7 +107,7 @@ public class Bobby implements Datamon {
 
     @Override
     public Image getSprite() {
-        String path = "file:" + "src/main/resources/com/example/ice/Daniello.png";
+        String path = "file:" + "src/main/resources/com/example/ice/BobbySprite.png";
 
         // Import image file.
         Image image = new Image(path);

@@ -100,7 +100,7 @@ public class Fred1 implements Datamon{
     }
     @Override
     public Image getSprite() {
-        String path = "file:" + "src/main/resources/com/example/ice/Fred2Sprite.png";
+        String path = "file:" + "src/main/resources/com/example/ice/Fred1Sprite.png";
 
         // Import image file.
         Image image = new Image(path);
