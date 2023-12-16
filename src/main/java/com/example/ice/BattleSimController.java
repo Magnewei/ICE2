@@ -113,20 +113,19 @@ public class BattleSimController implements Initializable {
             enemyProgressBar.setProgress(enemyPlayer.getDatamons().get(0).getPercentageHealth());
         }
         playerProgressBar.setProgress(currentPlayer.getCurrentDatamon().getPercentageHealth());
-    }
 
-    private void updateSprite() {
+        // Changes images of enemy and player sprites.
         PlayerSprite.setImage(currentPlayer.getCurrentDatamon().getSprite());
         EnemySprite.setImage(enemyPlayer.getCurrentDatamon().getSprite());
-
     }
+
+
 
     @FXML
     public void chooseMon1(ActionEvent e){
         currentPlayer.setCurrentDatamon(0);
         updateMoveLabels();
         showMonButtons();
-        updateSprite();
     }
 
     @FXML
@@ -134,7 +133,6 @@ public class BattleSimController implements Initializable {
         currentPlayer.setCurrentDatamon(1);
         updateMoveLabels();
         showMonButtons();
-        updateSprite();
     }
 
     @FXML
@@ -142,7 +140,6 @@ public class BattleSimController implements Initializable {
         currentPlayer.setCurrentDatamon(2);
         updateMoveLabels();
         showMonButtons();
-        updateSprite();
     }
 
     @FXML
@@ -184,8 +181,6 @@ public class BattleSimController implements Initializable {
             ChooseMon2Name.setText(currentPlayer.getDatamons().get(1).getName());
         }
         ChooseMon1Name.setText(currentPlayer.getDatamons().get(0).getName());
-
-
     }
 
     private void updateActiveMonLabels(){
