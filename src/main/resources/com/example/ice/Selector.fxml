@@ -88,14 +88,14 @@
                            <effect>
                               <ImageInput>
                                  <source>
-                                    <Image url="@Temp.png" />
+                                    <Image url="@Tess.png" />
                                  </source></ImageInput>
                            </effect></Button>
                         <Button fx:id="button12" mnemonicParsing="false" onAction="#Select12Pressed" prefHeight="200.0" prefWidth="480.0" text="12">
                            <effect>
                               <ImageInput>
                                  <source>
-                                    <Image url="@Temp.png" />
+                                    <Image url="@Tobias.png" />
                                  </source></ImageInput>
                            </effect></Button>
                      </children>

@@ -24,7 +24,7 @@ import javafx.scene.media.MediaView;
 
 public class BattleSimController implements Initializable {
     @FXML
-    private MediaView SimBackground;
+    private ImageView StageTemp;
     @FXML
     private Label ActiveMon1, ActiveMon2;
     @FXML
@@ -55,10 +55,7 @@ public class BattleSimController implements Initializable {
     }
 
     public void setup(User currentPlayer, User enemyPlayer) {
-        File file = new File("MediaFiles/DataMonB.mp4");
-        Media media = new Media(file.toURI().toString());
-        mediaPlayer = new MediaPlayer(media);
-        SimBackground.setMediaPlayer(mediaPlayer);
+
         this.currentPlayer = currentPlayer;
         this.enemyPlayer = enemyPlayer;
         sim.setup(currentPlayer, enemyPlayer);
@@ -171,12 +168,6 @@ public class BattleSimController implements Initializable {
         ActiveMon1.setText(currentPlayer.getCurrentDatamon().getName());
         ActiveMon2.setText(enemyPlayer.getDatamons().get(0).getName());
     }
-    @FXML
-    private void PlaySimB(MouseEvent mouseEvent) {
-        mediaPlayer.play();
-        mediaPlayer.setRate(1.1);
-        mediaPlayer.setVolume(0.5);
 
-    }
 }
 
