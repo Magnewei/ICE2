@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
@@ -24,7 +25,7 @@ import javafx.scene.media.MediaView;
 
 public class BattleSimController implements Initializable {
     @FXML
-    private ImageView StageTemp;
+    private ImageView StageTemp, PlayerSprite;
     @FXML
     private Label ActiveMon1, ActiveMon2;
     @FXML
@@ -167,6 +168,10 @@ public class BattleSimController implements Initializable {
     private void updateActiveMonLabels(){
         ActiveMon1.setText(currentPlayer.getCurrentDatamon().getName());
         ActiveMon2.setText(enemyPlayer.getDatamons().get(0).getName());
+    }
+
+    public void PlayerSprite(){
+
     }
 
 }
