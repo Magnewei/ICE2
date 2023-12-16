@@ -4,6 +4,9 @@ import com.example.ice.Datamon;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 public class Fred2 implements Datamon {
 
     private String name;
@@ -113,17 +116,20 @@ public int move4(Datamon target){
         return move4Name;
     }
 
+
     @Override
-    public ImageView getSprite() {
+    public Image getSprite() {
+        String path = "file:" + "src/main/resources/com/example/ice/Fred2G.png";
+
         // Import image file.
-        Image image = new Image("@Fred2G.png");
+        Image image = new Image(path);
 
         // Instantiate ImageView and set image.
         ImageView imageView = new ImageView();
         imageView.setImage(image);
 
         // Return ImageView related to specific Datamon.
-        return imageView;
+        return image;
     }
 
 }

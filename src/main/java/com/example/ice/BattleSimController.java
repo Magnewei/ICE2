@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
 
+import com.example.ice.Datamons.Fred2;
+import com.example.ice.Datamons.Jonas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -25,7 +27,11 @@ import javafx.scene.media.MediaView;
 
 public class BattleSimController implements Initializable {
     @FXML
-    private ImageView StageTemp, PlayerSprite;
+    private ImageView StageTemp = new ImageView();
+    @FXML
+    private ImageView PlayerSprite = new ImageView();
+    @FXML
+    private ImageView  EnemySprite = new ImageView();
     @FXML
     private Label ActiveMon1, ActiveMon2;
     @FXML
@@ -50,6 +56,10 @@ public class BattleSimController implements Initializable {
     private MediaPlayer mediaPlayer;
 
 
+    Fred2 fred2 = new Fred2();
+    Jonas jones = new Jonas();
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -70,6 +80,10 @@ public class BattleSimController implements Initializable {
         if(enemyPlayer.getDatamons().size()>0){
             enemyProgressBar.setProgress(enemyPlayer.getDatamons().get(0).getPercentageHealth());
         }
+
+        PlayerSprite.setImage(currentPlayer.getCurrentDatamon().getSprite());
+        EnemySprite.setImage(enemyPlayer.getCurrentDatamon().getSprite());
+
 
     }
 
@@ -101,11 +115,18 @@ public class BattleSimController implements Initializable {
         playerProgressBar.setProgress(currentPlayer.getCurrentDatamon().getPercentageHealth());
     }
 
+    private void updateSprite() {
+        PlayerSprite.setImage(currentPlayer.getCurrentDatamon().getSprite());
+        EnemySprite.setImage(enemyPlayer.getCurrentDatamon().getSprite());
+
+    }
+
     @FXML
     public void chooseMon1(ActionEvent e){
         currentPlayer.setCurrentDatamon(0);
         updateMoveLabels();
         showMonButtons();
+        updateSprite();
     }
 
     @FXML
@@ -113,6 +134,7 @@ public class BattleSimController implements Initializable {
         currentPlayer.setCurrentDatamon(1);
         updateMoveLabels();
         showMonButtons();
+        updateSprite();
     }
 
     @FXML
@@ -120,6 +142,7 @@ public class BattleSimController implements Initializable {
         currentPlayer.setCurrentDatamon(2);
         updateMoveLabels();
         showMonButtons();
+        updateSprite();
     }
 
     @FXML
@@ -169,10 +192,5 @@ public class BattleSimController implements Initializable {
         ActiveMon1.setText(currentPlayer.getCurrentDatamon().getName());
         ActiveMon2.setText(enemyPlayer.getDatamons().get(0).getName());
     }
-
-    public void PlayerSprite(){
-
-    }
-
 }
 

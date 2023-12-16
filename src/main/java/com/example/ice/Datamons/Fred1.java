@@ -4,6 +4,8 @@ import com.example.ice.Datamon;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.FileNotFoundException;
+
 public class Fred1 implements Datamon{
     private String name;
     private int hp;
@@ -23,19 +25,6 @@ public class Fred1 implements Datamon{
     public double getPercentageHealth() {
         int maxHealth = 200;
         return (double) hp / maxHealth;
-    }
-
-    @Override
-    public ImageView getSprite() {
-        // Import image file.
-        Image image = new Image("@Fred2G.png");
-
-        // Instantiate ImageView and set image.
-        ImageView imageView = new ImageView();
-        imageView.setImage(image);
-
-        // Return ImageView related to specific Datamon.
-        return imageView;
     }
 
     @Override
@@ -108,6 +97,20 @@ public class Fred1 implements Datamon{
     @Override
     public String getMove4Name() {
         return move4Name;
+    }
+    @Override
+    public Image getSprite() {
+        String path = "file:" + "src/main/resources/com/example/ice/Fred2Sprite.png";
+
+        // Import image file.
+        Image image = new Image(path);
+
+        // Instantiate ImageView and set image.
+        ImageView imageView = new ImageView();
+        imageView.setImage(image);
+
+        // Return ImageView related to specific Datamon.
+        return image;
     }
 
     @Override

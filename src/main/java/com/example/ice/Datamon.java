@@ -1,13 +1,12 @@
 package com.example.ice;
 
-import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
 
 public interface Datamon {
     public String getName();
     public int getHP();
     public void setHP(int hp);
     public String getCreatureType();
-
     public int move1(Datamon Target);
     public int move2(Datamon Target);
     public int move3(Datamon Target);
@@ -16,10 +15,8 @@ public interface Datamon {
     public String getMove2Name();
     public String getMove3Name();
     public String getMove4Name();
-
     public String introduction();
-
     public double getPercentageHealth();
-    public ImageView getSprite();
+    public Image getSprite();
 
 }

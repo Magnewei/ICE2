@@ -1,6 +1,10 @@
 package com.example.ice.Datamons;
 
 import com.example.ice.Datamon;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
+import java.io.FileNotFoundException;
 
 public class Bobby implements Datamon {
     private String name;
@@ -10,8 +14,6 @@ public class Bobby implements Datamon {
     private String move2Name = "Ej jeg kommer på torsdag gutter";
     private String move3Name = "Bogstaveligt talt bare dyresex lmao";
     private String move4Name = "Drop ud";
-
-
 
     public Bobby() {
         this.name = "Bobby";
@@ -78,8 +80,6 @@ public class Bobby implements Datamon {
         return damage;
     }
 
-
-
     @Override
     public String getMove1Name() {
         return move1Name;
@@ -103,5 +103,20 @@ public class Bobby implements Datamon {
     @Override
     public String introduction() {
         return "A giant monster apears from the dista..... oh wait its just tiny jonas";
+    }
+
+    @Override
+    public Image getSprite() {
+        String path = "file:" + "src/main/resources/com/example/ice/Daniello.png";
+
+        // Import image file.
+        Image image = new Image(path);
+
+        // Instantiate ImageView and set image.
+        ImageView imageView = new ImageView();
+        imageView.setImage(image);
+
+        // Return ImageView related to specific Datamon.
+        return image;
     }
 }
