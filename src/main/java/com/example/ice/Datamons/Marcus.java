@@ -18,7 +18,7 @@ public class Marcus implements Datamon {
 
     public Marcus() {
         this.name = "Marcus";
-        this.hp = 280;
+        this.hp = 135;
         this.CreatureType = "Speedy";
     }
 

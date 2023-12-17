@@ -15,7 +15,7 @@ public class Nicolai implements Datamon {
 
     public Nicolai() {
         this.name = "Nicolai";
-        this.hp = 280;
+        this.hp = 140;
         this.CreatureType = "Mur";
     }
 

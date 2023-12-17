@@ -14,7 +14,7 @@ public class Mads implements Datamon {
 
     public Mads() {
         this.name = "Mads";
-        this.hp = 280;
+        this.hp = 123;
         this.CreatureType = "Bror";
     }
 

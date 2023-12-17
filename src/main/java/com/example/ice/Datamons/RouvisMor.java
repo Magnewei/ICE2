@@ -14,7 +14,7 @@ public class RouvisMor implements Datamon {
 
     public RouvisMor(){
         this.name = "Henriette";
-        this.hp = 300;
+        this.hp = 149;
         this.CreatureType = "MILF";
     }
 

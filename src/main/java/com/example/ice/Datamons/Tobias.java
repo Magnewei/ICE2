@@ -14,7 +14,7 @@ public class Tobias implements Datamon {
 
     public Tobias() {
         this.name = "Tobias";
-        this.hp = 280;
+        this.hp = 101;
         this.CreatureType = "YapMaster";
     }
 
