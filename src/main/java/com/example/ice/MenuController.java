@@ -32,14 +32,22 @@ public class MenuController implements Initializable {
     private DBConnector io = new DBConnector();
     private User currentUser = new User();
     private User NPC = new User("Hal9000", "");
-    private MediaPlayer mediaPlayer;
-
+    private MediaPlayer mediaPlayer, musicPlayer;
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         File file = new File("MediaFiles/DataMonA.mp4");
         Media media = new Media(file.toURI().toString());
         mediaPlayer = new MediaPlayer(media);
         MenuBackground.setMediaPlayer(mediaPlayer);
+
+        File music = new File("MediaFiled/Media.mp4");
+        mediaPlayer.setVolume(0.1);
+        mediaPlayer.play();;
+
+
+
+        mediaPlayer.pause();
+
     }
 
     /**
@@ -53,8 +61,8 @@ public class MenuController implements Initializable {
             if (currentUser != null) {
                 Platform.runLater(() -> {
                     try {
-
                         ((Node)(event.getSource())).getScene().getWindow().hide();
+
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("Selector.fxml"));
                         Parent root = loader.load();
 
@@ -89,7 +97,7 @@ public class MenuController implements Initializable {
     @FXML
     private void registerPressed(ActionEvent event) throws SQLException {
         if (io.createUser(usernameField.getText(), passwordField.getText()).equals(true)) {
-           showErrorDialog("Success!", "You can now proceed to login!");
+            showErrorDialog("Success!", "You can now proceed to login!");
 
         } else {
             showErrorDialog("Failure!", "User already exists.");

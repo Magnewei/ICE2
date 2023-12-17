@@ -46,157 +46,84 @@ public class SelectorController {
     @FXML
     private void Select1Pressed(ActionEvent event) {
         Datamon datamon = new Fred2();
-        if (datamons.size() < maxCarriedDatamon) {
-            currentUser.addDatamon(datamon);
-            System.out.println(datamon.getName() + " datamon added.");
-
-        } else {
-            System.out.println("You have too many datamon objects.");
-        }
+        selectDatamon(datamon);
     }
 
     @FXML
     private void  Select2Pressed(ActionEvent event) {
         Datamon datamon = new RouvisMor();
-
-        if (datamons.size() < maxCarriedDatamon) {
-            currentUser.addDatamon(datamon);
-            System.out.println(datamon.getName() + " datamon added.");
-
-        } else {
-            System.out.println("You have too many datamon objects.");
-        }
+        selectDatamon(datamon);
     }
 
     @FXML
     private void Select3Pressed(ActionEvent event) {
         Datamon datamon = new Jonas();
-
-        if (datamons.size() < maxCarriedDatamon) {
-            currentUser.addDatamon(datamon);
-            System.out.println(datamon.getName() + " datamon added.");
-
-        } else {
-            System.out.println("You have too many datamon objects.");
-        }
+        selectDatamon(datamon);
     }
 
     @FXML
     private void  Select4Pressed(ActionEvent event) {
         Datamon datamon = new Kevin();
-
-        if (datamons.size() < maxCarriedDatamon) {
-            currentUser.addDatamon(datamon);
-            System.out.println(datamon.getName() + " datamon added.");
-
-        } else {
-            System.out.println("You have too many datamon objects.");
-        }
+        selectDatamon(datamon);
     }
 
     @FXML
     private void Select5Pressed(ActionEvent event) {
         Datamon datamon = new Fred1();
-
-
-        if (datamons.size() < maxCarriedDatamon) {
-            currentUser.addDatamon(datamon);
-            System.out.println(datamon.getName() + " datamon added.");
-
-        } else {
-            System.out.println("You have too many datamon objects.");
-        }
+        selectDatamon(datamon);
     }
+
     @FXML
     private void Select6Pressed(ActionEvent event) {
         Datamon datamon = new Rouvi();
-
-        if (datamons.size() < maxCarriedDatamon) {
-            currentUser.addDatamon(datamon);
-            System.out.println(datamon.getName() + " datamon added.");
-
-        } else {
-            System.out.println("You have too many datamon objects.");
-        }
+        selectDatamon(datamon);
     }
+
     @FXML
     private void Select7Pressed(ActionEvent event) {
         Datamon datamon = new Bobby();
-
-        if (datamons.size() < maxCarriedDatamon) {
-            currentUser.addDatamon(datamon);
-            System.out.println(datamon.getName() + " datamon added.");
-
-        } else {
-            System.out.println("You have too many datamon objects.");
-        }
+        selectDatamon(datamon);
     }
 
     @FXML
     private void Select8Pressed(ActionEvent event) {
         Datamon datamon = new Mads();
-
-        if (datamons.size() < maxCarriedDatamon) {
-            currentUser.addDatamon(datamon);
-            System.out.println(datamon.getName() + " datamon added.");
-
-        } else {
-            System.out.println("You have too many datamon objects.");
-        }
+        selectDatamon(datamon);
     }
 
     @FXML
     private void Select9Pressed(ActionEvent event) {
         Datamon datamon = new Marcus();
-
-        if (datamons.size() < maxCarriedDatamon) {
-            currentUser.addDatamon(datamon);
-            System.out.println(datamon.getName() + " datamon added.");
-
-        } else {
-            System.out.println("You have too many datamon objects.");
-        }
+        selectDatamon(datamon);
     }
 
     @FXML
     private void Select10Pressed(ActionEvent event) {
         Datamon datamon = new Nicolai();
-
-        if (datamons.size() < maxCarriedDatamon) {
-            currentUser.addDatamon(datamon);
-            System.out.println(datamon.getName() + " datamon added.");
-
-        } else {
-            System.out.println("You have too many datamon objects.");
-        }
+        selectDatamon(datamon);
     }
 
     @FXML
     private void Select11Pressed(ActionEvent event) {
         Datamon datamon = new Tess();
-
-        if (datamons.size() < maxCarriedDatamon) {
-            currentUser.addDatamon(datamon);
-            System.out.println(datamon.getName() + " datamon added.");
-
-        } else {
-            System.out.println("You have too many datamon objects.");
-        }
+        selectDatamon(datamon);
     }
 
     @FXML
     private void Select12Pressed(ActionEvent event) {
         Datamon datamon = new Tobias();
+        selectDatamon(datamon);
+    }
 
+    // Helper method for selecting Datamons.
+    private void selectDatamon(Datamon datamon) {
         if (datamons.size() < maxCarriedDatamon) {
             currentUser.addDatamon(datamon);
             System.out.println(datamon.getName() + " datamon added.");
-
         } else {
             System.out.println("You have too many datamon objects.");
         }
     }
-
 
     /**
      * Loads BattleSim

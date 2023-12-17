@@ -4,13 +4,9 @@ import java.util.Random;
 import javafx.scene.control.Alert;
 
 public class BattleSim {
-    private User currentPlayer;
-    private User enemyPlayer;
-    private User player;
-    private User NPC;
+    private User currentPlayer, enemyPlayer, player, NPC;
     private final Random random = new Random();
-    private Datamon enemyDatamon;
-    private Datamon playerDatamon;
+    private Datamon enemyDatamon, playerDatamon;
     private String movePrint = "";
 
     public void setup(User player, User NPC) {
