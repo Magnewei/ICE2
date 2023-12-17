@@ -39,7 +39,7 @@ public class DBConnector{
         try (Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
              Statement statement = connection.createStatement()){
             String line;
-            String insertQuery = "INSERT INTO sql11671048.users (username, password) VALUES (?, ?)";
+            String insertQuery = "INSERT INTO users (username, password) VALUES (?, ?)";
 
             try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
                 // Set parameters based on your CSV file columns and data types

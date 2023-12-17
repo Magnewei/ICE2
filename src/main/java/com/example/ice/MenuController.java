@@ -72,7 +72,7 @@ public class MenuController implements Initializable {
                 });
 
             } else {
-                showErrorDialog("Error2", "An error occurred while loading the next screen.");
+                showErrorDialog("Error!", "Username or password is wrong.");
             }
         } catch (FileNotFoundException e) {
             showErrorDialog("Error3", "An unexpected error occured: " + e.getMessage());
