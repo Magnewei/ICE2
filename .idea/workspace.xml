@@ -4,25 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65d5054d-fe21-451c-b7ff-3cef466f622e" name="Changes" comment="Helper method for selecter buttons.">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSim.java" afterDir="false" />
+    <list default="true" id="65d5054d-fe21-451c-b7ff-3cef466f622e" name="Changes" comment="Minor clean up and additional comments.">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/DBConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/DBConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Bobby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Bobby.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Fred1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Fred1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Fred2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Fred2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Jonas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Jonas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Kevin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Kevin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Mads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Mads.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Marcus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Marcus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Nicolai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Nicolai.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Rouvi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Rouvi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/RouvisMor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/RouvisMor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Tess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Tess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Tobias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Tobias.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/OptionsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/TextUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/MenuController.java" afterDir="false" />
     </list>
     <list id="50d3cce0-8330-4f92-b463-5a7a976c0af9" name="Changes by chris" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,32 +47,32 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.Unnamed.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "openjdk-21",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.23828125",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.23828125&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.Unnamed">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.ice.Main" />
@@ -541,6 +525,7 @@
     <MESSAGE value="fixed fight logic" />
     <MESSAGE value="Cleaned up imports and added damageLabel method. Added access modifiers and minor changes to user and datamon variables and added getDamage()." />
     <MESSAGE value="Helper method for selecter buttons." />
-    <option name="LAST_COMMIT_MESSAGE" value="Helper method for selecter buttons." />
+    <MESSAGE value="Minor clean up and additional comments." />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor clean up and additional comments." />
   </component>
 </project>

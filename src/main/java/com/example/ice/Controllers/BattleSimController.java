@@ -1,8 +1,11 @@
-package com.example.ice;
+package com.example.ice.Controllers;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.ice.BattleSim;
+import com.example.ice.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

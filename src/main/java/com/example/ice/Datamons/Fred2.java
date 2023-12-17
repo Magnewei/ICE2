@@ -42,8 +42,6 @@ public class Fred2 implements Datamon {
         this.hp = hp;
     }
 
-
-
     @Override
     public String getCreatureType() {
         return CreatureType;
@@ -53,7 +51,6 @@ public class Fred2 implements Datamon {
     public String introduction() {
         return  "";
     }
-
 
     /**
      * These 4 methods below , are used to create attacks for the Datamon. Every attack returns damage. Some attacks damage variable is buffed / nerfed depending on which datamon the target is.
@@ -66,7 +63,6 @@ public class Fred2 implements Datamon {
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         beerdrunk = true;
         return damage;
-
     }
 
     public int move2(Datamon target){

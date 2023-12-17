@@ -1,4 +1,7 @@
-package com.example.ice;
+package com.example.ice.Controllers;
+import com.example.ice.Controllers.SelectorController;
+import com.example.ice.DBConnector;
+import com.example.ice.User;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,10 +17,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.io.File;
-import javafx.scene.input.MouseEvent;
+
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
