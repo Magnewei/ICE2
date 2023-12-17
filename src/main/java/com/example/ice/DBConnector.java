@@ -8,15 +8,15 @@ import java.util.*;
 public class DBConnector{
 
     // database URL
-    static final String DB_URL = "jdbc:mysql://sql11.freemysqlhosting.net:3306/sql11669270";
+    static final String DB_URL = "jdbc:mysql://sql11.freemysqlhosting.net:3306/sql11671048";
 
     //  Database credentials
-    static final String USER = "sql11669270";
-    static final String PASS = "HreeKmVJuh";
+    static final String USER = "sql11671048";
+    static final String PASS = "dUkWhlecP6";
 
     private List<User> loadUsers() throws FileNotFoundException {
         List<User> users = new ArrayList<>();
-        String selectQuery = "SELECT username, password FROM sql11669270.users";
+        String selectQuery = "SELECT username, password FROM users";
         try (Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(selectQuery)) {
@@ -39,7 +39,7 @@ public class DBConnector{
         try (Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
              Statement statement = connection.createStatement()){
             String line;
-            String insertQuery = "INSERT INTO sql11669270.users (username, password) VALUES (?, ?)";
+            String insertQuery = "INSERT INTO sql11671048.users (username, password) VALUES (?, ?)";
 
             try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
                 // Set parameters based on your CSV file columns and data types
