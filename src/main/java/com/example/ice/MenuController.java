@@ -14,6 +14,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.io.File;
 import javafx.scene.input.MouseEvent;
@@ -35,6 +36,7 @@ public class MenuController implements Initializable {
     private User currentUser = new User();
     private User NPC = new User("Hal9000", "");
     private MediaPlayer mediaPlayer;
+    private MediaPlayer musicPlayer;
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -42,6 +44,18 @@ public class MenuController implements Initializable {
         Media media = new Media(file.toURI().toString());
         mediaPlayer = new MediaPlayer(media);
         MenuBackground.setMediaPlayer(mediaPlayer);
+        mediaPlayer.play();
+
+        File music = new File("MediaFiles/MenuTrack.mp3");
+        Media musicMedia = new Media(music.toURI().toString());
+        musicPlayer = new MediaPlayer(musicMedia);
+        musicPlayer.setVolume(0.1);
+        musicPlayer.play();
+
+
+
+
+
     }
 
     // Parses database login information. Returns user if username and password match found.
@@ -52,7 +66,7 @@ public class MenuController implements Initializable {
             if (currentUser != null) {
                 Platform.runLater(() -> {
                     try {
-
+                        musicPlayer.pause();
                         ((Node)(event.getSource())).getScene().getWindow().hide();
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("Selector.fxml"));
                         Parent root = loader.load();
@@ -99,12 +113,6 @@ public class MenuController implements Initializable {
         alert.showAndWait();
     }
 
-    @FXML
-    private void PlayMenu(MouseEvent mouseEvent) {
-        mediaPlayer.play();
-        mediaPlayer.setRate(1.1);
-        mediaPlayer.setVolume(0.5);
 
-    }
 }
 

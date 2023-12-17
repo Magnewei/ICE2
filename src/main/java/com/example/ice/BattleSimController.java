@@ -1,5 +1,6 @@
 package com.example.ice;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.event.ActionEvent;
@@ -8,6 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 public class BattleSimController {
     @FXML
@@ -21,7 +24,16 @@ public class BattleSimController {
     private User currentPlayer, enemyPlayer;
     private final BattleSim sim = new BattleSim();
 
+    private MediaPlayer musicPlayer;
+
+
+
     public void setup(User currentPlayer, User enemyPlayer) {
+        File music = new File("MediaFiles/BattleSimTrack.mp3");
+        Media musicMedia = new Media(music.toURI().toString());
+        musicPlayer = new MediaPlayer(musicMedia);
+        musicPlayer.setVolume(0.1);
+        musicPlayer.play();
         this.currentPlayer = currentPlayer;
         this.enemyPlayer = enemyPlayer;
         sim.setup(currentPlayer, enemyPlayer);
