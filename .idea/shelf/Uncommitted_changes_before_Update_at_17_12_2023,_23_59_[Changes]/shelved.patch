@@ -1,0 +1,273 @@
+Index: src/main/java/com/example/ice/MenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice;\nimport javafx.application.Platform;\nimport javafx.event.ActionEvent;\nimport javafx.fxml.FXML;\nimport javafx.fxml.FXMLLoader;\nimport javafx.fxml.Initializable;\nimport javafx.scene.Node;\nimport javafx.scene.Parent;\nimport javafx.scene.Scene;\nimport javafx.scene.control.Alert;\nimport javafx.scene.control.TextField;\nimport javafx.stage.Stage;\nimport java.io.FileNotFoundException;\nimport java.io.IOException;\nimport java.net.URL;\nimport java.sql.SQLException;\nimport java.util.ResourceBundle;\nimport java.io.File;\nimport javafx.scene.input.MouseEvent;\nimport javafx.scene.media.Media;\nimport javafx.scene.media.MediaPlayer;\nimport javafx.scene.media.MediaView;\n\n\npublic class MenuController implements Initializable {\n    @FXML\n    private MediaView MenuBackground;\n    @FXML\n    private TextField usernameField, passwordField;\n    @FXML\n    private Stage userChoices = new Stage();\n    private DBConnector io = new DBConnector();\n    private User currentUser = new User();\n    private User NPC = new User(\"Hal9000\", \"\");\n    private MediaPlayer mediaPlayer;\n\n    @Override\n    public void initialize(URL arg0, ResourceBundle arg1) {\n        File file = new File(\"MediaFiles/DataMonA.mp4\");\n        Media media = new Media(file.toURI().toString());\n        mediaPlayer = new MediaPlayer(media);\n        MenuBackground.setMediaPlayer(mediaPlayer);\n    }\n\n    // Parses database login information. Returns user if username and password match found.\n    @FXML\n    private void loginPressed(ActionEvent event) {\n        try {\n            currentUser = io.login(usernameField.getText(), passwordField.getText());\n            if (currentUser != null) {\n                Platform.runLater(() -> {\n                    try {\n\n                        ((Node)(event.getSource())).getScene().getWindow().hide();\n                        FXMLLoader loader = new FXMLLoader(getClass().getResource(\"Selector.fxml\"));\n                        Parent root = loader.load();\n\n                        SelectorController selectorController = loader.getController();\n                        selectorController.setup(currentUser, NPC);\n\n                        userChoices.setScene(new Scene(root));;\n                        userChoices.show();\n\n                    } catch (IOException e) {\n                        showErrorDialog(\"Error1\", \"An error occurred while loading the next screen.\");\n                        e.printStackTrace();\n                    }\n                });\n\n            } else {\n                showErrorDialog(\"Error!\", \"Username or password is wrong.\");\n            }\n        } catch (FileNotFoundException e) {\n            showErrorDialog(\"Error3\", \"An unexpected error occured: \" + e.getMessage());\n\n        } catch (Exception e) {\n            showErrorDialog(\"Error4\", \"An unexpected error occured: \" + e.getMessage());\n        }\n    }\n\n    // Register user and inserts username and password into database.\n    @FXML\n    private void registerPressed(ActionEvent event) throws SQLException {\n        if (io.createUser(usernameField.getText(), passwordField.getText()).equals(true)) {\n           showErrorDialog(\"Success!\", \"You can now proceed to login!\");\n\n        } else {\n            showErrorDialog(\"Failure!\", \"User already exists.\");\n        }\n    }\n\n    private void showErrorDialog(String title, String content) {\n        Alert alert = new Alert(Alert.AlertType.ERROR);\n        alert.setTitle(title);\n        alert.setHeaderText(null);\n        alert.setContentText(content);\n        alert.showAndWait();\n    }\n\n    @FXML\n    private void PlayMenu(MouseEvent mouseEvent) {\n        mediaPlayer.play();\n        mediaPlayer.setRate(1.1);\n        mediaPlayer.setVolume(0.5);\n\n    }\n}\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/MenuController.java b/src/main/java/com/example/ice/MenuController.java
+--- a/src/main/java/com/example/ice/MenuController.java	(revision 6a5c806cd74390fd24d18fc083625518d540ee79)
++++ b/src/main/java/com/example/ice/MenuController.java	(date 1702853673864)
+@@ -32,14 +32,22 @@
+     private DBConnector io = new DBConnector();
+     private User currentUser = new User();
+     private User NPC = new User("Hal9000", "");
+-    private MediaPlayer mediaPlayer;
+-
++    private MediaPlayer mediaPlayer, musicPlayer;
+     @Override
+     public void initialize(URL arg0, ResourceBundle arg1) {
+         File file = new File("MediaFiles/DataMonA.mp4");
+         Media media = new Media(file.toURI().toString());
+         mediaPlayer = new MediaPlayer(media);
+         MenuBackground.setMediaPlayer(mediaPlayer);
++
++        File music = new File("MediaFiled/Media.mp4");
++        mediaPlayer.setVolume(0.1);
++        mediaPlayer.play();;
++
++
++
++        mediaPlayer.pause();
++
+     }
+ 
+     // Parses database login information. Returns user if username and password match found.
+@@ -50,8 +58,8 @@
+             if (currentUser != null) {
+                 Platform.runLater(() -> {
+                     try {
+-
+                         ((Node)(event.getSource())).getScene().getWindow().hide();
++
+                         FXMLLoader loader = new FXMLLoader(getClass().getResource("Selector.fxml"));
+                         Parent root = loader.load();
+ 
+@@ -82,7 +90,7 @@
+     @FXML
+     private void registerPressed(ActionEvent event) throws SQLException {
+         if (io.createUser(usernameField.getText(), passwordField.getText()).equals(true)) {
+-           showErrorDialog("Success!", "You can now proceed to login!");
++            showErrorDialog("Success!", "You can now proceed to login!");
+ 
+         } else {
+             showErrorDialog("Failure!", "User already exists.");
+Index: src/main/java/com/example/ice/BattleSim.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice;\n\nimport java.util.Random;\nimport javafx.scene.control.Alert;\n\npublic class BattleSim {\n    private User currentPlayer;\n    private User enemyPlayer;\n    private User player;\n    private User NPC;\n    private final Random random = new Random();\n    private Datamon enemyDatamon;\n    private Datamon playerDatamon;\n    private String movePrint = \"\";\n\n    public void setup(User player, User NPC) {\n        this.player = player;\n        this.NPC = NPC;\n\n        currentPlayer = player;\n        enemyPlayer = NPC;\n\n        enemyDatamon = enemyPlayer.getDatamons().get(0);\n        playerDatamon = currentPlayer.getDatamons().get(0);\n}\n\n\n\n    // Checks if Datamon is dead.\n    private void checkIfDead() {\n        if (enemyDatamon.getHP() <= 0) {\n            enemyPlayer.removeDatamon(enemyDatamon);\n            if (!enemyPlayer.getDatamons().isEmpty()) {\n                enemyDatamon = enemyPlayer.getDatamons().get(0);\n            }\n        }\n\n        if (playerDatamon.getHP() <= 0) {\n            player.removeDatamon(playerDatamon);\n            if (!player.getDatamons().isEmpty()) {\n                playerDatamon = player.getDatamons().get(0);\n            }\n        }\n    }\n\n    // Checks winner by parsing NPC and Player Datamon ArrayLists.\n    private Boolean checkIfWin() {\n        if (player.getDatamons().isEmpty()) {\n            showErrorDialog(\"Winner found \", NPC.getUsername() + \" won!\");\n            return true;\n\n        } else if (NPC.getDatamons().isEmpty()) {\n            showErrorDialog(\"Winner found \", player.getUsername() + \" won!\");\n            return true;\n        } else {\n            return false;\n        }\n    }\n\n\n\n    // Method is called on buttons. Fight() checks winner and prompts if winner is found, checks dead datamon\n    // Prompting if winner is found through method calls.\n    // Finally calls Moves from button if player turn or from random number on AI turn.\n\n    public void Fight(int pick) {\n        if (enemyPlayer != null && currentPlayer != null) {\n\n            // Used for debugging player objects and datamon arraylists.\n            //System.out.println(\"Player datamons\" + player.getDatamons().toString() );\n            //System.out.println(\"NPC datamons\" + NPC.getDatamons());\n            System.out.println(\"CurrentPlayer is: \" + currentPlayer.getUsername());\n            System.out.println(\"CurrentPlayer is: \" + enemyPlayer.getUsername());\n\n\n            if (!checkIfWin()) {\n                checkIfDead();\n\n                // Execute player move\n                if (currentPlayer.equals(player)) {\n                    executeMove(pick, playerDatamon, enemyDatamon);\n                    checkIfDead();\n                    if (checkIfWin()) return;\n\n                    switchUser(); // Switch to NPC after player move\n\n                    // Execute NPC move\n                    int npcMove = random.nextInt(1, 5); // Assuming 4 moves, inclusive\n                    executeMove(npcMove, enemyDatamon, playerDatamon);\n                    checkIfDead();\n                    checkIfWin();\n\n                    switchUser(); // Switch back to player\n                }\n            }\n        }\n    }\n\n\n\n\n    private void switchUser() {\n        User temp = currentPlayer;\n        currentPlayer = enemyPlayer;\n        enemyPlayer = temp;\n    }\n\n    private void showErrorDialog(String title, String content) {\n        Alert alert = new Alert(Alert.AlertType.ERROR);\n        alert.setTitle(title);\n        alert.setHeaderText(null);\n        alert.setContentText(content);\n        alert.showAndWait();\n    }\n\n\n\n    private void executeMove(int moveNumber, Datamon attacker, Datamon defender) {\n        switch (moveNumber) {\n            case 1:\n                move1(attacker, defender);\n                movePrint = attacker + \"used move\" + attacker.getMove1Name() + \" on \" + defender + \".\" + \"Attack did \" + attacker.getDamage() + \"!\";\n                break;\n            case 2:\n                move2(attacker, defender);\n                movePrint = attacker + \"used move\" + attacker.getMove2Name() + \" on \" + defender + \".\" + \"Attack did \" + attacker.getDamage() + \"!\";\n                break;\n            case 3:\n                move3(attacker, defender);\n                movePrint = attacker + \"used move\" + attacker.getMove3Name() + \" on \" + defender + \".\" + \"Attack did \" + attacker.getDamage() + \"!\";\n                break;\n            case 4:\n                move4(attacker, defender);\n                movePrint = attacker + \"used move\" + attacker.getMove4Name() + \" on \" + defender + \".\" + \"Attack did \" + attacker.getDamage() + \"!\";\n                break;\n            default:\n                System.out.println(\"Invalid move.\");\n        }\n    }\n\n    public Datamon getPlayerDatamon(){\n        return playerDatamon;\n    }\n\n\n    // Current datamon's move 1 to 4.\n    public void move1(Datamon attacker, Datamon defender) {\n        defender.setHP(defender.getHP() - attacker.move1(defender));\n\n    }\n    public void move2(Datamon attacker, Datamon defender) {\n        defender.setHP(defender.getHP() - attacker.move2(defender));\n\n    }\n\n    public void move3(Datamon attacker, Datamon defender) {\n        defender.setHP(defender.getHP() - attacker.move3(defender));\n    }\n    public void move4(Datamon attacker, Datamon defender) {\n        defender.setHP(defender.getHP() - attacker.move4(defender));\n    }\n\n    public String getMovePrint() {\n        return movePrint;\n    }\n\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/BattleSim.java b/src/main/java/com/example/ice/BattleSim.java
+--- a/src/main/java/com/example/ice/BattleSim.java	(revision 6a5c806cd74390fd24d18fc083625518d540ee79)
++++ b/src/main/java/com/example/ice/BattleSim.java	(date 1702851525347)
+@@ -4,13 +4,9 @@
+ import javafx.scene.control.Alert;
+ 
+ public class BattleSim {
+-    private User currentPlayer;
+-    private User enemyPlayer;
+-    private User player;
+-    private User NPC;
++    private User currentPlayer, enemyPlayer, player, NPC;
+     private final Random random = new Random();
+-    private Datamon enemyDatamon;
+-    private Datamon playerDatamon;
++    private Datamon enemyDatamon, playerDatamon;
+     private String movePrint = "";
+ 
+     public void setup(User player, User NPC) {
+Index: src/main/java/com/example/ice/SelectorController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice;\n\nimport java.io.IOException;\nimport java.net.URL;\nimport java.security.spec.RSAOtherPrimeInfo;\nimport java.util.ArrayList;\nimport java.util.List;\nimport java.util.Random;\nimport java.util.ResourceBundle;\nimport com.example.ice.Datamons.*;\nimport javafx.application.Platform;\nimport javafx.event.ActionEvent;\nimport javafx.fxml.FXML;\nimport javafx.fxml.FXMLLoader;\nimport javafx.fxml.Initializable;\nimport javafx.scene.Node;\nimport javafx.scene.Parent;\nimport javafx.scene.Scene;\nimport javafx.scene.control.Button;\nimport javafx.scene.image.ImageView;\nimport javafx.scene.input.MouseEvent;\nimport javafx.stage.Stage;\n\npublic class SelectorController {\n    private final int maxCarriedDatamon = 3;\n    @FXML\n    private ImageView Mon1, Mon2, Mon3, Mon4, Mon5, Mon6;\n    @FXML\n    private Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12;\n    private User currentUser, NPC;\n    private List<Datamon> datamons, NPCdatamons;\n\n\n    public void setup(User currentUser, User NPC) {\n        this.currentUser = currentUser;\n        this.NPC = NPC;\n        this.datamons = (currentUser != null) ? currentUser.getDatamons() : new ArrayList<>();\n        this.NPCdatamons = (NPC != null) ? NPC.getDatamons() : new ArrayList<>();\n    }\n    @FXML\n    private void Select1Pressed(ActionEvent event) {\n        Datamon datamon = new Fred2();\n        if (datamons.size() < maxCarriedDatamon) {\n            currentUser.addDatamon(datamon);\n            System.out.println(datamon.getName() + \" datamon added.\");\n\n        } else {\n            System.out.println(\"You have too many datamon objects.\");\n        }\n    }\n\n    @FXML\n    private void  Select2Pressed(ActionEvent event) {\n        Datamon datamon = new RouvisMor();\n\n        if (datamons.size() < maxCarriedDatamon) {\n            currentUser.addDatamon(datamon);\n            System.out.println(datamon.getName() + \" datamon added.\");\n\n        } else {\n            System.out.println(\"You have too many datamon objects.\");\n        }\n    }\n\n    @FXML\n    private void Select3Pressed(ActionEvent event) {\n        Datamon datamon = new Jonas();\n\n        if (datamons.size() < maxCarriedDatamon) {\n            currentUser.addDatamon(datamon);\n            System.out.println(datamon.getName() + \" datamon added.\");\n\n        } else {\n            System.out.println(\"You have too many datamon objects.\");\n        }\n    }\n\n    @FXML\n    private void  Select4Pressed(ActionEvent event) {\n        Datamon datamon = new Kevin();\n\n        if (datamons.size() < maxCarriedDatamon) {\n            currentUser.addDatamon(datamon);\n            System.out.println(datamon.getName() + \" datamon added.\");\n\n        } else {\n            System.out.println(\"You have too many datamon objects.\");\n        }\n    }\n\n    @FXML\n    private void Select5Pressed(ActionEvent event) {\n        Datamon datamon = new Fred1();\n\n\n        if (datamons.size() < maxCarriedDatamon) {\n            currentUser.addDatamon(datamon);\n            System.out.println(datamon.getName() + \" datamon added.\");\n\n        } else {\n            System.out.println(\"You have too many datamon objects.\");\n        }\n    }\n    @FXML\n    private void Select6Pressed(ActionEvent event) {\n        Datamon datamon = new Rouvi();\n\n        if (datamons.size() < maxCarriedDatamon) {\n            currentUser.addDatamon(datamon);\n            System.out.println(datamon.getName() + \" datamon added.\");\n\n        } else {\n            System.out.println(\"You have too many datamon objects.\");\n        }\n    }\n    @FXML\n    private void Select7Pressed(ActionEvent event) {\n        Datamon datamon = new Bobby();\n\n        if (datamons.size() < maxCarriedDatamon) {\n            currentUser.addDatamon(datamon);\n            System.out.println(datamon.getName() + \" datamon added.\");\n\n        } else {\n            System.out.println(\"You have too many datamon objects.\");\n        }\n    }\n\n    @FXML\n    private void Select8Pressed(ActionEvent event) {\n        Datamon datamon = new Mads();\n\n        if (datamons.size() < maxCarriedDatamon) {\n            currentUser.addDatamon(datamon);\n            System.out.println(datamon.getName() + \" datamon added.\");\n\n        } else {\n            System.out.println(\"You have too many datamon objects.\");\n        }\n    }\n\n    @FXML\n    private void Select9Pressed(ActionEvent event) {\n        Datamon datamon = new Marcus();\n\n        if (datamons.size() < maxCarriedDatamon) {\n            currentUser.addDatamon(datamon);\n            System.out.println(datamon.getName() + \" datamon added.\");\n\n        } else {\n            System.out.println(\"You have too many datamon objects.\");\n        }\n    }\n\n    @FXML\n    private void Select10Pressed(ActionEvent event) {\n        Datamon datamon = new Nicolai();\n\n        if (datamons.size() < maxCarriedDatamon) {\n            currentUser.addDatamon(datamon);\n            System.out.println(datamon.getName() + \" datamon added.\");\n\n        } else {\n            System.out.println(\"You have too many datamon objects.\");\n        }\n    }\n\n    @FXML\n    private void Select11Pressed(ActionEvent event) {\n        Datamon datamon = new Tess();\n\n        if (datamons.size() < maxCarriedDatamon) {\n            currentUser.addDatamon(datamon);\n            System.out.println(datamon.getName() + \" datamon added.\");\n\n        } else {\n            System.out.println(\"You have too many datamon objects.\");\n        }\n    }\n\n    @FXML\n    private void Select12Pressed(ActionEvent event) {\n        Datamon datamon = new Tobias();\n\n        if (datamons.size() < maxCarriedDatamon) {\n            currentUser.addDatamon(datamon);\n            System.out.println(datamon.getName() + \" datamon added.\");\n\n        } else {\n            System.out.println(\"You have too many datamon objects.\");\n        }\n    }\n\n\n    // Loads BattleSim\n    @FXML\n    private void BattleButtonPressed(ActionEvent event) {\n\n        if (datamons.size() > 0) {\n                 sendNPCList();\n                 Stage userChoices = new Stage();\n                try {\n                    ((Node) (event.getSource())).getScene().getWindow().hide();\n                    FXMLLoader loader = new FXMLLoader(getClass().getResource(\"BattleSim.fxml\"));\n                    Parent root = loader.load();\n\n                    BattleSimController battleSimController = loader.getController();\n\n                    battleSimController.setup(currentUser, NPC);\n\n                    userChoices.setScene(new Scene(root));\n                    userChoices.show();\n\n                } catch (IOException e) {\n                    e.printStackTrace();\n                }\n\n        } else {\n            System.out.println(\"No datamons selected.\");\n        }\n    }\n\n     // Adds random Datamons to NPC Datamon list.\n    private void sendNPCList(){\n        Random rand = new Random();\n\n        for(int i = 0 ; i <= (datamons.size() -1); i++ ) {\n            List<Datamon> pickDataMon = new ArrayList<>();\n            pickDataMon.add(new Bobby());\n            pickDataMon.add(new Fred1());\n            pickDataMon.add(new Fred2());\n            pickDataMon.add(new Jonas());\n            pickDataMon.add(new Kevin());\n            pickDataMon.add(new Mads());\n            pickDataMon.add(new Marcus());\n            pickDataMon.add(new Nicolai());\n            pickDataMon.add(new Rouvi());\n            pickDataMon.add(new RouvisMor());\n            pickDataMon.add(new Tess());\n            pickDataMon.add(new Tobias());\n\n            int randomNum = rand.nextInt(pickDataMon.size());\n            NPC.addDatamon(pickDataMon.get(randomNum));\n       }\n    }\n\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/SelectorController.java b/src/main/java/com/example/ice/SelectorController.java
+--- a/src/main/java/com/example/ice/SelectorController.java	(revision 6a5c806cd74390fd24d18fc083625518d540ee79)
++++ b/src/main/java/com/example/ice/SelectorController.java	(date 1702852047859)
+@@ -30,7 +30,6 @@
+     private User currentUser, NPC;
+     private List<Datamon> datamons, NPCdatamons;
+ 
+-
+     public void setup(User currentUser, User NPC) {
+         this.currentUser = currentUser;
+         this.NPC = NPC;
+@@ -40,148 +39,74 @@
+     @FXML
+     private void Select1Pressed(ActionEvent event) {
+         Datamon datamon = new Fred2();
+-        if (datamons.size() < maxCarriedDatamon) {
+-            currentUser.addDatamon(datamon);
+-            System.out.println(datamon.getName() + " datamon added.");
+-
+-        } else {
+-            System.out.println("You have too many datamon objects.");
+-        }
++        selectDatamon(datamon);
+     }
+ 
+     @FXML
+     private void  Select2Pressed(ActionEvent event) {
+         Datamon datamon = new RouvisMor();
+-
+-        if (datamons.size() < maxCarriedDatamon) {
+-            currentUser.addDatamon(datamon);
+-            System.out.println(datamon.getName() + " datamon added.");
+-
+-        } else {
+-            System.out.println("You have too many datamon objects.");
+-        }
++        selectDatamon(datamon);
+     }
+ 
+     @FXML
+     private void Select3Pressed(ActionEvent event) {
+         Datamon datamon = new Jonas();
+-
+-        if (datamons.size() < maxCarriedDatamon) {
+-            currentUser.addDatamon(datamon);
+-            System.out.println(datamon.getName() + " datamon added.");
+-
+-        } else {
+-            System.out.println("You have too many datamon objects.");
+-        }
++        selectDatamon(datamon);
+     }
+ 
+     @FXML
+     private void  Select4Pressed(ActionEvent event) {
+         Datamon datamon = new Kevin();
+-
+-        if (datamons.size() < maxCarriedDatamon) {
+-            currentUser.addDatamon(datamon);
+-            System.out.println(datamon.getName() + " datamon added.");
+-
+-        } else {
+-            System.out.println("You have too many datamon objects.");
+-        }
++        selectDatamon(datamon);
+     }
+ 
+     @FXML
+     private void Select5Pressed(ActionEvent event) {
+         Datamon datamon = new Fred1();
+-
+-
+-        if (datamons.size() < maxCarriedDatamon) {
+-            currentUser.addDatamon(datamon);
+-            System.out.println(datamon.getName() + " datamon added.");
+-
+-        } else {
+-            System.out.println("You have too many datamon objects.");
+-        }
++        selectDatamon(datamon);
+     }
+     @FXML
+     private void Select6Pressed(ActionEvent event) {
+         Datamon datamon = new Rouvi();
+-
+-        if (datamons.size() < maxCarriedDatamon) {
+-            currentUser.addDatamon(datamon);
+-            System.out.println(datamon.getName() + " datamon added.");
+-
+-        } else {
+-            System.out.println("You have too many datamon objects.");
+-        }
++        selectDatamon(datamon);
+     }
+     @FXML
+     private void Select7Pressed(ActionEvent event) {
+         Datamon datamon = new Bobby();
+-
+-        if (datamons.size() < maxCarriedDatamon) {
+-            currentUser.addDatamon(datamon);
+-            System.out.println(datamon.getName() + " datamon added.");
+-
+-        } else {
+-            System.out.println("You have too many datamon objects.");
+-        }
++        selectDatamon(datamon);
+     }
+ 
+     @FXML
+     private void Select8Pressed(ActionEvent event) {
+         Datamon datamon = new Mads();
+-
+-        if (datamons.size() < maxCarriedDatamon) {
+-            currentUser.addDatamon(datamon);
+-            System.out.println(datamon.getName() + " datamon added.");
+-
+-        } else {
+-            System.out.println("You have too many datamon objects.");
+-        }
++        selectDatamon(datamon);
+     }
+ 
+     @FXML
+     private void Select9Pressed(ActionEvent event) {
+         Datamon datamon = new Marcus();
+-
+-        if (datamons.size() < maxCarriedDatamon) {
+-            currentUser.addDatamon(datamon);
+-            System.out.println(datamon.getName() + " datamon added.");
+-
+-        } else {
+-            System.out.println("You have too many datamon objects.");
+-        }
++        selectDatamon(datamon);
+     }
+ 
+     @FXML
+     private void Select10Pressed(ActionEvent event) {
+         Datamon datamon = new Nicolai();
+-
+-        if (datamons.size() < maxCarriedDatamon) {
+-            currentUser.addDatamon(datamon);
+-            System.out.println(datamon.getName() + " datamon added.");
+-
+-        } else {
+-            System.out.println("You have too many datamon objects.");
+-        }
++        selectDatamon(datamon);
+     }
+ 
+     @FXML
+     private void Select11Pressed(ActionEvent event) {
+         Datamon datamon = new Tess();
+-
+-        if (datamons.size() < maxCarriedDatamon) {
+-            currentUser.addDatamon(datamon);
+-            System.out.println(datamon.getName() + " datamon added.");
+-
+-        } else {
+-            System.out.println("You have too many datamon objects.");
+-        }
++        selectDatamon(datamon);
+     }
+ 
+     @FXML
+     private void Select12Pressed(ActionEvent event) {
+         Datamon datamon = new Tobias();
++        selectDatamon(datamon);
++    }
+ 
++    private void selectDatamon(Datamon datamon) {
+         if (datamons.size() < maxCarriedDatamon) {
+             currentUser.addDatamon(datamon);
+             System.out.println(datamon.getName() + " datamon added.");
+@@ -191,11 +116,9 @@
+         }
+     }
+ 
+-
+     // Loads BattleSim
+     @FXML
+     private void BattleButtonPressed(ActionEvent event) {
+-
+         if (datamons.size() > 0) {
+                  sendNPCList();
+                  Stage userChoices = new Stage();

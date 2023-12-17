@@ -1,0 +1,336 @@
+Index: src/main/java/com/example/ice/Datamons/Jonas.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice.Datamons;\n\nimport com.example.ice.Datamon;\n\npublic class Jonas implements Datamon {\n    private String name;\n    private double hp;\n    private String CreatureType;\n    private String move1Name = \"Bulk up\";\n    private String move2Name = \"Skift navn på discord\";\n    private String move3Name = \"Sig vi skal game senere, men glem at dukke op\";\n    private String move4Name = \"HULK SMASH\";\n\n\n    public Jonas(){\n        this.name = \"Jonas\";\n        this.hp = 50;\n        this.CreatureType = \"ElsketLøve\";\n    }\n\n    @Override\n    public String getName() {\n        return name;\n    }\n\n    @Override\n    public int getHP() {\n        return (int)hp;\n    }\n\n    @Override\n    public void setHP(int hp) {\n        this.hp = hp;\n    }\n\n\n    @Override\n    public String getCreatureType() {\n        return CreatureType;\n    }\n\n    @Override\n    public String introduction() {\n        return \"A giant monster apears from the dista..... oh wait its just tiny Jonas\";\n    }\n\n\n    public int move1(Datamon target){\n        setHP((int)hp + 50);\n        int damage = 0;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    @Override\n    public int move2(Datamon target) {\n        int damage = 2;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    @Override\n    public int move3(Datamon target) {\n        int damage = 10;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    @Override\n    public int move4(Datamon target) {\n        double damage = hp/10;\n        if(hp > 200){\n            damage *= 5;\n        }\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return (int)damage;\n    }\n\n    @Override\n    public String getMove1Name() {\n        return move1Name;\n    }\n\n    @Override\n    public String getMove2Name() {\n        return move2Name;\n    }\n\n    @Override\n    public String getMove3Name() {\n        return move3Name;\n    }\n\n    @Override\n    public String getMove4Name() {\n        return move4Name;\n    }\n\n\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/Datamons/Jonas.java b/src/main/java/com/example/ice/Datamons/Jonas.java
+--- a/src/main/java/com/example/ice/Datamons/Jonas.java	
++++ b/src/main/java/com/example/ice/Datamons/Jonas.java	
+@@ -2,6 +2,8 @@
+ 
+ import com.example.ice.Datamon;
+ 
++import java.util.Objects;
++
+ public class Jonas implements Datamon {
+     private String name;
+     private double hp;
+@@ -80,6 +82,16 @@
+         return (int)damage;
+     }
+ 
++    @Override
++    public boolean equals(Object o) {
++        return this == o;
++    }
++
++    @Override
++    public int hashCode() {
++        return System.identityHashCode(this);
++    }
++
+     @Override
+     public String getMove1Name() {
+         return move1Name;
+Index: src/main/java/com/example/ice/Datamons/Kevin.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice.Datamons;\n\nimport com.example.ice.Datamon;\n\npublic class Kevin implements Datamon {\n    private String name;\n    private int hp;\n    private String CreatureType;\n    private String move1Name = \"Kast Jordbær\";\n    private String move2Name = \"Absorber sjæl\";\n    private String move3Name = \"Rødhåret blodrus\";\n    private String move4Name = \"Blændende maveskind\";\n\n    public Kevin(){\n        this.name = \"Kevin\";\n        this.hp = 100;\n        this.CreatureType = \"Ginger\";\n    }\n\n    @Override\n    public String getName() {\n        return name;\n    }\n\n    @Override\n    public int getHP() {\n        return hp;\n    }\n\n    @Override\n    public void setHP(int hp) {\n        this.hp = hp;\n    }\n\n    @Override\n    public String getCreatureType() {\n        return CreatureType;\n    }\n\n\n    @Override\n    public String introduction() {\n        return \"A soulless Datamon appears, and it has.... red hair?\";\n    }\n\n    public int move1(Datamon target){\n        int damage = 7;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    public int move2(Datamon target){\n        int damage = 11;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    public int move3(Datamon target){\n        int damage = 8;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    public int move4(Datamon target){\n        int damage = 5;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    @Override\n    public String getMove1Name() {\n        return move1Name;\n    }\n\n    @Override\n    public String getMove2Name() {\n        return move2Name;\n    }\n\n    @Override\n    public String getMove3Name() {\n        return move3Name;\n    }\n\n    @Override\n    public String getMove4Name() {\n        return move4Name;\n    }\n\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/Datamons/Kevin.java b/src/main/java/com/example/ice/Datamons/Kevin.java
+--- a/src/main/java/com/example/ice/Datamons/Kevin.java	
++++ b/src/main/java/com/example/ice/Datamons/Kevin.java	
+@@ -2,6 +2,8 @@
+ 
+ import com.example.ice.Datamon;
+ 
++import java.util.Objects;
++
+ public class Kevin implements Datamon {
+     private String name;
+     private int hp;
+@@ -71,6 +73,17 @@
+         return damage;
+     }
+ 
++    @Override
++    public boolean equals(Object o) {
++        return this == o;
++    }
++
++    @Override
++    public int hashCode() {
++        return System.identityHashCode(this);
++    }
++
++
+     @Override
+     public String getMove1Name() {
+         return move1Name;
+Index: src/main/java/com/example/ice/Datamons/Nicolai.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice.Datamons;\n\nimport com.example.ice.Datamon;\n\npublic class Nicolai implements Datamon {\n    private String name;\n    private int hp;\n    private String CreatureType;\n\n    private String move1Name = \"Build that wall\";\n    private String move2Name = \"Murstens kast\";\n    private String move3Name = \"CS Flick\";\n    private String move4Name = \"Clutch kongen\";\n\n\n    public Nicolai() {\n        this.name = \"Nicolai\";\n        this.hp = 280;\n        this.CreatureType = \"Muren\";\n    }\n\n    @Override\n    public String getName() {\n        return name;\n    }\n\n    @Override\n    public int getHP() {\n        return hp;\n    }\n\n    @Override\n    public void setHP(int hp) {\n        this.hp = hp;\n    }\n\n    @Override\n    public String getCreatureType() {\n        return CreatureType;\n    }\n\n    @Override\n    public String introduction() {\n        return \"A giant monster apears from the dista..... oh wait its just tiny jonas\";\n    }\n\n\n    public int move1(Datamon target){\n        String name =\"Build that wall\";\n        int damage = 7;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    public int move2(Datamon target){\n        String name =\"Murstens kast\";\n        int damage = 8;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    public int move3(Datamon target){\n        String name =\"Cs flæk\";\n        int damage = 6;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    public int move4(Datamon target){\n        String name =\"?\";\n        int damage = 2;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    @Override\n    public String getMove1Name() {\n        return move1Name;\n    }\n\n    @Override\n    public String getMove2Name() {\n        return move2Name;\n    }\n\n    @Override\n    public String getMove3Name() {\n        return move3Name;\n    }\n\n    @Override\n    public String getMove4Name() {\n        return move4Name;\n    }\n\n}\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/Datamons/Nicolai.java b/src/main/java/com/example/ice/Datamons/Nicolai.java
+--- a/src/main/java/com/example/ice/Datamons/Nicolai.java	
++++ b/src/main/java/com/example/ice/Datamons/Nicolai.java	
+@@ -2,6 +2,8 @@
+ 
+ import com.example.ice.Datamon;
+ 
++import java.util.Objects;
++
+ public class Nicolai implements Datamon {
+     private String name;
+     private int hp;
+@@ -77,6 +79,16 @@
+         return damage;
+     }
+ 
++    @Override
++    public boolean equals(Object o) {
++        return this == o;
++    }
++
++    @Override
++    public int hashCode() {
++        return System.identityHashCode(this);
++    }
++
+     @Override
+     public String getMove1Name() {
+         return move1Name;
+Index: src/main/java/com/example/ice/Datamons/Mads.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice.Datamons;\n\nimport com.example.ice.Datamon;\n\npublic class Mads implements Datamon {\n    private String name;\n    private int hp;\n    private String CreatureType;\n    private String move1Name = \"Spil en banger\";\n    private String move2Name = \"Råb bror\";\n    private String move3Name = \"Skal vi i byen?\";\n    private String move4Name = \"Næver forever\";\n\n\n    public Mads() {\n        this.name = \"Mads\";\n        this.hp = 280;\n        this.CreatureType = \"Bror\";\n    }\n\n    @Override\n    public String getName() {\n        return name;\n    }\n\n    @Override\n    public int getHP() {\n        return hp;\n    }\n\n    @Override\n    public void setHP(int hp) {\n        this.hp = hp;\n    }\n\n    @Override\n    public String getCreatureType() {\n        return CreatureType;\n    }\n\n    @Override\n    public String introduction() {\n        return \"You hear the bangers long before he turns the corner... It's Mads!\";\n    }\n\n    public int move1(Datamon target){\n        int damage = 11;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    public int move2(Datamon target){\n        int damage = 8;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    public int move3(Datamon target){\n        int damage = 9;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    public int move4(Datamon target){\n        int damage = 1;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    @Override\n    public String getMove1Name() {\n        return move1Name;\n    }\n\n    @Override\n    public String getMove2Name() {\n        return move2Name;\n    }\n\n    @Override\n    public String getMove3Name() {\n        return move3Name;\n    }\n\n    @Override\n    public String getMove4Name() {\n        return move4Name;\n    }\n\n}\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/Datamons/Mads.java b/src/main/java/com/example/ice/Datamons/Mads.java
+--- a/src/main/java/com/example/ice/Datamons/Mads.java	
++++ b/src/main/java/com/example/ice/Datamons/Mads.java	
+@@ -2,6 +2,8 @@
+ 
+ import com.example.ice.Datamon;
+ 
++import java.util.Objects;
++
+ public class Mads implements Datamon {
+     private String name;
+     private int hp;
+@@ -71,6 +73,16 @@
+         return damage;
+     }
+ 
++
++    @Override
++    public boolean equals(Object o) {
++        return this == o;
++    }
++
++    @Override
++    public int hashCode() {
++        return System.identityHashCode(this);
++    }
+     @Override
+     public String getMove1Name() {
+         return move1Name;
+Index: src/main/java/com/example/ice/Datamons/Rouvi.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice.Datamons;\n\nimport com.example.ice.Datamon;\n\npublic class Rouvi implements Datamon {\n    private String name;\n    private int hp;\n    private String CreatureType;\n\n    private String move1Name = \"Wingman\";\n    private String move2Name = \"Teemo\";\n    private String move3Name = \"Yappe\";\n    private String move4Name = \"CS goat\";\n\n\n    public Rouvi() {\n        this.name = \"Rouvi\";\n        this.hp = 280;\n        this.CreatureType = \"?\";\n    }\n\n    @Override\n    public String getName() {\n        return name;\n    }\n\n    @Override\n    public int getHP() {\n        return hp;\n    }\n\n    @Override\n    public void setHP(int hp) {\n        this.hp = hp;\n    }\n\n\n    @Override\n    public String getCreatureType() {\n        return CreatureType;\n    }\n\n\n    @Override\n    public String introduction() {\n        return \"A giant monster apears from the dista..... oh wait its just tiny jonas\";\n    }\n\n\n    public int move1(Datamon target){\n        String name =\"Wingman\";\n        int damage = 6;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    public int move2(Datamon target){\n        String name =\"Teemo\";\n        int damage = 5;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    public int move3(Datamon target){\n        String name =\"Yappe\";\n        int damage = 9;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    public int move4(Datamon target){\n        String name =\"Cs goat\";\n        int damage = 7;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    @Override\n    public String getMove1Name() {\n        return move1Name;\n    }\n\n    @Override\n    public String getMove2Name() {\n        return move2Name;\n    }\n\n    @Override\n    public String getMove3Name() {\n        return move3Name;\n    }\n\n    @Override\n    public String getMove4Name() {\n        return move4Name;\n    }\n\n}\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/Datamons/Rouvi.java b/src/main/java/com/example/ice/Datamons/Rouvi.java
+--- a/src/main/java/com/example/ice/Datamons/Rouvi.java	
++++ b/src/main/java/com/example/ice/Datamons/Rouvi.java	
+@@ -2,6 +2,8 @@
+ 
+ import com.example.ice.Datamon;
+ 
++import java.util.Objects;
++
+ public class Rouvi implements Datamon {
+     private String name;
+     private int hp;
+@@ -79,6 +81,16 @@
+         return damage;
+     }
+ 
++    @Override
++    public boolean equals(Object o) {
++        return this == o;
++    }
++
++    @Override
++    public int hashCode() {
++        return System.identityHashCode(this);
++    }
++
+     @Override
+     public String getMove1Name() {
+         return move1Name;
+Index: src/main/java/com/example/ice/Datamons/Marcus.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice.Datamons;\n\nimport com.example.ice.Datamon;\n\npublic class Marcus implements Datamon {\n    private String name;\n    private int hp;\n    private String CreatureType;\n    boolean opgave1Done = false;\n    boolean opgave2Done = false;\n    boolean opgave3Done = false;\n    private String move1Name = \"Lav opgave 1\";\n    private String move2Name = \"Lav opgave 2\";\n    private String move3Name = \"Lav opgave 3\";\n    private String move4Name = \"Opgaver done, I'm gone\";\n\n\n    public Marcus() {\n        this.name = \"Marcus\";\n        this.hp = 280;\n        this.CreatureType = \"Speedy\";\n    }\n\n    @Override\n    public String getName() {\n        return name;\n    }\n\n    @Override\n    public int getHP() {\n        return hp;\n    }\n\n    @Override\n    public void setHP(int hp) {\n        this.hp = hp;\n    }\n\n\n    @Override\n    public String getCreatureType() {\n        return CreatureType;\n    }\n\n    @Override\n    public String introduction() {\n        return \"A giant monster apears from the dista..... oh wait its just tiny jonas\";\n    }\n\n\n    public int move1(Datamon target){\n        int damage = 2;\n        opgave1Done = true;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    public int move2(Datamon target){\n        String name =\"Lav opgave 2\";\n        int damage = 2;\n        opgave2Done = true;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    public int move3(Datamon target){\n        String name =\"Lav opgave 3\";\n        int damage = 2;\n        opgave3Done = true;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    public int move4(Datamon target){\n        String name =\"Opgaver done? I'm gone\";\n        int damage = 2;\n        if(opgave1Done && opgave2Done && opgave3Done){\n            damage = 1000;\n            setHP(0);\n            opgave1Done = false;\n            opgave2Done = false;\n            opgave3Done = false;\n        }\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    @Override\n    public String getMove1Name() {\n        return move1Name;\n    }\n\n    @Override\n    public String getMove2Name() {\n        return move2Name;\n    }\n\n    @Override\n    public String getMove3Name() {\n        return move3Name;\n    }\n\n    @Override\n    public String getMove4Name() {\n        return move4Name;\n    }\n\n}\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/Datamons/Marcus.java b/src/main/java/com/example/ice/Datamons/Marcus.java
+--- a/src/main/java/com/example/ice/Datamons/Marcus.java	
++++ b/src/main/java/com/example/ice/Datamons/Marcus.java	
+@@ -2,6 +2,8 @@
+ 
+ import com.example.ice.Datamon;
+ 
++import java.util.Objects;
++
+ public class Marcus implements Datamon {
+     private String name;
+     private int hp;
+@@ -89,6 +91,16 @@
+         return damage;
+     }
+ 
++    @Override
++    public boolean equals(Object o) {
++        return this == o;
++    }
++
++    @Override
++    public int hashCode() {
++        return System.identityHashCode(this);
++    }
++
+     @Override
+     public String getMove1Name() {
+         return move1Name;
+Index: src/main/java/com/example/ice/Datamons/Fred2.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice.Datamons;\n\nimport com.example.ice.Datamon;\n\npublic class Fred2 implements Datamon {\n\n    private String name;\n    private int hp;\n    private String CreatureType;\n    boolean beerdrunk = false;\n    boolean winedrunk = false;\n    boolean whiskeydrunk = false;\n    private String move1Name = \"Drik øl med far\";\n    private String move2Name = \"Drik vin med far\";\n    private String move3Name = \"Drik whiskey med far\";\n    private String move4Name = \"Drunken uppercut\";\n\n    public Fred2(){\n        this.name = \"Fred2\";\n        this.hp = 250;\n        this.CreatureType = \"Drunk\";\n    }\n\n    @Override\n    public String getName() {\n        return name;\n    }\n\n    @Override\n    public int getHP() {\n        return hp;\n    }\n\n    @Override\n    public void setHP(int hp) {\n        this.hp = hp;\n    }\n\n\n\n    @Override\n    public String getCreatureType() {\n        return CreatureType;\n    }\n\n    @Override\n    public String introduction() {\n        return  \"\";\n    }\n\n\n\n    public int move1(Datamon target){\n        int damage = 50;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        beerdrunk = true;\n        return damage;\n\n    }\n\n    public int move2(Datamon target){\n        int damage = 2;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        winedrunk = true;\n        return damage;\n    }\n\n    public int move3(Datamon target){\n        int damage = 11;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        whiskeydrunk = true;\n        return damage;\n    }\n\npublic int move4(Datamon target){\n        int damage = 3;\n        if(whiskeydrunk && winedrunk && beerdrunk){\n            damage = 20;\n        }\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n}\n\n    @Override\n    public String getMove1Name() {\n        return move1Name;\n    }\n\n    @Override\n    public String getMove2Name() {\n        return move2Name;\n    }\n\n    @Override\n    public String getMove3Name() {\n        return move3Name;\n    }\n\n    @Override\n    public String getMove4Name() {\n        return move4Name;\n    }\n\n\n\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/Datamons/Fred2.java b/src/main/java/com/example/ice/Datamons/Fred2.java
+--- a/src/main/java/com/example/ice/Datamons/Fred2.java	
++++ b/src/main/java/com/example/ice/Datamons/Fred2.java	
+@@ -2,6 +2,8 @@
+ 
+ import com.example.ice.Datamon;
+ 
++import java.util.Objects;
++
+ public class Fred2 implements Datamon {
+ 
+     private String name;
+@@ -17,7 +19,7 @@
+ 
+     public Fred2(){
+         this.name = "Fred2";
+-        this.hp = 250;
++        this.hp = 20;
+         this.CreatureType = "Drunk";
+     }
+ 
+@@ -85,6 +87,17 @@
+         return damage;
+ }
+ 
++    @Override
++    public boolean equals(Object o) {
++        return this == o;
++    }
++
++    @Override
++    public int hashCode() {
++        return System.identityHashCode(this);
++    }
++
++
+     @Override
+     public String getMove1Name() {
+         return move1Name;
+Index: src/main/java/com/example/ice/Datamons/Bobby.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice.Datamons;\n\nimport com.example.ice.Datamon;\n\npublic class Bobby implements Datamon {\n    private String name;\n    private int hp;\n    private String CreatureType;\n    private String move1Name = \"Jeg kommer i morgen gutter\";\n    private String move2Name = \"Ej jeg kommer på torsdag gutter\";\n    private String move3Name = \"Bogstaveligt talt bare dyresex lmao\";\n    private String move4Name = \"Drop ud\";\n\n\n\n    public Bobby() {\n        this.name = \"Bobby\";\n        this.hp = 310;\n        this.CreatureType = \"Ghost\";\n    }\n\n    @Override\n    public String getName() {\n        return name;\n    }\n\n    @Override\n    public int getHP() {\n        return hp;\n    }\n\n    @Override\n    public void setHP(int hp) {\n        this.hp = hp;\n    }\n\n    @Override\n    public String getCreatureType() {\n        return CreatureType;\n    }\n\n    @Override\n    public int move1(Datamon target){\n        int damage = 2;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    @Override\n    public int move2(Datamon target){\n        int damage = 4;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    @Override\n    public int move3(Datamon target){\n        int damage = 10;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    @Override\n    public int move4(Datamon target){\n        setHP(0);\n        int damage = 0;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    @Override\n    public String getMove1Name() {\n        return move1Name;\n    }\n\n    @Override\n    public String getMove2Name() {\n        return move2Name;\n    }\n\n    @Override\n    public String getMove3Name() {\n        return move3Name;\n    }\n\n    @Override\n    public String getMove4Name() {\n        return move4Name;\n    }\n\n    @Override\n    public String introduction() {\n        return \"A giant monster apears from the dista..... oh wait its just tiny jonas\";\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/Datamons/Bobby.java b/src/main/java/com/example/ice/Datamons/Bobby.java
+--- a/src/main/java/com/example/ice/Datamons/Bobby.java	
++++ b/src/main/java/com/example/ice/Datamons/Bobby.java	
+@@ -2,6 +2,8 @@
+ 
+ import com.example.ice.Datamon;
+ 
++import java.util.Objects;
++
+ public class Bobby implements Datamon {
+     private String name;
+     private int hp;
+@@ -72,6 +74,17 @@
+         return damage;
+     }
+ 
++    @Override
++    public boolean equals(Object o) {
++        return this == o;
++    }
++
++    @Override
++    public int hashCode() {
++        return System.identityHashCode(this);
++    }
++
++
+     @Override
+     public String getMove1Name() {
+         return move1Name;
+Index: src/main/java/com/example/ice/Datamons/Fred1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice.Datamons;\n\nimport com.example.ice.Datamon;\n\npublic class Fred1 implements Datamon{\n    private String name;\n    private int hp;\n    private String CreatureType;\n    private String move1Name = \"Forvir med kompleks matematik\";\n    private String move2Name = \"Spil Gwen\";\n    private String move3Name = \"Spil literally alt andet end Gwen\";\n    private String move4Name = \"Jeg gider ikke være Tauren!\";\n\n    public Fred1() {\n        this.name = \"Fred1\";\n        this.hp= 200;\n        this.CreatureType = \"Ghost\";\n    }\n\n    @Override\n    public String getName() {\n        return name;\n    }\n\n    @Override\n    public int getHP() {\n        return hp;\n    }\n\n    @Override\n    public void setHP(int hp) {\n        this.hp = hp;\n    }\n\n    @Override\n    public String getCreatureType() {\n        return CreatureType;\n    }\n\n    @Override\n    public int move1(Datamon target) {\n        int damage = 30;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    @Override\n    public int move2(Datamon target) {\n        int damage = 5;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    @Override\n    public int move3(Datamon target) {\n        int damage = -20;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    @Override\n    public int move4(Datamon target) {\n        int damage = 0;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n    }\n\n    @Override\n    public String getMove1Name() {\n        return move1Name;\n    }\n\n    @Override\n    public String getMove2Name() {\n        return move2Name;\n    }\n\n    @Override\n    public String getMove3Name() {\n        return move3Name;\n    }\n\n    @Override\n    public String getMove4Name() {\n        return move4Name;\n    }\n\n    @Override\n    public String introduction() {\n        return null;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/Datamons/Fred1.java b/src/main/java/com/example/ice/Datamons/Fred1.java
+--- a/src/main/java/com/example/ice/Datamons/Fred1.java	
++++ b/src/main/java/com/example/ice/Datamons/Fred1.java	
+@@ -2,6 +2,8 @@
+ 
+ import com.example.ice.Datamon;
+ 
++import java.util.Objects;
++
+ public class Fred1 implements Datamon{
+     private String name;
+     private int hp;
+@@ -69,6 +71,16 @@
+         return damage;
+     }
+ 
++    @Override
++    public boolean equals(Object o) {
++        return this == o;
++    }
++
++    @Override
++    public int hashCode() {
++        return System.identityHashCode(this);
++    }
++
+     @Override
+     public String getMove1Name() {
+         return move1Name;

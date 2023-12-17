@@ -1,0 +1,48 @@
+Index: src/main/java/com/example/ice/BattleSim.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice;\n\nimport java.io.IOException;\nimport java.util.ArrayList;\nimport java.util.List;\nimport java.util.Random;\nimport java.util.concurrent.atomic.AtomicBoolean;\n\nimport javafx.event.ActionEvent;\nimport javafx.application.Platform;\nimport javafx.fxml.FXML;\nimport javafx.fxml.FXMLLoader;\nimport javafx.scene.Parent;\nimport javafx.scene.Scene;\nimport javafx.scene.control.Alert;\nimport javafx.stage.Stage;\n\npublic class BattleSim {\n    private User currentPlayer;\n    private User enemyPlayer;\n    private User player;\n    private User NPC;\n    private final Random random = new Random();\n    private Datamon enemyDatamon;\n    private Datamon playerDatamon;\n\n    public void setup(User player, User NPC) {\n        this.player = player;\n        this.NPC = NPC;\n\n        currentPlayer = player;\n        enemyPlayer = NPC;\n\n        enemyDatamon = enemyPlayer.getDatamons().get(0);\n        playerDatamon = currentPlayer.getDatamons().get(0);\n}\n\n\n\n    // Checks if Datamon is dead.\n\n    private void checkIfDead() {\n        if (enemyDatamon.getHP() <= 0) {\n            enemyPlayer.removeDatamon(enemyDatamon);\n            if (!enemyPlayer.getDatamons().isEmpty()) {\n                enemyDatamon = enemyPlayer.getDatamons().get(0);\n            }\n        }\n\n        if (playerDatamon.getHP() <= 0) {\n            player.removeDatamon(playerDatamon);\n            if (!player.getDatamons().isEmpty()) {\n                playerDatamon = player.getDatamons().get(0);\n            }\n        }\n    }\n\n    // Checks winner by parsing NPC and Player Datamon ArrayLists.\n    private Boolean checkIfWin() {\n        if (player.getDatamons().isEmpty()) {\n            showErrorDialog(\"Winner found \", NPC.getUsername() + \" won!\");\n            return true;\n\n        } else if (NPC.getDatamons().isEmpty()) {\n            showErrorDialog(\"Winner found \", player.getUsername() + \" won!\");\n            return true;\n        } else {\n            return false;\n        }\n    }\n\n\n\n    // Method is called on buttons. Fight() checks winner and prompts if winner is found, checks dead datamon\n    // Prompting if winner is found through method calls.\n    // Finally calls Moves from button if player turn or from random number on AI turn.\n\n    public void Fight(int pick) {\n        if (enemyPlayer != null && currentPlayer != null) {\n\n            // Used for debugging player objects and datamon arraylists.\n            System.out.println(\"Player datamons\" + player.getDatamons().toString() );\n            System.out.println(\"NPC datamons\" + NPC.getDatamons());\n            System.out.println(\"CurrentPlayer is: \" + currentPlayer.getUsername());\n            System.out.println(\"CurrentPlayer is: \" + enemyPlayer.getUsername());\n\n\n            if (!checkIfWin()) {\n                checkIfDead();\n\n                // Execute player move\n                if (currentPlayer.equals(player)) {\n                    executeMove(pick, playerDatamon, enemyDatamon);\n                    checkIfDead();\n                    if (checkIfWin()) return;\n\n                    switchUser(); // Switch to NPC after player move\n\n                    // Execute NPC move\n                    int npcMove = random.nextInt(1, 5); // Assuming 4 moves, inclusive\n                    executeMove(npcMove, enemyDatamon, playerDatamon);\n                    checkIfDead();\n                    checkIfWin();\n\n                    switchUser(); // Switch back to player\n                }\n            }\n        }\n    }\n\n\n\n\n    private void switchUser() {\n        User temp = currentPlayer;\n        currentPlayer = enemyPlayer;\n        enemyPlayer = temp;\n    }\n\n    private void showErrorDialog(String title, String content) {\n        Alert alert = new Alert(Alert.AlertType.ERROR);\n        alert.setTitle(title);\n        alert.setHeaderText(null);\n        alert.setContentText(content);\n        alert.showAndWait();\n    }\n\n\n\n    private void executeMove(int moveNumber, Datamon attacker, Datamon defender) {\n        switch (moveNumber) {\n            case 1:\n                move1(attacker, defender);\n                break;\n            case 2:\n                move2(attacker, defender);\n                break;\n            case 3:\n                move3(attacker, defender);\n                break;\n            case 4:\n                move4(attacker, defender);\n                break;\n            default:\n                System.out.println(\"Invalid move.\");\n        }\n    }\n\n\n    // Current datamon's move 1 to 4.\n    public void move1(Datamon attacker, Datamon defender) {\n        defender.setHP(defender.getHP() - attacker.move1(defender));\n\n    }\n    public void move2(Datamon attacker, Datamon defender) {\n        defender.setHP(defender.getHP() - attacker.move2(defender));\n\n    }\n\n    public void move3(Datamon attacker, Datamon defender) {\n        defender.setHP(defender.getHP() - attacker.move3(defender));\n    }\n    public void move4(Datamon attacker, Datamon defender) {\n        defender.setHP(defender.getHP() - attacker.move4(defender));\n    }\n\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/BattleSim.java b/src/main/java/com/example/ice/BattleSim.java
+--- a/src/main/java/com/example/ice/BattleSim.java	(revision bf36bdca068161b2946c0f431a5c59eb63270c28)
++++ b/src/main/java/com/example/ice/BattleSim.java	(date 1702578000044)
+@@ -38,7 +38,6 @@
+ 
+ 
+     // Checks if Datamon is dead.
+-
+     private void checkIfDead() {
+         if (enemyDatamon.getHP() <= 0) {
+             enemyPlayer.removeDatamon(enemyDatamon);
+@@ -70,11 +69,9 @@
+     }
+ 
+ 
+-
+     // Method is called on buttons. Fight() checks winner and prompts if winner is found, checks dead datamon
+     // Prompting if winner is found through method calls.
+     // Finally calls Moves from button if player turn or from random number on AI turn.
+-
+     public void Fight(int pick) {
+         if (enemyPlayer != null && currentPlayer != null) {
+ 
+@@ -108,9 +105,6 @@
+         }
+     }
+ 
+-
+-
+-
+     private void switchUser() {
+         User temp = currentPlayer;
+         currentPlayer = enemyPlayer;
+@@ -126,7 +120,6 @@
+     }
+ 
+ 
+-
+     private void executeMove(int moveNumber, Datamon attacker, Datamon defender) {
+         switch (moveNumber) {
+             case 1:
