@@ -5,13 +5,12 @@ import java.sql.*;
 import java.util.*;
 public class DBConnector{
 
-    // database URL
-    static final String DB_URL = "jdbc:mysql://sql11.freemysqlhosting.net:3306/sql11671048";
+    // Database URL & database credentials.
+   private static final String DB_URL = "jdbc:mysql://sql11.freemysqlhosting.net:3306/sql11671048";
+   private static final String USER = "sql11671048";
+   private static final String PASS = "dUkWhlecP6";
 
-    //  Database credentials
-    static final String USER = "sql11671048";
-    static final String PASS = "dUkWhlecP6";
-
+   // Loads users into an ArrayList for the login() method.
     private List<User> loadUsers() throws FileNotFoundException {
         List<User> users = new ArrayList<>();
         String selectQuery = "SELECT username, password FROM users";

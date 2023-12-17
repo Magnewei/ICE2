@@ -26,9 +26,7 @@ public class MenuController implements Initializable {
     @FXML
     private MediaView MenuBackground;
     @FXML
-    private TextField usernameField;
-    @FXML
-    private TextField passwordField;
+    private TextField usernameField, passwordField;
     @FXML
     private Stage userChoices = new Stage();
     private DBConnector io = new DBConnector();
