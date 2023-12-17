@@ -46,6 +46,11 @@ public class Bobby implements Datamon {
         return CreatureType;
     }
 
+    /**
+     * These 4 methods below , are used to create attacks for the Datamon. Every attack returns damage. Some attacks damage variable is buffed / nerfed depending on which datamon the target is.
+     * @param target
+     * @return damage
+     */
     @Override
     public int move1(Datamon target){
         damage = 2;
@@ -104,6 +109,11 @@ public class Bobby implements Datamon {
         return "A giant monster apears from the dista..... oh wait its just tiny jonas";
     }
 
+
+    /**
+     * This following method returns the Sprite of the Datamon. Our Sprite is the image of the users/enemy's Datamon, That's being displayed when launching our BattlSim
+     * @return image
+     */
     @Override
     public Image getSprite() {
         String path = "file:" + "src/main/resources/com/example/ice/BobbySprite.png";
