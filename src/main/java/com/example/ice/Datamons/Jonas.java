@@ -17,7 +17,7 @@ public class Jonas implements Datamon {
 
     public Jonas(){
         this.name = "Elsket Løve";
-        this.hp = 20;
+        this.hp = 100;
         this.CreatureType = "StudieGruppeF";
     }
 

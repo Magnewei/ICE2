@@ -17,7 +17,7 @@ public class Tess implements Datamon {
 
     public Tess(){
         this.name = "Tess";
-        this.hp = 300;
+        this.hp = 150;
         this.CreatureType = "Boss";
     }
 
@@ -62,7 +62,7 @@ public class Tess implements Datamon {
      * @return damage
      */
     public int move1(Datamon target){
-        damage = 7;
+        damage = 75;
         if (target.getName().equals("Elsket Løve")){
             damage *= 100;
         }
@@ -72,7 +72,7 @@ public class Tess implements Datamon {
     }
 
     public int move2(Datamon target){
-        damage = 12;
+        damage = 75;
         if(studerendePræsenterer){
             damage *= 2;
             studerendePræsenterer = false;
@@ -83,14 +83,14 @@ public class Tess implements Datamon {
     }
 
     public int move3(Datamon target){
-        damage = 2;
+        damage = 75;
         System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move4(Datamon target){
-        damage = 3;
+        damage = 75;
         studerendePræsenterer = true;
         System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));

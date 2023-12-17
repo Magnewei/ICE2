@@ -16,7 +16,7 @@ public class Kevin implements Datamon {
 
     public Kevin(){
         this.name = "Kevin";
-        this.hp = 100;
+        this.hp = 134;
         this.CreatureType = "Ginger";
     }
 

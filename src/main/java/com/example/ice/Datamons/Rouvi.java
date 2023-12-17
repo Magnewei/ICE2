@@ -17,7 +17,7 @@ public class Rouvi implements Datamon {
 
     public Rouvi() {
         this.name = "Rouvi";
-        this.hp = 280;
+        this.hp = 142;
         this.CreatureType = "CS:GOAT";
     }
 
