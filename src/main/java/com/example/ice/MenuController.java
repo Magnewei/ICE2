@@ -27,16 +27,13 @@ public class MenuController implements Initializable {
     @FXML
     private MediaView MenuBackground;
     @FXML
-    private TextField usernameField;
-    @FXML
-    private TextField passwordField;
+    private TextField usernameField, passwordField;
     @FXML
     private Stage userChoices = new Stage();
     private DBConnector io = new DBConnector();
     private User currentUser = new User();
     private User NPC = new User("Hal9000", "");
-    private MediaPlayer mediaPlayer;
-    private MediaPlayer musicPlayer;
+    private MediaPlayer mediaPlayer, musicPlayer;
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -51,11 +48,6 @@ public class MenuController implements Initializable {
         musicPlayer = new MediaPlayer(musicMedia);
         musicPlayer.setVolume(0.1);
         musicPlayer.play();
-
-
-
-
-
     }
 
     // Parses database login information. Returns user if username and password match found.

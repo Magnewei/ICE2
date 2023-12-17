@@ -26,8 +26,6 @@ public class BattleSimController {
 
     private MediaPlayer musicPlayer;
 
-
-
     public void setup(User currentPlayer, User enemyPlayer) {
         File music = new File("MediaFiles/BattleSimTrack.mp3");
         Media musicMedia = new Media(music.toURI().toString());
