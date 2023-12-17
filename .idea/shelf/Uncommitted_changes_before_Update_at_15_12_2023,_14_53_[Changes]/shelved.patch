@@ -1,0 +1,82 @@
+Index: src/main/java/com/example/ice/BattleSim.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice;\n\nimport java.io.IOException;\nimport java.util.ArrayList;\nimport java.util.List;\nimport java.util.Random;\nimport java.util.concurrent.atomic.AtomicBoolean;\n\nimport javafx.event.ActionEvent;\nimport javafx.application.Platform;\nimport javafx.fxml.FXML;\nimport javafx.fxml.FXMLLoader;\nimport javafx.scene.Parent;\nimport javafx.scene.Scene;\nimport javafx.scene.control.Alert;\nimport javafx.stage.Stage;\n\npublic class BattleSim {\n    private User currentPlayer;\n    private User enemyPlayer;\n    private User player;\n    private User NPC;\n    private final Random random = new Random();\n    private Datamon enemyDatamon;\n    private Datamon playerDatamon;\n\n    public void setup(User player, User NPC) {\n        this.player = player;\n        this.NPC = NPC;\n\n        currentPlayer = player;\n        enemyPlayer = NPC;\n\n        enemyDatamon = enemyPlayer.getDatamons().get(0);\n        playerDatamon = currentPlayer.getDatamons().get(0);\n}\n\n\n\n    // Checks if Datamon is dead.\n\n    private void checkIfDead() {\n        if (enemyDatamon.getHP() <= 0) {\n            enemyPlayer.removeDatamon(enemyDatamon);\n            if (!enemyPlayer.getDatamons().isEmpty()) {\n                enemyDatamon = enemyPlayer.getDatamons().get(0);\n            }\n        }\n\n        if (playerDatamon.getHP() <= 0) {\n            player.removeDatamon(playerDatamon);\n            if (!player.getDatamons().isEmpty()) {\n                playerDatamon = player.getDatamons().get(0);\n            }\n        }\n    }\n\n    // Checks winner by parsing NPC and Player Datamon ArrayLists.\n    private Boolean checkIfWin() {\n        if (player.getDatamons().isEmpty()) {\n            showErrorDialog(\"Winner found \", NPC.getUsername() + \" won!\");\n            return true;\n\n        } else if (NPC.getDatamons().isEmpty()) {\n            showErrorDialog(\"Winner found \", player.getUsername() + \" won!\");\n            return true;\n        } else {\n            return false;\n        }\n    }\n\n\n\n    // Method is called on buttons. Fight() checks winner and prompts if winner is found, checks dead datamon\n    // Prompting if winner is found through method calls.\n    // Finally calls Moves from button if player turn or from random number on AI turn.\n\n    public void Fight(int pick) {\n        if (enemyPlayer != null && currentPlayer != null) {\n\n            // Used for debugging player objects and datamon arraylists.\n            System.out.println(\"Player datamons\" + player.getDatamons().toString() );\n            System.out.println(\"NPC datamons\" + NPC.getDatamons());\n            System.out.println(\"CurrentPlayer is: \" + currentPlayer.getUsername());\n            System.out.println(\"CurrentPlayer is: \" + enemyPlayer.getUsername());\n\n\n            if (!checkIfWin()) {\n                checkIfDead();\n\n                // Execute player move\n                if (currentPlayer.equals(player)) {\n                    executeMove(pick, playerDatamon, enemyDatamon);\n                    checkIfDead();\n                    if (checkIfWin()) return;\n\n                    switchUser(); // Switch to NPC after player move\n\n                    // Execute NPC move\n                    int npcMove = random.nextInt(1, 5); // Assuming 4 moves, inclusive\n                    executeMove(npcMove, enemyDatamon, playerDatamon);\n                    checkIfDead();\n                    checkIfWin();\n\n                    switchUser(); // Switch back to player\n                }\n            }\n        }\n    }\n\n\n\n\n    private void switchUser() {\n        User temp = currentPlayer;\n        currentPlayer = enemyPlayer;\n        enemyPlayer = temp;\n    }\n\n    private void showErrorDialog(String title, String content) {\n        Alert alert = new Alert(Alert.AlertType.ERROR);\n        alert.setTitle(title);\n        alert.setHeaderText(null);\n        alert.setContentText(content);\n        alert.showAndWait();\n    }\n\n\n\n    private void executeMove(int moveNumber, Datamon attacker, Datamon defender) {\n        switch (moveNumber) {\n            case 1:\n                move1(attacker, defender);\n                break;\n            case 2:\n                move2(attacker, defender);\n                break;\n            case 3:\n                move3(attacker, defender);\n                break;\n            case 4:\n                move4(attacker, defender);\n                break;\n            default:\n                System.out.println(\"Invalid move.\");\n        }\n    }\n\n    public Datamon getPlayerDatamon(){\n        return playerDatamon;\n    }\n\n\n\n    // Current datamon's move 1 to 4.\n    public void move1(Datamon attacker, Datamon defender) {\n        defender.setHP(defender.getHP() - attacker.move1(defender));\n\n    }\n    public void move2(Datamon attacker, Datamon defender) {\n        defender.setHP(defender.getHP() - attacker.move2(defender));\n\n    }\n\n    public void move3(Datamon attacker, Datamon defender) {\n        defender.setHP(defender.getHP() - attacker.move3(defender));\n    }\n    public void move4(Datamon attacker, Datamon defender) {\n        defender.setHP(defender.getHP() - attacker.move4(defender));\n    }\n\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/BattleSim.java b/src/main/java/com/example/ice/BattleSim.java
+--- a/src/main/java/com/example/ice/BattleSim.java	(revision 092160df76331b1e5dd5f236a323a42d26bc6018)
++++ b/src/main/java/com/example/ice/BattleSim.java	(date 1702608856889)
+@@ -74,7 +74,6 @@
+     // Method is called on buttons. Fight() checks winner and prompts if winner is found, checks dead datamon
+     // Prompting if winner is found through method calls.
+     // Finally calls Moves from button if player turn or from random number on AI turn.
+-
+     public void Fight(int pick) {
+         if (enemyPlayer != null && currentPlayer != null) {
+ 
+@@ -92,6 +91,7 @@
+                 if (currentPlayer.equals(player)) {
+                     executeMove(pick, playerDatamon, enemyDatamon);
+                     checkIfDead();
++
+                     if (checkIfWin()) return;
+ 
+                     switchUser(); // Switch to NPC after player move
+Index: src/main/java/com/example/ice/BattleSimController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice;\n\nimport java.io.IOException;\nimport java.net.URL;\nimport java.util.ArrayList;\nimport java.util.List;\nimport java.util.Random;\nimport java.util.ResourceBundle;\n\nimport javafx.event.ActionEvent;\nimport javafx.fxml.FXML;\nimport javafx.fxml.Initializable;\nimport javafx.scene.control.Button;\nimport javafx.scene.control.Label;\nimport javafx.scene.control.TextField;\nimport javafx.scene.image.ImageView;\n\n\n\npublic class BattleSimController implements Initializable {\n\n    @FXML\n    private ResourceBundle resources;\n\n    @FXML\n    private URL location;\n\n    @FXML\n    private Button SelectMove1, SelectMove2, SelectMove3, SelectMove4;\n\n\n    @FXML\n    private Button ChooseMon1,ChooseMon2,ChooseMon3;\n\n\n    @FXML\n    private ImageView VisualMon1, VisualMon2;\n\n\n    @FXML\n    private Label MoveName1, MoveName2, MoveName3, MoveName4;\n\n    @FXML\n    private Label ChooseMon1Name, ChooseMon2Name, ChooseMon3Name;\n\n    private User currentPlayer;\n    private User enemyPlayer;\n    private final BattleSim sim = new BattleSim();\n\n\n    @Override\n    public void initialize(URL url, ResourceBundle resourceBundle) {\n\n    }\n    public void setup(User currentPlayer, User enemyPlayer) {\n        this.currentPlayer = currentPlayer;\n        this.enemyPlayer = enemyPlayer;\n        sim.setup(currentPlayer, enemyPlayer);\n        MoveName1.setText(sim.getPlayerDatamon().getMove1Name());\n        MoveName2.setText(sim.getPlayerDatamon().getMove2Name());\n        MoveName3.setText(sim.getPlayerDatamon().getMove3Name());\n        MoveName4.setText(sim.getPlayerDatamon().getMove4Name());\n        ChooseMon1Name.setText(currentPlayer.getDatamons().get(0).getName());\n        ChooseMon2Name.setText(currentPlayer.getDatamons().get(1).getName());\n        ChooseMon3Name.setText(currentPlayer.getDatamons().get(2).getName());\n    }\n\n\n\n\n    @FXML\n    public void move1Button(ActionEvent e){\n        sim.Fight(1);\n    }\n\n    @FXML\n    public void move2Button(ActionEvent e){\n        sim.Fight(2);\n    }\n\n    @FXML\n    public void move3Button(ActionEvent e){\n        sim.Fight(3);\n    }\n\n    @FXML\n    public void move4Button(ActionEvent e){\n        sim.Fight(4);\n    }\n\n\n\n    }\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/BattleSimController.java b/src/main/java/com/example/ice/BattleSimController.java
+--- a/src/main/java/com/example/ice/BattleSimController.java	(revision 092160df76331b1e5dd5f236a323a42d26bc6018)
++++ b/src/main/java/com/example/ice/BattleSimController.java	(date 1702648433897)
+@@ -1,6 +1,6 @@
+ package com.example.ice;
+ 
+-import java.io.IOException;
++import javafx.scene.control.ProgressBar;
+ import java.net.URL;
+ import java.util.ArrayList;
+ import java.util.List;
+@@ -63,6 +63,10 @@
+         ChooseMon1Name.setText(currentPlayer.getDatamons().get(0).getName());
+         ChooseMon2Name.setText(currentPlayer.getDatamons().get(1).getName());
+         ChooseMon3Name.setText(currentPlayer.getDatamons().get(2).getName());
++
++        ProgressBar enemyMonHealth = new ProgressBar();
++        ProgressBar playerMonHealth = new ProgressBar();
++
+     }
+ 
+ 
+Index: src/main/java/com/example/ice/Datamons/Fred2.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice.Datamons;\n\nimport com.example.ice.Datamon;\n\npublic class Fred2 implements Datamon {\n\n    private String name;\n    private int hp;\n    private String CreatureType;\n    boolean beerdrunk = false;\n    boolean winedrunk = false;\n    boolean whiskeydrunk = false;\n    private String move1Name = \"Drik øl med far\";\n    private String move2Name = \"Drik vin med far\";\n    private String move3Name = \"Drik whiskey med far\";\n    private String move4Name = \"Drunken uppercut\";\n\n    public Fred2(){\n        this.name = \"Fred2\";\n        this.hp = 30;\n        this.CreatureType = \"Drunk\";\n    }\n\n    @Override\n    public String getName() {\n        return name;\n    }\n\n    @Override\n    public int getHP() {\n        return hp;\n    }\n\n    @Override\n    public void setHP(int hp) {\n        this.hp = hp;\n    }\n\n\n\n    @Override\n    public String getCreatureType() {\n        return CreatureType;\n    }\n\n    @Override\n    public String introduction() {\n        return  \"\";\n    }\n\n\n\n    public int move1(Datamon target){\n        int damage = 50;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        beerdrunk = true;\n        return damage;\n\n    }\n\n    public int move2(Datamon target){\n        int damage = 2;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        winedrunk = true;\n        return damage;\n    }\n\n    public int move3(Datamon target){\n        int damage = 11;\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        whiskeydrunk = true;\n        return damage;\n    }\n\npublic int move4(Datamon target){\n        int damage = 3;\n        if(whiskeydrunk && winedrunk && beerdrunk){\n            damage = 20;\n        }\n        System.out.println(\"Angreb: \" + name + \" Dealt : \" + damage + \" To \" + target.getName());\n        System.out.println(target.getName() + \" hp is now: \" + (target.getHP()-damage));\n        return damage;\n}\n\n    @Override\n    public String getMove1Name() {\n        return move1Name;\n    }\n\n    @Override\n    public String getMove2Name() {\n        return move2Name;\n    }\n\n    @Override\n    public String getMove3Name() {\n        return move3Name;\n    }\n\n    @Override\n    public String getMove4Name() {\n        return move4Name;\n    }\n\n\n\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/Datamons/Fred2.java b/src/main/java/com/example/ice/Datamons/Fred2.java
+--- a/src/main/java/com/example/ice/Datamons/Fred2.java	(revision 092160df76331b1e5dd5f236a323a42d26bc6018)
++++ b/src/main/java/com/example/ice/Datamons/Fred2.java	(date 1702608746481)
+@@ -23,12 +23,16 @@
+ 
+     @Override
+     public String getName() {
++        if (hp <= 0) {
++            return "Dead";
++        }
+         return name;
+     }
+ 
+     @Override
+     public int getHP() {
+         return hp;
++
+     }
+ 
+     @Override

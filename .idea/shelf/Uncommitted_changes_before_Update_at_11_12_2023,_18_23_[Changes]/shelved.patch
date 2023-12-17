@@ -1,0 +1,98 @@
+Index: src/main/java/com/example/ice/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice;\n\nimport javafx.application.Application;\nimport javafx.fxml.FXMLLoader;\nimport javafx.scene.Group;\nimport javafx.scene.Scene;\nimport javafx.scene.layout.Pane;\nimport javafx.stage.Stage;\n\nimport java.io.IOException;\n\npublic class Main extends Application {\n\n    public static void main(String[] args) {\n        launch(args);\n    }\n\n    public void start(Stage primaryStage) throws IOException {\n        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(\"Menu.fxml\"));\n        Pane root = fxmlLoader.load();\n        Scene scene = new Scene(root);\n        primaryStage.setTitle(\"Datamon.exe\");\n        primaryStage.setScene(scene);\n        primaryStage.show();\n    }\n\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/Main.java b/src/main/java/com/example/ice/Main.java
+--- a/src/main/java/com/example/ice/Main.java	(revision 6517fc4e9e91542b8515d920ea440993f1205c23)
++++ b/src/main/java/com/example/ice/Main.java	(date 1702314144376)
+@@ -2,11 +2,9 @@
+ 
+ import javafx.application.Application;
+ import javafx.fxml.FXMLLoader;
+-import javafx.scene.Group;
+ import javafx.scene.Scene;
+ import javafx.scene.layout.Pane;
+ import javafx.stage.Stage;
+-
+ import java.io.IOException;
+ 
+ public class Main extends Application {
+Index: src/main/java/com/example/ice2/HelloApplication.java
+===================================================================
+diff --git a/src/main/java/com/example/ice2/HelloApplication.java b/src/main/java/com/example/ice2/HelloApplication.java
+deleted file mode 100644
+--- a/src/main/java/com/example/ice2/HelloApplication.java	(revision 6517fc4e9e91542b8515d920ea440993f1205c23)
++++ /dev/null	(revision 6517fc4e9e91542b8515d920ea440993f1205c23)
+@@ -1,23 +0,0 @@
+-package com.example.ice2;
+-
+-import javafx.application.Application;
+-import javafx.fxml.FXMLLoader;
+-import javafx.scene.Scene;
+-import javafx.stage.Stage;
+-
+-import java.io.IOException;
+-
+-public class HelloApplication extends Application {
+-    @Override
+-    public void start(Stage stage) throws IOException {
+-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+-        stage.setTitle("Hello!");
+-        stage.setScene(scene);
+-        stage.show();
+-    }
+-
+-    public static void main(String[] args) {
+-        launch();
+-    }
+-}
+\ No newline at end of file
+Index: src/main/resources/com/example/ice2/hello-view.fxml
+===================================================================
+diff --git a/src/main/resources/com/example/ice2/hello-view.fxml b/src/main/resources/com/example/ice2/hello-view.fxml
+deleted file mode 100644
+--- a/src/main/resources/com/example/ice2/hello-view.fxml	(revision 6517fc4e9e91542b8515d920ea440993f1205c23)
++++ /dev/null	(revision 6517fc4e9e91542b8515d920ea440993f1205c23)
+@@ -1,16 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import javafx.geometry.Insets?>
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.layout.VBox?>
+-
+-<?import javafx.scene.control.Button?>
+-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+-      fx:controller="com.example.ice2.HelloController">
+-  <padding>
+-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+-  </padding>
+-
+-  <Label fx:id="welcomeText"/>
+-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
+-</VBox>
+Index: src/main/java/com/example/ice2/HelloController.java
+===================================================================
+diff --git a/src/main/java/com/example/ice2/HelloController.java b/src/main/java/com/example/ice2/HelloController.java
+deleted file mode 100644
+--- a/src/main/java/com/example/ice2/HelloController.java	(revision 6517fc4e9e91542b8515d920ea440993f1205c23)
++++ /dev/null	(revision 6517fc4e9e91542b8515d920ea440993f1205c23)
+@@ -1,14 +0,0 @@
+-package com.example.ice2;
+-
+-import javafx.fxml.FXML;
+-import javafx.scene.control.Label;
+-
+-public class HelloController {
+-    @FXML
+-    private Label welcomeText;
+-
+-    @FXML
+-    protected void onHelloButtonClick() {
+-        welcomeText.setText("Welcome to JavaFX Application!");
+-    }
+-}
+\ No newline at end of file

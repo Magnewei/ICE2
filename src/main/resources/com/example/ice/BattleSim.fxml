@@ -99,22 +99,22 @@
          <center>
             <AnchorPane prefHeight="457.0" prefWidth="893.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane layoutY="461.0" prefHeight="193.0" prefWidth="1702.0">
+                  <AnchorPane layoutY="365.0" prefHeight="292.0" prefWidth="1702.0">
                      <children>
-                        <ProgressBar fx:id="playerProgressBar" layoutX="926.0" layoutY="85.0" prefHeight="45.0" prefWidth="720.0" progress="1.0" style="-fx-background-color: Silver;">
+                        <ProgressBar fx:id="playerProgressBar" layoutX="926.0" layoutY="186.0" prefHeight="45.0" prefWidth="720.0" progress="1.0" style="-fx-background-color: Silver;">
                            <effect>
                               <InnerShadow choke="0.09" height="9.28" radius="2.675" width="3.42" />
                            </effect></ProgressBar>
-                        <Label fx:id="ActiveMon1" layoutX="925.0" layoutY="32.0" prefHeight="45.0" prefWidth="717.0" text="Label" underline="true">
+                        <Label fx:id="ActiveMon1" layoutX="925.0" layoutY="135.0" prefHeight="41.0" prefWidth="717.0" text="Label" underline="true">
                            <font>
                               <Font name="Comic Sans MS" size="24.0" />
                            </font></Label>
-                        <ImageView fx:id="PlayerSprite" fitHeight="196.0" fitWidth="197.0" layoutX="163.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="PlayerSprite" fitHeight="303.0" fitWidth="365.0" layoutX="239.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Fred2Sprite.png" />
                            </image></ImageView>
                      </children></AnchorPane>
-                  <AnchorPane layoutX="4.0" prefHeight="424.0" prefWidth="1697.0">
+                  <AnchorPane layoutX="4.0" prefHeight="360.0" prefWidth="1697.0">
                      <children>
                         <ProgressBar fx:id="enemyProgressBar" layoutX="52.0" layoutY="235.0" prefHeight="45.0" prefWidth="715.0" progress="1.0" style="-fx-background-color: Silver;">
                            <effect>
@@ -124,7 +124,7 @@
                            <font>
                               <Font name="Comic Sans MS" size="24.0" />
                            </font></Label>
-                        <ImageView fx:id="EnemySprite" fitHeight="367.0" fitWidth="541.0" layoutX="969.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="EnemySprite" fitHeight="386.0" fitWidth="567.0" layoutX="969.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" />
                      </children></AnchorPane>
                </children>
             </AnchorPane>

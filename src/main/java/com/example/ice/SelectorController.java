@@ -1,5 +1,6 @@
 package com.example.ice;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.security.spec.RSAOtherPrimeInfo;
@@ -19,9 +20,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
-public class SelectorController {
+public class SelectorController implements Initializable {
     private final int maxCarriedDatamon = 3;
     @FXML
     private ImageView Mon1, Mon2, Mon3, Mon4, Mon5, Mon6;
@@ -29,8 +32,17 @@ public class SelectorController {
     private Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12;
     private User currentUser, NPC;
     private List<Datamon> datamons, NPCdatamons;
+    private MediaPlayer musicPlayer;
 
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        File music = new File("MediaFiles/SelectorTrack.mp3");
+        Media musicMedia = new Media(music.toURI().toString());
+        musicPlayer = new MediaPlayer(musicMedia);
+        musicPlayer.setVolume(0.1);
+        musicPlayer.play();
 
+    }
     public void setup(User currentUser, User NPC) {
         this.currentUser = currentUser;
         this.NPC = NPC;
@@ -136,6 +148,7 @@ public class SelectorController {
                  sendNPCList();
                  Stage userChoices = new Stage();
                 try {
+                    musicPlayer.pause();
                     ((Node) (event.getSource())).getScene().getWindow().hide();
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("BattleSim.fxml"));
                     Parent root = loader.load();

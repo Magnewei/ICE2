@@ -1,0 +1,41 @@
+Index: src/main/java/com/example/ice/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\npublic class User {\n    private String username;\n    private String password;\n    private int xp;\n    private List<Datamon> datamons = new ArrayList<>();\n    private Datamon currentDatamon;\n\n    public User(String username, String password) {\n        this.username = username;\n        this.password = password;\n\n    }\n    public User() {\n\n    }\n\n    public List<Datamon> getDatamons() {\n        return datamons;\n    }\n\n    public Datamon getCurrentDatamon() {\n        if (datamons != null && !datamons.isEmpty() ) {\n            return datamons.get(0);\n    }\n        return currentDatamon;\n    }\n    public void addDatamon(Datamon mon){\n        datamons.add(mon);\n    }\n    public void removeDatamon(Datamon mon){\n        datamons.remove(mon);\n    }\n    public String getUsername() {\n        return username;\n    }\n\n    public String getPassword() {\n        return password;\n    }\n\n\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/User.java b/src/main/java/com/example/ice/User.java
+--- a/src/main/java/com/example/ice/User.java	(revision ee2235a5f672395859a515c7c11ab687d012791c)
++++ b/src/main/java/com/example/ice/User.java	(date 1702484212754)
+@@ -8,6 +8,11 @@
+     private String password;
+     private int xp;
+     private List<Datamon> datamons = new ArrayList<>();
++
++    public void setCurrentDatamon(int x) {
++        this.currentDatamon = datamons.get(x);
++    }
++
+     private Datamon currentDatamon;
+ 
+     public User(String username, String password) {
+Index: src/main/java/com/example/ice/BattleSim.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice;\n\nimport java.io.IOException;\nimport java.util.ArrayList;\nimport java.util.List;\nimport java.util.Random;\nimport javafx.event.ActionEvent;\nimport javafx.application.Platform;\nimport javafx.fxml.FXML;\nimport javafx.fxml.FXMLLoader;\nimport javafx.scene.Parent;\nimport javafx.scene.Scene;\nimport javafx.scene.control.Alert;\nimport javafx.stage.Stage;\n\npublic class BattleSim {\n\n    private User currentPlayer;\n    private User enemyPlayer;\n    private User player;\n    private User NPC;\n\n\n    public void setup(User currentPlayer, User enemyPlayer) {\n        this.currentPlayer = currentPlayer;\n        this.enemyPlayer = enemyPlayer;\n\n\n    }\n\n    public void ChooseMove(int pick) {\n        int methodNumber;\n\n        if (currentPlayer != null) {\n\n            if (currentPlayer.equals(enemyPlayer)) {\n                Random random = new Random();\n                methodNumber = random.nextInt(4) + 1;\n            } else {\n                methodNumber = pick;\n            }\n\n\n            switch (methodNumber) {\n                case 1:\n                    move1(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());\n                    break;\n\n                case 2:\n                    move2(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());\n                    break;\n\n                case 3:\n                    move3(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());\n                    break;\n\n                case 4:\n                    move4(currentPlayer.getCurrentDatamon(), enemyPlayer.getCurrentDatamon());\n                    break;\n\n                default:\n                    System.out.println(\"Something went wrong.\");\n            }\n\n        } else {\n            System.out.println(\"Current player is null.\");\n        }\n\n\n    }\n\n    private void checkIfDead() {\n        if (!enemyPlayer.getDatamons().isEmpty() && enemyPlayer.getCurrentDatamon().getHP() <= 0) {\n            enemyPlayer.removeDatamon(enemyPlayer.getCurrentDatamon());\n            enemyPlayer.getDatamons().get(0);\n        }\n    }\n\n    private Boolean checkIfWin() {\n        if (enemyPlayer.getDatamons().size() <= 0) {\n            System.out.println(\"Winner found test\");\n            return true;\n        }\n        return false;\n    }\n\n    public void Fight() {\n\n        if (enemyPlayer != null && currentPlayer != null) {\n            if (checkIfWin()) {\n                showErrorDialog(\"Winner found\", currentPlayer.getUsername() + \"won!\");\n            }\n\n            // checkIfDead();\n            // switchUser();\n        } else {\n            System.out.println(\"Fight() users are null.\");\n        }\n\n    }\n    private void showErrorDialog(String title, String content) {\n        Alert alert = new Alert(Alert.AlertType.ERROR);\n        alert.setTitle(title);\n        alert.setHeaderText(null);\n        alert.setContentText(content);\n        alert.showAndWait();\n    }\n\n    private void chooseMon() {\n        //TODO: Add måde at vælge på.\n        //Generer buttons ud fra list.size() med navne på objekter.\n    }\n\n    private void switchUser() {\n        if (currentPlayer.equals(currentPlayer)) {\n            currentPlayer = enemyPlayer;\n            enemyPlayer = currentPlayer;\n        }\n\n        }\n\n\n    // Checks if there's a winner.\n    public void move1(Datamon attacker, Datamon defender) {\n        defender.setHP(defender.getHP() - attacker.move1(defender));\n\n    }\n    public void move2(Datamon attacker, Datamon defender) {\n        defender.setHP(defender.getHP() - attacker.move2(defender));\n\n    }\n\n    public void move3(Datamon attacker, Datamon defender) {\n        defender.setHP(defender.getHP() - attacker.move3(defender));\n    }\n    public void move4(Datamon attacker, Datamon defender) {\n        defender.setHP(defender.getHP() - attacker.move4(defender));\n    }\n\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/BattleSim.java b/src/main/java/com/example/ice/BattleSim.java
+--- a/src/main/java/com/example/ice/BattleSim.java	(revision ee2235a5f672395859a515c7c11ab687d012791c)
++++ b/src/main/java/com/example/ice/BattleSim.java	(date 1702486595765)
+@@ -35,7 +35,7 @@
+ 
+             if (currentPlayer.equals(enemyPlayer)) {
+                 Random random = new Random();
+-                methodNumber = random.nextInt(4) + 1;
++                methodNumber = random.nextInt(1, 4);
+             } else {
+                 methodNumber = pick;
+             }
