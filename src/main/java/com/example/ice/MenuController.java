@@ -1,7 +1,5 @@
-package com.example.ice.Controllers;
-import com.example.ice.Controllers.SelectorController;
-import com.example.ice.DBConnector;
-import com.example.ice.User;
+package com.example.ice;
+
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

@@ -1,4 +1,4 @@
-package com.example.ice.Controllers;
+package com.example.ice;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,11 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
-
-import com.example.ice.Controllers.BattleSimController;
-import com.example.ice.Datamon;
 import com.example.ice.Datamons.*;
-import com.example.ice.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

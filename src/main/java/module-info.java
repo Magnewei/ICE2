@@ -11,6 +11,4 @@ module com.example.ice {
     exports com.example.ice;
     exports com.example.ice.Datamons;
     opens com.example.ice.Datamons to javafx.fxml;
-    exports com.example.ice.Controllers;
-    opens com.example.ice.Controllers to javafx.fxml;
 }

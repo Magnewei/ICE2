@@ -4,9 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65d5054d-fe21-451c-b7ff-3cef466f622e" name="Changes" comment="Minor clean up and additional comments.">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/MenuController.java" afterDir="false" />
+    <list default="true" id="65d5054d-fe21-451c-b7ff-3cef466f622e" name="Changes" comment="Helper method for selecter buttons.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Controllers/BattleSimController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Controllers/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Controllers/SelectorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/SelectorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/ice/BattleSim.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/ice/BattleSim.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/ice/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/ice/Menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/ice/Selector.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/ice/Selector.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSim.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSim.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSimController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSimController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Fred2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Fred2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/MenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/SelectorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/SelectorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <list id="50d3cce0-8330-4f92-b463-5a7a976c0af9" name="Changes by chris" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,6 +86,11 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.ice" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Unnamed">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.ice.Main" />
@@ -467,7 +485,23 @@
       <option name="project" value="LOCAL" />
       <updated>1702854252442</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Helper method for selecter buttons.">
+      <option name="closed" value="true" />
+      <created>1702855287158</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1702855287158</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Helper method for selecter buttons.">
+      <option name="closed" value="true" />
+      <created>1702855551175</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1702855551175</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -524,8 +558,8 @@
     <MESSAGE value="Fix logic" />
     <MESSAGE value="fixed fight logic" />
     <MESSAGE value="Cleaned up imports and added damageLabel method. Added access modifiers and minor changes to user and datamon variables and added getDamage()." />
-    <MESSAGE value="Helper method for selecter buttons." />
     <MESSAGE value="Minor clean up and additional comments." />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor clean up and additional comments." />
+    <MESSAGE value="Helper method for selecter buttons." />
+    <option name="LAST_COMMIT_MESSAGE" value="Helper method for selecter buttons." />
   </component>
 </project>
