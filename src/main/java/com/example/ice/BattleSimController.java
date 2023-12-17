@@ -38,7 +38,6 @@ public class BattleSimController {
 
         PlayerSprite.setImage(currentPlayer.getCurrentDatamon().getSprite());
         EnemySprite.setImage(enemyPlayer.getCurrentDatamon().getSprite());
-
     }
 
     /**
@@ -142,8 +141,6 @@ public class BattleSimController {
         MoveName2.setText(currentPlayer.getCurrentDatamon().getMove2Name());
         MoveName3.setText(currentPlayer.getCurrentDatamon().getMove3Name());
         MoveName4.setText(currentPlayer.getCurrentDatamon().getMove4Name());
-
-
     }
 
     /**

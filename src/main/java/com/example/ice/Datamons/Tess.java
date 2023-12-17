@@ -5,15 +5,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Tess implements Datamon {
-    private String name;
-    private int hp;
-    private String CreatureType;
+    private String name, CreatureType;
+    private int hp, damage;
     private boolean studerendePræsenterer;
     private String move1Name = "Roast";
     private String move2Name = "Stil spørgsmål til studerendes kode";
     private String move3Name = "Undervis på Zoom";
     private String move4Name = "Få studerende til at præsentere";
-    private int damage;
 
     public Tess(){
         this.name = "Tess";

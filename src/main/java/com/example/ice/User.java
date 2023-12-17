@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-
 public class User {
-    private String username;
-    private String password;
+    private String username, password;
     private List<Datamon> datamons = new ArrayList<>();
     private Datamon currentDatamon;
 
     public User(String username, String password) {
         this.username = username;
         this.password = password;
-
+    }
+    // Create empty user.
+    public User() {
     }
 
     public void setCurrentDatamon(int x) {
@@ -23,10 +23,6 @@ public class User {
 
     public void setCurrentDatamon(Datamon datamon) {
         this.currentDatamon = datamon;
-    }
-
-
-    public User() {
     }
 
     public List<Datamon> getDatamons() {

@@ -5,14 +5,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class RouvisMor implements Datamon {
-    private String name;
-    private int hp;
-    private String CreatureType;
+    private String name, CreatureType;
+    private int hp, damage;
     private String move1Name = "Teen Seduction";
     private String move2Name = "Bitch slap";
     private String move3Name = "Blowing kiss";
     private String move4Name = "Life Advice";
-    private int damage;
 
     public RouvisMor(){
         this.name = "Henriette";

@@ -5,17 +5,16 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Marcus implements Datamon {
-    private String name;
-    private int hp;
-    private String CreatureType;
+    private String name, CreatureType;
+    private int hp, damage;
     private boolean opgave1Done = false;
     private boolean opgave2Done = false;
-    private  boolean opgave3Done = false;
+    private boolean opgave3Done = false;
     private String move1Name = "Lav opgave 1";
     private String move2Name = "Lav opgave 2";
     private String move3Name = "Lav opgave 3";
     private String move4Name = "Opgaver done, I'm gone";
-    private int damage;
+
 
     public Marcus() {
         this.name = "Marcus";

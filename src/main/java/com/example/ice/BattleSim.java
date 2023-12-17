@@ -5,7 +5,6 @@ import javafx.scene.control.Alert;
 
 public class BattleSim {
     private User currentPlayer, enemyPlayer, player, NPC;
-    private final Random random = new Random();
     private Datamon enemyDatamon, playerDatamon;
     private String movePrint = "";
 
@@ -18,7 +17,7 @@ public class BattleSim {
 
         enemyDatamon = enemyPlayer.getDatamons().get(0);
         playerDatamon = currentPlayer.getDatamons().get(0);
-}
+    }
 
 
 
@@ -53,21 +52,12 @@ public class BattleSim {
         }
     }
 
-
-
     // Method is called on buttons. Fight() checks winner and prompts if winner is found, checks dead datamon
     // Prompting if winner is found through method calls.
-    // Finally calls Moves from button if player turn or from random number on AI turn.
-
+    // Finally, calls Moves from button if player turn or from random number on AI turn.
     public void Fight(int pick) {
         if (enemyPlayer != null && currentPlayer != null) {
-
-            // Used for debugging player objects and datamon arraylists.
-            //System.out.println("Player datamons" + player.getDatamons().toString() );
-            //System.out.println("NPC datamons" + NPC.getDatamons());
-            System.out.println("CurrentPlayer is: " + currentPlayer.getUsername());
-            System.out.println("CurrentPlayer is: " + enemyPlayer.getUsername());
-
+            final Random random = new Random();
 
             if (!checkIfWin()) {
                 checkIfDead();
@@ -76,8 +66,8 @@ public class BattleSim {
                 if (currentPlayer.equals(player)) {
                     executeMove(pick, playerDatamon, enemyDatamon);
                     checkIfDead();
-                    if (checkIfWin()) return;
 
+                    if (checkIfWin()) return;
                     switchUser(); // Switch to NPC after player move
 
                     // Execute NPC move
@@ -85,23 +75,20 @@ public class BattleSim {
                     executeMove(npcMove, enemyDatamon, playerDatamon);
                     checkIfDead();
                     checkIfWin();
-
                     switchUser(); // Switch back to player
                 }
             }
         }
     }
 
-
-
-//Switching Users, so that currentPlayer always is the one who's about to chose a move
+    //Switching Users, so that currentPlayer always is the one who's about to chose a move
     private void switchUser() {
         User temp = currentPlayer;
         currentPlayer = enemyPlayer;
         enemyPlayer = temp;
     }
 
-    // Eror catching
+    // Showing error dialogs.
     private void showErrorDialog(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
@@ -144,7 +131,6 @@ public class BattleSim {
         return playerDatamon;
     }
 
-
     /**
      * These 4 methods is used to set the Defenders hp after its taken damage from the attackers move 1,2,3 and 4
      * @param attacker
@@ -169,6 +155,4 @@ public class BattleSim {
     public String getMovePrint() {
         return movePrint;
     }
-
-
 }
