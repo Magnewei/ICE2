@@ -4,17 +4,15 @@ import com.example.ice.Datamon;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.io.FileNotFoundException;
-
 public class Rouvi implements Datamon {
     private String name;
     private int hp;
     private String CreatureType;
-
     private String move1Name = "Wingman";
     private String move2Name = "Teemo";
     private String move3Name = "Yappe";
     private String move4Name = "CS goat";
+    private int damage;
 
 
     public Rouvi() {
@@ -58,28 +56,28 @@ public class Rouvi implements Datamon {
 
 
     public int move1(Datamon target){
-        int damage = 6;
+        damage = 6;
         System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move2(Datamon target){
-        int damage = 5;
+        damage = 5;
         System.out.println("Angreb: " + move2Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move3(Datamon target){
-        int damage = 9;
+        damage = 9;
         System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move4(Datamon target){
-        int damage = 7;
+        damage = 7;
         System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
@@ -120,6 +118,10 @@ public class Rouvi implements Datamon {
 
         // Return ImageView related to specific Datamon.
         return image;
+    }
+    @Override
+    public int getDamage() {
+        return damage;
     }
 }
 

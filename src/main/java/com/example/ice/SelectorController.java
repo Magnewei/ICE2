@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
-
 import com.example.ice.Datamons.*;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -28,10 +27,9 @@ public class SelectorController {
     private ImageView Mon1, Mon2, Mon3, Mon4, Mon5, Mon6;
     @FXML
     private Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12;
-    private User currentUser;
-    private User NPC;
-    private List<Datamon> datamons;
-    private List<Datamon> NPCdatamons;
+    private User currentUser, NPC;
+    private List<Datamon> datamons, NPCdatamons;
+
 
     public void setup(User currentUser, User NPC) {
         this.currentUser = currentUser;

@@ -4,8 +4,6 @@ import com.example.ice.Datamon;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.io.FileNotFoundException;
-
 public class Bobby implements Datamon {
     private String name;
     private int hp;
@@ -14,6 +12,7 @@ public class Bobby implements Datamon {
     private String move2Name = "Ej jeg kommer på torsdag gutter";
     private String move3Name = "Bogstaveligt talt bare dyresex lmao";
     private String move4Name = "Drop ud";
+    private int damage = 0;
 
     public Bobby() {
         this.name = "Bobby";
@@ -49,7 +48,7 @@ public class Bobby implements Datamon {
 
     @Override
     public int move1(Datamon target){
-        int damage = 2;
+        damage = 2;
         System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
@@ -57,7 +56,7 @@ public class Bobby implements Datamon {
 
     @Override
     public int move2(Datamon target){
-        int damage = 4;
+        damage = 4;
         System.out.println("Angreb: " + move2Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
@@ -65,7 +64,7 @@ public class Bobby implements Datamon {
 
     @Override
     public int move3(Datamon target){
-        int damage = 10;
+        damage = 10;
         System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
@@ -74,7 +73,7 @@ public class Bobby implements Datamon {
     @Override
     public int move4(Datamon target){
         this.setHP(0);
-        int damage = 0;
+        damage = 0;
         System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
@@ -118,5 +117,10 @@ public class Bobby implements Datamon {
 
         // Return ImageView related to specific Datamon.
         return image;
+    }
+
+    @Override
+    public int getDamage() {
+        return damage;
     }
 }

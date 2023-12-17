@@ -1,11 +1,8 @@
 package com.example.ice;
 
 import javafx.fxml.Initializable;
-
 import java.net.URL;
 import java.util.ResourceBundle;
-
-
 
 public class OptionsController implements Initializable {
     @Override

@@ -4,8 +4,6 @@ import com.example.ice.Datamon;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.io.FileNotFoundException;
-
 public class Mads implements Datamon {
     private String name;
     private int hp;
@@ -14,6 +12,7 @@ public class Mads implements Datamon {
     private String move2Name = "Råb bror";
     private String move3Name = "Skal vi i byen?";
     private String move4Name = "Næver forever";
+    private int damage;
 
 
     public Mads() {
@@ -54,21 +53,21 @@ public class Mads implements Datamon {
     }
 
     public int move1(Datamon target){
-        int damage = 11;
+        damage = 11;
         System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move2(Datamon target){
-        int damage = 8;
+        damage = 8;
         System.out.println("Angreb: " + move2Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move3(Datamon target){
-        int damage = 9;
+        damage = 9;
         if(target.getName().equals("Fred2")){
             damage *= 3;
         }
@@ -78,7 +77,7 @@ public class Mads implements Datamon {
     }
 
     public int move4(Datamon target){
-        int damage = 1;
+        damage = 1;
         System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
@@ -119,6 +118,11 @@ public class Mads implements Datamon {
 
         // Return ImageView related to specific Datamon.
         return image;
+    }
+
+    @Override
+    public int getDamage() {
+        return damage;
     }
 }
 

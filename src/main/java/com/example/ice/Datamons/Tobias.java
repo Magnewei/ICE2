@@ -4,18 +4,15 @@ import com.example.ice.Datamon;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.io.FileNotFoundException;
-
 public class Tobias implements Datamon {
     private String name;
     private int hp;
     private String CreatureType;
-
     private String move1Name = "Kod reol";
     private String move2Name = "Print reol";
     private String move3Name = "Byg Reol";
     private String move4Name = "Snak om reol";
-
+    private int damage;
 
     public Tobias() {
         this.name = "Tobias";
@@ -57,28 +54,28 @@ public class Tobias implements Datamon {
     }
 
     public int move1(Datamon target){
-         int damage = 0;
+        damage = 0;
         System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
          return damage;
     }
 
     public int move2(Datamon target){
-        int damage = 0;
+        damage = 0;
         System.out.println("Angreb: " + move2Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move3(Datamon target){
-        int damage = 0;
+        damage = 0;
         System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move4(Datamon target){
-        int damage = 0;
+        damage = 0;
         System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
@@ -117,5 +114,10 @@ public class Tobias implements Datamon {
 
         // Return ImageView related to specific Datamon.
         return image;
+    }
+
+    @Override
+    public int getDamage() {
+        return damage;
     }
 }

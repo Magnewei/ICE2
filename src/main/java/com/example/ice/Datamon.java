@@ -18,5 +18,6 @@ public interface Datamon {
     public String introduction();
     public double getPercentageHealth();
     public Image getSprite();
+    public int getDamage();
 
 }

@@ -4,17 +4,16 @@ import com.example.ice.Datamon;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.io.FileNotFoundException;
 
 public class Nicolai implements Datamon {
     private String name;
     private int hp;
     private String CreatureType;
-
     private String move1Name = "Build that wall";
     private String move2Name = "Murstens kast";
     private String move3Name = "CS Flick";
     private String move4Name = "Clutch kongen";
+    private int damage;
 
 
     public Nicolai() {
@@ -56,28 +55,28 @@ public class Nicolai implements Datamon {
 
 
     public int move1(Datamon target){
-        int damage = 7;
+        damage = 7;
         System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move2(Datamon target){
-        int damage = 8;
+        damage = 8;
         System.out.println("Angreb: " + move2Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move3(Datamon target){
-        int damage = 6;
+        damage = 6;
         System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move4(Datamon target){
-        int damage = 15;
+        damage = 15;
         if(target.getHP() > hp){
             damage *= 2;
         }
@@ -121,6 +120,10 @@ public class Nicolai implements Datamon {
 
         // Return ImageView related to specific Datamon.
         return image;
+    }
+    @Override
+    public int getDamage() {
+        return damage;
     }
 }
 

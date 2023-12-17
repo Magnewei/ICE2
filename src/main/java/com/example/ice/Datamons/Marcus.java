@@ -4,20 +4,18 @@ import com.example.ice.Datamon;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.io.FileNotFoundException;
-
 public class Marcus implements Datamon {
     private String name;
     private int hp;
     private String CreatureType;
-    boolean opgave1Done = false;
-    boolean opgave2Done = false;
-    boolean opgave3Done = false;
+    private boolean opgave1Done = false;
+    private boolean opgave2Done = false;
+    private  boolean opgave3Done = false;
     private String move1Name = "Lav opgave 1";
     private String move2Name = "Lav opgave 2";
     private String move3Name = "Lav opgave 3";
     private String move4Name = "Opgaver done, I'm gone";
-
+    private int damage;
 
     public Marcus() {
         this.name = "Marcus";
@@ -59,7 +57,7 @@ public class Marcus implements Datamon {
 
 
     public int move1(Datamon target){
-        int damage = 2;
+        damage = 2;
         opgave1Done = true;
         System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
@@ -67,7 +65,7 @@ public class Marcus implements Datamon {
     }
 
     public int move2(Datamon target){
-        int damage = 2;
+        damage = 2;
         opgave2Done = true;
         System.out.println("Angreb: " + move2Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
@@ -75,7 +73,7 @@ public class Marcus implements Datamon {
     }
 
     public int move3(Datamon target){
-        int damage = 2;
+        damage = 2;
         opgave3Done = true;
         System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
@@ -83,7 +81,7 @@ public class Marcus implements Datamon {
     }
 
     public int move4(Datamon target){
-        int damage = 2;
+        damage = 2;
         if(opgave1Done && opgave2Done && opgave3Done){
             if(target.getCreatureType().equals("StudieGruppeF")){
                 damage = 1000;
@@ -133,6 +131,11 @@ public class Marcus implements Datamon {
 
         // Return ImageView related to specific Datamon.
         return image;
+    }
+
+    @Override
+    public int getDamage() {
+        return damage;
     }
 }
 

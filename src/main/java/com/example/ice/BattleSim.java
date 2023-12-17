@@ -1,19 +1,7 @@
 package com.example.ice;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicBoolean;
-
-import javafx.event.ActionEvent;
-import javafx.application.Platform;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.stage.Stage;
 
 public class BattleSim {
     private User currentPlayer;
@@ -23,6 +11,7 @@ public class BattleSim {
     private final Random random = new Random();
     private Datamon enemyDatamon;
     private Datamon playerDatamon;
+    private String movePrint = "";
 
     public void setup(User player, User NPC) {
         this.player = player;
@@ -130,15 +119,19 @@ public class BattleSim {
         switch (moveNumber) {
             case 1:
                 move1(attacker, defender);
+                movePrint = attacker + "used move" + attacker.getMove1Name() + " on " + defender + "." + "Attack did " + attacker.getDamage() + "!";
                 break;
             case 2:
                 move2(attacker, defender);
+                movePrint = attacker + "used move" + attacker.getMove2Name() + " on " + defender + "." + "Attack did " + attacker.getDamage() + "!";
                 break;
             case 3:
                 move3(attacker, defender);
+                movePrint = attacker + "used move" + attacker.getMove3Name() + " on " + defender + "." + "Attack did " + attacker.getDamage() + "!";
                 break;
             case 4:
                 move4(attacker, defender);
+                movePrint = attacker + "used move" + attacker.getMove4Name() + " on " + defender + "." + "Attack did " + attacker.getDamage() + "!";
                 break;
             default:
                 System.out.println("Invalid move.");
@@ -148,7 +141,6 @@ public class BattleSim {
     public Datamon getPlayerDatamon(){
         return playerDatamon;
     }
-
 
 
     // Current datamon's move 1 to 4.
@@ -166,6 +158,10 @@ public class BattleSim {
     }
     public void move4(Datamon attacker, Datamon defender) {
         defender.setHP(defender.getHP() - attacker.move4(defender));
+    }
+
+    public String getMovePrint() {
+        return movePrint;
     }
 
 

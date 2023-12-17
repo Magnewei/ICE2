@@ -4,19 +4,15 @@ import com.example.ice.Datamon;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.io.FileNotFoundException;
-
 public class RouvisMor implements Datamon {
-
     private String name;
     private int hp;
     private String CreatureType;
-
     private String move1Name = "Teen Seduction";
     private String move2Name = "Bitch slap";
     private String move3Name = "Blowing kiss";
     private String move4Name = "Life Advice";
-
+    private int damage;
 
     public RouvisMor(){
         this.name = "Henriette";
@@ -29,7 +25,6 @@ public class RouvisMor implements Datamon {
         int maxHealth = 300;
         return (double) hp / maxHealth;
     }
-
 
     @Override
     public String getName() {
@@ -46,7 +41,6 @@ public class RouvisMor implements Datamon {
         this.hp = hp;
     }
 
-
     @Override
     public String getCreatureType() {
         return CreatureType;
@@ -58,7 +52,7 @@ public class RouvisMor implements Datamon {
     }
 
     public int move1(Datamon target){
-        int damage = 7;
+        damage = 7;
         if("Ginger".equals(target.getCreatureType())){
             damage *= 2;
         }
@@ -68,7 +62,7 @@ public class RouvisMor implements Datamon {
     }
 
     public int move2(Datamon target){
-        int damage = 6;
+        damage = 6;
         if("Ginger".equals(target.getCreatureType())){
             damage *= 2;
         }
@@ -78,7 +72,7 @@ public class RouvisMor implements Datamon {
     }
 
     public int move3(Datamon target){
-        int damage = 1;
+        damage = 1;
         if("Ginger".equals(target.getCreatureType())){
             damage = 100;
         }
@@ -89,7 +83,7 @@ public class RouvisMor implements Datamon {
     }
 
     public int move4(Datamon target){
-        int damage = 1;
+        damage = 1;
         if("Ginger".equals(target.getCreatureType())){
             damage *= 2;
         }
@@ -131,5 +125,10 @@ public class RouvisMor implements Datamon {
 
         // Return ImageView related to specific Datamon.
         return image;
+    }
+
+    @Override
+    public int getDamage() {
+        return damage;
     }
 }

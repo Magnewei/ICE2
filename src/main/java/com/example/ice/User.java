@@ -8,9 +8,7 @@ import java.util.Random;
 public class User {
     private String username;
     private String password;
-    private int xp;
     private List<Datamon> datamons = new ArrayList<>();
-
     private Datamon currentDatamon;
 
     public User(String username, String password) {

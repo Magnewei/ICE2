@@ -4,21 +4,19 @@ import com.example.ice.Datamon;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-
 public class Fred2 implements Datamon {
 
     private String name;
     private int hp;
     private String CreatureType;
-    boolean beerdrunk = false;
-    boolean winedrunk = false;
-    boolean whiskeydrunk = false;
+    private boolean beerdrunk = false;
+    private boolean winedrunk = false;
+    private  boolean whiskeydrunk = false;
     private String move1Name = "Drik øl med far";
     private String move2Name = "Drik vin med far";
     private String move3Name = "Drik whiskey med far";
     private String move4Name = "Drunken uppercut";
+    private int damage;
 
     public Fred2(){
         this.name = "Fred2";
@@ -62,7 +60,7 @@ public class Fred2 implements Datamon {
 
 
     public int move1(Datamon target){
-        int damage = 50;
+        damage = 50;
         System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         beerdrunk = true;
@@ -71,7 +69,7 @@ public class Fred2 implements Datamon {
     }
 
     public int move2(Datamon target){
-        int damage = 2;
+        damage = 2;
         System.out.println("Angreb: " + move2Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         winedrunk = true;
@@ -79,22 +77,22 @@ public class Fred2 implements Datamon {
     }
 
     public int move3(Datamon target){
-        int damage = 11;
+        damage = 11;
         System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         whiskeydrunk = true;
         return damage;
     }
 
-public int move4(Datamon target){
-        int damage = 3;
+    public int move4(Datamon target){
+        damage = 3;
         if(whiskeydrunk && winedrunk && beerdrunk){
             damage = 20;
         }
         System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
-}
+    }
 
     @Override
     public String getMove1Name() {
@@ -130,6 +128,11 @@ public int move4(Datamon target){
 
         // Return ImageView related to specific Datamon.
         return image;
+    }
+
+    @Override
+    public int getDamage() {
+        return damage;
     }
 
 }

@@ -1,72 +1,27 @@
 package com.example.ice;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.ResourceBundle;
-
-import com.example.ice.Datamons.Fred2;
-import com.example.ice.Datamons.Jonas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 
-
-public class BattleSimController implements Initializable {
+public class BattleSimController {
     @FXML
-    private ImageView StageTemp = new ImageView();
+    private ImageView  EnemySprite, PlayerSprite, StageTemp;
     @FXML
-    private ImageView PlayerSprite = new ImageView();
+    private Button SelectMove1, SelectMove2, SelectMove3, SelectMove4, ChooseMon1,ChooseMon2,ChooseMon3;
     @FXML
-    private ImageView  EnemySprite = new ImageView();
-    @FXML
-    private Label ActiveMon1, ActiveMon2;
-    @FXML
-    private ResourceBundle resources;
-    @FXML
-    private URL location;
-    @FXML
-    private Button SelectMove1, SelectMove2, SelectMove3, SelectMove4;
-    @FXML
-    private Button ChooseMon1,ChooseMon2,ChooseMon3;
-    @FXML
-    private ImageView VisualMon1, VisualMon2;
-    @FXML
-    private Label MoveName1, MoveName2, MoveName3, MoveName4;
-    @FXML
-    private Label ChooseMon1Name, ChooseMon2Name, ChooseMon3Name;
+    private Label ActiveMon1, ActiveMon2, ChooseMon1Name, ChooseMon2Name, ChooseMon3Name, MoveName1, MoveName2, MoveName3, MoveName4, damageBox;
     @FXML
     private ProgressBar enemyProgressBar, playerProgressBar;
-    private User currentPlayer;
-    private User enemyPlayer;
+    private User currentPlayer, enemyPlayer;
     private final BattleSim sim = new BattleSim();
-    private MediaPlayer mediaPlayer;
-
-
-    Fred2 fred2 = new Fred2();
-    Jonas jones = new Jonas();
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
 
     public void setup(User currentPlayer, User enemyPlayer) {
-
         this.currentPlayer = currentPlayer;
         this.enemyPlayer = enemyPlayer;
         sim.setup(currentPlayer, enemyPlayer);
@@ -83,7 +38,6 @@ public class BattleSimController implements Initializable {
 
         PlayerSprite.setImage(currentPlayer.getCurrentDatamon().getSprite());
         EnemySprite.setImage(enemyPlayer.getCurrentDatamon().getSprite());
-
 
     }
 
@@ -120,7 +74,6 @@ public class BattleSimController implements Initializable {
     }
 
 
-
     @FXML
     public void chooseMon1(ActionEvent e){
         currentPlayer.setCurrentDatamon(0);
@@ -146,24 +99,28 @@ public class BattleSimController implements Initializable {
     public void move1Button(ActionEvent e){
         sim.Fight(1);
         showMonButtons();
+        updateDamageBox();
     }
 
     @FXML
     public void move2Button(ActionEvent e){
         sim.Fight(2);
         showMonButtons();
+        updateDamageBox();
     }
 
     @FXML
     public void move3Button(ActionEvent e){
         sim.Fight(3);
         showMonButtons();
+        updateDamageBox();
     }
 
     @FXML
     public void move4Button(ActionEvent e){
         sim.Fight(4);
         showMonButtons();
+        updateDamageBox();
     }
 
     private void updateMoveLabels(){
@@ -171,6 +128,8 @@ public class BattleSimController implements Initializable {
         MoveName2.setText(currentPlayer.getCurrentDatamon().getMove2Name());
         MoveName3.setText(currentPlayer.getCurrentDatamon().getMove3Name());
         MoveName4.setText(currentPlayer.getCurrentDatamon().getMove4Name());
+
+
     }
 
     private void updateMonLabels(){
@@ -186,6 +145,11 @@ public class BattleSimController implements Initializable {
     private void updateActiveMonLabels(){
         ActiveMon1.setText(currentPlayer.getCurrentDatamon().getName());
         ActiveMon2.setText(enemyPlayer.getDatamons().get(0).getName());
+    }
+
+    private void updateDamageBox() {
+        String chatBox = sim.getMovePrint();
+        damageBox.setText(chatBox);
     }
 }
 

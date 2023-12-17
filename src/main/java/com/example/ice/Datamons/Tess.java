@@ -4,19 +4,16 @@ import com.example.ice.Datamon;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.io.FileNotFoundException;
-
 public class Tess implements Datamon {
-
     private String name;
     private int hp;
     private String CreatureType;
     private boolean studerendePræsenterer;
-
     private String move1Name = "Roast";
     private String move2Name = "Stil spørgsmål til studerendes kode";
     private String move3Name = "Undervis på Zoom";
     private String move4Name = "Få studerende til at præsentere";
+    private int damage;
 
     public Tess(){
         this.name = "Tess";
@@ -24,13 +21,11 @@ public class Tess implements Datamon {
         this.CreatureType = "Boss";
     }
 
-
     @Override
     public double getPercentageHealth() {
         int maxHealth = 300;
         return (double) hp / maxHealth;
     }
-
 
     @Override
     public String getName() {
@@ -60,7 +55,7 @@ public class Tess implements Datamon {
 
 
     public int move1(Datamon target){
-        int damage = 7;
+        damage = 7;
         if (target.getName().equals("Elsket Løve")){
             damage *= 100;
         }
@@ -70,7 +65,7 @@ public class Tess implements Datamon {
     }
 
     public int move2(Datamon target){
-        int damage = 12;
+        damage = 12;
         if(studerendePræsenterer){
             damage *= 2;
             studerendePræsenterer = false;
@@ -81,14 +76,14 @@ public class Tess implements Datamon {
     }
 
     public int move3(Datamon target){
-        int damage = 2;
+        damage = 2;
         System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move4(Datamon target){
-        int damage = 3;
+        damage = 3;
         studerendePræsenterer = true;
         System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
@@ -115,7 +110,6 @@ public class Tess implements Datamon {
         return move4Name;
     }
 
-
     @Override
     public Image getSprite() {
         String path = "file:" + "src/main/resources/com/example/ice/TessSprite.png";
@@ -129,5 +123,9 @@ public class Tess implements Datamon {
 
         // Return ImageView related to specific Datamon.
         return image;
+    }
+    @Override
+    public int getDamage() {
+        return damage;
     }
 }
