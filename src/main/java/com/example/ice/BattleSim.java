@@ -98,13 +98,14 @@ public class BattleSim {
 
 
 
-
+//Switching Users, so that currentPlayer always is the one who's about to chose a move
     private void switchUser() {
         User temp = currentPlayer;
         currentPlayer = enemyPlayer;
         enemyPlayer = temp;
     }
 
+    // Eror catching
     private void showErrorDialog(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
@@ -114,7 +115,12 @@ public class BattleSim {
     }
 
 
-
+    /**
+     * We are using the following method to constantly displaying what move is being used and how much damage it did in our TextBox in BattleSim.
+     * @param moveNumber
+     * @param attacker
+     * @param defender
+     */
     private void executeMove(int moveNumber, Datamon attacker, Datamon defender) {
         switch (moveNumber) {
             case 1:
@@ -143,7 +149,11 @@ public class BattleSim {
     }
 
 
-    // Current datamon's move 1 to 4.
+    /**
+     * These 4 methods is used to set the Defenders hp after its taken damage from the attackers move 1,2,3 and 4
+     * @param attacker
+     * @param defender
+     */
     public void move1(Datamon attacker, Datamon defender) {
         defender.setHP(defender.getHP() - attacker.move1(defender));
 

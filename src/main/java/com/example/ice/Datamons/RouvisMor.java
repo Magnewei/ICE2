@@ -31,10 +31,12 @@ public class RouvisMor implements Datamon {
         return name;
     }
 
+
     @Override
     public int getHP() {
         return hp;
     }
+
 
     @Override
     public void setHP(int hp) {
@@ -50,6 +52,12 @@ public class RouvisMor implements Datamon {
     public String introduction() {
         return "A hot milf appears in the wild. Her soul is kind, and her smile light up the world";
     }
+
+    /**
+     * These 4 methods below , are used to create attacks for the Datamon. Every attack returns damage. Some attacks damage variable is buffed / nerfed depending on which datamon the target is.
+     * @param target
+     * @return damage
+     */
 
     public int move1(Datamon target){
         damage = 7;
@@ -112,6 +120,10 @@ public class RouvisMor implements Datamon {
         return move4Name;
     }
 
+    /**
+     * This following method returns the Sprite of the Datamon. Our Sprite is the image of the users/enemy's Datamon, That's being displayed when launching our BattlSim
+     * @return image
+     */
     @Override
     public Image getSprite() {
         String path = "file:" + "src/main/resources/com/example/ice/RouvisMorSprite.png";

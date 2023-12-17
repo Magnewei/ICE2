@@ -12,6 +12,12 @@ public class DBConnector{
     static final String USER = "sql11671048";
     static final String PASS = "dUkWhlecP6";
 
+
+    /**
+     * Method that lets u load user from our MySQL Database
+     * @return
+     * @throws FileNotFoundException
+     */
     private List<User> loadUsers() throws FileNotFoundException {
         List<User> users = new ArrayList<>();
         String selectQuery = "SELECT username, password FROM users";
@@ -31,6 +37,13 @@ public class DBConnector{
         return users;
     }
 
+    /**
+     * Method that lets u Create a user in our MySQL Database
+     * @param username
+     * @param password
+     * @return
+     * @throws SQLException
+     */
     public Boolean createUser(String username, String password) throws SQLException {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -67,6 +80,13 @@ public class DBConnector{
         }//end try
     }
 
+    /**
+     * Method that lets u Log in with an existing username and password, from our MySQL Database
+     * @param username
+     * @param password
+     * @return
+     * @throws FileNotFoundException
+     */
     public User login(String username, String password) throws FileNotFoundException {
         List<User> users = loadUsers();
         for(User user : users) {

@@ -44,7 +44,10 @@ public class MenuController implements Initializable {
         MenuBackground.setMediaPlayer(mediaPlayer);
     }
 
-    // Parses database login information. Returns user if username and password match found.
+    /**
+     * Parses database login information. Returns user if username and password match found.
+     * @param event
+     */
     @FXML
     private void loginPressed(ActionEvent event) {
         try {
@@ -80,7 +83,11 @@ public class MenuController implements Initializable {
         }
     }
 
-    // Register user and inserts username and password into database.
+    /**
+     * Register user and inserts username and password into database.
+     * @param event
+     * @throws SQLException
+     */
     @FXML
     private void registerPressed(ActionEvent event) throws SQLException {
         if (io.createUser(usernameField.getText(), passwordField.getText()).equals(true)) {
@@ -91,6 +98,11 @@ public class MenuController implements Initializable {
         }
     }
 
+    /**
+     * Method that's used for Catching errors.
+     * @param title
+     * @param content
+     */
     private void showErrorDialog(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
@@ -99,6 +111,10 @@ public class MenuController implements Initializable {
         alert.showAndWait();
     }
 
+    /**
+     * Playing our Menu, with a selected Volume for the mediaPlayer's sound.
+     * @param mouseEvent
+     */
     @FXML
     private void PlayMenu(MouseEvent mouseEvent) {
         mediaPlayer.play();

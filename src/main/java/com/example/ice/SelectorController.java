@@ -37,6 +37,12 @@ public class SelectorController {
         this.datamons = (currentUser != null) ? currentUser.getDatamons() : new ArrayList<>();
         this.NPCdatamons = (NPC != null) ? NPC.getDatamons() : new ArrayList<>();
     }
+
+
+    /**
+     * The following 12 Method's are used to add a Datamon to the Players deck of Datamons.  We are using these methods in our Selector.fxml to connect it to an image of the 12 Datamons.
+     * @param event
+     */
     @FXML
     private void Select1Pressed(ActionEvent event) {
         Datamon datamon = new Fred2();
@@ -192,7 +198,10 @@ public class SelectorController {
     }
 
 
-    // Loads BattleSim
+    /**
+     * Loads BattleSim
+     * @param event
+     */
     @FXML
     private void BattleButtonPressed(ActionEvent event) {
 
@@ -220,7 +229,9 @@ public class SelectorController {
         }
     }
 
-     // Adds random Datamons to NPC Datamon list.
+    /**
+     * Adds random Datamons to NPC Datamon list.
+     */
     private void sendNPCList(){
         Random rand = new Random();
 

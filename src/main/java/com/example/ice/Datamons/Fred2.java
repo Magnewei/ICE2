@@ -58,7 +58,11 @@ public class Fred2 implements Datamon {
     }
 
 
-
+    /**
+     * These 4 methods below , are used to create attacks for the Datamon. Every attack returns damage. Some attacks damage variable is buffed / nerfed depending on which datamon the target is.
+     * @param target
+     * @return damage
+     */
     public int move1(Datamon target){
         damage = 50;
         System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
@@ -114,7 +118,10 @@ public class Fred2 implements Datamon {
         return move4Name;
     }
 
-
+    /**
+     * This following method returns the Sprite of the Datamon. Our Sprite is the image of the users/enemy's Datamon, That's being displayed when launching our BattlSim
+     * @return image
+     */
     @Override
     public Image getSprite() {
         String path = "file:" + "src/main/resources/com/example/ice/Fred2Sprite.png";
