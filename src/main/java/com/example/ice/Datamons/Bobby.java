@@ -12,16 +12,15 @@ public class Bobby implements Datamon {
     private String move3Name = "Bogstaveligt talt bare dyresex lmao";
     private String move4Name = "Drop ud";
 
-
     public Bobby() {
         this.name = "Bobby";
-        this.hp = 310;
+        this.hp = 110;
         this.CreatureType = "Ghost";
     }
 
     @Override
     public double getPercentageHealth() {
-        int maxHealth = 310;
+        int maxHealth = 110;
         return (double) hp / maxHealth;
     }
 

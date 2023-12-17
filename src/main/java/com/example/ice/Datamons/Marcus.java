@@ -15,7 +15,6 @@ public class Marcus implements Datamon {
     private String move3Name = "Lav opgave 3";
     private String move4Name = "Opgaver done, I'm gone";
 
-
     public Marcus() {
         this.name = "Marcus";
         this.hp = 135;
@@ -24,7 +23,7 @@ public class Marcus implements Datamon {
 
     @Override
     public double getPercentageHealth() {
-        int maxHealth = 280;
+        int maxHealth = 135;
         return (double) hp / maxHealth;
     }
 

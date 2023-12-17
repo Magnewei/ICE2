@@ -108,19 +108,19 @@ public class BattleSim {
         switch (moveNumber) {
             case 1:
                 move1(attacker, defender);
-                movePrint = attacker + "used move" + attacker.getMove1Name() + " on " + defender + "." + "Attack did " + attacker.getDamage() + "!";
+                movePrint = attacker.getName() + " used move " + attacker.getMove1Name() +"!" + "\nAttack did " + attacker.getDamage() + " to " + defender.getName() +"!";
                 break;
             case 2:
                 move2(attacker, defender);
-                movePrint = attacker + "used move" + attacker.getMove2Name() + " on " + defender + "." + "Attack did " + attacker.getDamage() + "!";
+                movePrint = attacker.getName() + " used move " + attacker.getMove2Name() +"!" + "\nAttack did " + attacker.getDamage() + " to " + defender.getName() +"!";
                 break;
             case 3:
                 move3(attacker, defender);
-                movePrint = attacker + "used move" + attacker.getMove3Name() + " on " + defender + "." + "Attack did " + attacker.getDamage() + "!";
+                movePrint = attacker.getName() + " used move " + attacker.getMove3Name() +"!" + "\nAttack did " + attacker.getDamage() + " to " + defender.getName() +"!";
                 break;
             case 4:
                 move4(attacker, defender);
-                movePrint = attacker + "used move" + attacker.getMove4Name() + " on " + defender + "." + "Attack did " + attacker.getDamage() + "!";
+                movePrint = attacker.getName() + " used move " + attacker.getMove4Name() +"!" + "\nAttack did " + attacker.getDamage() + " to " + defender.getName() +"!";
                 break;
             default:
                 System.out.println("Invalid move.");

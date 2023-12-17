@@ -21,7 +21,7 @@ public class Jonas implements Datamon {
 
     @Override
     public double getPercentageHealth() {
-        int maxHealth = 20;
+        int maxHealth = 100;
         return (double) hp / maxHealth;
     }
 

@@ -126,6 +126,11 @@
                            </font></Label>
                         <ImageView fx:id="EnemySprite" fitHeight="386.0" fitWidth="567.0" layoutX="969.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" />
                      </children></AnchorPane>
+                  <Label fx:id="damageBox" alignment="TOP_LEFT" layoutX="43.0" layoutY="683.0" prefHeight="192.0" prefWidth="1599.0" wrapText="true">
+                     <font>
+                        <Font name="Comic Sans MS" size="41.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </center>

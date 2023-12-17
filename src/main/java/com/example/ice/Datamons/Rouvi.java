@@ -20,7 +20,7 @@ public class Rouvi implements Datamon {
 
     @Override
     public double getPercentageHealth() {
-        int maxHealth = 280;
+        int maxHealth = 142;
         return (double) hp / maxHealth;
     }
 
