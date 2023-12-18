@@ -13,7 +13,7 @@ public class User {
         this.username = username;
         this.password = password;
     }
-    // Create empty user.
+    // Create empty user object. Used to work around null errors.
     public User() {
     }
 
@@ -43,7 +43,6 @@ public class User {
         }
         return currentDatamon;
     }
-
 
     public void addDatamon(Datamon mon) {
         datamons.add(mon);

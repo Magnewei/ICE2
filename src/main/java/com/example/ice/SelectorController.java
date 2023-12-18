@@ -38,15 +38,14 @@ public class SelectorController implements Initializable {
         musicPlayer = new MediaPlayer(musicMedia);
         musicPlayer.setVolume(0.1);
         musicPlayer.play();
-
     }
+
     public void setup(User currentUser, User NPC) {
         this.currentUser = currentUser;
         this.NPC = NPC;
         this.datamons = (currentUser != null) ? currentUser.getDatamons() : new ArrayList<>();
         this.NPCdatamons = (NPC != null) ? NPC.getDatamons() : new ArrayList<>();
     }
-
 
     /**
      * The following 12 Method's are used to add a Datamon to the Players deck of Datamons.  We are using these methods in our Selector.fxml to connect it to an image of the 12 Datamons.
@@ -140,26 +139,31 @@ public class SelectorController implements Initializable {
      */
     @FXML
     private void BattleButtonPressed(ActionEvent event) {
-
+        Stage userChoices = new Stage();
         if (datamons.size() > 0) {
-                 sendNPCList();
-                 Stage userChoices = new Stage();
-                try {
-                    musicPlayer.pause();
-                    ((Node) (event.getSource())).getScene().getWindow().hide();
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("BattleSim.fxml"));
-                    Parent root = loader.load();
+            // Adds Datamons to the NPC on scene end.
+            sendNPCList();
+            try {
+                // Pause music on scene end.
+                musicPlayer.pause();
 
-                    BattleSimController battleSimController = loader.getController();
-                    battleSimController.setup(currentUser, NPC);
+                // Hide current window on scene end.
+                ((Node) (event.getSource())).getScene().getWindow().hide();
 
-                    userChoices.setScene(new Scene(root));
-                    userChoices.show();
+                // Load new window & scene.
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("BattleSim.fxml"));
+                Parent root = loader.load();
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                // Pass correct SelectorController objects to BattleSim.
+                BattleSimController battleSimController = loader.getController();
+                battleSimController.setup(currentUser, NPC);
 
+                // Load new scene.
+                userChoices.setScene(new Scene(root));
+                userChoices.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         } else {
             System.out.println("No datamons selected.");
         }
@@ -171,6 +175,7 @@ public class SelectorController implements Initializable {
     private void sendNPCList(){
         Random rand = new Random();
 
+        // Collects all possible Datamons and adds a random one to the NPC's list of Datamons, until the NPC has the same amount of Datamons as the player.
         for(int i = 0 ; i <= (datamons.size() -1); i++ ) {
             List<Datamon> pickDataMon = new ArrayList<>();
             pickDataMon.add(new Bobby());
@@ -188,7 +193,7 @@ public class SelectorController implements Initializable {
 
             int randomNum = rand.nextInt(pickDataMon.size());
             NPC.addDatamon(pickDataMon.get(randomNum));
-       }
+        }
     }
 
 }

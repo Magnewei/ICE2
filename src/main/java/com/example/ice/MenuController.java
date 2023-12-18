@@ -17,7 +17,6 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.io.File;
-
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
@@ -58,14 +57,22 @@ public class MenuController implements Initializable {
             if (currentUser != null) {
                 Platform.runLater(() -> {
                     try {
+
+                        // Pause music on scene end.
                         musicPlayer.pause();
+
+                        // Hide current window on new end.
                         ((Node)(event.getSource())).getScene().getWindow().hide();
+
+                        // Load new window & scene.
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("Selector.fxml"));
                         Parent root = loader.load();
 
+                        // Pass correct MenuController object to SelectorController.
                         SelectorController selectorController = loader.getController();
                         selectorController.setup(currentUser, NPC);
 
+                        // Load new scene
                         userChoices.setScene(new Scene(root));;
                         userChoices.show();
 

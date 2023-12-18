@@ -4,12 +4,10 @@ import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.*;
 public class DBConnector{
-
     // Database URL & Database credentials
     private static final String DB_URL = "jdbc:mysql://sql11.freemysqlhosting.net:3306/sql11671048";
     private static final String USER = "sql11671048";
     private static final String PASS = "dUkWhlecP6";
-
 
     /**
      * Method that lets u load user from our MySQL Database

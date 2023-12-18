@@ -17,7 +17,6 @@ public class BattleSim {
     private Datamon enemyDatamon;
     private Datamon playerDatamon;
     private String movePrint = "";
-
     private String FightResult;
 
     public void setup(User player, User NPC) {
@@ -168,12 +167,12 @@ public class BattleSim {
     }
     public void move2(Datamon attacker, Datamon defender) {
         defender.setHP(defender.getHP() - attacker.move2(defender));
-
     }
 
     public void move3(Datamon attacker, Datamon defender) {
         defender.setHP(defender.getHP() - attacker.move3(defender));
     }
+
     public void move4(Datamon attacker, Datamon defender) {
         defender.setHP(defender.getHP() - attacker.move4(defender));
     }
