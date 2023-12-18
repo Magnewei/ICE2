@@ -10,15 +10,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class EndScreenController implements Initializable {
-    private File file;
-
     private MediaPlayer mediaPlayer;
     @FXML
     private MediaView MediaEnd;
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        File File = new File("MediaFiles/MediaEndWin.mp4");  // NPC wins
+        File file = new File("MediaFiles/MediaEndWin.mp4");  // NPC wins
         Media media = new Media(file.toURI().toString());
         mediaPlayer = new MediaPlayer(media);
         MediaEnd.setMediaPlayer(mediaPlayer);
