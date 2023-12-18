@@ -5,12 +5,17 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Tobias implements Datamon {
-    private String name, CreatureType;
-    private int hp, damage;
+    private String name;
+    private int hp;
+    private String CreatureType;
     private String move1Name = "Kod reol";
     private String move2Name = "Print reol";
     private String move3Name = "Byg Reol";
     private String move4Name = "Snak om reol";
+    private int damage;
+    private boolean ReolCode = false;
+    private boolean ReolPrint = false;
+    private boolean ReolTalk = false;
 
     public Tobias() {
         this.name = "Tobias";
@@ -20,7 +25,7 @@ public class Tobias implements Datamon {
 
     @Override
     public double getPercentageHealth() {
-        int maxHealth = 101;
+        int maxHealth = 280;
         return (double) hp / maxHealth;
     }
 
@@ -61,6 +66,7 @@ public class Tobias implements Datamon {
         damage = 0;
         System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        ReolCode = true;
          return damage;
     }
 
@@ -68,6 +74,7 @@ public class Tobias implements Datamon {
         damage = 0;
         System.out.println("Angreb: " + move2Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        ReolPrint = true;
         return damage;
     }
 
@@ -75,6 +82,10 @@ public class Tobias implements Datamon {
         damage = 0;
         System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        if((ReolPrint && ReolTalk && ReolCode) == true){
+            CreatureType ="TobiasShrek";
+
+        }
         return damage;
     }
 
@@ -82,6 +93,7 @@ public class Tobias implements Datamon {
         damage = 0;
         System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        ReolTalk = true;
         return damage;
     }
 
@@ -129,4 +141,6 @@ public class Tobias implements Datamon {
     public int getDamage() {
         return damage;
     }
+
+
 }

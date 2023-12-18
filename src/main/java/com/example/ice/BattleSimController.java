@@ -3,18 +3,22 @@ package com.example.ice;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.ice.Datamons.Shrek;
+import com.example.ice.Datamons.Tobias;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 public class BattleSimController {
     @FXML
-    private ImageView  EnemySprite, PlayerSprite, StageTemp;
+    private ImageView  EnemySprite, PlayerSprite, StageTemp, ShrekBorder;
     @FXML
     private Button SelectMove1, SelectMove2, SelectMove3, SelectMove4, ChooseMon1,ChooseMon2,ChooseMon3;
     @FXML
@@ -25,6 +29,7 @@ public class BattleSimController {
     private final BattleSim sim = new BattleSim();
 
     private MediaPlayer musicPlayer;
+
 
     public void setup(User currentPlayer, User enemyPlayer) {
         File music = new File("MediaFiles/BattleSimTrack.mp3");
@@ -48,6 +53,7 @@ public class BattleSimController {
 
         PlayerSprite.setImage(currentPlayer.getCurrentDatamon().getSprite());
         EnemySprite.setImage(enemyPlayer.getCurrentDatamon().getSprite());
+
     }
 
     /**
@@ -72,6 +78,23 @@ public class BattleSimController {
             buttons.get(i).setVisible(true);
         }
     }
+
+    /**
+     * Nasseren cooked this method. If currentPlayer Datamon is tobias, and tobias has casted his 4th ability 4 times, then he transforms into shrek.
+     */
+    private void ShrekEasterEgg(){
+        if(currentPlayer.getCurrentDatamon().getName().equals("Tobias")&& currentPlayer.setCurrentDatamon().getCreatureType().equals("TobiasShrek")){
+            String path = "file:" + "src/main/resources/com/example/ice/TobiasSprite.png";
+
+            // Import image file.
+            Image image = new Image(path);
+
+            // Instantiate ImageView and set image.
+            PlayerSprite.setImage(image);
+
+        }
+    }
+
 
     /**
      * This method Updates our progressbar, depending on how much hp the attacker/Defenders datamon has left. We are also changing the Sprite depending on which Datamon we are using
@@ -151,6 +174,8 @@ public class BattleSimController {
         MoveName2.setText(currentPlayer.getCurrentDatamon().getMove2Name());
         MoveName3.setText(currentPlayer.getCurrentDatamon().getMove3Name());
         MoveName4.setText(currentPlayer.getCurrentDatamon().getMove4Name());
+
+
     }
 
     /**

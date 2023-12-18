@@ -4,43 +4,44 @@ import com.example.ice.Datamon;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-public class Tess implements Datamon {
-    private String name, CreatureType;
-    private int hp, damage;
-    private boolean studerendePræsenterer;
-    private String move1Name = "Roast";
-    private String move2Name = "Stil spørgsmål til studerendes kode";
-    private String move3Name = "Undervis på Zoom";
-    private String move4Name = "Få studerende til at præsentere";
+public class Shrek implements Datamon {
+    private String name;
+    private int hp;
+    private String CreatureType;
+    private String move1Name = "WWE takedown";
+    private String move2Name = "Flying Crossbody";
+    private String move3Name = "UFO";
+    private String move4Name = "Vertical Suplex";
+    private int damage;
 
-    public Tess(){
-        this.name = "Tess";
-        this.hp = 150;
-        this.CreatureType = "Boss";
+    public Shrek(){
+        this.name = "Shrek";
+        this.hp = 149;
+        this.CreatureType = "Gigablaster";
     }
 
     @Override
     public double getPercentageHealth() {
-        int maxHealth = 150;
+        int maxHealth = 300;
         return (double) hp / maxHealth;
     }
 
-    //Getter that retrieve name
     @Override
     public String getName() {
         return name;
     }
+
 
     @Override
     public int getHP() {
         return hp;
     }
 
+
     @Override
     public void setHP(int hp) {
         this.hp = hp;
     }
-
 
     @Override
     public String getCreatureType() {
@@ -49,46 +50,39 @@ public class Tess implements Datamon {
 
     @Override
     public String introduction() {
-        return  "";
+        return "";
     }
-
 
     /**
      * These 4 methods below , are used to create attacks for the Datamon. Every attack returns damage. Some attacks damage variable is buffed / nerfed depending on which datamon the target is.
      * @param target
      * @return damage
      */
+
     public int move1(Datamon target){
-        damage = 75;
-        if (target.getName().equals("Elsket Løve")){
-            damage *= 100;
-        }
+        damage = 50;
         System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move2(Datamon target){
-        damage = 75;
-        if(studerendePræsenterer){
-            damage *= 2;
-            studerendePræsenterer = false;
-        }
+        damage = 45;
         System.out.println("Angreb: " + move2Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move3(Datamon target){
-        damage = 75;
+        damage = 35;
         System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
+
     }
 
     public int move4(Datamon target){
-        damage = 75;
-        studerendePræsenterer = true;
+        damage = 60;
         System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
@@ -114,14 +108,13 @@ public class Tess implements Datamon {
         return move4Name;
     }
 
-
     /**
      * This following method returns the Sprite of the Datamon. Our Sprite is the image of the users/enemy's Datamon, That's being displayed when launching our BattlSim
      * @return image
      */
     @Override
     public Image getSprite() {
-        String path = "file:" + "src/main/resources/com/example/ice/TessSprite.png";
+        String path = "file:" + "src/main/resources/com/example/ice/RouvisMorSprite.png";
 
         // Import image file.
         Image image = new Image(path);
@@ -133,8 +126,11 @@ public class Tess implements Datamon {
         // Return ImageView related to specific Datamon.
         return image;
     }
+
     @Override
     public int getDamage() {
         return damage;
     }
+
+
 }
