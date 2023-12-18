@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65d5054d-fe21-451c-b7ff-3cef466f622e" name="Changes" comment="Helper method for selecter buttons.">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Shrek.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Shrek.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Tobias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Tobias.java" afterDir="false" />
+    <list default="true" id="65d5054d-fe21-451c-b7ff-3cef466f622e" name="Changes" comment="Updated with Shrek transform and end screen.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSim.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSim.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSim.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSim.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSim.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSimController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSimController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Tess.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Tess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Tobias.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Tobias.class" afterDir="false" />
     </list>
     <list id="50d3cce0-8330-4f92-b463-5a7a976c0af9" name="Changes by chris" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -489,7 +494,31 @@
       <option name="project" value="LOCAL" />
       <updated>1702855551175</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Helper method for selecter buttons.">
+      <option name="closed" value="true" />
+      <created>1702861148449</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1702861148449</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Updated with Shrek transform and end screen.">
+      <option name="closed" value="true" />
+      <created>1702861281497</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1702861281498</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Updated with Shrek transform and end screen.">
+      <option name="closed" value="true" />
+      <created>1702861479908</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1702861479908</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,6 +577,7 @@
     <MESSAGE value="Cleaned up imports and added damageLabel method. Added access modifiers and minor changes to user and datamon variables and added getDamage()." />
     <MESSAGE value="Minor clean up and additional comments." />
     <MESSAGE value="Helper method for selecter buttons." />
-    <option name="LAST_COMMIT_MESSAGE" value="Helper method for selecter buttons." />
+    <MESSAGE value="Updated with Shrek transform and end screen." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated with Shrek transform and end screen." />
   </component>
 </project>
