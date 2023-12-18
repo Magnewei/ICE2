@@ -14,7 +14,7 @@ import javafx.scene.media.MediaPlayer;
 
 public class BattleSimController {
     @FXML
-    private ImageView  EnemySprite, PlayerSprite, StageTemp;
+    private ImageView  EnemySprite, PlayerSprite, StageTemp, ShrekBorder;
     @FXML
     private Button SelectMove1, SelectMove2, SelectMove3, SelectMove4, ChooseMon1,ChooseMon2,ChooseMon3;
     @FXML
