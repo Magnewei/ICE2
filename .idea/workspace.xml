@@ -4,43 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65d5054d-fe21-451c-b7ff-3cef466f622e" name="Changes" comment="Added todo&#10;Added method to load EndScreenController.fxml&#10;Minor changes and fixes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MediaFiles/MediaEndWin.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/MediaFiles/MediaEndWin.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Fred2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Fred2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Tobias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Tobias.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/EndScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/EndScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/EndScreenLController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/EndScreenLController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/ice/EndScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/ice/EndScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSim.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSim.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSimController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSimController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Bobby.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Bobby.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Fred1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Fred1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Tobias.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Tobias.class" afterDir="false" />
-    </list>
-    <list id="50d3cce0-8330-4f92-b463-5a7a976c0af9" name="Changes by chris" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Bobby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Bobby.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Fred1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Fred1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Fred2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Fred2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Jonas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Jonas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Kevin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Kevin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Mads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Mads.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Marcus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Marcus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Nicolai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Nicolai.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Rouvi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Rouvi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/RouvisMor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/RouvisMor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Shrek.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Shrek.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Tess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Tess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Tobias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Tobias.java" afterDir="false" />
-    </list>
-    <list id="e6665657-b6d3-4016-80fb-afbd25236378" name="Changes by Gustav" comment="" />
-    <list id="a06521b8-f73e-497e-b985-80fa691e9608" name="Changes by magnus" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSim.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/ice/EndScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/ice/EndScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/ice/EndScreenL.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/ice/EndScreenL.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="65d5054d-fe21-451c-b7ff-3cef466f622e" name="Changes" comment="Added todo&#10;Added method to load EndScreenController.fxml&#10;Minor changes and fixes" />
+    <list id="50d3cce0-8330-4f92-b463-5a7a976c0af9" name="Changes by chris" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="GUSTAVNIKSPILLEBRANCH" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -66,47 +31,6 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/ice/SelectorController.java" root0="SKIP_INSPECTION" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Tobias.java">
-      <ranges>
-        <range start1="14" end1="15" start2="14" end2="15" changelist="65d5054d-fe21-451c-b7ff-3cef466f622e" />
-        <range start1="18" end1="18" start2="18" end2="19" changelist="65d5054d-fe21-451c-b7ff-3cef466f622e" />
-        <range start1="65" end1="68" start2="66" end2="66" changelist="65d5054d-fe21-451c-b7ff-3cef466f622e" />
-        <range start1="73" end1="76" start2="71" end2="71" changelist="65d5054d-fe21-451c-b7ff-3cef466f622e" />
-        <range start1="81" end1="84" start2="76" end2="76" changelist="50d3cce0-8330-4f92-b463-5a7a976c0af9" />
-        <range start1="85" end1="87" start2="77" end2="78" changelist="65d5054d-fe21-451c-b7ff-3cef466f622e" />
-        <range start1="95" end1="95" start2="86" end2="87" changelist="65d5054d-fe21-451c-b7ff-3cef466f622e" />
-        <range start1="101" end1="104" start2="93" end2="93" changelist="65d5054d-fe21-451c-b7ff-3cef466f622e" />
-        <range start1="135" end1="136" start2="124" end2="124" changelist="65d5054d-fe21-451c-b7ff-3cef466f622e" />
-        <range start1="152" end1="153" start2="140" end2="140" changelist="65d5054d-fe21-451c-b7ff-3cef466f622e" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/resources/com/example/ice/EndScreen.fxml">
-      <ranges>
-        <range start1="4" end1="5" start2="4" end2="4" changelist="a06521b8-f73e-497e-b985-80fa691e9608" />
-        <range start1="7" end1="10" start2="6" end2="9" changelist="65d5054d-fe21-451c-b7ff-3cef466f622e" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Fred2.java">
-      <ranges>
-        <range start1="61" end1="63" start2="61" end2="61" changelist="65d5054d-fe21-451c-b7ff-3cef466f622e" />
-        <range start1="69" end1="71" start2="67" end2="67" changelist="65d5054d-fe21-451c-b7ff-3cef466f622e" />
-        <range start1="77" end1="79" start2="73" end2="73" changelist="50d3cce0-8330-4f92-b463-5a7a976c0af9" />
-        <range start1="85" end1="86" start2="79" end2="80" changelist="50d3cce0-8330-4f92-b463-5a7a976c0af9" />
-        <range start1="88" end1="90" start2="82" end2="82" changelist="50d3cce0-8330-4f92-b463-5a7a976c0af9" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java">
-      <ranges>
-        <range start1="212" end1="213" start2="212" end2="215" changelist="65d5054d-fe21-451c-b7ff-3cef466f622e" />
-        <range start1="225" end1="226" start2="227" end2="228" changelist="65d5054d-fe21-451c-b7ff-3cef466f622e" />
-        <range start1="227" end1="227" start2="229" end2="230" changelist="a06521b8-f73e-497e-b985-80fa691e9608" />
-        <range start1="233" end1="235" start2="236" end2="238" changelist="65d5054d-fe21-451c-b7ff-3cef466f622e" />
-        <range start1="240" end1="241" start2="243" end2="243" changelist="65d5054d-fe21-451c-b7ff-3cef466f622e" />
-        <range start1="249" end1="249" start2="251" end2="274" changelist="65d5054d-fe21-451c-b7ff-3cef466f622e" />
-      </ranges>
-    </file>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -122,36 +46,33 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-21&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.23828125&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.Unnamed.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "openjdk-21",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.23828125",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\HP\IdeaProjects\ICE2\MediaFiles" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.ice" />
     </key>
