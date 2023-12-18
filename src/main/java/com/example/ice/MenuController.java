@@ -112,5 +112,12 @@ public class MenuController implements Initializable {
         alert.setContentText(content);
         alert.showAndWait();
     }
+
+    @FXML
+    private void ExitButton() {
+        Platform.exit();
+    }
+
+
 }
 

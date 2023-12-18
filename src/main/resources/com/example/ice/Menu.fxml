@@ -44,7 +44,7 @@
                </effect>
             </Label>
          </graphic></Button>
-      <Button fx:id="ExitButton" layoutX="835.0" layoutY="851.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #408861;" textFill="#fed269">
+      <Button fx:id="ExitButton" layoutX="835.0" layoutY="851.0" mnemonicParsing="false" onAction="#ExitButton" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #408861;" textFill="#fed269">
          <font>
             <Font name="Impact" size="16.0" />
          </font>
