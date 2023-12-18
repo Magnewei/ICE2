@@ -41,12 +41,14 @@ public class MenuController implements Initializable {
         mediaPlayer = new MediaPlayer(media);
         MenuBackground.setMediaPlayer(mediaPlayer);
         mediaPlayer.play();
+        mediaPlayer.setCycleCount(55);
 
         File music = new File("MediaFiles/MenuTrack.mp3");
         Media musicMedia = new Media(music.toURI().toString());
         musicPlayer = new MediaPlayer(musicMedia);
         musicPlayer.setVolume(0.1);
         musicPlayer.play();
+        musicPlayer.setCycleCount(55);
     }
 
     // Parses database login information. Returns user if username and password match found.

@@ -41,6 +41,7 @@ public class BattleSimController {
         musicPlayer = new MediaPlayer(musicMedia);
         musicPlayer.setVolume(0.1);
         musicPlayer.play();
+        musicPlayer.setCycleCount(55);
         this.currentPlayer = currentPlayer;
         this.enemyPlayer = enemyPlayer;
         sim.setup(currentPlayer, enemyPlayer);
