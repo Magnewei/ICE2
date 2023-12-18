@@ -38,8 +38,10 @@ public class EndScreenController implements Initializable {
             if (sim.getFightResult().equals("Hal9000")) {
                 File = new File("MediaFiles/MediaEndWin.mp4");  // NPC wins
                 return File;
+            }else{
+                File = new File("MediaFiles/MediaEndDie.mp4");  // Player wins
+                return File;
             }
-            File = new File("MediaFiles/MediaEndDie.mp4");  // Player wins
-            return File;
+
     }
 }

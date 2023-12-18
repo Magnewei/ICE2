@@ -113,7 +113,7 @@ public class BattleSim {
         enemyPlayer = temp;
     }
 
-    // Eror catching
+    // Error catching
     private void showErrorDialog(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
@@ -124,7 +124,7 @@ public class BattleSim {
 
 
     /**
-     * We are using the following method to constantly displaying what move is being used and how much damage it did in our TextBox in BattleSim.
+     * We are using the following method to constantly display what move is being used and how much damage it did in our TextBox in BattleSim.
      * @param moveNumber
      * @param attacker
      * @param defender

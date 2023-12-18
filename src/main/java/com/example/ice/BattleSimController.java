@@ -94,6 +94,7 @@ public class BattleSimController {
 
             // Instantiate ImageView and set image.
             PlayerSprite.setImage(image);
+            showMonButtons();
         }
     }
 
@@ -199,7 +200,9 @@ public class BattleSimController {
         if (currentPlayer.getDatamons().size() > 1) {
             ChooseMon2Name.setText(currentPlayer.getDatamons().get(1).getName());
         }
-        ChooseMon1Name.setText(currentPlayer.getDatamons().get(0).getName());
+        if (currentPlayer.getDatamons().size() > 0) {
+            ChooseMon1Name.setText(currentPlayer.getDatamons().get(0).getName());
+        }
     }
 
     /**
