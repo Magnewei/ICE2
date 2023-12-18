@@ -210,12 +210,15 @@ public class BattleSimController {
      */
     private void updateActiveMonLabels() {
         ActiveMon1.setText(currentPlayer.getCurrentDatamon().getName());
-        ActiveMon2.setText(enemyPlayer.getDatamons().get(0).getName());
+        if(!enemyPlayer.getDatamons().isEmpty()){
+            ActiveMon2.setText(enemyPlayer.getDatamons().get(0).getName());
+        }
+
     }
 
-    /**
-     * Updating DamageBox.
-     */
+
+     //Updating DamageBox.
+
     private void updateDamageBox() {
         String chatBox = sim.getMovePrint();
         damageBox.setText(chatBox);

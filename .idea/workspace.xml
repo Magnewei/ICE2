@@ -5,39 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65d5054d-fe21-451c-b7ff-3cef466f622e" name="Changes" comment="Added todo&#10;Added method to load EndScreenController.fxml&#10;Minor changes and fixes">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/ice/Funktionelle krav.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/254717a7-ecff-43b7-b6b5-23a8e38f0b22.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/254717a7-ecff-43b7-b6b5-23a8e38f0b22.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__17_52__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__17_52__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__17_52__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__17_52__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__17_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__17_54__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__18_25__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__18_25__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__18_25__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__18_25__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_12_2023__15_28__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_12_2023__15_28__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_15_12_2023__02_17__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_15_12_2023__02_17__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_15_12_2023__15_26__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_15_12_2023__15_26__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_16_12_2023__18_04__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_16_12_2023__18_04__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_12_2023__18_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_12_2023__18_23__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2023__23_24__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2023__23_24__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2023__23_24__Changes_by_chris_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2023__23_24__Changes_by_chris_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2023__17_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2023__17_57__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2023__17_57__Changes_by_chris_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2023__17_57__Changes_by_chris_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_12_2023__18_25__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_12_2023__18_25__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_12_2023__02_12__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_12_2023__02_12__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_12_2023__14_53__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_12_2023__14_53__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_2023__18_03__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_2023__18_03__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_12_2023__23_59__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_12_2023__23_59__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/EndScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/EndScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSim.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSim.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSimController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSimController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/DBConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/DBConnector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/MenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/SelectorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/SelectorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Jonas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Jonas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Tobias.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Tobias.class" afterDir="false" />
     </list>
     <list id="50d3cce0-8330-4f92-b463-5a7a976c0af9" name="Changes by chris" comment="" />
+    <list id="7aa0e297-0fd7-472c-a7db-186b72e247eb" name="Changes by Gustav" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="GUSTAVNIKSPILLEBRANCH" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -77,32 +52,32 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-21&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.23828125&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.Unnamed.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "WTFISGOING-ON",
+    "jdk.selected.JAVA_MODULE": "openjdk-21",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.23828125",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\HP\IdeaProjects\ICE2\src\main\resources\com\example\ice" />
@@ -185,22 +160,6 @@
       <workItem from="1702755275042" duration="2165000" />
       <workItem from="1702847221229" duration="7611000" />
       <workItem from="1702864017347" duration="2397000" />
-    </task>
-    <task id="LOCAL-00003" summary="gitignore">
-      <option name="closed" value="true" />
-      <created>1702307051683</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1702307051683</updated>
-    </task>
-    <task id="LOCAL-00004" summary="gitignore">
-      <option name="closed" value="true" />
-      <created>1702307100701</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1702307100701</updated>
     </task>
     <task id="LOCAL-00005" summary="Implemented changes from Ice-&gt;småRettelser">
       <option name="closed" value="true" />
@@ -578,7 +537,23 @@
       <option name="project" value="LOCAL" />
       <updated>1702865976442</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Added todo&#10;Added method to load EndScreenController.fxml&#10;Minor changes and fixes">
+      <option name="closed" value="true" />
+      <created>1702898246429</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1702898246430</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Added todo&#10;Added method to load EndScreenController.fxml&#10;Minor changes and fixes">
+      <option name="closed" value="true" />
+      <created>1702898583928</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1702898583928</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
