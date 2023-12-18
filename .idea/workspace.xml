@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="65d5054d-fe21-451c-b7ff-3cef466f622e" name="Changes" comment="XD">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/EndScreenLController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/EndScreenLController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/SelectorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/SelectorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/ice/EndScreenL.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/ice/EndScreenL.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/MenuController.class" afterDir="false" />
     </list>
     <list id="50d3cce0-8330-4f92-b463-5a7a976c0af9" name="Changes by chris" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -159,14 +153,6 @@
       <workItem from="1702755275042" duration="2165000" />
       <workItem from="1702847221229" duration="7611000" />
       <workItem from="1702864017347" duration="2397000" />
-    </task>
-    <task id="LOCAL-00004" summary="gitignore">
-      <option name="closed" value="true" />
-      <created>1702307100701</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1702307100701</updated>
     </task>
     <task id="LOCAL-00005" summary="Implemented changes from Ice-&gt;småRettelser">
       <option name="closed" value="true" />
@@ -552,7 +538,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702902471719</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="XD">
+      <option name="closed" value="true" />
+      <created>1702905831930</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1702905831930</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
