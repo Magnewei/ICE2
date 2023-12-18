@@ -10,6 +10,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class EndScreenController implements Initializable {
+    private File file;
     private MediaPlayer mediaPlayer;
     @FXML
     private MediaView MediaEnd;

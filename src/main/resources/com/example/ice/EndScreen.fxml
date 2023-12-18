@@ -5,7 +5,7 @@
 
 
 <AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ice.EndScreenController">
-   <children>
-      <MediaView fx:id="MediaEnd" fitHeight="1080.0" fitWidth="1920.0" />
-   </children>
+    <children>
+        <MediaView fx:id="MediaEnd" fitHeight="1080.0" fitWidth="1920.0" />
+    </children>
 </AnchorPane>

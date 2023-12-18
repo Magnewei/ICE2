@@ -10,7 +10,7 @@ public class DBConnector{
     private static final String PASS = "dUkWhlecP6";
 
     /**
-     * Method that lets u load user from our MySQL Database
+     * Method that lets you load user from our MySQL Database
      * @return
      * @throws FileNotFoundException
      */
