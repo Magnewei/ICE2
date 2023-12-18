@@ -5,19 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65d5054d-fe21-451c-b7ff-3cef466f622e" name="Changes" comment="XD">
+      <change afterPath="$PROJECT_DIR$/src/main/doc/domænemodel.puml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/doc/klassediagram slut.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/SelectorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/SelectorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/ice/Selector.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/ice/Selector.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSimController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSimController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Tobias.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Tobias.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/MenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Selector.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Selector.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/SelectorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/SelectorController.class" afterDir="false" />
     </list>
     <list id="50d3cce0-8330-4f92-b463-5a7a976c0af9" name="Changes by chris" comment="" />
-    <list id="2f85c099-70a4-4c95-8c5e-f85d63feaba5" name="Changes by magnus" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/SelectorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/SelectorController.java" afterDir="false" />
-    </list>
+    <list id="2f85c099-70a4-4c95-8c5e-f85d63feaba5" name="Changes by magnus" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +24,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="UML Object" />
+        <option value="UML Class" />
       </list>
     </option>
   </component>
@@ -43,23 +42,8 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/ice/SelectorController.java" root0="SKIP_INSPECTION" />
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/com/example/ice/SelectorController.java">
-      <ranges>
-        <range start1="18" end1="18" start2="18" end2="19" changelist="2f85c099-70a4-4c95-8c5e-f85d63feaba5" />
-        <range start1="29" end1="29" start2="30" end2="32" changelist="2f85c099-70a4-4c95-8c5e-f85d63feaba5" />
-        <range start1="41" end1="41" start2="44" end2="45" changelist="65d5054d-fe21-451c-b7ff-3cef466f622e" />
-        <range start1="52" end1="52" start2="56" end2="57" changelist="2f85c099-70a4-4c95-8c5e-f85d63feaba5" />
-        <range start1="61" end1="62" start2="66" end2="67" changelist="2f85c099-70a4-4c95-8c5e-f85d63feaba5" />
-        <range start1="73" end1="74" start2="78" end2="79" changelist="2f85c099-70a4-4c95-8c5e-f85d63feaba5" />
-        <range start1="124" end1="124" start2="129" end2="130" changelist="2f85c099-70a4-4c95-8c5e-f85d63feaba5" />
-        <range start1="130" end1="130" start2="136" end2="137" changelist="2f85c099-70a4-4c95-8c5e-f85d63feaba5" />
-        <range start1="138" end1="138" start2="145" end2="146" changelist="2f85c099-70a4-4c95-8c5e-f85d63feaba5" />
-        <range start1="175" end1="176" start2="183" end2="184" changelist="2f85c099-70a4-4c95-8c5e-f85d63feaba5" />
-        <range start1="179" end1="180" start2="187" end2="188" changelist="2f85c099-70a4-4c95-8c5e-f85d63feaba5" />
-        <range start1="199" end1="199" start2="207" end2="218" changelist="2f85c099-70a4-4c95-8c5e-f85d63feaba5" />
-      </ranges>
-    </file>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -79,10 +63,12 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Application.Unnamed.executor": "Run",
+    "DefaultPlantUmlFileTemplate": "UML Class",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "openjdk-21",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -93,7 +79,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.23828125",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -144,7 +130,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-3183f394aec4-abbd5a8d" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-3183f394aec4-7d648f2c" />
       </set>
     </attachedChunks>
   </component>
@@ -181,6 +167,7 @@
       <workItem from="1702755275042" duration="2165000" />
       <workItem from="1702847221229" duration="7611000" />
       <workItem from="1702864017347" duration="2397000" />
+      <workItem from="1702915037149" duration="2217000" />
     </task>
     <task id="LOCAL-00004" summary="gitignore">
       <option name="closed" value="true" />

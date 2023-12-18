@@ -1,0 +1,254 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Main{
+    + static void main(String[] args)
+    + void start(Stage primaryStage)
+}
+
+package "util"{
+    class DBConnector{
+        - String DB_URL
+        - String USER
+        - String PASS
+
+        + void loadUsers()
+        + Boolean createUser(String username, String password)
+        + User login(String username, String password)
+
+    }
+}
+
+package "model"{
+    class User{
+        - String username, password;
+        - List<Datamon> datamons = new ArrayList<>();
+        - Datamon currentDatamon;
+
+        + User(String username, String password)
+        + void setCurrentDatamon(int x)
+        + void setCurrentDatamon(Datamon datamon)
+        + List<Datamon> getDatamons()
+        + Datamon getCurrentDatamon()
+        + Datamon setCurrentDatamon()
+        + void addDatamon(Datamon mon)
+        + void removeDatamon(Datamon mon)
+        + String getUsername()
+        + String getPassword()
+    }
+
+    class BattleSim{
+        - User currentPlayer;
+        - User enemyPlayer;
+        - User player;
+        - User NPC;
+        - Random random;
+        - Datamon enemyDatamon;
+        - Datamon playerDatamon;
+        - String movePrint;
+        - String FightResult;
+
+        + void setup(User player, User NPC)
+        - void checkIfDead()
+        + Boolean checkIfWin()
+        + void Fight(int pick)
+        - void switchUser()
+        - void showErrorDialog(String title, String content)
+        - void executeMove(int moveNumber, Datamon attacker, Datamon defender)
+        + void move1(Datamon attacker, Datamon defender)
+        + void move2(Datamon attacker, Datamon defender)
+        + void move3(Datamon attacker, Datamon defender)
+        + void move4(Datamon attacker, Datamon defender)
+        + String getMovePrint()
+        + String getFightResult()
+    }
+}
+
+package "datamons" {
+
+    interface Datamon {
+        public String getName();
+        public int getHP();
+        public void setHP(int hp);
+        public String getCreatureType();
+        public int move1(Datamon Target);
+        public int move2(Datamon Target);
+        public int move3(Datamon Target);
+        public int move4(Datamon Target);
+        public String getMove1Name();
+        public String getMove2Name();
+        public String getMove3Name();
+        public String getMove4Name();
+        public String introduction();
+        public double getPercentageHealth();
+        public Image getSprite();
+        public int getDamage();
+
+    }
+    class Bobby implements Datamon{
+
+    }
+
+    class Fred1 implements Datamon{
+
+    }
+
+    class Fred2 implements Datamon{
+
+    }
+
+    class Jonas implements Datamon{
+
+    }
+
+    class Kevin implements Datamon{
+
+    }
+
+    class Mads implements Datamon{
+
+    }
+
+    class Marcus implements Datamon{
+
+    }
+
+    class Nicolai implements Datamon{
+
+    }
+
+    class Rouvi implements Datamon{
+
+    }
+
+    class RouvisMor implements Datamon{
+
+    }
+
+    class Tess implements Datamon{
+
+    }
+
+    class Tobias implements Datamon{
+
+    }
+}
+
+package "controllers"{
+    class BattleSimController{
+        - ImageView EnemySprite, PlayerSprite, StageTemp, ShrekBorder;
+        - Button SelectMove1, SelectMove2, SelectMove3, SelectMove4, ChooseMon1, ChooseMon2, ChooseMon3;
+        - Label ActiveMon1, ActiveMon2, ChooseMon1Name, ChooseMon2Name, ChooseMon3Name, MoveName1, MoveName2, MoveName3, MoveName4, damageBox;
+        - ProgressBar enemyProgressBar, playerProgressBar;
+        - User currentPlayer, enemyPlayer;
+        - final BattleSim sim = new BattleSim();
+        - MediaPlayer musicPlayer;
+
+        + void setup(User currentPlayer, User enemyPlayer)
+        - void showMonButtons()
+        - void updateProgress()
+        + void chooseMon1(ActionEvent e)
+        + void chooseMon2(ActionEvent e)
+        + void chooseMon3(ActionEvent e)
+        + void move1Button(ActionEvent e)
+        + void move2Button(ActionEvent e)
+        + void move3Button(ActionEvent e)
+        + void move4Button(ActionEvent e)
+        - void updateMoveLabels()
+        - void updateMonLabels()
+        - void updateActiveMonLabels()
+        - void updateDamageBox()
+        - void onWin(Event event)
+    }
+
+    class EndScreenController{
+        - File file
+        - MediaPlayer mediaPlayer
+        - MediaView MediaEnd
+
+        + void initialize(URL arg0, ResourceBundle arg1)
+
+    }
+
+    class EndScreenLController{
+        - File file
+        - MediaPlayer mediaPlayer
+        - MediaView MediaEnd
+
+        + void initialize(URL arg0, ResourceBundle arg1)
+    }
+
+    class MenuController{
+        - MediaView MenuBackground;
+        - TextField usernameField, passwordField;
+        - Stage userChoices;
+        - DBConnector io;
+        - User currentUser;
+        - User NPC;
+        - MediaPlayer mediaPlayer, musicPlayer;
+
+        + void initialize(URL arg0, ResourceBundle arg1)
+        - void loginPressed(ActionEvent event)
+        - void registerPressed(ActionEvent event)
+        - void showErrorDialog(String title, String content)
+    }
+
+    class SelectorController{
+        - int maxCarriedDatamon = 3;
+        - ImageView Mon1, Mon2, Mon3, Mon4, Mon5, Mon6;
+        - Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12;
+        - ImageView ChosenMon1, ChosenMon2, ChosenMon3;
+        - User currentUser, NPC;
+        - List<Datamon> datamons, NPCdatamons;
+        - MediaPlayer musicPlayer;
+
+        + void initialize(URL arg0, ResourceBundle arg1)
+        + void setup(User currentUser, User NPC)
+        - void Select1Pressed(ActionEvent event)
+        - void Select2Pressed(ActionEvent event)
+        - void Select3Pressed(ActionEvent event)
+        - void Select4Pressed(ActionEvent event)
+        - void Select5Pressed(ActionEvent event)
+        - void Select6Pressed(ActionEvent event)
+        - void Select7Pressed(ActionEvent event)
+        - void Select8Pressed(ActionEvent event)
+        - void Select9Pressed(ActionEvent event)
+        - void Select10Pressed(ActionEvent event)
+        - void Select11Pressed(ActionEvent event)
+        - void Select12Pressed(ActionEvent event)
+        - void selectDatamon(Datamon datamon)
+        - void BattleButtonPressed(ActionEvent event)
+        - void sendNPCList()
+        - void setChosenMon()
+
+
+    }
+}
+
+Main *-- MenuController
+
+MenuController *-- SelectorController
+MenuController *-- DBConnector
+MenuController *-- User
+
+SelectorController *-- BattleSimController
+SelectorController *-- User
+SelectorController *-- Datamon
+
+BattleSimController *-- EndScreenController
+BattleSimController *-- EndScreenLController
+BattleSimController *-- BattleSim
+BattleSimController *-- User
+BattleSimController *-- Datamon
+
+User *-- Datamon
+
+BattleSim *-- BattleSimController
+BattleSim *-- User
+BattleSim *-- Datamon
+
+
+
+
+
+@enduml

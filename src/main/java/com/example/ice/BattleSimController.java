@@ -82,21 +82,6 @@ public class BattleSimController {
         }
     }
 
-    /**
-     * Nasseren cooked this method. If currentPlayer Datamon is tobias, and tobias has casted his 4th ability 4 times, then he transforms into shrek.
-     */
-    private void ShrekEasterEgg() {
-        if (currentPlayer.getCurrentDatamon().getName().equals("Tobias") && currentPlayer.setCurrentDatamon().getCreatureType().equals("TobiasShrek")) {
-            String path = "file:" + "src/main/resources/com/example/ice/TobiasSprite.png";
-
-            // Import image file.
-            Image image = new Image(path);
-
-            // Instantiate ImageView and set image.
-            PlayerSprite.setImage(image);
-            showMonButtons();
-        }
-    }
 
 
     /**
@@ -177,7 +162,6 @@ public class BattleSimController {
         updateDamageBox();
         onWin(e);
 
-        ShrekEasterEgg();
     }
 
     /**

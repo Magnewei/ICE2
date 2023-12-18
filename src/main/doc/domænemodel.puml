@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object Mon
+object User
+object Datamon
+object DBConnector
+object TextUI
+object JavaFX
+object Controllers
+object ActualMons
+
+Datamon o-- Mon
+Datamon o-- JavaFX
+JavaFX o-- Controllers
+Datamon o-- User
+Datamon o-- TextUI
+Datamon o-- DBConnector
+Mon <|-- ActualMons
+
+
+@enduml
