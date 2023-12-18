@@ -5,36 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65d5054d-fe21-451c-b7ff-3cef466f622e" name="Changes" comment="Helper method for selecter buttons.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSim.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Bobby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Bobby.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Fred1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Fred1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Fred2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Fred2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Jonas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Jonas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Kevin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Kevin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Mads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Mads.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Marcus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Marcus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Nicolai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Nicolai.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Rouvi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Rouvi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/RouvisMor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/RouvisMor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Tess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Tess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Shrek.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Shrek.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Tobias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Datamons/Tobias.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/ice/BattleSim.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/ice/BattleSim.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSim.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSim.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSim.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSim.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Bobby.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Bobby.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Fred1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Fred1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Fred2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Fred2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Jonas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Jonas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Kevin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Kevin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Mads.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Mads.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Marcus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Marcus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Nicolai.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Nicolai.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Rouvi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Rouvi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/RouvisMor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/RouvisMor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Tess.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Tess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Tobias.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Tobias.class" afterDir="false" />
     </list>
     <list id="50d3cce0-8330-4f92-b463-5a7a976c0af9" name="Changes by chris" comment="" />
     <option name="SHOW_DIALOG" value="false" />

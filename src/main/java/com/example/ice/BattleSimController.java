@@ -29,7 +29,6 @@ public class BattleSimController {
     private final BattleSim sim = new BattleSim();
     private MediaPlayer musicPlayer;
 
-
     public void setup(User currentPlayer, User enemyPlayer) {
         File music = new File("MediaFiles/BattleSimTrack.mp3");
         Media musicMedia = new Media(music.toURI().toString());
@@ -52,7 +51,6 @@ public class BattleSimController {
 
         PlayerSprite.setImage(currentPlayer.getCurrentDatamon().getSprite());
         EnemySprite.setImage(enemyPlayer.getCurrentDatamon().getSprite());
-
     }
 
     /**
@@ -163,6 +161,8 @@ public class BattleSimController {
         sim.Fight(4);
         showMonButtons();
         updateDamageBox();
+
+        ShrekEasterEgg();
     }
 
     /**
