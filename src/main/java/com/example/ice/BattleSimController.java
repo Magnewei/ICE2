@@ -94,7 +94,10 @@ public class BattleSimController {
         playerProgressBar.setProgress(currentPlayer.getCurrentDatamon().getPercentageHealth());
 
         PlayerSprite.setImage(currentPlayer.getCurrentDatamon().getSprite());
-        EnemySprite.setImage(enemyPlayer.getCurrentDatamon().getSprite());
+        if(!enemyPlayer.getDatamons().isEmpty()){
+            EnemySprite.setImage(enemyPlayer.getDatamons().get(0).getSprite());
+        }
+
     }
 
     /**
