@@ -67,7 +67,7 @@ public class Tobias implements Datamon {
         System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         ReolCode = true;
-         return damage;
+        return damage;
     }
 
     public int move2(Datamon target){
@@ -85,7 +85,16 @@ public class Tobias implements Datamon {
         if((ReolPrint && ReolTalk && ReolCode) == true){
             CreatureType ="TobiasShrek";
 
+            // Transform into Shrek
+            move1Name = "WWE takedown";
+            move2Name = "Flying Crossbody";
+            move3Name = "UFO";
+            move4Name = "Vertical Suplex";
+            CreatureType = "Gigablaster";
+            name = "Shrek";
+            hp = 149;
         }
+
         return damage;
     }
 

@@ -27,7 +27,6 @@ public class BattleSimController {
     private ProgressBar enemyProgressBar, playerProgressBar;
     private User currentPlayer, enemyPlayer;
     private final BattleSim sim = new BattleSim();
-
     private MediaPlayer musicPlayer;
 
 

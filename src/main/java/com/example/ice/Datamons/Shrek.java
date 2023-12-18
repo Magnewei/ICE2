@@ -6,13 +6,12 @@ import javafx.scene.image.ImageView;
 
 public class Shrek implements Datamon {
     private String name;
-    private int hp;
+    private int hp, damage;;
     private String CreatureType;
     private String move1Name = "WWE takedown";
     private String move2Name = "Flying Crossbody";
     private String move3Name = "UFO";
     private String move4Name = "Vertical Suplex";
-    private int damage;
 
     public Shrek(){
         this.name = "Shrek";
