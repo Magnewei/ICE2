@@ -15,14 +15,12 @@ public class EndScreenController implements Initializable {
     @FXML
     private MediaView MediaEnd;
     private User currentPlayer, EnemyPlayer;
-    String fightResult;
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         if (FilePath() != null) {
             file = FilePath();
         }
-
         Media media = new Media(file.toURI().toString());
         mediaPlayer = new MediaPlayer(media);
         MediaEnd.setMediaPlayer(mediaPlayer);
