@@ -18,7 +18,7 @@ public class EndScreenLController implements Initializable {
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        File File = new File("MediaFiles/MediaEndDie.mp4");  // NPC wins
+        File file = new File("MediaFiles/MediaEndDie.mp4");  // NPC wins
         Media media = new Media(file.toURI().toString());
         mediaPlayer = new MediaPlayer(media);
         MediaEnd.setMediaPlayer(mediaPlayer);

@@ -4,38 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65d5054d-fe21-451c-b7ff-3cef466f622e" name="Changes" comment="Added todo&#10;Added method to load EndScreenController.fxml&#10;Minor changes and fixes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/EndScreenLController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/ice/EndScreenL.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/254717a7-ecff-43b7-b6b5-23a8e38f0b22.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__17_52__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__17_52__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__17_52__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__17_52__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__17_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__17_54__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__18_25__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__18_25__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__18_25__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2023__18_25__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_12_2023__15_28__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_12_2023__15_28__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_15_12_2023__02_17__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_15_12_2023__02_17__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_15_12_2023__15_26__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_15_12_2023__15_26__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_16_12_2023__18_04__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_16_12_2023__18_04__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_12_2023__18_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_12_2023__18_23__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2023__23_24__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2023__23_24__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2023__23_24__Changes_by_chris_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2023__23_24__Changes_by_chris_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2023__17_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2023__17_57__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2023__17_57__Changes_by_chris_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2023__17_57__Changes_by_chris_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_12_2023__18_25__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_12_2023__18_25__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_12_2023__02_12__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_12_2023__02_12__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_12_2023__14_53__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_12_2023__14_53__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_2023__18_03__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_2023__18_03__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_12_2023__23_59__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_12_2023__23_59__Changes_.xml" afterDir="false" />
+    <list default="true" id="65d5054d-fe21-451c-b7ff-3cef466f622e" name="Changes" comment="XD">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/BattleSimController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/EndScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/EndScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSim.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSim.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSimController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/BattleSimController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/DBConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/DBConnector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/EndScreenLController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/EndScreenLController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ice/SelectorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ice/SelectorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/ice/EndScreenL.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/ice/EndScreenL.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/MenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/SelectorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/SelectorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/User.class" afterDir="false" />
     </list>
     <list id="50d3cce0-8330-4f92-b463-5a7a976c0af9" name="Changes by chris" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -183,14 +159,6 @@
       <workItem from="1702755275042" duration="2165000" />
       <workItem from="1702847221229" duration="7611000" />
       <workItem from="1702864017347" duration="2397000" />
-    </task>
-    <task id="LOCAL-00003" summary="gitignore">
-      <option name="closed" value="true" />
-      <created>1702307051683</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1702307051683</updated>
     </task>
     <task id="LOCAL-00004" summary="gitignore">
       <option name="closed" value="true" />
@@ -576,7 +544,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702865976442</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="XD">
+      <option name="closed" value="true" />
+      <created>1702902471718</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1702902471719</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -638,6 +614,7 @@
     <MESSAGE value="Updated with Shrek transform and end screen." />
     <MESSAGE value="Fixed getMoviePrint()" />
     <MESSAGE value="Added todo&#10;Added method to load EndScreenController.fxml&#10;Minor changes and fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added todo&#10;Added method to load EndScreenController.fxml&#10;Minor changes and fixes" />
+    <MESSAGE value="XD" />
+    <option name="LAST_COMMIT_MESSAGE" value="XD" />
   </component>
 </project>
