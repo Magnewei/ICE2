@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65d5054d-fe21-451c-b7ff-3cef466f622e" name="Changes" comment="XD">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/ice/Fred1Sprite.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/ice/Fred1Sprite.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/ice/Fred2Sprite.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/ice/Fred2Sprite.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/ice/JonesSprite.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/ice/JonesSprite.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/ice/TessSprite.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/ice/TessSprite.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Tobias.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Datamons/Tobias.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/Fred2Sprite.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/Fred2Sprite.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/JonesSprite.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/JonesSprite.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ice/TessSprite.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ice/TessSprite.png" afterDir="false" />
-    </list>
+    <list default="true" id="65d5054d-fe21-451c-b7ff-3cef466f622e" name="Changes" comment="XD" />
     <list id="50d3cce0-8330-4f92-b463-5a7a976c0af9" name="Changes by chris" comment="" />
     <list id="2f85c099-70a4-4c95-8c5e-f85d63feaba5" name="Changes by magnus" comment="" />
     <option name="SHOW_DIALOG" value="false" />
