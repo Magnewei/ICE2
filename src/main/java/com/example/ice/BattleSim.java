@@ -1,11 +1,7 @@
 package com.example.ice;
 
 import java.util.Random;
-
-import com.example.ice.Datamons.Shrek;
-import com.example.ice.Datamons.Tobias;
 import javafx.scene.control.Alert;
-import javafx.scene.image.Image;
 
 public class BattleSim {
     private User currentPlayer;
@@ -28,9 +24,10 @@ public class BattleSim {
 
         enemyDatamon = enemyPlayer.getDatamons().get(0);
         playerDatamon = currentPlayer.getDatamons().get(0);
-}
+    }
 
-
+    // TODO:
+    // Fix game logic.
 
     // Checks if Datamon is dead.
     private void checkIfDead() {
@@ -50,7 +47,7 @@ public class BattleSim {
     }
 
     // Checks winner by parsing NPC and Player Datamon ArrayLists.
-    private Boolean checkIfWin() {
+    public Boolean checkIfWin() {
 
         if (player.getDatamons().isEmpty()) {
             showErrorDialog("Winner found ", NPC.getUsername() + " won!");
@@ -107,7 +104,7 @@ public class BattleSim {
 
 
 
-//Switching Users, so that currentPlayer always is the one who's about to chose a move
+    //Switching Users, so that currentPlayer always is the one who's about to chose a move
     private void switchUser() {
         User temp = currentPlayer;
         currentPlayer = enemyPlayer;
@@ -190,6 +187,5 @@ public class BattleSim {
     public String getFightResult(){
         return FightResult;
     }
-
 
 }

@@ -151,7 +151,6 @@ public class SelectorController implements Initializable {
                     Parent root = loader.load();
 
                     BattleSimController battleSimController = loader.getController();
-
                     battleSimController.setup(currentUser, NPC);
 
                     userChoices.setScene(new Scene(root));

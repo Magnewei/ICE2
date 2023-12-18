@@ -14,6 +14,7 @@ public class EndScreenController implements Initializable {
     private MediaPlayer mediaPlayer;
     @FXML
     private MediaView MediaEnd;
+    private User currentPlayer, EnemyPlayer;
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -23,6 +24,9 @@ public class EndScreenController implements Initializable {
         MediaEnd.setMediaPlayer(mediaPlayer);
         mediaPlayer.play();
     }
+
+    // TODO:
+    // Test if FilePath() loads scene correctly
 
 
     // Returns an end screen, depending on the winner of the game.

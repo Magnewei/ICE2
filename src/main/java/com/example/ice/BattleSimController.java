@@ -1,13 +1,18 @@
 package com.example.ice;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.ice.Datamons.Shrek;
-import com.example.ice.Datamons.Tobias;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
@@ -15,12 +20,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
+
 
 public class BattleSimController {
     @FXML
-    private ImageView  EnemySprite, PlayerSprite, StageTemp, ShrekBorder;
+    private ImageView EnemySprite, PlayerSprite, StageTemp, ShrekBorder;
     @FXML
-    private Button SelectMove1, SelectMove2, SelectMove3, SelectMove4, ChooseMon1,ChooseMon2,ChooseMon3;
+    private Button SelectMove1, SelectMove2, SelectMove3, SelectMove4, ChooseMon1, ChooseMon2, ChooseMon3;
     @FXML
     private Label ActiveMon1, ActiveMon2, ChooseMon1Name, ChooseMon2Name, ChooseMon3Name, MoveName1, MoveName2, MoveName3, MoveName4, damageBox;
     @FXML
@@ -45,7 +52,7 @@ public class BattleSimController {
         updateProgress();
         updateActiveMonLabels();
         playerProgressBar.setProgress(currentPlayer.getCurrentDatamon().getPercentageHealth());
-        if(enemyPlayer.getDatamons().size()>0){
+        if (enemyPlayer.getDatamons().size() > 0) {
             enemyProgressBar.setProgress(enemyPlayer.getDatamons().get(0).getPercentageHealth());
         }
 
@@ -71,16 +78,20 @@ public class BattleSimController {
         updateActiveMonLabels();
         updateProgress();
 
-        for(int i = 0; i <  amountOfDatamons ; i++){
+        for (int i = 0; i < amountOfDatamons; i++) {
             buttons.get(i).setVisible(true);
         }
     }
 
+    // TODO:
+    // Test if onWin() loads EndScreen controller on win.
+
+
     /**
      * Nasseren cooked this method. If currentPlayer Datamon is tobias, and tobias has casted his 4th ability 4 times, then he transforms into shrek.
      */
-    private void ShrekEasterEgg(){
-        if(currentPlayer.getCurrentDatamon().getName().equals("Tobias")&& currentPlayer.setCurrentDatamon().getCreatureType().equals("TobiasShrek")){
+    private void ShrekEasterEgg() {
+        if (currentPlayer.getCurrentDatamon().getName().equals("Tobias") && currentPlayer.setCurrentDatamon().getCreatureType().equals("TobiasShrek")) {
             String path = "file:" + "src/main/resources/com/example/ice/TobiasSprite.png";
 
             // Import image file.
@@ -88,7 +99,6 @@ public class BattleSimController {
 
             // Instantiate ImageView and set image.
             PlayerSprite.setImage(image);
-
         }
     }
 
@@ -97,7 +107,7 @@ public class BattleSimController {
      * This method Updates our progressbar, depending on how much hp the attacker/Defenders datamon has left. We are also changing the Sprite depending on which Datamon we are using
      */
     private void updateProgress() {
-        if(enemyPlayer.getDatamons().size()>0){
+        if (enemyPlayer.getDatamons().size() > 0) {
             enemyProgressBar.setProgress(enemyPlayer.getDatamons().get(0).getPercentageHealth());
         }
         playerProgressBar.setProgress(currentPlayer.getCurrentDatamon().getPercentageHealth());
@@ -108,24 +118,26 @@ public class BattleSimController {
 
     /**
      * These 3 Methods is used so the user can swap between its Datamons
+     *
      * @param e
      */
     @FXML
-    public void chooseMon1(ActionEvent e){
+    public void chooseMon1(ActionEvent e) {
         currentPlayer.setCurrentDatamon(0);
         updateMoveLabels();
         showMonButtons();
     }
 
     @FXML
-    public void chooseMon2(ActionEvent e){
+    public void chooseMon2(ActionEvent e) {
         currentPlayer.setCurrentDatamon(1);
         updateMoveLabels();
         showMonButtons();
+
     }
 
     @FXML
-    public void chooseMon3(ActionEvent e){
+    public void chooseMon3(ActionEvent e) {
         currentPlayer.setCurrentDatamon(2);
         updateMoveLabels();
         showMonButtons();
@@ -133,34 +145,39 @@ public class BattleSimController {
 
     /**
      * These 4 methods are used to connect the 4 Datamons attacks, to its buttons.
+     *
      * @param e
      */
     @FXML
-    public void move1Button(ActionEvent e){
+    public void move1Button(ActionEvent e) {
         sim.Fight(1);
         showMonButtons();
         updateDamageBox();
+        onWin(e);
     }
 
     @FXML
-    public void move2Button(ActionEvent e){
+    public void move2Button(ActionEvent e) {
         sim.Fight(2);
         showMonButtons();
         updateDamageBox();
+        onWin(e);
     }
 
     @FXML
-    public void move3Button(ActionEvent e){
+    public void move3Button(ActionEvent e) {
         sim.Fight(3);
         showMonButtons();
         updateDamageBox();
+        onWin(e);
     }
 
     @FXML
-    public void move4Button(ActionEvent e){
+    public void move4Button(ActionEvent e) {
         sim.Fight(4);
         showMonButtons();
         updateDamageBox();
+        onWin(e);
 
         ShrekEasterEgg();
     }
@@ -168,23 +185,21 @@ public class BattleSimController {
     /**
      * Updating the moveLabels text depending on what Datamon is being used
      */
-    private void updateMoveLabels(){
+    private void updateMoveLabels() {
         MoveName1.setText(currentPlayer.getCurrentDatamon().getMove1Name());
         MoveName2.setText(currentPlayer.getCurrentDatamon().getMove2Name());
         MoveName3.setText(currentPlayer.getCurrentDatamon().getMove3Name());
         MoveName4.setText(currentPlayer.getCurrentDatamon().getMove4Name());
-
-
     }
 
     /**
      * Updating the Name Labels depending on what Datamon the player still has left.
      */
-    private void updateMonLabels(){
-        if(currentPlayer.getDatamons().size()>2){
+    private void updateMonLabels() {
+        if (currentPlayer.getDatamons().size() > 2) {
             ChooseMon3Name.setText(currentPlayer.getDatamons().get(2).getName());
         }
-        if(currentPlayer.getDatamons().size()>1) {
+        if (currentPlayer.getDatamons().size() > 1) {
             ChooseMon2Name.setText(currentPlayer.getDatamons().get(1).getName());
         }
         ChooseMon1Name.setText(currentPlayer.getDatamons().get(0).getName());
@@ -193,7 +208,7 @@ public class BattleSimController {
     /**
      * Updating the Name Label depending on what Datamon is currently Active.
      */
-    private void updateActiveMonLabels(){
+    private void updateActiveMonLabels() {
         ActiveMon1.setText(currentPlayer.getCurrentDatamon().getName());
         ActiveMon2.setText(enemyPlayer.getDatamons().get(0).getName());
     }
@@ -204,6 +219,35 @@ public class BattleSimController {
     private void updateDamageBox() {
         String chatBox = sim.getMovePrint();
         damageBox.setText(chatBox);
+    }
+
+    // Loads EndScreen.fxml if game is finished.
+    private void onWin(Event event) {
+        if (sim.checkIfWin()) {
+            Stage userChoices = new Stage();
+            try {
+
+                // Pause music on scene end.
+                musicPlayer.pause();
+                // Hide current window on new end.
+                ((Node) (event.getSource())).getScene().getWindow().hide();
+
+                // Load new window & scene.
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("EndScreen.fxml"));  // Load new window.
+
+                // Load correct instantiation of controller from memory.
+                Parent root = loader.load();
+                EndScreenController endController = loader.getController();
+
+                // Load new scene
+                userChoices.setScene(new Scene(root));
+                userChoices.show();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            // Moved from BattleSimController to EndScreen.fxml if checkIfWin returned true. Else continue.
+        }
     }
 }
 
