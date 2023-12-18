@@ -17,6 +17,8 @@ public class BattleSim {
     private Datamon playerDatamon;
     private String movePrint = "";
 
+    private String FightResult;
+
     public void setup(User player, User NPC) {
         this.player = player;
         this.NPC = NPC;
@@ -49,11 +51,14 @@ public class BattleSim {
 
     // Checks winner by parsing NPC and Player Datamon ArrayLists.
     private Boolean checkIfWin() {
+
         if (player.getDatamons().isEmpty()) {
             showErrorDialog("Winner found ", NPC.getUsername() + " won!");
+            FightResult=NPC.getUsername();
             return true;
 
         } else if (NPC.getDatamons().isEmpty()) {
+            FightResult=player.getUsername();
             showErrorDialog("Winner found ", player.getUsername() + " won!");
             return true;
         } else {
@@ -176,6 +181,10 @@ public class BattleSim {
 
     public String getMovePrint() {
         return movePrint;
+    }
+
+    public String getFightResult(){
+        return FightResult;
     }
 
 

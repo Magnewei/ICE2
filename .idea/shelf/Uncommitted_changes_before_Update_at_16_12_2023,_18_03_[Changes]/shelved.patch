@@ -1,0 +1,18 @@
+Index: src/main/java/com/example/ice/Datamon.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ice;\n\npublic interface Datamon {\n    public String getName();\n    public int getHP();\n    public void setHP(int hp);\n    public String getCreatureType();\n\n    public int move1(Datamon Target);\n    public int move2(Datamon Target);\n    public int move3(Datamon Target);\n    public int move4(Datamon Target);\n    public String getMove1Name();\n    public String getMove2Name();\n    public String getMove3Name();\n    public String getMove4Name();\n\n    public String introduction();\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ice/Datamon.java b/src/main/java/com/example/ice/Datamon.java
+--- a/src/main/java/com/example/ice/Datamon.java	(revision 0fd4053c256d6ef2795d139c416359fda3716f8d)
++++ b/src/main/java/com/example/ice/Datamon.java	(date 1702746163634)
+@@ -5,7 +5,6 @@
+     public int getHP();
+     public void setHP(int hp);
+     public String getCreatureType();
+-
+     public int move1(Datamon Target);
+     public int move2(Datamon Target);
+     public int move3(Datamon Target);

@@ -14,6 +14,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.io.File;
 import javafx.scene.input.MouseEvent;
@@ -35,6 +36,7 @@ public class MenuController implements Initializable {
     private User currentUser = new User();
     private User NPC = new User("Hal9000", "");
     private MediaPlayer mediaPlayer;
+    private MediaPlayer musicPlayer;
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -42,12 +44,21 @@ public class MenuController implements Initializable {
         Media media = new Media(file.toURI().toString());
         mediaPlayer = new MediaPlayer(media);
         MenuBackground.setMediaPlayer(mediaPlayer);
+        mediaPlayer.play();
+
+        File music = new File("MediaFiles/MenuTrack.mp3");
+        Media musicMedia = new Media(music.toURI().toString());
+        musicPlayer = new MediaPlayer(musicMedia);
+        musicPlayer.setVolume(0.1);
+        musicPlayer.play();
+
+
+
+
+
     }
 
-    /**
-     * Parses database login information. Returns user if username and password match found.
-     * @param event
-     */
+    // Parses database login information. Returns user if username and password match found.
     @FXML
     private void loginPressed(ActionEvent event) {
         try {
@@ -55,7 +66,7 @@ public class MenuController implements Initializable {
             if (currentUser != null) {
                 Platform.runLater(() -> {
                     try {
-
+                        musicPlayer.pause();
                         ((Node)(event.getSource())).getScene().getWindow().hide();
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("Selector.fxml"));
                         Parent root = loader.load();
@@ -83,11 +94,7 @@ public class MenuController implements Initializable {
         }
     }
 
-    /**
-     * Register user and inserts username and password into database.
-     * @param event
-     * @throws SQLException
-     */
+    // Register user and inserts username and password into database.
     @FXML
     private void registerPressed(ActionEvent event) throws SQLException {
         if (io.createUser(usernameField.getText(), passwordField.getText()).equals(true)) {
@@ -98,11 +105,6 @@ public class MenuController implements Initializable {
         }
     }
 
-    /**
-     * Method that's used for Catching errors.
-     * @param title
-     * @param content
-     */
     private void showErrorDialog(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
@@ -111,16 +113,6 @@ public class MenuController implements Initializable {
         alert.showAndWait();
     }
 
-    /**
-     * Playing our Menu, with a selected Volume for the mediaPlayer's sound.
-     * @param mouseEvent
-     */
-    @FXML
-    private void PlayMenu(MouseEvent mouseEvent) {
-        mediaPlayer.play();
-        mediaPlayer.setRate(1.1);
-        mediaPlayer.setVolume(0.5);
 
-    }
 }
 
