@@ -63,8 +63,7 @@ public class Tess implements Datamon {
         if (target.getName().equals("Elsket Løve")){
             damage *= 100;
         }
-        System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+
         return damage;
     }
 
@@ -74,23 +73,20 @@ public class Tess implements Datamon {
             damage *= 2;
             studerendePræsenterer = false;
         }
-        System.out.println("Angreb: " + move2Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+
         return damage;
     }
 
     public int move3(Datamon target){
         damage = 75;
-        System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+
         return damage;
     }
 
     public int move4(Datamon target){
         damage = 75;
         studerendePræsenterer = true;
-        System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+
         return damage;
     }
 

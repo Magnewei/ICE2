@@ -12,10 +12,12 @@ public class Tobias implements Datamon {
     private String move2Name = "Print reol";
     private String move3Name = "Byg Reol";
     private String move4Name = "Snak om reol";
-    private int damage;
+    private int damage = 0;
     private boolean ReolCode = false;
     private boolean ReolPrint = false;
     private boolean ReolTalk = false;
+    private String path = "file:" + "src/main/resources/com/example/ice/TobiasSprite.png";
+
 
     public Tobias() {
         this.name = "Tobias";
@@ -25,7 +27,7 @@ public class Tobias implements Datamon {
 
     @Override
     public double getPercentageHealth() {
-        int maxHealth = 280;
+        int maxHealth = 101;
         return (double) hp / maxHealth;
     }
 
@@ -63,28 +65,18 @@ public class Tobias implements Datamon {
      */
 
     public int move1(Datamon target){
-        damage = 0;
-        System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         ReolCode = true;
         return damage;
     }
 
     public int move2(Datamon target){
-        damage = 0;
-        System.out.println("Angreb: " + move2Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         ReolPrint = true;
         return damage;
     }
 
     public int move3(Datamon target){
-        damage = 0;
-        System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         if((ReolPrint && ReolTalk && ReolCode) == true){
-            CreatureType ="TobiasShrek";
-
+            path = "file:" + "src/main/resources/com/example/ice/ShrekSprite.png";
             // Transform into Shrek
             move1Name = "WWE takedown";
             move2Name = "Flying Crossbody";
@@ -93,15 +85,13 @@ public class Tobias implements Datamon {
             CreatureType = "Gigablaster";
             name = "Shrek";
             hp = 149;
+            damage = 40;
         }
 
         return damage;
     }
 
     public int move4(Datamon target){
-        damage = 0;
-        System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         ReolTalk = true;
         return damage;
     }
@@ -150,6 +140,5 @@ public class Tobias implements Datamon {
     public int getDamage() {
         return damage;
     }
-
 
 }

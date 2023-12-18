@@ -15,7 +15,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -95,6 +94,7 @@ public class BattleSimController {
 
             // Instantiate ImageView and set image.
             PlayerSprite.setImage(image);
+            showMonButtons();
         }
     }
 
@@ -200,7 +200,9 @@ public class BattleSimController {
         if (currentPlayer.getDatamons().size() > 1) {
             ChooseMon2Name.setText(currentPlayer.getDatamons().get(1).getName());
         }
-        ChooseMon1Name.setText(currentPlayer.getDatamons().get(0).getName());
+        if (currentPlayer.getDatamons().size() > 0) {
+            ChooseMon1Name.setText(currentPlayer.getDatamons().get(0).getName());
+        }
     }
 
     /**
@@ -208,7 +210,9 @@ public class BattleSimController {
      */
     private void updateActiveMonLabels() {
         ActiveMon1.setText(currentPlayer.getCurrentDatamon().getName());
-        ActiveMon2.setText(enemyPlayer.getDatamons().get(0).getName());
+        if(!enemyPlayer.getDatamons().isEmpty()){
+            ActiveMon2.setText(enemyPlayer.getDatamons().get(0).getName());
+        }
     }
 
     /**
@@ -221,21 +225,21 @@ public class BattleSimController {
 
     // Loads EndScreen.fxml if game is finished.
     private void onWin(Event event) {
-        if (sim.checkIfWin()) {
+        if (sim.checkIfWin() && !sim.getFightResult().equals("Hal9000")) {
             Stage userChoices = new Stage();
+            String path = "EndScreen.fxml";
             try {
                 // Pause music on scene end.
                 musicPlayer.pause();
                 // Hide current window on new end.
                 ((Node) (event.getSource())).getScene().getWindow().hide();
 
-                // Load new window & scene.
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("EndScreen.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+
                 Parent root = loader.load();
 
                 // Pass correct BattleSim object to EndScreenController.
                 EndScreenController endController = loader.getController();
-                endController.setup(sim);
 
                 // Load new scene
                 userChoices.setScene(new Scene(root));
@@ -245,6 +249,29 @@ public class BattleSimController {
                 e.printStackTrace();
             }
             // Moved from BattleSimController to EndScreen.fxml if checkIfWin returned true. Else continue.
+        }else if(sim.checkIfWin()){
+            Stage userChoices = new Stage();
+            String path = "EndScreenL.fxml";
+            try {
+                // Pause music on scene end.
+                musicPlayer.pause();
+                // Hide current window on new end.
+                ((Node) (event.getSource())).getScene().getWindow().hide();
+
+                FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+
+                Parent root = loader.load();
+
+                // Pass correct BattleSim object to EndScreenController.
+                EndScreenLController endController = loader.getController();
+
+                // Load new scene
+                userChoices.setScene(new Scene(root));
+                userChoices.show();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

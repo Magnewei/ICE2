@@ -58,22 +58,16 @@ public class Nicolai implements Datamon {
      */
     public int move1(Datamon target){
         damage = 7;
-        System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move2(Datamon target){
         damage = 8;
-        System.out.println("Angreb: " + move2Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move3(Datamon target){
         damage = 6;
-        System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
@@ -82,8 +76,7 @@ public class Nicolai implements Datamon {
         if(target.getHP() > hp){
             damage *= 2;
         }
-        System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+
         return damage;
     }
 

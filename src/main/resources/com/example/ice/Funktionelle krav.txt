@@ -1,0 +1,11 @@
+Funktionelle krav til ICE:
+Overordnet set vil vi gerne lave en tro kopi af Pokemon Showdown. Mere konkret betyder det at vi gerne vil i mål med:
+En startmenu
+En menu til at vælge Datamoner
+En kampscene, med de samme funktioner som den i showdown:
+	- 4 moves til hver datamon, hver med deres egen damage, nogle med bestemte forudsætninger
+	- mulighed for at skifte Datamon før den er død.
+Brugere gemt i en online database
+Kampe både mod NPC og 1v1 hotseat
+
+

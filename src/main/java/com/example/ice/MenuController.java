@@ -21,7 +21,6 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 
-
 public class MenuController implements Initializable {
     @FXML
     private MediaView MenuBackground;
@@ -113,7 +112,5 @@ public class MenuController implements Initializable {
         alert.setContentText(content);
         alert.showAndWait();
     }
-
-
 }
 
