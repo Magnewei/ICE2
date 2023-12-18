@@ -82,10 +82,6 @@ public class BattleSimController {
         }
     }
 
-    // TODO:
-    // Test if onWin() loads EndScreen controller on win.
-
-
     /**
      * Nasseren cooked this method. If currentPlayer Datamon is tobias, and tobias has casted his 4th ability 4 times, then he transforms into shrek.
      */
@@ -224,7 +220,7 @@ public class BattleSimController {
 
     // Loads EndScreen.fxml if game is finished.
     private void onWin(Event event) {
-        if (true) {
+        if (sim.checkIfWin()) {
             Stage userChoices = new Stage();
             try {
                 // Pause music on scene end.

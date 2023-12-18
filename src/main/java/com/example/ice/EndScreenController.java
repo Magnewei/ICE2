@@ -19,7 +19,10 @@ public class EndScreenController implements Initializable {
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        file = FilePath();
+        if (FilePath() != null) {
+            file = FilePath();
+        }
+
         Media media = new Media(file.toURI().toString());
         mediaPlayer = new MediaPlayer(media);
         MediaEnd.setMediaPlayer(mediaPlayer);
@@ -30,19 +33,14 @@ public class EndScreenController implements Initializable {
         this.sim = sim;
     }
 
-
-    // TODO:
-    // Test if FilePath() loads scene correctly
-
-
     // Returns an end screen, depending on the winner of the game.
     public File FilePath() {
         File File;
-        if (sim.getFightResult().equals("Hal9000")) {
-            File = new File("MediaFiles/MediaEndWin.mp4");  // NPC wins
+            if (sim.getFightResult().equals("Hal9000")) {
+                File = new File("MediaFiles/MediaEndWin.mp4");  // NPC wins
+                return File;
+            }
+            File = new File("MediaFiles/MediaEndDie.mp4");  // Player wins
             return File;
-        }
-        File = new File("MediaFiles/MediaEndDie.mp4");  // Player wins
-        return File;
     }
 }
