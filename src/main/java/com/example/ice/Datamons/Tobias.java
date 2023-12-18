@@ -16,7 +16,8 @@ public class Tobias implements Datamon {
     private boolean ReolCode = false;
     private boolean ReolPrint = false;
     private boolean ReolTalk = false;
-    String path = "file:" + "src/main/resources/com/example/ice/TobiasSprite.png";
+    private String path = "file:" + "src/main/resources/com/example/ice/TobiasSprite.png";
+
 
     public Tobias() {
         this.name = "Tobias";
@@ -122,6 +123,7 @@ public class Tobias implements Datamon {
      */
     @Override
     public Image getSprite() {
+        String path = "file:" + "src/main/resources/com/example/ice/TobiasSprite.png";
 
         // Import image file.
         Image image = new Image(path);
