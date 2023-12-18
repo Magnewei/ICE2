@@ -9,7 +9,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class EndScreenController implements Initializable {
+public class EndScreenLController implements Initializable {
     private File file;
 
     private MediaPlayer mediaPlayer;
@@ -18,7 +18,7 @@ public class EndScreenController implements Initializable {
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        File File = new File("MediaFiles/MediaEndWin.mp4");  // NPC wins
+        File File = new File("MediaFiles/MediaEndDie.mp4");  // NPC wins
         Media media = new Media(file.toURI().toString());
         mediaPlayer = new MediaPlayer(media);
         MediaEnd.setMediaPlayer(mediaPlayer);

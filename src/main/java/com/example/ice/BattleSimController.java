@@ -237,7 +237,7 @@ public class BattleSimController {
 
                 // Pass correct BattleSim object to EndScreenController.
                 EndScreenController endController = loader.getController();
-                endController.setup(sim);
+
 
                 // Load new scene
                 userChoices.setScene(new Scene(root));
