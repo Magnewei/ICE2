@@ -1,7 +1,12 @@
 package com.example.ice;
 
+import java.io.IOException;
 import java.util.Random;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.stage.Stage;
 
 public class BattleSim {
     private User currentPlayer;
@@ -22,8 +27,8 @@ public class BattleSim {
         currentPlayer = player;
         enemyPlayer = NPC;
 
-        enemyDatamon = enemyPlayer.getDatamons().get(0);
-        playerDatamon = currentPlayer.getDatamons().get(0);
+        enemyDatamon = enemyPlayer.getDatamons().getFirst();
+        playerDatamon = currentPlayer.getDatamons().getFirst();
     }
 
     // TODO:
@@ -34,14 +39,14 @@ public class BattleSim {
         if (enemyDatamon.getHP() <= 0) {
             enemyPlayer.removeDatamon(enemyDatamon);
             if (!enemyPlayer.getDatamons().isEmpty()) {
-                enemyDatamon = enemyPlayer.getDatamons().get(0);
+                enemyDatamon = enemyPlayer.getDatamons().getFirst();
             }
         }
 
         if (playerDatamon.getHP() <= 0) {
             player.removeDatamon(playerDatamon);
             if (!player.getDatamons().isEmpty()) {
-                playerDatamon = player.getDatamons().get(0);
+                playerDatamon = player.getDatamons().getFirst();
             }
         }
     }
@@ -101,9 +106,7 @@ public class BattleSim {
             }
         }
     }
-
-
-
+    
     //Switching Users, so that currentPlayer always is the one who's about to chose a move
     private void switchUser() {
         User temp = currentPlayer;
@@ -153,11 +156,6 @@ public class BattleSim {
                 System.out.println("Invalid move.");
         }
     }
-
-    public Datamon getPlayerDatamon(){
-        return playerDatamon;
-    }
-
 
     /**
      * These 4 methods is used to set the Defenders hp after its taken damage from the attackers move 1,2,3 and 4

@@ -1,11 +1,5 @@
 package com.example.ice;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -21,6 +15,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class BattleSimController {
@@ -52,8 +51,8 @@ public class BattleSimController {
         updateProgress();
         updateActiveMonLabels();
         playerProgressBar.setProgress(currentPlayer.getCurrentDatamon().getPercentageHealth());
-        if (enemyPlayer.getDatamons().size() > 0) {
-            enemyProgressBar.setProgress(enemyPlayer.getDatamons().get(0).getPercentageHealth());
+        if (!enemyPlayer.getDatamons().isEmpty()) {
+            enemyProgressBar.setProgress(enemyPlayer.getDatamons().getFirst().getPercentageHealth());
         }
 
         PlayerSprite.setImage(currentPlayer.getCurrentDatamon().getSprite());
@@ -107,8 +106,8 @@ public class BattleSimController {
      * This method Updates our progressbar, depending on how much hp the attacker/Defenders datamon has left. We are also changing the Sprite depending on which Datamon we are using
      */
     private void updateProgress() {
-        if (enemyPlayer.getDatamons().size() > 0) {
-            enemyProgressBar.setProgress(enemyPlayer.getDatamons().get(0).getPercentageHealth());
+        if (!enemyPlayer.getDatamons().isEmpty()) {
+            enemyProgressBar.setProgress(enemyPlayer.getDatamons().getFirst().getPercentageHealth());
         }
         playerProgressBar.setProgress(currentPlayer.getCurrentDatamon().getPercentageHealth());
 
@@ -162,6 +161,7 @@ public class BattleSimController {
         showMonButtons();
         updateDamageBox();
         onWin(e);
+
     }
 
     @FXML
@@ -170,6 +170,7 @@ public class BattleSimController {
         showMonButtons();
         updateDamageBox();
         onWin(e);
+
     }
 
     @FXML
@@ -223,21 +224,21 @@ public class BattleSimController {
 
     // Loads EndScreen.fxml if game is finished.
     private void onWin(Event event) {
-        if (sim.checkIfWin()) {
+        if (true) {
             Stage userChoices = new Stage();
             try {
-
                 // Pause music on scene end.
                 musicPlayer.pause();
                 // Hide current window on new end.
                 ((Node) (event.getSource())).getScene().getWindow().hide();
 
                 // Load new window & scene.
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("EndScreen.fxml"));  // Load new window.
-
-                // Load correct instantiation of controller from memory.
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("EndScreen.fxml"));
                 Parent root = loader.load();
+
+                // Pass correct BattleSim object to EndScreenController.
                 EndScreenController endController = loader.getController();
+                endController.setup(sim);
 
                 // Load new scene
                 userChoices.setScene(new Scene(root));
