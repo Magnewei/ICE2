@@ -10,7 +10,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 public class EndScreenController implements Initializable {
     private File file;
-
     private BattleSim Sim = new BattleSim();
     private MediaPlayer mediaPlayer;
     @FXML
@@ -18,19 +17,22 @@ public class EndScreenController implements Initializable {
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        FilePath();
+        file = FilePath();
         Media media = new Media(file.toURI().toString());
         mediaPlayer = new MediaPlayer(media);
         MediaEnd.setMediaPlayer(mediaPlayer);
         mediaPlayer.play();
-
     }
-    public void FilePath() {
+
+
+    // Returns an end screen, depending on the winner of the game.
+    public File FilePath() {
         File File;
-        if (Sim.getFightResult().equals("Hal900")) {
-            File = new File("MediaFiles/MediaEndWin.mp4");
-        } else {
-            File = new File("MediaFiles/MediaEndDie.mp4");
+        if (Sim.getFightResult().equals("Hal9000")) {
+            File = new File("MediaFiles/MediaEndWin.mp4");  // NPC wins
+            return File;
         }
+            File = new File("MediaFiles/MediaEndDie.mp4");  // Player wins
+            return File;
     }
 }
