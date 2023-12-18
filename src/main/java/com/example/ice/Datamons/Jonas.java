@@ -15,13 +15,13 @@ public class Jonas implements Datamon {
 
     public Jonas(){
         this.name = "Elsket Løve";
-        this.hp = 100;
+        this.hp = 20;
         this.CreatureType = "StudieGruppeF";
     }
 
     @Override
     public double getPercentageHealth() {
-        int maxHealth = 100;
+        int maxHealth = 20;
         return (double) hp / maxHealth;
     }
 
