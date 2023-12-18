@@ -39,6 +39,7 @@ public class SelectorController implements Initializable {
         musicPlayer.setVolume(0.1);
         musicPlayer.play();
         musicPlayer.setCycleCount(55);
+
     }
 
     public void setup(User currentUser, User NPC) {

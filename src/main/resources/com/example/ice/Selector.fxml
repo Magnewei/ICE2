@@ -116,7 +116,7 @@
                </children></AnchorPane>
          </top>
          <center>
-            <Button mnemonicParsing="false" prefHeight="360.0" prefWidth="1920.0" text="Button" BorderPane.alignment="CENTER">
+            <Button mnemonicParsing="false" prefHeight="358.0" prefWidth="1920.0" text="Button" BorderPane.alignment="CENTER">
                <effect>
                   <ImageInput>
                      <source>
@@ -126,5 +126,8 @@
             </Button>
          </center>
       </BorderPane>
+      <ImageView fx:id="ChosenMon1" fitHeight="359.0" fitWidth="547.0" layoutX="26.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ChosenMon2" fitHeight="359.0" fitWidth="598.0" layoutX="644.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ChosenMon3" fitHeight="359.0" fitWidth="584.0" layoutX="1303.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
