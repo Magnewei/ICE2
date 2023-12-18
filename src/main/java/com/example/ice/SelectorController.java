@@ -16,6 +16,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -27,6 +28,8 @@ public class SelectorController implements Initializable {
     private ImageView Mon1, Mon2, Mon3, Mon4, Mon5, Mon6;
     @FXML
     private Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12;
+    @FXML
+    private ImageView ChosenMon1, ChosenMon2, ChosenMon3;
     private User currentUser, NPC;
     private List<Datamon> datamons, NPCdatamons;
     private MediaPlayer musicPlayer;
@@ -51,6 +54,7 @@ public class SelectorController implements Initializable {
 
     /**
      * The following 12 Method's are used to add a Datamon to the Players deck of Datamons.  We are using these methods in our Selector.fxml to connect it to an image of the 12 Datamons.
+     *
      * @param event
      */
     @FXML
@@ -60,7 +64,7 @@ public class SelectorController implements Initializable {
     }
 
     @FXML
-    private void  Select2Pressed(ActionEvent event) {
+    private void Select2Pressed(ActionEvent event) {
         Datamon datamon = new RouvisMor();
         selectDatamon(datamon);
     }
@@ -72,7 +76,7 @@ public class SelectorController implements Initializable {
     }
 
     @FXML
-    private void  Select4Pressed(ActionEvent event) {
+    private void Select4Pressed(ActionEvent event) {
         Datamon datamon = new Kevin();
         selectDatamon(datamon);
     }
@@ -123,12 +127,14 @@ public class SelectorController implements Initializable {
     private void Select12Pressed(ActionEvent event) {
         Datamon datamon = new Tobias();
         selectDatamon(datamon);
+
     }
 
     // Helper method for selecting Datamons.
     private void selectDatamon(Datamon datamon) {
         if (datamons.size() < maxCarriedDatamon) {
             currentUser.addDatamon(datamon);
+            setChosenMon();
             System.out.println(datamon.getName() + " datamon added.");
         } else {
             System.out.println("You have too many datamon objects.");
@@ -137,6 +143,7 @@ public class SelectorController implements Initializable {
 
     /**
      * Loads BattleSim
+     *
      * @param event
      */
     @FXML
@@ -174,11 +181,11 @@ public class SelectorController implements Initializable {
     /**
      * Adds random Datamons to NPC Datamon list.
      */
-    private void sendNPCList(){
+    private void sendNPCList() {
         Random rand = new Random();
 
         // Collects all possible Datamons and adds a random one to the NPC's list of Datamons, until the NPC has the same amount of Datamons as the player.
-        for(int i = 0 ; i <= (datamons.size() -1); i++ ) {
+        for (int i = 0; i <= (datamons.size() - 1); i++) {
             List<Datamon> pickDataMon = new ArrayList<>();
             pickDataMon.add(new Bobby());
             pickDataMon.add(new Fred1());
@@ -198,4 +205,15 @@ public class SelectorController implements Initializable {
         }
     }
 
+    private void setChosenMon() {
+        List<ImageView> chosenMons = new ArrayList<>();
+        chosenMons.add(ChosenMon1);
+        chosenMons.add(ChosenMon2);
+        chosenMons.add(ChosenMon3);
+
+        for (int i = 0; i < chosenMons.size() && i < datamons.size(); i++) {
+            Image image = datamons.get(i).getSprite();
+            chosenMons.get(i).setImage(image);
+        }
+    }
 }
