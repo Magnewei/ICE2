@@ -1,12 +1,7 @@
 package com.example.ice;
 
-import java.io.IOException;
 import java.util.Random;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.stage.Stage;
 
 public class BattleSim {
     private User currentPlayer;
@@ -29,10 +24,6 @@ public class BattleSim {
         enemyDatamon = enemyPlayer.getDatamons().getFirst();
         playerDatamon = currentPlayer.getDatamons().getFirst();
     }
-
-    // TODO:
-    // Fix game logic.
-
     // Checks if Datamon is dead.
     private void checkIfDead() {
         if (enemyDatamon.getHP() <= 0) {
@@ -67,12 +58,9 @@ public class BattleSim {
         }
     }
 
-
-
     // Method is called on buttons. Fight() checks winner and prompts if winner is found, checks dead datamon
     // Prompting if winner is found through method calls.
-    // Finally calls Moves from button if player turn or from random number on AI turn.
-
+    // Finally, calls Moves from button if player turn or from random number on AI turn.
     public void Fight(int pick) {
         if (enemyPlayer != null && currentPlayer != null) {
 

@@ -74,9 +74,6 @@ public class Tobias implements Datamon {
     }
 
     public int move3(Datamon target){
-        damage = 0;
-        System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         if((ReolPrint && ReolTalk && ReolCode) == true){
             path = "file:" + "src/main/resources/com/example/ice/ShrekSprite.png";
             // Transform into Shrek

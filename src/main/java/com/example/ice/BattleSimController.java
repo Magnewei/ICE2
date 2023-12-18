@@ -15,7 +15,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -227,6 +226,7 @@ public class BattleSimController {
     private void onWin(Event event) {
         if (sim.checkIfWin() && !sim.getFightResult().equals("Hal9000")) {
             Stage userChoices = new Stage();
+            String path = "EndScreen.fxml";
             try {
                 // Pause music on scene end.
                 musicPlayer.pause();

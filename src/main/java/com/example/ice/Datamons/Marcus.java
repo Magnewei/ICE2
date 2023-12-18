@@ -63,24 +63,18 @@ public class Marcus implements Datamon {
     public int move1(Datamon target){
         damage = 2;
         opgave1Done = true;
-        System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move2(Datamon target){
         damage = 2;
         opgave2Done = true;
-        System.out.println("Angreb: " + move2Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move3(Datamon target){
         damage = 2;
         opgave3Done = true;
-        System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
@@ -95,8 +89,6 @@ public class Marcus implements Datamon {
             opgave2Done = false;
             opgave3Done = false;
         }
-        System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 

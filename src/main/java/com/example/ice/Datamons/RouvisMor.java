@@ -62,8 +62,7 @@ public class RouvisMor implements Datamon {
         if("Ginger".equals(target.getCreatureType())){
             damage *= 2;
         }
-        System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+
         return damage;
     }
 
@@ -72,8 +71,7 @@ public class RouvisMor implements Datamon {
         if("Ginger".equals(target.getCreatureType())){
             damage *= 2;
         }
-        System.out.println("Angreb: " + move2Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+
         return damage;
     }
 
@@ -82,8 +80,7 @@ public class RouvisMor implements Datamon {
         if("Ginger".equals(target.getCreatureType())){
             damage = 100;
         }
-        System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+
         return damage;
 
     }
@@ -93,8 +90,7 @@ public class RouvisMor implements Datamon {
         if("Ginger".equals(target.getCreatureType())){
             damage *= 2;
         }
-        System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
-        System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+
         return damage;
     }
 
