@@ -4,25 +4,25 @@ import com.example.ice.Datamon;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-public class Tobias implements Datamon {
+public class Shrek implements Datamon {
     private String name;
     private int hp;
     private String CreatureType;
-    private String move1Name = "Kod reol";
-    private String move2Name = "Print reol";
-    private String move3Name = "Byg Reol";
-    private String move4Name = "Snak om reol";
+    private String move1Name = "WWE takedown";
+    private String move2Name = "Flying Crossbody";
+    private String move3Name = "UFO";
+    private String move4Name = "Vertical Suplex";
     private int damage;
 
-    public Tobias() {
-        this.name = "Tobias";
-        this.hp = 101;
-        this.CreatureType = "YapMaster";
+    public Shrek(){
+        this.name = "Shrek";
+        this.hp = 149;
+        this.CreatureType = "Gigablaster";
     }
 
     @Override
     public double getPercentageHealth() {
-        int maxHealth = 280;
+        int maxHealth = 300;
         return (double) hp / maxHealth;
     }
 
@@ -31,26 +31,26 @@ public class Tobias implements Datamon {
         return name;
     }
 
+
     @Override
     public int getHP() {
         return hp;
     }
+
 
     @Override
     public void setHP(int hp) {
         this.hp = hp;
     }
 
-
     @Override
     public String getCreatureType() {
         return CreatureType;
     }
 
-
     @Override
     public String introduction() {
-        return "A giant monster apears from the dista..... oh wait its just tiny jonas";
+        return "";
     }
 
     /**
@@ -60,29 +60,29 @@ public class Tobias implements Datamon {
      */
 
     public int move1(Datamon target){
-        damage = 0;
+        damage = 50;
         System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
-         return damage;
+        return damage;
     }
 
     public int move2(Datamon target){
-        damage = 0;
+        damage = 45;
         System.out.println("Angreb: " + move2Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
     }
 
     public int move3(Datamon target){
-        damage = 0;
+        damage = 35;
         System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
-        CreatureType ="TobiasShrek";
         return damage;
+
     }
 
     public int move4(Datamon target){
-        damage = 0;
+        damage = 60;
         System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
         return damage;
@@ -108,14 +108,13 @@ public class Tobias implements Datamon {
         return move4Name;
     }
 
-
     /**
      * This following method returns the Sprite of the Datamon. Our Sprite is the image of the users/enemy's Datamon, That's being displayed when launching our BattlSim
      * @return image
      */
     @Override
     public Image getSprite() {
-        String path = "file:" + "src/main/resources/com/example/ice/TobiasSprite.png";
+        String path = "file:" + "src/main/resources/com/example/ice/RouvisMorSprite.png";
 
         // Import image file.
         Image image = new Image(path);

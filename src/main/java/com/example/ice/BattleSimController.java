@@ -2,11 +2,15 @@ package com.example.ice;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.ice.Datamons.Shrek;
+import com.example.ice.Datamons.Tobias;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class BattleSimController {
@@ -63,6 +67,23 @@ public class BattleSimController {
             buttons.get(i).setVisible(true);
         }
     }
+
+    /**
+     * Nasseren cooked this method. If currentPlayer Datamon is tobias, and tobias has casted his 4th ability 4 times, then he transforms into shrek.
+     */
+    private void ShrekEasterEgg(){
+        if(currentPlayer.getCurrentDatamon().getName().equals("Tobias")&& currentPlayer.setCurrentDatamon().getCreatureType().equals("TobiasShrek")){
+            String path = "file:" + "src/main/resources/com/example/ice/TobiasSprite.png";
+
+            // Import image file.
+            Image image = new Image(path);
+
+            // Instantiate ImageView and set image.
+            PlayerSprite.setImage(image);
+
+        }
+    }
+
 
     /**
      * This method Updates our progressbar, depending on how much hp the attacker/Defenders datamon has left. We are also changing the Sprite depending on which Datamon we are using

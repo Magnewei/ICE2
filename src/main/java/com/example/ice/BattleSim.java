@@ -1,7 +1,11 @@
 package com.example.ice;
 
 import java.util.Random;
+
+import com.example.ice.Datamons.Shrek;
+import com.example.ice.Datamons.Tobias;
 import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
 
 public class BattleSim {
     private User currentPlayer;

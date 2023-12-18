@@ -55,7 +55,6 @@ public class Tess implements Datamon {
     }
 
 
-
     /**
      * These 4 methods below , are used to create attacks for the Datamon. Every attack returns damage. Some attacks damage variable is buffed / nerfed depending on which datamon the target is.
      * @param target
