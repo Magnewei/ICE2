@@ -13,6 +13,9 @@ public class Tobias implements Datamon {
     private String move3Name = "Byg Reol";
     private String move4Name = "Snak om reol";
     private int damage;
+    private boolean ReolCode = false;
+    private boolean ReolPrint = false;
+    private boolean ReolTalk = false;
 
     public Tobias() {
         this.name = "Tobias";
@@ -63,6 +66,7 @@ public class Tobias implements Datamon {
         damage = 0;
         System.out.println("Angreb: " + move1Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        ReolCode = true;
          return damage;
     }
 
@@ -70,6 +74,7 @@ public class Tobias implements Datamon {
         damage = 0;
         System.out.println("Angreb: " + move2Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        ReolPrint = true;
         return damage;
     }
 
@@ -77,7 +82,10 @@ public class Tobias implements Datamon {
         damage = 0;
         System.out.println("Angreb: " + move3Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
-        CreatureType ="TobiasShrek";
+        if((ReolPrint && ReolTalk && ReolCode) == true){
+            CreatureType ="TobiasShrek";
+
+        }
         return damage;
     }
 
@@ -85,6 +93,7 @@ public class Tobias implements Datamon {
         damage = 0;
         System.out.println("Angreb: " + move4Name + " Dealt : " + damage + " To " + target.getName());
         System.out.println(target.getName() + " hp is now: " + (target.getHP()-damage));
+        ReolTalk = true;
         return damage;
     }
 
