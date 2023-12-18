@@ -1,0 +1,46 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Main{
+    + static void main(String[] args)
+}
+class Datamon{
+    + void runGame()
+}
+
+package "util"{
+    class TextUI{
+        + void displayMessage(String msg)
+        + void getInput (String msg)
+    }
+    class DBConnector{
+        + void loadUsers
+        + void createUser(String username, String password)
+        + void login(String username, String password)
+
+    }
+}
+package "model" {
+    class user{
+
+    }
+    interface Mon{
+
+    }
+    class ActualMons implements Mon{
+
+    }
+}
+
+package "JavaFX"{
+    class Controllers
+}
+
+Main -- Datamon
+Datamon-- Mon
+Datamon -- TextUI
+Datamon-- DBConnector
+Datamon -- user
+Datamon-- Controllers
+
+@enduml
